@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  </head>
+<body>
+  <div class="outer">
+    <h3 class="header">Choose the correct variant</h3>
+<div class="inner">
+    <div class="text">
+      <div class="question">
+      <p>1. Lynn has been so ______ since her cat died.</p>
+      <input type="radio" name="q1" value="a"> a. worried &emsp;
+      <input type="radio" name="q1" value="b"> b. depressed &emsp;
+      <input type="radio" name="q1" value="c"> c. shocked &emsp;
+      <input type="radio" name="q1" value="d"> d. embarrassed
+    </div>
+
+    <div class="question">
+      <p>2. Jerry _______ where he parked his car.</p>
+      <input type="radio" name="q2" value="a"> a. isn't remembering &emsp;
+      <input type="radio" name="q2" value="b"> b. remember &emsp;
+      <input type="radio" name="q2" value="c"> c. doesn't remember &emsp;
+      <input type="radio" name="q2" value="d"> d. don't remember
+    </div>
+
+    <div class="question">
+      <p>3. I'm not sure what they are _______ about, but they are being very loud about it!</p>
+      <input type="radio" name="q3" value="a"> a. quarrelling &emsp;
+      <input type="radio" name="q3" value="b"> b. nagging &emsp;
+      <input type="radio" name="q3" value="c"> c. discussing &emsp;
+      <input type="radio" name="q3" value="d"> d. lying
+    </div>
+
+    <div class="question">
+      <p>4. I really don't ______ him very well.</p>
+      <input type="radio" name="q4" value="a"> a. fall out with &emsp;
+      <input type="radio" name="q4" value="b"> b. make up with &emsp;
+      <input type="radio" name="q4" value="c"> c. get on with &emsp;
+      <input type="radio" name="q4" value="d"> d. break up with
+    </div>
+
+    <div class="question">
+      
+      <p>5. How long has it been since you ______ your sister?</p>
+      <input type="radio" name="q5" value="a"> a. heard to &emsp;
+      <input type="radio" name="q5" value="b"> b. heard with &emsp;
+      <input type="radio" name="q5" value="c"> c. heard on &emsp;
+      <input type="radio" name="q5" value="d"> d. heard from
+    </div>
+
+    <div class="question">
+      <p>6. Every day after school, they ______ computer games for hours at the Internet cafe.</p>
+      <input type="radio" name="q6" value="a"> a. are playing &emsp;
+      <input type="radio" name="q6" value="b"> b. play &emsp;
+      <input type="radio" name="q6" value="c"> c. to play &emsp;
+      <input type="radio" name="q6" value="d"> d. playing
+    </div>
+    </div>
+
+    
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+    
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="tryAgainBtn">Try again</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <script>
+    const correctAnswers = ["b", "c", "a", "c", "d", "b"];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 1; i <= correctAnswers.length; i++) {
+        const userInput = document.querySelector(`input[name=q${i}]:checked`);
+        if (userInput) {
+          userAnswers.push(userInput.value);
+          if (userInput.value === correctAnswers[i - 1]) {
+            score++;
+            userInput.parentElement.classList.add("correct");
+          } else {
+            userInput.parentElement.classList.add("incorrect");
+          }
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      const radioInputs = document.querySelectorAll("input[type='radio']");
+      radioInputs.forEach(input => {
+        input.checked = false;
+        input.parentElement.classList.remove("correct", "incorrect");
+      });
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>
+
