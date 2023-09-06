@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    .hdd{font-weight: bold; background-color: #ffc119; font-size: 27px; border-radius: 15px}
+    </style>
+  </head>
+<body>
+  <div class="outer">
+    <h3 class="header">Look at the signs and make sentences using have to, don't have to, need to, don't need to, must or mustn't.</h3>
+<div class="inner">
+    <div class="text">
+      
+      <div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: auto;">
+        
+<div style="height: 200px; padding: 10px; flex: 100px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; background-color: #FDFD96; 
+            background-image: url('https://m.media-amazon.com/images/I/615M8Nfka0L.jpg'); background-size: contain; background-size: 100% 100%;">
+</div>
+        
+<div style="padding: 10px; flex: 200px; border: 1px solid black; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: #FDFD96; font-family: merriweather; font-size: 19px; color: black; line-height: normal; background-image: url('https://fillingdon.com/wp-content/uploads/2014/10/Sign-gallery.jpg'); background-size: contain; background-size: 100% 100%;">
+</div>
+        
+<div style="padding: 10px; flex: 200px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: #FDFD96; font-family: merriweather; font-size: 19px; color: black; line-height: normal; background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/Copenhagen_Frederiksberg_Have.jpg/800px-Copenhagen_Frederiksberg_Have.jpg'); background-size: contain; background-size: 100% 100%;">
+  <span style="font-size: 30px; color: black; background-color: yellow;">
+Finbar Funpark<br>
+Tuesday's entrance<br>
+FREE!</span>
+</div>
+<div style="height: 200px; padding: 10px; flex: 1; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: #FDFD96; font-family: merriweather; font-size: 19px; color: black; line-height: normal; background-image: url('https://aussiesafetystickers.com/cdn/shop/products/PS427_large.jpg?v=1543572065'); background-size: contain; background-size: 100% 100%;"> 
+</div>
+        
+<div style="padding: 10px; flex: 200px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: #FDFD96; font-family: merriweather; font-size: 19px; color: black; line-height: normal; background-image: url('https://phabcart.imgix.net/cdn/scdn/images/uploads/XY07314.jpg'); background-size: contain; background-size: 100% 100%;"> 
+
+  </div></div>
+      <hr>
+      
+1. People <input type="text" id="q1"> to wear their helmets.<br><br>
+
+2. Let's visit a Picasso Gallery? But we <input type="text" id="q2"> buy the tickets first.<br><br>
+      
+3. Look! You <input type="text" id="q3"> to pay for the park entrance! Brilliant!<br><br>
+
+4. You <input type="text" id="q4"> go there with your dog. It's not allowed!<br><br>
+
+5. They <input type="text" id="q5"> to take a camera with them. Flash photography is forbiden anyway.<br>
+
+  
+  
+  </div>
+      
+</div>
+    
+  
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+    
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="tryAgainBtn">Try again</button>
+     
+    </div>
+  </div>
+</div>
+
+  <script>
+    const correctAnswers = [
+      "have", "must", "don't have", "mustn't", "don't need"
+     
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 0; i < correctAnswers.length; i++) {
+        const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+        userAnswers.push(userInput);
+        const inputField = document.getElementById(`q${i + 1}`);
+
+        if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
+          inputField.style.backgroundColor = "lightgreen";
+          score++;
+        } else {
+          inputField.style.backgroundColor = "pink";
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      const inputFields = document.querySelectorAll("input[type='text']");
+      inputFields.forEach(input => {
+        input.style.backgroundColor = "white";
+        input.value = "";
+      });
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>
