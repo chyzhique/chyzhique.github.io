@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Rewrite the following sentences starting with the words given.</h3>
+    <div class="inner">
+      <div class="text">
+
+
+1. 'I don't want to go to the theatre tonight,' said Thomas.<br>
+Thomas said <input type="text" id="q1" style="width: 60%"  class="question"><br><br>
+2. 'Anna has been taking guitar lessons for three years,' Marion told me.<br>
+Marion told <input type="text" id="q2" style="width: 60%" class="question"><br><br>
+3. 'I will never speak to him again,' said Caroline.<br>
+Caroline said <input type="text" id="q3" style="width: 60%" class="question"><br><br>
+4. 'Let's go camping this weekend,' Ben told us.<br>
+Ben suggested <input type="text" id="q4" style="width: 60%" class="question"><br><br>
+5. 'I won't do the washing-up,' said Linda.<br>
+Linda refused <input type="text" id="q5" style="width: 60%" class="question"><br><br>
+6. 'Janet can't answer the phone because she is taking a shower now, said Ellen.<br>
+Ellen said <input type="text" id="q6" style="width: 60%" class="question"><br><br>
+        </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const correctAnswers = [
+      ["that he didn't want to go to the theatre that night"],
+["me that Anna had been taking guitar lessons for three years"],
+["that she would never speak to him again"],
+["that we went camping that weekend", "going camping that weekend"],
+["to do the washing up"],
+["that Janet couldn't answer the phone then because she was taking a shower"]
+    ];
+    
+    const submitBtn = document.getElementById("submitBtn");
+  const tryAgainBtn = document.getElementById("tryAgainBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputElement = document.getElementById(`q${i + 1}`);
+      const correctAnswer = correctAnswers[i];
+
+      if (correctAnswer.includes(userInput.toLowerCase())) {
+        inputElement.classList.add("correct");
+        score++;
+      } else {
+        inputElement.classList.add("incorrect");
+      }
+    }
+
+    displayResults(score);
+  });
+
+  tryAgainBtn.addEventListener("click", () => {
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const inputElement = document.getElementById(`q${i + 1}`);
+      inputElement.classList.remove("correct", "incorrect");
+      inputElement.value = "";
+    }
+
+    resultsDiv.style.display = "none";
+    tryAgainBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  });
+
+  function displayResults(score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    submitBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+  }
+</script>	
+      </body>
+    </html>

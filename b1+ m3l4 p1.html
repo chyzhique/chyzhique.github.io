@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header">A. Complete the text with who, which, whose, that, when or where.</h3>
+    <div class="inner">
+      <h1 class="header">Writer's confession</h1>
+      <div class="text" style="background-color: oldlace; ">
+        <div class="image"style="height: 40%; width: 40%; float: left; display: flex;
+  align-items: flex-start;">
+          <img src="https://images.squarespace-cdn.com/content/v1/6397e1ebbb148c2e8ac0b037/1672428666106-6KNJ84NMO1NAQ86DJB3T/smallerKESS-5082.jpg" style="max-width: 100%;
+  max-height: 100%; transform: rotate(-10deg); object-fit: contain;"; alt="corfu">
+          </div>
+     <span style ="position: relative; z-index: 1; background-color: oldlace">
+        An author confesses it was a holiday in Corfu 
+(1) <input type="text" id="q1">
+        first gave me the idea to write this novel. The story is about a young couple 
+(2) <input type="text" id="q2">
+        move to a small village on the island to start a new life. They discover that the villagers, 
+(3) <input type="text" id="q3">
+        at first seem open and welcoming, are actually desperate to hide a terrible secret. While writing the book, I tried to include descriptions of the island 
+  (4) <input type="text" id="q4">
+        magic and beauty fascinated me. I finished the book in just a couple of months, 
+  (5) <input type="text" id="q5">
+        is quite fast, even for me. You see writing is something 
+  (6) <input type="text" id="q6">
+        comes quite naturally to me now but it wasn't always like that. I mean, I really used to find it hard at first and there was a time 
+  (7) <input type="text" id="q7">
+        I felt I had no talent at all. I would have given up if it hadn't been for my husband, 
+(8) <input type="text" id="q8">
+        encouraged me to keep writing.
+        Now, besides writing, I also teach a Creative Writing course at a college in Manchester, 
+(9) <input type="text" id="q9">
+        I live with my family. I always tell my students that writing is a career 
+(10) <input type="text" id="q10">
+        requires patience, hard work as well as imagination. </span>
+      </div> 
+    
+    </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="tryAgainBtn">Try again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script>
+  const correctAnswers = [
+    ["which", "that"],
+    ["who", "that"],
+    "who",
+    "whose",
+    "which",
+    ["which", "that"],
+    "when",
+    "who",
+    "where",
+    ["which", "that"]
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const tryAgainBtn = document.getElementById("tryAgainBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    let score = 0;
+
+    for (let i = 1; i <= 10; i++) {
+      const userInput = document.getElementById(`q${i}`).value.toLowerCase().trim();
+      const correctAnswer = correctAnswers[i - 1];
+
+      if (Array.isArray(correctAnswer)) {
+        if (correctAnswer.includes(userInput)) {
+          document.getElementById(`q${i}`).classList.add("correct");
+          score++;
+        } else {
+          document.getElementById(`q${i}`).classList.add("incorrect");
+        }
+      } else {
+        if (userInput === correctAnswer) {
+          document.getElementById(`q${i}`).classList.add("correct");
+          score++;
+        } else {
+          document.getElementById(`q${i}`).classList.add("incorrect");
+        }
+      }
+    }
+
+    displayResults(score);
+  });
+
+  tryAgainBtn.addEventListener("click", () => {
+    for (let i = 1; i <= 10; i++) {
+      const inputElement = document.getElementById(`q${i}`);
+      inputElement.value = "";
+      inputElement.classList.remove("correct", "incorrect");
+    }
+
+    resultsDiv.style.display = "none";
+    tryAgainBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  });
+
+  function displayResults(score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    submitBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+  }
+</script>
+</body>
+</html>

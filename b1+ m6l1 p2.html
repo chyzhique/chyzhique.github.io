@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> A. Read the text below and choose the correct verb form.</h3>
+    <div class="inner">
+      <div class="text">
+        <h3 class="header"> 
+          B. Write each of the following sentences in the Passive Voice starting with the words given. 
+        </h3>
+       
+        
+1. Someone opened a new sushi bar in our neighbourhood last month.<br>
+A new sushi bar <input type="text" id="q1" style="width: 60%"> <br><br>
+2. We will definitely finish the project by the end  of the month.<br>
+The project <input type="text" id="q2" style="width: 60%"> <br><br>
+3. We must pay the electricity bill by Monday.<br>
+The electricity bill <input type="text" id="q3" style="width: 60%"> <br><br>
+4. We will announce the name of the new coach at 10am.<br>
+The name of the new coach  <input type="text" id="q4" style="width: 60%"> <br><br>
+5. What time do they serve breakfast at the hotel?<br>
+What time  <input type="text" id="q5" style="width: 60%"> <br><br>
+6. They didn't feed the chimpanzees this morning.<br>
+The chimpanzees   <input type="text" id="q6" style="width: 60%"> <br><br>
+        
+        </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      "was opened in our neighbourhood last month", 
+      "will definitely be finished by the end of the month", 
+"must be paid by Monday", 
+"will be announced at 10 am", 
+"is breakfast served at the hotel", 
+"weren't fed this morning", 
+    ];
+    
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.trim();
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 6`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+      </body>
+    </html>

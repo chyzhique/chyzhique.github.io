@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the text below and complete the gaps. Use only one word in each gap.</h3>
+    <div class="inner">
+      <div class="text">
+         <h2 style="float: left; padding: 15px; background-color: orange; margin: 2px">
+           FOOD <br>MILES</h2>
+
+Recent years have seen not only an increased interest 
+        (1)<input type="text" id="q1">
+the freshness of what we eat but also where the food was actually grown.
+This is because ecologists have pointed out that the distance the food 
+        (2)<input type="text" id="q2">
+travelled to arrive in the supermarket or greengrocer has an important influence 
+        (3)<input type="text" id="q3">
+the environment. The term 'food miles' was invented as a way
+(4)<input type="text" id="q4">
+measuring the distance a food has
+(5)<input type="text" id="q5">
+transported until it reaches the dining table. For example, a shopper in London may 
+        (6)<input type="text" id="q6">
+prepared to pay a relatively high price for Japanese prawns that have been caught and flown over on the same morning. However, this badly damages the environment because the plane and the
+lorry 
+        (7)<input type="text" id="q7">
+have delivered the prawns have polluted the environment. Research that has been carried out
+        (8)<input type="text" id="q8">
+environmental groups has found that the environmental cost of food transport is more 
+        (9)<input type="text" id="q9">
+15 million euros a year. Although food miles make up only one part of the total cost of food production, they should be taken 
+        (10)<input type="text" id="q10">
+consideration in any discussion on the Future of the world in which we live.
+        </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      "in", "has", "on", "of", "been", "be", "that", "by", "than", "into"
+    ];
+    
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.trim();
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 10`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+      </body>
+    </html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style> 
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
+  
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the text below and choose the correct words.</h3>
+    <div class="inner">
+      <div class="text">
+         
+Last week, Christine realised she was bored of watching television every
+evening and feeling tired all the time so she asked her friend Emma what
+
+        (1) <select id="q1">
+        <option value="">       </option>
+<option value="a">could she do</option>
+<option value="b">she could do</option></select>
+        to keep fit. Emma is a fitness instructor and a dietician. Emma advised Christine 
+        (2) <select id="q2">
+        <option value="">       </option>
+<option value="a">do</option>
+<option value="b">to do </option></select>
+        
+        something more active in her spare time such as going to a gym. Christine said that she
+didn't like going to the gym and she wondered 
+        (3) <select id="q3">
+        <option value="">       </option>
+<option value="a">if there was</option>
+<option value="b">if there is</option></select> 
+        
+something more interesting that she could do. Emma suggested a dance
+class or an aerobics class. Christine agreed that 
+        (4) <select id="q4">
+        <option value="">       </option>
+<option value="a">this is</option>
+<option value="b">that was </option></select> 
+        
+        a great idea and decided to join a salsa class. Emma told her 
+        (5) <select id="q5">
+        <option value="">       </option>
+<option value="a">not to overdo</option>
+<option value="b">not overdoing</option></select> 
+        
+        it in the beginning as this could lead to injuries. Emma also said that Christine 
+        (6) <select id="q6">
+        <option value="">       </option>
+<option value="a">should try</option>
+<option value="b">should have tried </option></select>
+        
+        doing something like yoga, which is good for relaxation. Christine also wanted to know how
+        (7) <select id="q7">
+        <option value="">       </option>
+<option value="a">could she</option>
+<option value="b">she could </option></select>
+        improve her diet. Emma told her that she
+        (8) <select id="q8">
+        <option value="">       </option>
+<option value="a">had</option>
+<option value="b">has had </option></select>
+        to eat more fresh fruit and vegetables. However, Christine complained that she 
+        (9) <select id="q9">
+        <option value="">       </option>
+<option value="a">disliked</option>
+<option value="b">had disliked </option></select>
+        eating vegetables and asked 
+        (10) <select id="q10">
+        <option value="">       </option>
+<option value="a">if Emma knew</option>
+<option value="b">Emma to know</option></select>
+        any interesting ways of cooking vegetables to make them tastier. Emma suggested a recipe book that she often used. Christine thanked her friend for all her good advice
+and asked her whether 
+        (11) <select id="q11">
+        <option value="">       </option>
+<option value="a">would she like</option>
+<option value="b">she would like</option></select>
+        to come round to her house for a nice healthy meal. Emma agreed and said she
+
+        (12) <select id="q12">
+        <option value="">       </option>
+<option value="a">would bring</option>
+<option value="b">had brought </option></select>
+        the recipe book with her.
+
+        </div>  </div>
+   
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "b", 
+      "b", 
+      "a", 
+      "b", 
+      "a",
+      "a", 
+      "b", 
+      "a", 
+      "a", 
+      "a",
+      "b",
+      "a"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 12`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

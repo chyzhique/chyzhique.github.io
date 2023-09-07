@@ -1,0 +1,122 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  </head>
+  
+  <body>
+  
+    <div class="outer">
+    <h3 class="header">Read the sentences and choose the correct answer.</h3>
+    <div class="inner">
+      <h1 class="header">Choose the Correct Answer</h1>
+      <div class="text">
+        <ol>
+          <li>
+            I 
+            <select id="q1">
+              <option value="haven't seen">haven't seen</option>
+              <option value="didn't see">didn't see</option>
+            </select> the new episodes of Prison Break yet.
+          </li>
+          <li>
+            Haven't you 
+            <select id="q2">
+              <option value="never">never</option>
+              <option value="ever">ever</option>
+            </select> been to Paris?
+          </li>
+          <li>
+            John 
+            <select id="q3">
+              <option value="has slept">has slept</option>
+              <option value="has been sleeping">has been sleeping</option>
+            </select> since two o'clock this afternoon; wake him up.
+          </li>
+          <li>
+            
+            <select id="q4">
+              <option value="Did you visit">Did you visit</option>
+              <option value="Have you visited">Have you visited</option>
+            </select> your grandparents last weekend?
+          </li>
+          <li>
+            Emma hasn't had a holiday 
+            <select id="q5">
+              <option value="since">since</option>
+              <option value="for">for</option>
+            </select> two years now, and she feels like she really needs one.
+          </li>
+        </ol>
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="tryAgainBtn">Try again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = [
+      "haven't seen",
+      "ever",
+      "has been sleeping",
+      "Did you visit",
+      "for"
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 1; i <= 5; i++) {
+        const selectedOption = document.getElementById(`q${i}`).value;
+
+        userAnswers.push(selectedOption);
+        const selectElement = document.getElementById(`q${i}`);
+        const correctAnswer = correctAnswers[i - 1];
+
+        if (selectedOption === correctAnswer) {
+          selectElement.classList.add("correct");
+          score++;
+        } else {
+          selectElement.classList.add("incorrect");
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= 5; i++) {
+        const selectElement = document.getElementById(`q${i}`);
+        selectElement.classList.remove("correct", "incorrect");
+        selectElement.value = "";
+      }
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style> 
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
+  
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the text below and complete the gaps. Use only one word in each gap.</h3>
+    <div class="inner">
+      <div class="text">
+    <div> 
+<h1 style="float: left; font-family: 'Cormorant Garamond', serif"><i>
+  <span style="color: crimson">not your average</span></i><br><br><br>
+<span style="font-size:68px; font-family: Cormorant+Garamond:ital">footballer</h1>
+        <div class="image" style="flot: right">
+<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Marco_Wegener.jpg/220px-Marco_Wegener.jpg">
+         </div>  
+           </div> 
+      
+Simon Chatwick is a sixteen-year-old sports phenomenon! He's his
+school's most valuable football player and he has scored more goals
+
+      (1) <input type="text" id="q1" class="question">
+any other striker in the entire city. Last school year
+alone, he scored over twenty goals! However, this iS not why Simon's
+story is so unique. As a result of tragic boating accident when he
+was ten, Simon lost his left arm. had 
+      (2)<input type="text" id="q2" class="question">
+opportunity
+at to interview Simon at the local shopping centre, where the team's
+next big match 
+      (3)<input type="text" id="q3" class="question">
+being promoted.
+Simon said that when he started playing football a 
+      (4)<input type="text" id="q4" class="question">
+
+years ago, many of his friends and teachers 
+      (5)<input type="text" id="q5" class="question">
+him
+that he wouldn't be able to do it in his condition. At that time, he
+couldn't help thinking that maybe they 
+      (6)<input type="text" id="q6" class="question">
+right. Then one day, his dad said that if he wanted something badly enough, he
+should just go for it. That's been his motto ever since. That's why he always has 'GFI', which stands for Go For It, sewn onto 
+      (7)<input type="text" id="q7" class="question">
+hats and shirts. Simon told me 
+      (8)<input type="text" id="q8" class="question">
+he hated it when people treated him differently because of his disability. 'Now
+think people realise that it's football. I don't need two arms 
+      (9)<input type="text" id="q9" class="question">
+play, I only use my feet!' said Simon. He thinks that despite all the difficulties, he has proved himself, and people treat him like 
+      (10)<input type="text" id="q10" class="question">
+average teen. certainly think he's above average when it comes to his sports abilities, and I'lI make sure to cheer him on in the matches to come!
+      </div></div>
+      
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const correctAnswers = [
+      ["than"],
+["the", "an"],
+["was"],
+["few"],
+["told"],
+["were"],
+      ["his"],
+      ["that"],
+      ["to"],
+      ["an", "any"]
+    ];
+    
+    const submitBtn = document.getElementById("submitBtn");
+  const tryAgainBtn = document.getElementById("tryAgainBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputElement = document.getElementById(`q${i + 1}`);
+      const correctAnswer = correctAnswers[i];
+
+      if (correctAnswer.includes(userInput.toLowerCase())) {
+        inputElement.classList.add("correct");
+        score++;
+      } else {
+        inputElement.classList.add("incorrect");
+      }
+    }
+
+    displayResults(score);
+  });
+
+  tryAgainBtn.addEventListener("click", () => {
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const inputElement = document.getElementById(`q${i + 1}`);
+      inputElement.classList.remove("correct", "incorrect");
+      inputElement.value = "";
+    }
+
+    resultsDiv.style.display = "none";
+    tryAgainBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  });
+
+  function displayResults(score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    submitBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+  }
+</script>	
+      </body>
+    </html>

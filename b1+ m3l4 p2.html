@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    /* Add your custom styles here */
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header">Read the fext below and complete the gaps. Use only one word in each gap.
+</h3>
+    <div class="inner">
+      
+      <div class="text">
+  <h2>career choices</h2>
+ 
+    Choosing the right career is one of the hardest decisions people have to 
+        (1) <input type="text" id="q11">,
+    How do you go about making a career choice when you don't really know what you want to do? Well, the first thing you should 
+        (2)<input type="text" id="q12">
+    is consider Your values, interests and skills as this will make 
+        (3)<input type="text" id="q13"> career choices suitable and others not so suitable for you.
+    You can take what are called career tests 
+        (4)<input type="text" id="q14"> will tell you which occupations are appropriate for vou. Think
+    about these occupations and circle the ones you find appealing. Then, look at the job description, educational and other
+    requirements, 
+        (5)<input type="text" id="q15"> as well as the earnings. The next thing you should do is talk to people 
+        (6)<input type="text" id="q16">
+    have firsthand knowledge of the occupations you are interested in. If they have convinced you that it's the right career choice
+    for you, then you need to start training for your new career. You might need to get a degree or 
+        (7)<input type="text" id="q17">
+    some courses to learn some new skills. And remember, if you are not satisfied 
+        (8)______ your career choice for any reason,
+    you can always change it. Lots of people do!
+  
+
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+
+  <div id="results" style="display: none; justify-content: center; align-items: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = [
+      "make",
+      "do",
+      ["certain", "some"],
+      ["which", "that"],
+      "as",
+      ["who", "that"],
+      "take",
+      ["with", "buy"],
+      
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 11; i <= 17; i++) {
+        const userInput = document.getElementById(`q${i}`).value.toLowerCase().trim();
+        const correctAnswer = correctAnswers[i - 11];
+
+        // Check if the user input matches any of the correct answers
+        if (Array.isArray(correctAnswer)) {
+          if (correctAnswer.some(answer => answer === userInput)) {
+            document.getElementById(`q${i}`).classList.add("correct");
+            score++;
+          } else {
+            document.getElementById(`q${i}`).classList.add("incorrect");
+          }
+        } else {
+          if (userInput === correctAnswer) {
+            document.getElementById(`q${i}`).classList.add("correct");
+            score++;
+          } else {
+            document.getElementById(`q${i}`).classList.add("incorrect");
+          }
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 11; i <= 17; i++) {
+        const inputElement = document.getElementById(`q${i}`);
+        inputElement.value = "";
+        inputElement.classList.remove("correct", "incorrect");
+      }
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+</script>
+</body>
+</html>

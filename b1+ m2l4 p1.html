@@ -1,0 +1,128 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+     
+  </head>
+
+<body>
+  <div class="outer">
+    <h3 class="header"> A. Complete the text below with the Past Simple, Past Progressive, Past Perfect Simple or Past Perfect Progressive of the verbs in brackets.</h3>
+    <div class="inner">
+      <h1 class="header"> finshing in the Coracle</h1>
+    <div class="image" style="height:40%; width: 40%; float: left">
+    <img src="https://seashellcommunications.files.wordpress.com/2013/08/coracle-regatta-conway-richards-2-030813-by-cathy-shelbourne.jpg" alt="surfing">
+    </div>
+     <div class="text">
+  Last summer, I 
+  <input type="text" id="q1" class="question"> (stay) at a friend's house in a pretty village in Wales. One morning, while I 
+  <input type="text" id="q2" class="question"> (have) breakfast, my friend 
+  <input type="text" id="q3" class="question"> (tell) me that his cousins 
+  <input type="text" id="q4" class="question"> (go) fishing in a coracle. As I 
+  <input type="text" id="q5" class="question"> (not hear) of a coracle before, he 
+  <input type="text" id="q6" class="question"> (explain) to me
+  what it is. A coracle is a circular boat which Welsh people commonly 
+  <input type="text" id="q7" class="question"> (use) from the time of the Romans until the 1970s.
+  In those days, coracles 
+  <input type="text" id="q8" class="question"> (carry) people or things up and down the rivers but, nowadays, coracles are used for fishing.
+  We 
+  <input type="text" id="q9" class="question"> (decide) to go down to the river and have a look for ourselves. We 
+  <input type="text" id="q10" class="question"> (walk) for about an hour when we finally 
+  <input type="text" id="q11" class="question"> (spot) my friend's cousins sitting in separate
+  boats. As they 
+  <input type="text" id="q12" class="question"> (fish) all morning, they 
+  <input type="text" id="q13" class="question"> (catch) quite a few fish. I was really curious to see how they do it. I 
+  <input type="text" id="q14" class="question"> (notice) that with one hand they 
+  <input type="text" id="q15" class="question"> (hold) a net while with the other hand they 
+  <input type="text" id="q16" class="question"> (control) their boats. Suddenly, a fish 
+  <input type="text" id="q17" class="question"> (get) caught in their net. So each of them 
+  <input type="text" id="q18" class="question"> (pull) in his end of the
+  net until the boats 
+  <input type="text" id="q19" class="question"> (touch) and then, as if by magic, they 
+  <input type="text" id="q20" class="question"> (lift) the fish out of the net. The whole scene was amazing!
+</div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+
+  <div id="results" style="display: none; justify-content: center; align-items: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    ["was staying"], 
+    ["was having"], 
+    ["told"], 
+    ["were going", "had gone"], 
+    ["hadn't heard"], 
+    ["explained"], 
+    ["used"], 
+    ["carried"], 
+    ["decided"], 
+    ["had been walking"], 
+    ["spotted"], 
+    ["had been fishing"], 
+    ["had caught"], 
+    ["noticed"], 
+    ["held", "were holding"], 
+    ["controlled", "were controlling"], 
+    ["got"], 
+    ["pulled"], 
+    ["touched"], 
+    ["lifted"]
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const tryAgainBtn = document.getElementById("tryAgainBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputElement = document.getElementById(`q${i + 1}`);
+      const correctAnswer = correctAnswers[i];
+
+      if (correctAnswer.includes(userInput.toLowerCase())) {
+        inputElement.classList.add("correct");
+        score++;
+      } else {
+        inputElement.classList.add("incorrect");
+      }
+    }
+
+    displayResults(score);
+  });
+
+  tryAgainBtn.addEventListener("click", () => {
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const inputElement = document.getElementById(`q${i + 1}`);
+      inputElement.classList.remove("correct", "incorrect");
+      inputElement.value = "";
+    }
+
+    resultsDiv.style.display = "none";
+    tryAgainBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  });
+
+  function displayResults(score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    submitBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+  }
+</script>	

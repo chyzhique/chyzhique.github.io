@@ -1,0 +1,149 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style> 
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&display=swap');
+  
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the text below and decide which answer a, b or c best fits each gap</h3>
+    <div class="inner">
+      <div class="text">
+         
+<h2 class="header">Are you a fast food addict ?</h2>
+
+Be honest. Would you and your friends 
+        (1) <select id="q1">
+        <option value="">       </option>
+<option value="a">a. rather</option>
+<option value="b">b. want</option>
+<option value="c">c. wish</option></select>
+order a nice pepperoni pizza or eat the spaghetti your mother has lovingly prepared for you? What sounds more appealing, a big juicy burger at a fast food restaurant or a homemade
+potato salad? 
+        (2) <select id="q2">
+        <option value="">       </option>
+<option value="a">a. Favourite</option>
+<option value="b">b. Popular</option>
+<option value="c">c. Ordinary</option></select>
+burgers at a fast food place may he unhealthy, but most teenagers eat them almost every
+day. We are gradually becoming a society that prefers ready-made products and a 
+        (3) <select id="q3">
+        <option value="">       </option>
+<option value="a">a. private</option>
+<option value="b">b. complimentary</option>
+<option value="c">c. convenient</option></select>
+life; we also have very little time. Fast food restaurants 
+        (4) <select id="q4">
+        <option value="">       </option>
+<option value="a">a. offer</option>
+<option value="b">b. supply</option>
+<option value="c">c. cater</option></select>
+for those of us who come home exhausted after a long day and want food really fast. They are also 
+        (5) <select id="q5">
+        <option value="">       </option>
+<option value="a">a. popular</option>
+<option value="b">b. famous</option>
+<option value="c">c. busy</option></select>
+with teenagers because apart from offering food, they also function as places where they can socialise with other young people. Usually, fast food restaurants 
+        (6) <select id="q6">
+        <option value="">       </option>
+<option value="a">a. locate </option>
+<option value="b">b. are located</option>
+<option value="c">c. locating</option></select>
+in central points of the cits and are regularly advertised by the press and media, so they are difficult to avoid.
+        <br><br>
+However, if you are a junk food fan, try to keep in mind that eating fast food on a daily basis may mean spending a lot of money and eating tood which is bad for you and is high in calories, too. If this sounds all too 
+        (7) <select id="q7">
+        <option value="">       </option>
+<option value="a">a. familiar</option>
+<option value="b">b. different</option>
+<option value="c">c. traditional</option></select>
+then your eating habits are not so good. Maybe 
+        (8) <select id="q8">
+        <option value="">       </option>
+<option value="a">a. would rather</option>
+<option value="b">b. it's time</option>
+<option value="c">c. you wish</option></select>
+you tried something healthy for a change!
+        
+
+
+        </div>  </div>
+   
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "a", 
+      "c", 
+      "c", 
+      "c", 
+      "a",
+      "b", 
+      "a", 
+      "b", 
+      
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 12`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style>
+  .kk {font-weight: bold; background-color: yellow; border: 1px solid silver; border-radius: 10px; padding: 3px}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Complete the second sentence so that it has a similar meaning to the
+first sentence, using the word given. Do not change the word given.
+You must use between two and five words, including the word given.</h3>
+    <div class="inner">
+      <div class="text">
+        
+       
+1. 'I didn't go to the gym yesterday,' said Ellen. <b class="kk">gone</b><br>
+Ellen said that 
+        <input type="text" id="q1" style="width: 60%"  class="question"> 
+to the gym the previous day.
+<hr>
+      2. 'Do you prefer basketball to tennis?" said Alice. <b class="kk">me</b><br>
+Alice asked <input type="text" id="q2" style="width: 60%"  class="question"> basketball to tennis.
+<hr>
+      3. 'How often do you work out?' Anne said to Cathy. <b class="kk">asked</b><br>
+Anne <input type="text" id="q3" style="width: 60%"  class="question"> worked out.
+<hr>
+      4. 'You shouldn't eat junk food and you should try to get more exercise,' the doctor told me. <b class="kk">not</b><br>
+The doctor advised me 
+        <input type="text" id="q4" style="width: 60%"  class="question">
+and to try to get more exercise.
+<hr>
+5. 'Will this diet really help me to lose weight? Helen asked herself. <b class="kk">whether</b><br>
+Helen wondered 
+        <input type="text" id="q5" style="width: 60%"  class="question">
+help her to lose weight.
+<hr>
+6. 'Have you tried sushi before?' Jason asked me. <b class="kk">I </b><br>
+Jason wanted 
+        <input type="text" id="q6" style="width: 60%"  class="question">
+tried sushi before.
+<hr>
+7. 'Did Mark go to the new restaurant with you last night?' Carl asked me.
+<b class="kk">if + had</b><br>
+Carl asked me 
+        <input type="text" id="q7" style="width: 60%"  class="question">
+to the new restaurant with me the previous night. 
+<hr>
+8. 'My sister can't ski very well but she loves to ice-skate,' Eric told me. <b class="kk">his</b><br> 
+Eric told me that 
+        <input type="text" id="q8" style="width: 60%"  class="question">
+very well but that she loved to ice-skate.
+   
+        </div></div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      "she hadn't gone", 
+      "me if I preferred", 
+"asked Cathy how often she", 
+"not to eat junk food", 
+"whether that diet would really", 
+"to know if I had", 
+      "if Mark had gone",
+      "his sister couldn't ski"
+    ];
+    
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.trim();
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 6`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+      </body>
+    </html>

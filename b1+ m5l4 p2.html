@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Choose the word or phrase that best completes each sentence.</h3>
+    <div class="inner">
+      <div class="text">
+        
+        1. Jeremy is a(n) <select id="q1">
+        <option value="">       </option>
+<option value="a">a. avid</option>
+<option value="b">b. peculiar</option>
+<option value="c">c. proud</option>
+<option value="d">d. interested</option></select>
+        reader; he loves reading all kinds of books.
+      <hr>
+2. I think Mum will really <select id="q2"> 
+        <option value="">       </option>
+<option value="a">a. respond</option>
+<option value="b">b. appreciate</option>
+<option value="c">c. request</option>
+<option value="d">d. sort</option></select>
+    the flowers we bought her.
+        <hr>
+3. If you don't validate your <select id="q3"> 
+        <option value="">       </option>
+<option value="a">a. fare</option>
+<option value="b">b. album</option>
+<option value="c">c. ticket</option>
+<option value="d">d. stamp</option></select>
+  , you will be charged a fine.
+        <hr>
+4. Fiona is really interested <select id="q4"> 
+        <option value="">       </option>
+<option value="a">a. in</option>
+<option value="b">b. for</option>
+<option value="c">c. of</option>
+<option value="d">d. by</option></select>
+  learning foreign languages.
+        <hr>
+5. John gave Pamela a <select id="q5"> 
+        <option value="">       </option>
+<option value="a">a. pile</option>
+<option value="b">b. set</option>
+<option value="c">c. pack</option>
+<option value="d">d. bunch</option></select>
+of roses for her birthday.
+        <hr>
+6. Andrea has been trying to learn how to drive for two years; she is really <select id="q6"> 
+        <option value="">       </option>
+<option value="a">a. crazy about</option>
+<option value="b">b. fed up with</option>
+<option value="c">c. impressed by</option>
+<option value="d">d. fond of</option></select>
+taking lessons.
+        <hr>
+7. Brian <select id="q7"> 
+        <option value="">       </option>
+<option value="a">a. might be</option>
+<option value="b">b. can be</option>
+<option value="c">c. might be</option>
+<option value="d">d. must be</option></select>
+the fastest runner in our school; he has beaten everyone in the +00 metre race for two years in a row.
+        <hr>
+8. 'The cleaner <select id="q8"> 
+        <option value="">       </option>
+<option value="a">a. must have broken</option>
+<option value="b">b. can have broken</option>
+<option value="c">c. must break</option>
+<option value="d">d. could break</option></select>
+the vase: she was cleaning it this morning.
+        <hr>
+9.. You <select id="q9"> 
+        <option value="">       </option>
+<option value="a">a. mustn't have seen</option>
+<option value="b">b. couldn't have seen</option>
+<option value="c">c. may have seen</option>
+<option value="d">d. couldn't see</option></select>
+Ted at the party last night; he's away on business.
+        <hr>
+10. Charlie <select id="q10"> 
+        <option value="">       </option>
+<option value="a">a. mustn't be</option>
+<option value="b">b. can't have</option>
+<option value="c">c. can't be</option>
+<option value="d">d. mustn't have</option></select>
+serious about wanting to bungee jump off the bridge!
+        <hr>
+        
+        
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "a", 
+      "b", 
+      "c", 
+      "a", 
+      "d",
+      "b", 
+      "d", 
+      "a", 
+      "b", 
+      "c"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 10`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

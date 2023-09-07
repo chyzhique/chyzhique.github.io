@@ -1,0 +1,106 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style>
+  .kk {font-weight: bold; background-color: yellow; border: 1px solid silver; border-radius: 10px; padding: 3px}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the following situations and decide what you would say in each of them. Start with the words given.</h3>
+    <div class="inner">
+      <div class="text">
+        <br><br>
+       
+1. You want to go on holiday but you cant afford it.<br>
+I wish <input type="text" id="q1" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+2. You want your flatmate to do some housework.<br>
+I'd rather <input type="text" id="q2" style="width: 60%"  class="question"> 
+         <br><br><hr><br>
+3. You have been waiting for the bus for 20 minutes and it hasn't come vet.<br>
+I wish <input type="text" id="q3" style="width: 60%"  class="question"> 
+         <br><br><hr><br> 
+4. You've been studying hard for exams and vou want to have a break.<br>
+It's time<input type="text" id="q4" style="width: 60%"  class="question"> 
+         <br><br><hr><br>
+5. While you are on holiday abroad you lose your passport. The police arrest you and treat you like a criminal.<br>
+They treated me as if <input type="text" id="q5" style="width: 60%"  class="question"> 
+         <br><br><hr><br>
+6. You've seen a really nice pair of shoes in a shop but they are not available in your size.<br>
+I wish <input type="text" id="q6" style="width: 60%"  class="question"> 
+ <br><br><hr><br>
+        
+   
+       </div></div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      "I had enough money to go on holiday",
+"my flatmate did some housework",
+"the bus came now",
+"I had a break",
+"I were a criminal",
+"they had those shoes in my size"
+    ];
+    
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.trim();
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 6`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+      </body>
+    </html>

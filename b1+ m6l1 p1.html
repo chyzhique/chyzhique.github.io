@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> A. Read the text below and choose the correct verb form.</h3>
+    <div class="inner">
+      <div class="text">
+        <h3 style="background-color: green; color: white"> 
+          eco-tourism: blessing or threat. 
+        </h3>
+       
+Jungle holidays help to raise money to protect threatened wildlife, but the ever growing number of tourists trekking through the African jungle
+        (1) <select id="q1">
+        <option value="">       </option>
+<option value="a">has been proved</option>
+<option value="b">has proved</option></select> 
+      by scientists to be a threat to apes. Nature tourism or eco-tourism as it 
+        (2) <select id="q2">
+        <option value="">       </option>
+<option value="a">is called</option>
+<option value="b">is calling</option></select>
+      has never before been so popular, so thousands of people are thrilled with the idea of making their way through a forest to see African gorillas. This kind of holiday is popular in many African countries because it helps the local economy and
+        (3) <select id="q3">
+        <option value="">       </option>
+<option value="a">raises</option>
+<option value="b">is raised </option></select>  
+      money so that wildlife 
+        (4) <select id="q4">
+        <option value="">       </option>
+<option value="a">will be protected</option>
+<option value="b">will be protecting</option></select>  
+      both now and in the future. Unfortunately, contact with tourists 
+        (5) <select id="q5">
+        <option value="">       </option>
+<option value="a">has been discovered</option>
+<option value="b">has been discovering</option></select>  
+      to cause fatal diseases in apes. The first evidence 
+        (6) <select id="q6">
+        <option value="">       </option>
+<option value="a">was found</option>
+<option value="b">found</option></select>  
+      in Ivory Coast where a
+group of chimpanzees died of a disease which they 
+        (7) <select id="q7">
+        <option value="">       </option>
+<option value="a">had been caught</option>
+<option value="b">had caught</option></select>   
+      from humans. These findings 
+        (8) <select id="q8">
+        <option value="">       </option>
+<option value="a">have made</option>
+<option value="b">have been made</option></select> 
+the protection of the decreasing numbers of apes in Africa more
+difficult as the money from tourists 
+        (9) <select id="q9">
+        <option value="">       </option>
+<option value="a">needs</option>
+<option value="b">is needed</option></select> 
+      to protect the animals from illegal hunting. Scientists have come up with ways in which tourists can 
+        (10) <select id="q10">
+        <option value="">       </option>
+<option value="a">be allowed</option>
+<option value="b">allow</option></select> 
+      to visit the animals without infecting them. They hope that these measures
+        (11) <select id="q11">
+        <option value="">       </option>
+<option value="a">will protect</option>
+<option value="b">will be protected</option></select> 
+      the animals, while at the same time allow tourists to get close to them.
+        
+        </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "a", 
+      "a", 
+      "a", 
+      "a", 
+      "a",
+      "a", 
+      "a", 
+      "a", 
+      "b", 
+      "a",
+      "a"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 11`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

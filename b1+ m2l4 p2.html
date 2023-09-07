@@ -1,0 +1,99 @@
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  </head>
+
+<body>
+  <div class="outer">
+    <h3 class="header"> B. Read the text below and complete the gaps. Use only one word in each gap.</h3>
+    <div class="inner">
+      <h1 class="header"> Cheese rolling</h1>
+    
+      <div class="image" style="height: 60%; width: 60%; float: right">
+        <img src="https://i2-prod.gloucestershirelive.co.uk/news/gloucester-news/article7167993.ece/ALTERNATES/s1200c/3_cheese-rolling-12.jpg" alt="surfing">
+      </div>
+      <div class="text">
+        There are many strange customs and traditions all over the world. Last week I
+        <input type="text" name="q1" class="question"> the opportunity to witness the
+        famous cheese rolling custom which takes
+        <input type="text" name="q2" class="question"> in different parts of England. A round cheese is rolled down a hill
+        and the competitors run after
+        <input type="text" name="q3" class="question">. The winner is the first person to grab the cheese. Coopers Hill is the
+        <input type="text" name="q4" class="question"> famous cheese rolling site. When I arrived there, the men and women
+        <input type="text" name="q5" class="question"> already gathered on the top of the hill. When the cheese was dropped,
+        everyone started racing down a nearly vertical slope. It
+        <input type="text" name="q6" class="question"> spectacular to watch but much too dangerous to take part in. Many of the competitors ended up
+        with broken arms and legs. After the competition, I asked one
+        <input type="text" name="q7" class="question"> the participants, who was all bandaged up, if it had
+        <input type="text" name="q8" class="question"> worth it and he replied
+        that it was the most fun he had ever had!
+      </div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="tryAgainBtn">Try again</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = [
+      "had", "place", "it", "most", "had", "was", "of", "been"
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 1; i <= correctAnswers.length; i++) {
+        const userInput = document.querySelector(`input[name="q${i}"]`).value.trim();
+
+        userAnswers.push(userInput);
+        const inputElement = document.querySelector(`input[name="q${i}"]`);
+        const correctAnswer = correctAnswers[i - 1];
+
+        if (correctAnswer === userInput.toLowerCase()) {
+          inputElement.classList.add("correct");
+          score++;
+        } else {
+          inputElement.classList.add("incorrect");
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= correctAnswers.length; i++) {
+        const inputElement = document.querySelector(`input[name="q${i}"]`);
+        inputElement.classList.remove("correct", "incorrect");
+        inputElement.value = "";
+      }
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>

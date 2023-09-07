@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style>
+  .kk {font-weight: bold; background-color: yellow; border: 1px solid silver; border-radius: 10px; padding: 3px}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the following situations and write sentences starting with the words given.</h3>
+    <div class="inner">
+      <div class="text">
+        <br><br>
+       
+1. I lied to my parents this morning and now I feel bad about it.<br>
+If only <input type="text" id="q1" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+2. Jessie went out in the rain last night and caught a cold.<br>
+Jessie wishes<input type="text" id="q2" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+3. My friends didn't know it was my birthday so they didn't buy me a gift.<br>
+If my friends<input type="text" id="q3" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+4. The house we saw last year was beautiful, but unfortunately we didn't have the money to buy it.<br>
+If only<input type="text" id="q4" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+5. John didn't attend his daughter's wedding and now he regrets it.<br>
+John wishes<input type="text" id="q5" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+6. We didn't arrive at school on time so we missed the class.<br>
+If we<input type="text" id="q6" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+7. My brother didn't water my flowers while I was on holiday and now they are dead.<br>
+If only<input type="text" id="q7" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+        
+8. He forgot to lock the door and they broke into his house.<br>
+If<input type="text" id="q8" style="width: 60%"  class="question"> 
+        <br><br><hr><br>
+
+   
+       </div></div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+      
+
+  <div id="results" style="display: none;">
+    <div id="score"></div>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      ["I had told them the truth", "I hadn't lied to them"],
+      ["she had stayed in last night", "she hadn't gone out last night", "she she hadn't caught a cold"],
+      ["had known that it was my birthday they would have bought me a gift"],
+       ["we could have afford that house we saw last year", "we had had the money to buy the house we saw last year"],
+       ["he had attended his daughter's wedding"],
+       ["had arrived at school on time we wouldn't have missed the class"], 
+       ["my brother had watered my flowers while I was on holiday"],
+       ["he hadn't forgotten to lock the door they wouldn't have broken into his house"]
+    ];
+
+     const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 0; i < answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i + 1}`).value.trim();
+
+        const questionElement = document.getElementById(`q${i + 1}`);
+        if (answers[i].some(correctAnswer => userAnswer === correctAnswer)) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 0; i < answers.length; i++) {
+        const questionElement = document.getElementById(`q${i + 1}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${answers.length}.`;
+      checkBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>
+  
+  

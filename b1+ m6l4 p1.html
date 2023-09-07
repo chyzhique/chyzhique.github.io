@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Rewrite each of the following sentences starting with the words given in the Passive Voice</h3>
+    <div class="inner">
+      <div class="text">
+             
+        
+   <ol>
+     <li>
+They say that Alex is one of the best biologists in the country.<br>
+It <input type="text" id="q1" style="width:300px">
+        </li><hr>
+       <li>
+The zookeepers were feeding the baby elephants with special care.<br>
+The baby <input type="text" id="q2" style="width:300px">
+        </li><hr>
+       <li>
+They are building a new Natural History museum in our city.<br>
+A new <input type="text" id="q3" style="width:300px">
+        </li><hr>
+       <li>
+The secretary offered me some coffee.<br>
+I <input type="text" id="q4" style="width:300px">
+        </li><hr>
+       <li>
+They have made me wait for two hours already.<br>
+I <input type="text" id="q5" style="width:300px">
+        </li><hr>
+       <li>
+People believe that Professor Swanson deserves a Nobel prize.<br>
+Professor Swanson <input type="text" id="q6" style="width:300px">
+        </li><hr>
+       <li>
+I will send Mr Evans the e-mail after lunch.<br>
+The email <input type="text" id="q7" style="width:300px">
+        </li><hr>
+       <li>
+They made the children apologise to Mr Trenton.<br>
+The children <input type="text" id="q8" style="width:300px">
+</li> </ol>
+        </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+   <script>
+    const answers = [
+      "is sad that Alex is one of the best biologists in the country",
+      "elephants were being fed with special care by the zookeeper",
+"Natural History Museum is being built in our city",
+"was offered some coffee by the secretary",
+"have been made to wait for two hours already",
+"is believed to deserve a noble price double quote",
+"will be sent to Mr Evans after lunch",
+"were made to apologise to Mr Trenton"
+    ];
+    
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.trim();
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 8`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+      </body>
+    </html>

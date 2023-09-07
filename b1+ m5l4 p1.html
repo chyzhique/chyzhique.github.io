@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    hr {
+    border: none;
+    height: 3px;
+    margin: 40px 0;
+    background-image: linear-gradient(to right, #FFF, #FFC119, #FFF);
+}
+hr:before,
+hr:after {
+    content: '';
+    display: inline-block;
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #FFC119;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #FFF;
+}
+hr:after {
+    animation: anim-hr 3s linear infinite; 
+}
+@keyframes anim-hr {
+    0% {
+        width: 40px;
+        height: 40px;
+    }
+    100% {
+        width: 0;
+        height: 0;
+    }
+}
+
+    </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Read the texts below and choose the correct words</h3>
+    <div class="inner">
+      <div class="text">
+        
+        <div class="image" style="width: 40%; float: left">
+          <img src="https://people.com/thmb/t3vVQ8LyMfV7S5xBtA14ucW6EoQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc():focal(704x129:706x131)/Juliette-Lamour-canadian-lotto-winner-020823-1-5378b06ab446491d8cf6ffcbf15deab3.jpg">
+          </div>
+      My friend Becky 
+        <select id="q1">
+          <option value="">1</option>
+          <option value="can't be">can't be</option>
+          <option value="must be">must be</option>
+        </select> the luckiest person I know. Last week she won the lottery and became an instant millionaire.
+        When I asked her what she planned to do with her money, she told me she 
+        <select id="q2">
+          <option value="">2</option>
+          <option value="mustn't">mustn't</option>
+          <option value="might">might</option>
+        </select></b> go on a holiday, then she
+        <select id="q3">
+          <option value="">3</option>
+          <option value="might">might</option>
+          <option value="can't">can't</option>
+        </select></b> buy a new house. The newspapers are predicting that Becky 
+        <select id="q4">
+          <option value="">4</option>
+          <option value="could be">could be</option>
+          <option value="could have been">could have been</option>
+        </select></b> the richest woman in England because no one has won the lottery for the last two weeks,
+        this makes her winnings a rollover. Becky says she 
+        <select id="q5">
+          <option value="">5</option>
+          <option value="mustn't be">mustn't be</option>
+          <option value="can't be">can't be</option>
+        </select></b> the richest woman in England because surely that title belongs to the Queen!
+        
+        <hr>
+
+        <div class="image" style="width: 40%; float: right">
+          <img src="https://i0.wp.com/edgemagazine.com/wp-content/uploads/2023/03/01_02_23-Turtles-038.jpg?fit=1188%2C1800&ssl=1"> </div>
+      I wanted to do something useful on my summer holiday so I volunteered at a local Turtle Rescue and
+        Conservation Centre. My supervisor, Sally, told me that conservation work requires a lot of energy and patience.
+        She 
+        <select id="q6">
+          <option value="">6</option>
+          <option value="can't be">can't be</option>
+          <option value="must be">must be</option>
+        </select></b> right because I've only been doing it for a week and I'm completely exhausted! Yesterday I got up at dawn to help with the morning survey.
+        This involves walking along the beach and checking the nests where turtles lay their eggs. The survey lasted into the heat of the day and,
+        at one point, I 
+        <select id="q7">
+          <option value="">7</option>
+          <option value="must have looked">must have looked</option>
+          <option value="couldn't have looked">couldn't have looked</option>
+        </select></b> like I was about to faint because Sally told me to go and take a break.
+        This morning I helped to rescue a turtle, which 
+        <select id="q8">
+          <option value="">8</option>
+          <option value="must have injured">must have injured</option>
+          <option value="must injure">must injure</option>
+        </select></b> its back flipper in the sea, I think a speedboat <b>(9)
+        <select id="q9">
+          <option value="">9</option>
+          <option value="might have knocked">might have knocked</option>
+          <option value="couldn't have knocked">couldn't have knocked</option>
+        </select></b> against it.
+        We found it on the beach and transported it back to the Rescue Centre where it was treated immediately.
+        The vet said the turtle was lucky. It 
+        <select id="q10">
+          <option value="">10</option>
+          <option value="could have lost">could have lost</option>
+          <option value="must have lost">must have lost</option>
+        </select></b> its back flipper if we hadn't found it in time. At that moment, I felt that all the hard work was worth it.
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "must be", 
+      "might", 
+      "might", 
+      "could be", 
+      "can't be",
+      "must be", 
+      "must have looked", 
+      "must have injured", 
+      "might have knocked", 
+      "could have lost"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 10`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

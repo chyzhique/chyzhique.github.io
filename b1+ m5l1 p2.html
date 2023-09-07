@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    li {padding-top: 15px}
+    </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Complete the text below with the ful infinitive, the bare infinitive or the ing form of the  verbs in brackets. </h3>
+    <div class="inner">
+      <div class="text">
+      <h2>A thrilling pastime</h2>
+    
+    <p>During the week, Lane leads a quiet life. Her job as a secretary
+    in a construction company is not very exciting. At the weekend,
+    though, her life changes. She spends her time 
+    <select id="q1">
+      <option value="">1</option>
+      <option value="race">a. race</option>
+      <option value="racing">b. racing</option>
+      <option value="to race">c. to race</option>
+    </select>
+    she is a rally driver. She travels all around Europe to 
+    <select id="q2">
+      <option value="">2</option>
+      <option value="take place">a. take place</option>
+      <option value="take time">b. take time</option>
+      <option value="take part">c. take part</option>
+    </select>
+    in car races. She first became interested in the sport when some of her
+    friends arranged a trip to a nearby race track. They 
+    <select id="q3">
+      <option value="">3</option>
+      <option value="got">a. got</option>
+      <option value="had">b. had</option>
+      <option value="took">c. took</option>
+    </select>
+    great time, and one rally driver actually let her 
+    <select id="q4">
+      <option value="">4</option>
+      <option value="to drive">a. to drive</option>
+      <option value="drive">b. drive</option>
+      <option value="driving">c. driving</option>
+    </select>
+    his car. After that, Lane was hooked. Lane loves the thrill of the race
+    and the fact that she can 
+    <select id="q5">
+      <option value="">5</option>
+      <option value="visit">a. visit</option>
+      <option value="to visit">b. to visit</option>
+      <option value="visiting">c. visiting</option>
+    </select>
+    lots of interesting places. The
+    hardest race she's ever been in took place in Croatia. The rough,
+    twisting mountain roads, extreme heat, and clouds of dust really
+    tested her 
+    <select id="q6">
+      <option value="">6</option>
+      <option value="experience">a. experience</option>
+      <option value="endurance">b. endurance</option>
+      <option value="demonstration">c. demonstration</option>
+    </select>
+    Despite these harsh conditions, Lane still
+    managed 
+    <select id="q7">
+      <option value="">7</option>
+      <option value="complete">a. complete</option>
+      <option value="completing">b. completing</option>
+      <option value="to complete">c. to complete</option>
+    </select>
+    the race in second place, and she won €1000.
+    Lane also regularly gives talks around the country about rally
+    racing in the hope of 
+    <select id="q8">
+      <option value="">8</option>
+      <option value="encourage">a. encourage</option>
+      <option value="encouraging">b. encouraging</option>
+      <option value="to encourage">c. to encourage</option>
+    </select>
+    more women to join the sport. She
+    believes that it can really be a(n) 
+    <select id="q9">
+      <option value="">9</option>
+      <option value="rewarding">a. rewarding</option>
+      <option value="scenic">b. scenic</option>
+      <option value="available">c. available</option>
+    </select>
+    experience for them.
+    Lane says that rally driving allows you to 
+    <select id="q10">
+      <option value="">10</option>
+      <option value="combine">a. combine</option>
+      <option value="escape">b. escape</option>
+      <option value="explore">c. explore</option>
+    </select>
+    from your daily routine while having loads of fun at the same time.</p>
+
+    </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const answers = [
+      "racing", "take part", "had", "drive", "visit", "endurance", "to complete", "encouraging", "rewarding", "escape"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 10`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>
+    
