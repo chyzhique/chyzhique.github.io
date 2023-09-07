@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header">Read the text and complete the blanks with the correct form of the words in capitals.</h3>
+    <div class="inner">
+      <div class="text">
+        <h3>SCIENCE MUSEUMS</h3>
+        Science museums are a great and 
+<input type="text" id="q1" placeholder="AFFORD"> place to take your kids on a rainy Saturday afternoon.
+        Your children can learn all about science,
+        technology and 
+<input type="text" id="q2" placeholder="INVENT"> in a fun and creative way. Take, for
+        instance, the Science Museum in London; it has various 
+<input type="text" id="q3" placeholder="FASCINATE"> exhibits which are sure to leave your child 
+<input type="text" id="q4" placeholder="AMAZED">.
+        And if your child has the dream of becoming a 
+<input type="text" id="q5" placeholder="BIOLOGY">,
+        why not go to the Biology Gallery where they can explore the interesting and
+<input type="text" id="q6" placeholder="IMPRESS"> displays. In addition, the Science and Art of
+        Medicine Gallery is both beautiful and 
+<input type="text" id="q7" placeholder="EDUCATION">
+        as it uses objects to tell the history of medical traditions across the world.
+        So, why not go to your local science museum this weekend? It will be
+<input type="text" id="q8" placeholder="POSSIBLE"> not to enjoy the experience.
+      </div>
+    </div>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+  <script>
+    const correctAnswers = [
+      "affordable",
+      "inventions",
+      "fascinating",
+      "amazed",
+      "biologist",
+      "impressive",
+      "educational",
+      "impossible"
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= 8; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value.toLowerCase().trim();
+        const correctAnswer = correctAnswers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= 8; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>

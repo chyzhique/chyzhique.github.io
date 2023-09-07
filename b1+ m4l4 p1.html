@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+<style>
+  ul { padding: 5px; margin: 5px; list-style-type: none; float: left; color: black}
+  .left { background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: left}
+  .right { background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: right}
+  .namo { color: blue; font-size: 10px; font-weight: 700}
+  </style>
+</head>
+<body>
+  <div class="outer">
+    <h3 class="header"> Complete the texts with the correct form of the verb in inputs. </h3>
+    <div class="inner">
+    
+      <div  style=" margin: auto; overflow: hidden; max-width:700px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 15px; font-family: merriweather; font-size: 19px; color: black; line-height: normal; background-image: url('https://drive.google.com/uc?export=view&id=1aLQFxy9l7eqUlj6JiVyecSKLsbAT33js')">
+  <ul>
+    <li class="left">
+      <span class="namo">Colin</span><br>
+      Hi Marie. Are you online yet?
+    </li>
+    <li class="right">
+      <span class="namo">Marie</span><br>
+      Yes, go ahead, what's up, Colin?
+    </li>
+    <li style="background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: left">
+      <span class="namo">Colin</span><br>
+      I'm trying to get used to life in Canada. It's very different from London. When it snows heavily, schools 
+<input type="text" id="q1" placeholder="close">. Just wondering, can you ice skate?
+    </li>
+    <li style="background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: right">
+      <span class="namo"> Marie</span><br>
+      Sure. I grew up in Sweden. If I 
+<input type="text" id="q2" placeholder="have"> the time, I <b>go</b> to the
+      skating rink at the weekends.
+    </li>
+    <li style="background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: left">
+      <span class="namo">Colin</span><br>
+      Well, if you visit me here, we 
+<input type="text" id="q3" placeholder="go"> skating every day.
+    </li>
+    <li style="background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: right">
+      <span class="namo">Marie</span><br>
+      Sounds fantastic! If plane tickets weren't so expensive, I 
+<input type="text" id="q4" placeholder="get"> a ticket to Canada today.
+    </li>
+    <li style="background-color: white; border-radius: 15px; padding: 5px; border: 1px solid black; width: 70%; float: left">
+      <span class="namo">Colin</span><br>
+      It would be really great to see you. If I 
+<input type="text" id="q5" placeholder="be"> you, I 
+<input type="text" id="q6" placeholder="ask"> my parents to help out with the money.
+    </li>
+  </ul>      
+      </div>
+    </div>
+<div class="inner">
+  
+  <h3 style="text-align: center; background-color: aqua; color: red; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px">TEEN PROBLEMS: OVERWEIGHT</h3>
+      <div class="text">
+Many teenagers are overweight, and being overweight can be a source of stress. We all know how important our image is. If you
+<input type="text" id="q7" placeholder="want"> to lose weight, you 
+<input type="text" id="q8" placeholder="eat">  less and avoid bread, potatoes and sweets. But is that enough? No, unfortunately, it isn't.
+According to doctors, young people need to be fit and active. So, why not go to a gym or start playing a sport? If you 
+<input type="text" id="q9" placeholder="need">
+any advice, just 
+<input type="text" id="q10" placeholder="call"> your local health centre and talk to an expert!
+      </div>
+  </div>
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+ <script>
+  const correctAnswers = [
+    "close",
+    "have",
+    "will go",
+    "would get",
+    "were",
+    "would ask",
+    "want",
+    "should eat",
+    "need",
+    "call"
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const tryAgainBtn = document.getElementById("tryAgainBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    let score = 0;
+
+    for (let i = 1; i <= 10; i++) {
+      const userAnswer = document.getElementById(`q${i}`).value.toLowerCase().trim();
+      const correctAnswer = correctAnswers[i - 1];
+
+      const questionElement = document.getElementById(`q${i}`);
+      if (userAnswer === correctAnswer) {
+        questionElement.classList.add("correct");
+        score++;
+      } else {
+        questionElement.classList.add("incorrect");
+      }
+    }
+
+    displayResults(score);
+  });
+
+  tryAgainBtn.addEventListener("click", () => {
+    for (let i = 1; i <= 10; i++) {
+      const questionElement = document.getElementById(`q${i}`);
+      questionElement.value = "";
+      questionElement.classList.remove("correct", "incorrect");
+    }
+
+    resultsDiv.style.display = "none";
+    tryAgainBtn.style.display = "none";
+    submitBtn.style.display = "block";
+  });
+
+  function displayResults(score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+    submitBtn.style.display = "none";
+    tryAgainBtn.style.display = "block";
+  }
+</script>
+</body>
+</html>
