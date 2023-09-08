@@ -1,0 +1,160 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Complete the text with the correct answer for each gap.</h3>
+
+  <div class="inner">
+    <div class="text">
+    Ireland, which is believed by many to be the land of magic, is commonly associated
+    <span id="q1" class="dropdown">
+      <select>
+        <option value="" selected disabled>1</option>
+        <option value="a">a. in</option>
+        <option value="b">b. with</option>
+        <option value="c">c. by</option>
+      </select>
+    </span> leprechauns. Legend has it that leprechauns are tiny, red-haired
+    <span id="q2" class="dropdown">
+      <select>
+        <option value="" selected disabled>2</option>
+        <option value="a">a. aliens</option>
+        <option value="b">b. clues</option>
+        <option value="c">c. creatures</option>
+      </select>
+    </span>, usually dressed in green clothes and pointy shoes. They live in
+    <span id="q3" class="dropdown">
+      <select>
+        <option value="" selected disabled>3</option>
+        <option value="a">a. unexplained</option>
+        <option value="b">b. enormous</option>
+        <option value="c">c. remote</option>
+      </select>
+    </span> areas of Ireland and although they are not bad, they have a reputation for behaving
+    <span id="q4" class="dropdown">
+      <select>
+        <option value="" selected disabled>4</option>
+        <option value="a">a. encounter</option>
+        <option value="b">b. scatter</option>
+        <option value="c">c. confess</option>
+      </select>
+    </span>.
+    <br><br>
+    Here is one of the many stories known to Irish people about leprechauns. A man was walking in the woods when suddenly he
+    noticed a(n)
+    <span  id="q5" class="dropdown">
+      <select>
+        <option value="" selected disabled>5</option>
+        <option value="a">a. intact</option>
+        <option value="b">b. dazzling</option>
+        <option value="c">c. clear</option>
+      </select>
+    </span> light in the distance. He went closer, and to his
+    <span  id="q6" class="dropdown">
+      <select>
+        <option value="" selected disabled>6</option>
+        <option value="a">a. fear</option>
+        <option value="b">b. miracle</option>
+        <option value="c">c. astonishment</option>
+      </select>
+    </span>, he saw a leprechaun sitting next to a pot of gold. The
+    leprechaun was
+    <span  id="q7" class="dropdown">
+      <select>
+        <option value="" selected disabled>7</option>
+        <option value="a">a. frustrated</option>
+        <option value="b">b. radiant</option>
+        <option value="c">c. committed</option>
+      </select>
+    </span> with joy, but as soon as he realised he wasn't alone, he murmured something angrily and
+    <span  id="q8" class="dropdown">
+      <select>
+        <option value="" selected disabled>8</option>
+        <option value="a">a. wondered</option>
+        <option value="b">b. kidnapped</option>
+        <option value="c">c. vanished</option>
+      </select>
+    </span>! The
+    man, who was stunned by the incident, rushed back home to tell his wife. Strange, isn't it?
+  </div>
+  </div>
+  
+  <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="submitBtn" class="button-30">Check</button>
+  </div>
+
+  <div id="results" style="display: none; justify-content: center; align-items: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="redoBtn">Try again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = ["a", "c", "c", "a", "b", "c", "b", "c"];
+
+  const form = document.getElementById("beTestForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const selectedOption = document.getElementById(`q${i + 1}`).querySelector("select").value;
+
+      userAnswers.push(selectedOption);
+      const dropdown = document.getElementById(`q${i + 1}`);
+
+      if (selectedOption === correctAnswers[i]) {
+        dropdown.classList.remove("incorrect");
+        dropdown.classList.add("correct");
+        score++;
+      } else {
+        dropdown.classList.remove("correct");
+        dropdown.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    form.reset();
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+
+    const dropdowns = document.querySelectorAll(".dropdown");
+    dropdowns.forEach(dropdown => {
+      dropdown.classList.remove("correct", "incorrect");
+    });
+
+    const scoreDiv = document.getElementById("score");
+    scoreDiv.textContent = "";
+
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.style.display = "none";
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+
+</body>
+</html>

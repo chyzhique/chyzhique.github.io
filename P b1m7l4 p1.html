@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+
+<body>
+<div class="outer">
+  
+  <h3 class="header"> Choose the correct option</h3>
+    
+  <div class="inner">
+    
+    <form id="beTestForm">
+<table>
+    <colgroup>
+        <col style="background-color: #fad7df">
+    </colgroup>
+    <tr>
+        <th colspan="2" style="background-color:  #A0D7D9;">1.</th>
+    </tr>
+    <tr>
+        <td>
+            Mike</td><td>
+            Hi, Paul. What's wrong?
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Paul</td><td>
+            My mobile phone isn't working. I lent it to my sister. She
+            <select id="q1">
+                <option value="" selected disabled>Select an option</option>
+                <option value="must have broken">must have broken</option>
+                <option value="should have broken">should have broken</option>
+            </select>
+            it.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mike</td><td>
+            Let me have a look. Why is it wet? Ooh, no! She
+            <select id="q2">
+                <option value="" selected disabled>Select an option</option>
+                <option value="must have used">must have used</option>
+                <option value="should have used">should have used</option>
+            </select>
+            it in the rain. She
+            <select id="q3">
+                <option value="" selected disabled>Select an option</option>
+                <option value="shouldn't have done">shouldn't have done</option>
+                <option value="can't have done">can't have done</option>
+            </select>
+            that.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Paul</td><td>
+            I am so annoyed. That's the last time I'll lend her anything. It's a state-of-the-art mobile phone. It cost me £400. She's going to have to buy me a new one.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Mike</td><td>
+            Wait a minute. Look, it's working. We just needed to dry off the battery. If you want my opinion, you
+            <select id="q4">
+                <option value="" selected disabled>Select an option</option>
+                <option value="couldn't have lent">couldn't have lent</option>
+                <option value="shouldn't have lent">shouldn't have lent</option>
+            </select>
+            it to her in the first place. This always happens when she borrows your things. Remember what happened to your laptop?
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Paul</td><td>
+            Yeah, I remember I had to call a technician. She
+            <select id="q5">
+                <option value="" selected disabled>Select an option</option>
+                <option value="should have destroyed">should have destroyed</option>
+                <option value="could have destroyed">could have destroyed</option>
+            </select>
+            it completely, you know.
+        </td>
+    </tr>
+    <tr>
+        <th colspan="2" style="background-color:  #A0D7D9;">2.</th>
+    </tr>
+    <tr>
+        <td>
+            Kelly</td><td>
+            I love your new jeans. Are they designer? You
+            <select id="q6">
+                <option value="" selected disabled>Select an option</option>
+                <option value="could have paid">could have paid</option>
+                <option value="must have paid">must have paid</option>
+            </select>
+            loads for them.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Lisa</td><td>
+            Actually, I bought them in a second-hand clothes shop for £20.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Kelly</td><td>
+            Really? I might go and get a pair.
+        </td>
+    </tr>
+    <tr>
+        <td>
+            Lisa</td><td>
+            Unfortunately, these were the last pair. You
+            <select id="q7">
+                <option value="" selected disabled>Select an option</option>
+                <option value="should have gone">should have gone</option>
+                <option value="might have gone">might have gone</option>
+            </select>
+            yesterday.
+        </td>
+    </tr>
+</table>
+</form>
+
+       <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+
+      <div id="results" style="display: none; text-align: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px;"></div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="redoBtn">Try again</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    "must have broken", 
+    "must have used", 
+    "shouldn't have done", 
+    "shouldn't have lent", 
+    "could have destroyed", 
+    "must have paid", 
+    "should have gone"
+    // Add the correct answers for all questions
+  ];
+
+  const form = document.getElementById("beTestForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const selectedOption = document.getElementById(`q${i + 1}`).value;
+
+      userAnswers.push(selectedOption);
+      const dropdown = document.getElementById(`q${i + 1}`);
+
+      if (selectedOption === correctAnswers[i]) {
+        dropdown.style.backgroundColor = "lightgreen";
+        score++;
+      } else {
+        dropdown.style.backgroundColor = "#ffb3b3";
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    form.reset();
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+
+    const dropdowns = document.querySelectorAll("select");
+    dropdowns.forEach(dropdown => {
+      dropdown.style.backgroundColor = "white"; // Reset background color
+    });
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Rewrite the following sentences in the Passive Voice starting with the words given</h3>
+  <div class="inner">
+    <form id="passiveVoiceForm" class="text">
+      1. The reporter is interviewing the politician at the moment. <br>
+      The politician <input type="text" id="q1" name="q1">.<br><br>
+      
+      2. They say that Tim's last film is a huge success. <br>
+      Tim's last film <input type="text" id="q2" name="q2">.<br><br>
+      
+      3. The students were using two laptops for this project. <br>
+      Two laptops <input type="text" id="q3" name="q3">.<br><br>
+      
+      4. People believe that Niles is a millionaire.<br>
+      Niles <input type="text" id="q4" name="q4">.<br><br>
+      
+      5. I am sending the emails as we speak.<br>
+      The e-mails <input type="text" id="q5" name="q5">.<br><br>
+      
+      6. Everyone thinks that the house on the hill is haunted. <br>
+      It <input type="text" id="q6" name="q6">.
+      
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="redoBtn">Try again</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    "is being interviewed at the moment", 
+    "is said to be a huge success", 
+    "were being used for this project", 
+    "is believed to be a millionaire", 
+    "are being sent as we speak", 
+    "is thought that the house on the hill is haunted"
+  ];
+
+  const form = document.getElementById("passiveVoiceForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase();
+      const correctAnswer = correctAnswers[i].toLowerCase();
+
+      userAnswers.push(userAnswer);
+      const input = document.getElementById(`q${i + 1}`);
+
+      if (userAnswer === correctAnswer) {
+        input.classList.remove("incorrect");
+        input.classList.add("correct");
+        score++;
+      } else {
+        input.classList.remove("correct");
+        input.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    form.reset();
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+    });
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+
+    for (let i = 0; i < inputs.length; i++) {
+      const userAnswer = userAnswers[i] || "(no answer)";
+    }
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+</body>
+</html>

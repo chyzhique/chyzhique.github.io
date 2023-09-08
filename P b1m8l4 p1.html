@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+</head>
+<body>
+
+<div class="outer">
+  <h3 class="header">Complete the dialogues with all, both, and, neither, nor, none or either.</h3>
+  
+  <div class="inner">
+    <div class="text">
+      <h3 class="header">Dialogue 1</h3>
+      A: Does Felicity speak Italian?<br>
+      B: Actually, she is fluent in <input type="text" id="q1"> Italian and Spanish.<br><br>
+      
+      <h3 class="header">Dialogue 2</h3>
+      A: Would you like some coffee or tea?<br>
+      B: Actually, I drink <input type="text" id="q2"> coffee nor tea. Do you have any orange juice?<br><br>
+      
+      <h3 class="header">Dialogue 3</h3>
+      A: Where do you feel like going for dinner tonight?<br>
+      B: We can <input type="text" id="q3"> go to the Mexican restaurant or to the Thai one.<br><br>
+      
+      <h3 class="header">Dialogue 4</h3>
+      A: Does your family live here?<br>
+      B: No, <input type="text" id="q4"> my relatives live in Barcelona and <input type="text" id="q5"> of them have ever travelled abroad.<br><br>
+      
+      <h3 class="header">Dialogue 5</h3>
+      A: Have you met any of Mark's brothers?<br>
+      B: Yes, I've met <input type="text" id="q6"> Steve <input type="text" id="q7">  Jason. <input type="text" id="q8">  of them looks like Mark though.<br><br>
+      
+      <h3 class="header">Dialogue 6</h3>
+      A: Should we take the bus or the train to Henry's house?<br>
+      B: I think <input type="text" id="q9"> the bus <input type="text" id="q10">  the train will get us there fast. Let's get a taxi.<br><br>
+      
+      <h3 class="header">Dialogue 7</h3>
+      A: I don't think the guests liked the food.<br>
+      B: What do you mean? <input type="text" id="q11">  my friends like my cooking.<br><br>
+      
+      <h3 class="header">Dialogue 8</h3>
+      A: We asked every single one of the neighbours.<br>
+      B: Did they tell you anything about Tom?<br>
+      A: No, <input type="text" id="q12"> of them have seen him since last week.
+    </div>
+    
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+    
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="redoBtn">Try again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    "both", 
+    "neither",
+    "either", 
+    "none",
+    "either",
+    "all", "none", 
+    "both", "neither",
+    "neither", "nor", "none"
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputField = document.getElementById(`q${i + 1}`);
+
+      if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
+        inputField.classList.remove("incorrect");
+        inputField.classList.add("correct");
+        score++;
+      } else {
+        inputField.classList.remove("correct");
+        inputField.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    const inputFields = document.querySelectorAll("input[type='text']");
+    inputFields.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+      input.value = "";
+      input.style.backgroundColor = "white";
+    });
+
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+
+</body>
+</html>

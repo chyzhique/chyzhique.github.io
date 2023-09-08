@@ -1,0 +1,150 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+<div class="outer" id="content">
+    <h3 class="header">Complete the sentences by choosing the correct option for each gap.</h3>
+    <div class="inner">
+        <form id="beTestForm" class="text">
+            <span id="q1" class="dropdown">
+                <select>
+                    <option value="" selected disabled>1</option>
+                    <option value="a">Although</option>
+                    <option value="b">As</option>
+                </select>
+            </span> I have travelled to many different places, the place that made the strongest impression on me is Siwa in Egypt. This is
+            <span id="q2" class="dropdown">
+                <select>
+                    <option value="" selected disabled>2</option>
+                    <option value="a">because</option>
+                    <option value="b">despite</option>
+                </select>
+            </span> it is a beautiful oasis which makes you feel relaxed and full of energy. 
+            <span id="q3" class="dropdown">
+                <select>
+                    <option value="" selected disabled>3</option>
+                    <option value="a">Despite</option>
+                    <option value="b">Even though</option>
+                </select>
+            </span> there is a road which connects Siwa to the outside world, it is a difficult place to reach - by car it can take up to ten hours and by bus it can take even longer. As you drive, you will feel a little sleepy 
+            <span id="q4" class="dropdown">
+                <select>
+                    <option value="" selected disabled>4</option>
+                    <option value="a">due to</option>
+                    <option value="b">in spite of</option>
+                </select>
+            </span> the endless miles of straight road that you have to cover
+            <span id="q5" class="dropdown">
+                <select>
+                    <option value="" selected disabled>5</option>
+                    <option value="a">in order to</option>
+                    <option value="b">so that</option>
+                </select>
+            </span> get there. When you arrive, you will see the isolated town of Siwa which is surrounded by the desert. The town is beside Lake Siwa, which is an enormous salt lake.
+            <span id="q6" class="dropdown">
+                <select>
+                    <option value="" selected disabled>6</option>
+                    <option value="a">In order to</option>
+                    <option value="b">Due to</option>
+                </select>
+            </span> fully appreciate the beauty of this place, it is necessary to take a trip into the desert
+            <span id="q7" class="dropdown">
+                <select>
+                    <option value="" selected disabled>7</option>
+                    <option value="a">although</option>
+                    <option value="b">as</option>
+                </select>
+            </span> this will reveal the magic of the Sahara to you. Remember to pack some warm clothes;
+            <span id="q8" class="dropdown">
+                <select>
+                    <option value="" selected disabled>8</option>
+                    <option value="a">despite</option>
+                    <option value="b">although</option>
+                </select>
+            </span> the intense heat, once the sun goes down, the desert becomes incredibly cold.
+            <span id="q9" class="dropdown">
+                <select>
+                    <option value="" selected disabled>9</option>
+                    <option value="a">Because</option>
+                    <option value="b">Even though</option>
+                </select>
+            </span> the journey to Siwa is a tiring one, the reward at the end of your trip makes up for it.
+        </form>
+
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="button" id="submitBtn" class="button-30">Check</button>
+        </div>
+
+        <div id="results" style="display: none; justify-content: center; align-items: center;">
+            <h2 class="header">Results</h2>
+            <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button type="button" id="redoBtn">Try again</button>
+            </div>
+        </div>
+    </div>
+</div>
+  
+<script>
+  const correctAnswers = [
+  "a", "a", "b", "a", "a", "a", "b", "a", "b"
+  // Add the correct answers for all questions
+];
+
+  const form = document.getElementById("beTestForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const redoBtn = document.getElementById("redoBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const selectedOption = document.getElementById(`q${i + 1}`).querySelector("select").value;
+
+      userAnswers.push(selectedOption);
+      const dropdown = document.getElementById(`q${i + 1}`);
+
+      if (selectedOption === correctAnswers[i]) {
+        dropdown.classList.remove("incorrect");
+        dropdown.classList.add("correct");
+        score++;
+      } else {
+        dropdown.classList.remove("correct");
+        dropdown.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+        form.reset();
+        resultsDiv.style.display = "none";
+        submitBtn.disabled = false;
+
+        const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove("correct", "incorrect"); // Remove styling classes
+            const selectElement = dropdown.querySelector("select");
+            selectElement.value = ""; // Reset dropdown selections
+            selectElement.style.backgroundColor = "white"; // Reset background color
+        });
+    });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+
+</body>
+</html>

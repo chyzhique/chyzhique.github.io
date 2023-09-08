@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Complete the Sentences</h3>
+  <div class="inner">
+    <form id="causativeForm" class="text">
+      <!-- Question 1 -->
+    
+      <label for="q1">1. Julie will not buy a wedding dress. She will ask a famous designer to make it.</label><br>
+      <textarea id="q1" name="q1" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+    <!-- Question 2 -->
+    
+      <label for="q2">2. Mrs Morrison is at the hairdresser's. They are dyeing her hair.</label>
+      <textarea id="q2" name="q2" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+    <!-- Question 3 -->
+    
+      <label for="q3">3. Linda asked a catering company to prepare all the food.</label>
+      <textarea id="q3" name="q3" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 4 -->
+    
+      <label for="q4">4. Didn't the mechanic service your car yesterday?</label>
+      <textarea id="q4" name="q4" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 5 -->
+    
+      <label for="q5">5. Mr Wilson told his secretary to type and send all the letters.</label><br>
+      <textarea id="q5" name="q5" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 6 -->
+    
+      <label for="q6">6. Before the party, I am going to ask the cleaning lady to clean the house.</label>
+      <textarea id="q6" name="q6" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    </div>
+<br><br>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="redoBtn">Try again</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+ 
+  const correctAnswers = [
+    ["will have a wedding dress made", "will have a wedding dress made by a famous designer"], 
+    ["is having her hair dyed"], 
+    ["had all the food prepared", "had all the food prepared by a catering company"], 
+    ["have your car serviced yesterday"], 
+    ["had all the letters typed and sent"], 
+    ["am going to have the house cleaned before the party"]
+  ];
+
+  const form = document.getElementById("causativeForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase();
+      const correctAnswerArray = correctAnswers[i].map(answer => answer.toLowerCase());
+
+      userAnswers.push(userAnswer);
+      const input = document.getElementById(`q${i + 1}`);
+
+      if (correctAnswerArray.includes(userAnswer)) {
+        input.classList.remove("incorrect");
+        input.classList.add("correct");
+        score++;
+      } else {
+        input.classList.remove("correct");
+        input.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    form.reset();
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+    });
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+
+    for (let i = 0; i < inputs.length; i++) {
+      const userAnswer = userAnswers[i] || "(no answer)";
+    }
+
+    submitBtn.disabled = true;
+  }
+
+
+</script>
+
+</body>
+</html>

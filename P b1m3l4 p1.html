@@ -1,0 +1,118 @@
+	<html>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+	</head>
+  
+<body>
+  <div class="outer" id="content">
+    
+<h3 class="header">Read the text below and write the correct words. </h3>
+    
+    <div class="inner">
+  <form id="beTestForm" class="text"> 
+
+Choosing the right career <b>(1) 
+    <input type="text" id="q1" name="q1"> (can't be / must be)</b> the biggest problem I have on my mind these days. In fact, it just <b>(2)
+    <input type="text" id="q2" name="q2"> (may be / can be)</b> the most 
+important decision I will ever make. A few days ago, I went to see a careers counsellor because I thought it <b>(3) 
+    <input type="text" id="q3" name="q3">(must help/ might help)</b> me get a better idea 
+about what kind of job suits me. In addition to the information the counsellor gave me, she advised me that another thing I <b>(4) 
+    <input type="text" id="q4" name="q4"> (could do/ mustn't)</b> do is to 
+talk to people who do jobs I am interested in. She said they <b>(5) 
+    <input type="text" id="q5" name="q5"> (can't be / might be)</b> able to give me helpful advice and tips. It <b>(6) 
+    <input type="text" id="q6" name="q6"> (must not be/ may not)</b> be 
+very difficult to find a teacher or a doctor to talk to, but what if someone wants to become an astronaut or a chocolate taster? I'm sure it <b>(7) 
+    <input type="text" id="q7" name="q7">(may be / can't be)</b> so easy 
+in those cases. Anyway, since I have always liked to cook, I think I <b>(8) 
+    <input type="text" id="q8" name="q8"> (can't try / could try)</b> talking to chefs at the restaurants in my neighbourhood.
+
+
+    </form>
+</div>
+        
+      
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+        </div>
+      
+        <div id="results" style="display: none; justify-content: center; align-items: center;">
+            <h2 class="header">Results</h2>
+            <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+          
+          <div style="display: flex; justify-content: center; align-items: center;">
+            <button type="button" id="redoBtn">Try again</button>
+        </div></div>
+    </div>
+	  
+	<script>
+			const correctAnswers = [
+			"must be", "may be", "might help", "could do", "might be", "may not be", "can't be", "could try"
+			];
+
+
+const form = document.getElementById("beTestForm");
+const submitBtn = document.getElementById("submitBtn");
+const redoBtn = document.getElementById("redoBtn");
+const resultsDiv = document.getElementById("results");
+const scoreDiv = document.getElementById("score");
+
+submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+        const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase().replace(/\s+/g, '');
+        const correctAnswer = correctAnswers[i].toLowerCase().replace(/\s+/g, '');
+
+        userAnswers.push(userAnswer);
+        const input = document.getElementById(`q${i + 1}`);
+
+        if (userAnswer === correctAnswer) {
+            score++;
+            input.classList.remove("incorrect");
+            input.classList.add("correct");
+        } else {
+            input.classList.remove("correct");
+            input.classList.add("incorrect");
+        }
+    }
+
+    displayResults(userAnswers, score);
+});
+
+        redoBtn.addEventListener("click", () => {
+            form.reset();
+            resultsDiv.style.display = "none";
+            submitBtn.disabled = false;
+            
+            const inputs = document.querySelectorAll("input[type='text']");
+            inputs.forEach(input => {
+                input.classList.remove("correct", "incorrect");
+            });
+
+            const questionDivs = document.querySelectorAll(".question label");
+            questionDivs.forEach(label => {
+                label.innerHTML = label.textContent.split(" Your")[0];
+            });
+        });
+
+        function displayResults(userAnswers, score) {
+            resultsDiv.style.display = "block";
+            scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
+
+            const questionDivs = document.querySelectorAll(".question");
+
+            for (let i = 0; i < questionDivs.length; i++) {
+                const label = questionDivs[i].querySelector("label");
+                const userAnswer = userAnswers[i] || "(no answer)";
+                      }
+
+            submitBtn.disabled = true;
+        }
+    </script>
+	
+	</form>
+	</div>
+	</body>

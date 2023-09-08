@@ -1,0 +1,251 @@
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <style>
+.outer {margin: auto; max-width: 700px; border-radius: 15px; border: 1px solid black; border-radius: 25px; background-color:  #A0D7D9;font-family:merriweather; line-height:normal;font-size:20px;color:black;}
+.inner {margin: 5%; border-radius: 15px; border: 1px solid black; border-radius: 15px; background-color: oldlace;font-family:merriweather; line-height:normal;font-size:20px;color:black; paddipx}
+.text {padding: 10px}
+.header {text-align: center; max-width: 500px; margin-left:auto; margin-right: auto}
+.correct {color: green;}
+.incorrect {color: red;}
+input[type="text"] {background: transparent;border: none;
+border-bottom: 1px solid #000;padding: 5px;outline: none;}
+.button-30 {display: flex;
+    justify-content: center;
+    align-items: center; align-items: center;appearance: none;background-color: #FCFCFD;border-radius: 4px;border-width: 0;box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; box-sizing: border-box;  color: #36395A;
+  cursor: pointer;  display: inline-flex;  font-family: "JetBrains Mono",monospace;  height: 48px;  justify-content: center;
+  line-height: 1;  list-style: none;  overflow: hidden;
+  padding-left: 20%;  padding-right: 20%;  position: relative;
+  text-align: left;  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;  touch-action: manipulation;  white-space: nowrap;  will-change: box-shadow,transform;  font-size: 18px;}
+.button-30:focus { box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;}
+.button-30:hover {  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);}
+.button-30:active {  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);}
+.try {  align-items: center;  appearance: none;  background-color: orange;  border-radius: 4px;  border-width: 0;  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;  box-sizing: border-box;
+  color: #36395A;  cursor: pointer;  display: inline-flex;  height: 35px;  justify-content: center;  line-height: 1;  list-style: none;  overflow: hidden;  padding-left: 16px;  padding-right: 16px;
+  position: relative;  text-align: left;
+  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;
+  touch-action: manipulation;  white-space: nowrap;
+  will-change: box-shadow,transform;  font-size: 18px;}
+  
+  .question-container {
+      float: left;
+      width: 50%;
+    }
+    .answer-container {
+      float: left;
+      width: 50%;
+    }
+    .question {
+      cursor: pointer;
+      padding: 7px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+      background-color: white;
+    }
+    .question.correct {
+      background-color: #8BC34A;
+    }
+    .question.selected {
+      background-color: #FFEB3B;
+    }
+    .answer {
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      border-radius: 25px;
+      background-color: oldlace;
+    }
+    .answer.correct {
+      background-color: #8BC34A;
+    }
+    .incorrect {
+      background-color: #FF5722;
+    }
+    table { font-family: merriweather; font-size: 20px; line-height: normal; padding: 5px}
+    td { height: 25px; color: black; border-bottom: 1px solid silver; padding: 5px}
+    </style>
+</head>
+<body>
+    <div class="outer" id="content">
+        <div class="outer" id="content">
+    
+<h3 class="header">Choose the correct variant.</h3>
+    
+    
+  <div class="inner">
+    
+  <form id="beTestForm" class="text">
+  
+<div style="display: flex; flex-direction: row; flex-wrap: wrap; margin: auto">
+
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+            <div class="question">1. When the ___ erupted, a nearby village was buried in lava.</div>
+            <div class="answer-container">
+                <button type="button" class="answer" data-question="1" data-answer="1">a. earthquake</button>
+                <button type="button" class="answer" data-question="1" data-answer="2">b. volcano</button>
+                <button type="button" class="answer" data-question="1" data-answer="3">c. avalanche</button>
+                <button type="button" class="answer" data-question="1" data-answer="4">d. hurricane</button>
+            </div>
+        </div>
+    
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">2. The students ____ a test when they heard the explosion.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="2" data-answer="1">a. took</button>
+        <button type="button" class="answer" data-question="2" data-answer="2">b. are taking</button>
+        <button type="button" class="answer" data-question="2" data-answer="3">c. were taking</button>
+        <button type="button" class="answer" data-question="2" data-answer="4">d. were taken</button>
+    </div>
+</div>
+    
+    <div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">3. The firefighters ___ three people from the burning building.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="3" data-answer="1">a. survived</button>
+        <button type="button" class="answer" data-question="3" data-answer="2">b. searched</button>
+        <button type="button" class="answer" data-question="3" data-answer="3">c. rescued</button>
+        <button type="button" class="answer" data-question="3" data-answer="4">d. recalled</button>
+    </div>
+</div>
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">4. Fiona is in her room and she's been as quiet as a ___ all evening. I don't know what she's doing.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="4" data-answer="1">a. mouse</button>
+        <button type="button" class="answer" data-question="4" data-answer="2">b. bee</button>
+        <button type="button" class="answer" data-question="4" data-answer="3">c. feather</button>
+        <button type="button" class="answer" data-question="4" data-answer="4">d. sheet</button>
+    </div>
+</div>
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">5. During the earthquake, the people in the cinema panicked and ___ ran towards the exit.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="5" data-answer="1">a. as quickly</button>
+        <button type="button" class="answer" data-question="5" data-answer="2">b. quickly</button>
+        <button type="button" class="answer" data-question="5" data-answer="3">c. quick</button>
+        <button type="button" class="answer" data-question="5" data-answer="4">d. quicker</button>
+    </div>
+</div>
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">6. Those were ___ years of his life.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="6" data-answer="1">a. the most difficult</button>
+        <button type="button" class="answer" data-question="6" data-answer="2">b. as difficult</button>
+        <button type="button" class="answer" data-question="6" data-answer="3">c. the more difficult</button>
+        <button type="button" class="answer" data-question="6" data-answer="4">d. more difficult</button>
+    </div>
+</div>
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">7. Ellen's new camera is her most valuable ___</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="7" data-answer="1">a. response</button>
+        <button type="button" class="answer" data-question="7" data-answer="2">b. possession</button>
+        <button type="button" class="answer" data-question="7" data-answer="3">c. disguise</button>
+        <button type="button" class="answer" data-question="7" data-answer="4">d. power</button>
+    </div>
+</div>
+
+<div style="padding: 10px; flex: 500px; border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; 
+margin-right: 5px; margin-bottom: 5px; line-height: 1.8; background-color: white; font-family: merriweather; font-size: 19px; color: black; line-height: normal">
+    <div class="question">8. We worked ___ to finish our project on time.</div>
+    <div class="answer-container">
+        <button type="button" class="answer" data-question="8" data-answer="1">a. hardly</button>
+        <button type="button" class="answer" data-question="8" data-answer="2">b. as hard</button>
+        <button type="button" class="answer" data-question="8" data-answer="3">c. hard</button>
+        <button type="button" class="answer" data-question="8" data-answer="4">d. hardest</button>
+    </div>
+</div></div>
+
+        <button type="button" id="submitBtn">Check</button>
+        <button type="button" id="redoBtn">Try again</button>
+
+          </div>
+
+        <script>
+            const correctAnswers = [
+                2, // Question 1: Correct answer is "b. volcano"
+                3, // Question 2: Correct answer is "c. were taking"
+                3, // Question 3: Correct answer is "c. rescued"
+                1, // Question 4: Correct answer is "a. mouse"
+                1, // Question 5: Correct answer is "a. as quickly"
+                1, // Question 6: Correct answer is "a. the most difficult"
+                2, // Question 7: Correct answer is "b. possession"
+                3  // Question 8: Correct answer is "c. hard"
+            ];
+
+            const answerButtons = document.querySelectorAll('.answer');
+            const submitBtn = document.getElementById("submitBtn");
+            const redoBtn = document.getElementById("redoBtn");
+            const resultsDiv = document.getElementById("results");
+            const scoreDiv = document.getElementById("score");
+
+            answerButtons.forEach(button => {
+                button.addEventListener('click', (event) => {
+                    const selectedButton = event.target;
+                    const questionNumber = selectedButton.getAttribute('data-question');
+                    const answerNumber = selectedButton.getAttribute('data-answer');
+                    const correctAnswerIndex = correctAnswers[questionNumber - 1];
+
+                    if (answerNumber == correctAnswerIndex) {
+                        selectedButton.style.backgroundColor = 'green';
+                    } else {
+                        selectedButton.style.backgroundColor = 'red';
+                    }
+                });
+            });
+
+            submitBtn.addEventListener('click', () => {
+                displayResults();
+            });
+
+            redoBtn.addEventListener("click", () => {
+                answerButtons.forEach(button => {
+                    button.style.backgroundColor = 'oldlace';
+                    button.classList.remove('correct', 'incorrect');
+                    button.disabled = false;
+                });
+
+                resultsDiv.style.display = "none";
+            });
+
+            function displayResults() {
+                resultsDiv.style.display = 'block';
+                const score = Array.from(answerButtons).reduce((acc, button) => {
+                    const questionNumber = button.getAttribute('data-question');
+                    const correctAnswerIndex = correctAnswers[questionNumber - 1];
+
+                    if (correctAnswerIndex == button.getAttribute('data-answer')) {
+                        button.classList.add('correct');
+                        return acc + 1;
+                    } else {
+                        button.classList.add('incorrect');
+                        return acc;
+                    }
+                }, 0);
+
+                scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+                answerButtons.forEach(button => {
+                    button.disabled = true;
+                });
+            }
+        </script>
+    </div>
+</body>
+</html>

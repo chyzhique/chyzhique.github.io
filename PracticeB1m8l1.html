@@ -1,0 +1,118 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+</head>
+<body>
+
+<div class="outer">
+  
+  <h3 class="header">Complete the Dialogues</h3>
+  
+  <div class="inner">
+    <div class="text">
+      
+      <h3 class="header">Dialogue 1</h3>
+      A: &emsp; How did Tony do in the interview?<br>
+      B: &emsp; Not too well. If his CV 
+      <input type="text" id="q1"> (be) more professional, he 
+      <input type="text" id="q2"> (get) the job.<br>
+      A: &emsp; Maybe next time.<br><br>
+      
+      <h3 class="header">Dialogue 2</h3>
+      A: &emsp; It's a shame our grandmother wasn't here. If she <input type="text" id="q3"> (meet) Mark, she 
+<input type="text" id="q4"> (love) him.<br>
+      B: &emsp; Yes, you're right.<br><br>
+      
+      <h3 class="header">Dialogue 3</h3>
+      A: &emsp; What do you mean he disappeared into thin air?<br>
+      B: &emsp; I know that it sounds incredible, but if you 
+      <input type="text" id="q5"> (see) it, you 
+      <input type="text" id="q6"> (believe) it.<br><br>
+      
+      <h3 class="header">Dialogue 4</h3>
+      A:&emsp;  It was a bad idea to wait for the bus.<br>
+      B:&emsp;  Yes, I know. We 
+      <input type="text" id="q7"> (arrive) earlier if we 
+      <input type="text" id="q8"> (walk) home.<br><br>
+      
+      <h3 class="header">Dialogue 5</h3>
+      A:&emsp;  So how did your shopping trip go?<br>
+      B:&emsp;  Well, remember that computer game I told you about that I wanted to buy last time? I went back to the shop and they had none left! I was so disappointed. If I 
+      <input type="text" id="q9"> (know) they were so popular, I <input type="text" id="q10"> (buy) it when I first saw it.
+    
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="redoBtn">Try again</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    ["had been"], ["would have got"],
+    ["had met"], ["would have loved"],
+    ["saw"], ["would believe"],
+    ["would have arrived"], ["had walked"],
+    ["had known"], ["would have bought"]
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputField = document.getElementById(`q${i + 1}`);
+
+      if (userInput.toLowerCase() === correctAnswers[i][0].toLowerCase()) {
+        inputField.classList.remove("incorrect");
+        inputField.classList.add("correct");
+        score++;
+      } else {
+        inputField.classList.remove("correct");
+        inputField.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    const inputFields = document.querySelectorAll("input[type='text']");
+    inputFields.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+      input.value = "";
+      input.style.backgroundColor = "white";
+    });
+
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+</body>
+</html>

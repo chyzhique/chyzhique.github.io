@@ -1,0 +1,142 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Complete the text with the correct forms of the verbs in brackets.</h3>
+
+    <div class="inner">
+        <form id="beTestForm" class="text">
+            When in Havana, Cuba, a fun way to get around is by Coco taxi. Coco taxis 
+            (1) <span id="q1" class="dropdown">
+                <select>
+                    <option value="" selected disabled>1</option>
+                    <option value="a">a. are considered</option>
+                    <option value="b">b. consider</option>
+                </select>
+            </span> a trademark of Cuba and 
+            (2) <span id="q2" class="dropdown">
+                <select>
+                    <option value="" selected disabled>2</option>
+                    <option value="a">a. have been used</option>
+                    <option value="b">b. have used</option>
+                </select>
+            </span> for years. They 
+            (3) <span id="q3" class="dropdown">
+                <select>
+                    <option value="" selected disabled>3</option>
+                    <option value="a">a. call</option>
+                    <option value="b">b. are called</option>
+                </select>
+            </span> 'coco' (Spanish for coconut) because of their shape. They are bright yellow and
+            (4) <span id="q4" class="dropdown">
+                <select>
+                    <option value="" selected disabled>4</option>
+                    <option value="a">a. can be seen</option>
+                    <option value="b">b. can see</option>
+                </select>
+            </span> all around the city. As the locals will tell you, you 
+            (5) <span id="q5" class="dropdown">
+                <select>
+                    <option value="" selected disabled>5</option>
+                    <option value="a">a. will find</option>
+                    <option value="b">b. will be found</option>
+                </select>
+            </span> no faster or more enjoyable means of transport in the world! Because they are three-wheeled and can only 
+            (6) <span id="q6" class="dropdown">
+                <select>
+                    <option value="" selected disabled>6</option>
+                    <option value="a">a. carry</option>
+                    <option value="b">b. be carried</option>
+                </select>
+            </span> three passengers, they can go very fast, plus you can breathe some fresh Cuban air. Ask the driver and you will 
+            (7) <span id="q7" class="dropdown">
+                <select>
+                    <option value="" selected disabled>7</option>
+                    <option value="a">a. show</option>
+                    <option value="b">b. be shown</option>
+                </select>
+            </span> all the sights of Havana, which 
+            (8) <span id="q8" class="dropdown">
+                <select>
+                    <option value="" selected disabled>8</option>
+                    <option value="a">a. are included</option>
+                    <option value="b">b. include</option>
+                </select>
+            </span> the Cathedral and the very impressive Palacio de los Capitanes Generales.
+            <br><br>
+            <div style="display: flex; justify-content: center; align-items: center;">
+                <button type="button" id="submitBtn" class="button-30">Check</button>
+            </div>
+            <div id="results" style="display: none; justify-content: center; align-items: center;">
+                <h2 class="header">Results</h2>
+                <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+                <div style="display: flex; justify-content: center; align-items: center;">
+                    <button type="button" id="redoBtn">Try again</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+  
+<script>
+  const correctAnswers = ["a", "a", "b", "a", "a", "a", "b", "b" ];
+
+  const form = document.getElementById("beTestForm");
+    const submitBtn = document.getElementById("submitBtn");
+    const redoBtn = document.getElementById("redoBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const selectedOption = document.getElementById(`q${i + 1}`).querySelector("select").value;
+
+      userAnswers.push(selectedOption);
+      const dropdown = document.getElementById(`q${i + 1}`);
+
+      if (selectedOption === correctAnswers[i]) {
+        dropdown.classList.remove("incorrect");
+        dropdown.classList.add("correct");
+        score++;
+      } else {
+        dropdown.classList.remove("correct");
+        dropdown.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+        form.reset();
+        resultsDiv.style.display = "none";
+        submitBtn.disabled = false;
+
+        const dropdowns = document.querySelectorAll(".dropdown");
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove("correct", "incorrect"); // Remove styling classes
+            const selectElement = dropdown.querySelector("select");
+            selectElement.value = ""; // Reset dropdown selections
+            selectElement.style.backgroundColor = "white"; // Reset background color
+        });
+    });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+
+</body>
+</html>

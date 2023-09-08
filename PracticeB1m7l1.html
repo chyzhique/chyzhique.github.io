@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Complete the Text</h3>
+  <div class="inner">
+    <form id="completeTextForm" class="text">
+      <div class="image">
+        <img src="https://images.pexels.com/photos/974964/pexels-photo-974964.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="surfing">
+      </div>
+      It's amazing
+      (1) <input type="text" id="q1" name="q1" placeholder="(to see)"> how easily a modern mobile phone can
+      (2) <input type="text" id="q2" name="q2" placeholder="(affect)"> our everyday lives. Picture this. A woman goes to the city centre
+      (3) <input type="text" id="q3" name="q3" placeholder="(to do)"> some shopping. Like all women, she enjoys
+      (4) <input type="text" id="q4" name="q4" placeholder="(walking)"> around looking at window displays. She realises she might
+      (5) <input type="text" id="q5" name="q5" placeholder="(not have)"> enough money to buy everything she wants, so she uses her mobile phone
+      (6) <input type="text" id="q6" name="q6" placeholder="(to get)"> online and transfer money from her account to her credit card. Suddenly, she sees the perfect pair of high heels in a fabulous blue colour and a matching bag. She wants
+      (7) <input type="text" id="q7" name="q7" placeholder="(to buy)"> them but needs a second opinion. So, she sends an MMS to her best friend with a photo of the shoes and a question: 'Is it worth
+      (8) <input type="text" id="q8" name="q8" placeholder="(to pay)"> €200 for them?' Don’t you just love technology?
+
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="submitBtn" class="button-30">Check</button>
+      </div>
+      
+      <div id="results" style="display: none; justify-content: center; align-items: center;">
+        <h2 class="header">Results</h2>
+        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      
+        <div style="display: flex; justify-content: center; align-items: center;">
+          <button type="button" id="redoBtn">Try again</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    "to see", "affect", "to do", "walking", "not have", "to get", "to buy", "to pay"
+  ];
+
+  const form = document.getElementById("completeTextForm");
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase();
+      const correctAnswer = correctAnswers[i].toLowerCase();
+
+      userAnswers.push(userAnswer);
+      const input = document.getElementById(`q${i + 1}`);
+
+      if (userAnswer === correctAnswer) {
+        input.classList.remove("incorrect");
+        input.classList.add("correct");
+        score++;
+      } else {
+        input.classList.remove("correct");
+        input.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    form.reset();
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+    inputs.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+    });
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    const inputs = document.querySelectorAll("input[type='text']");
+
+    for (let i = 0; i < inputs.length; i++) {
+      const userAnswer = userAnswers[i] || "(no answer)";
+    }
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
