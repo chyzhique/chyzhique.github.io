@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">A. Read the situations and make negative questions.</h3>
+
+  <div class="inner">
+    <div class="text">
+      
+
+1. You're surprised that your brother doesn't know how to use a cash machine. <br>What do you say?
+<input type="text" id="q1" style="width: 90%">?<br><br>
+2. You see a woman who you think went to the same school as you. <br>What do you say to her?
+<input type="text" id="q2" style="width: 90%">?<br><br>
+3. Your best friend rents a DVD but you're quite sure he's seen it before. <br>What do you say?
+<input type="text" id="q3" style="width: 90%">?<br><br>
+
+                               
+                                    
+
+  </div>  
+</div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+<script>
+    const answers = [
+      "Don't you know how to use a cash machine", 
+      "Didn't we go to the same school", 
+      "Didn't you see it before"
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 11`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

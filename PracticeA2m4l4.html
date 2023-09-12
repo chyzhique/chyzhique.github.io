@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    .hdd{font-weight: bold; background-color: #ffc119; font-size: 27px; border-radius: 15px}
+    </style>
+  </head>
+<body>
+  <div class="outer">
+    <h3 class="header">Complete the dialogues with who, which, that or where. </h3>
+<div class="inner">
+    <div class="text" style="height: 100%">
+      
+<table>
+  <tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      1.</td></tr><tr>
+<td>
+A:</td><td> ls that the laptop 
+      (1) <input type="text" id="q1"> you bought last week?</td></tr><tr><td>
+B:</td><td> Yeah.</td></tr><tr><td>
+A:</td><td> It's nice. Where did you get it from?</td></tr><tr><td>
+B:</td><td> From the shop 
+      (2) <input type="text" id="q2"> you used to work. In fact, the man
+(3) <input type="text" id="q3"> sold it to me knew you.</td></tr><tr><td>
+A:</td><td> Did he? What was his name?</td></tr><tr><td>
+B:</td><td> Alan Bishop.</td></tr><tr><td>
+A:</td><td> Oh, he was one of the people 
+      (4) <input type="text" id="q4"> I hung out with while I was there.
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      2.</td></tr><tr>
+<td>
+A:</td><td> Denise, can I borrow your green top?</td></tr><tr><td>
+B:</td><td> Which one?</td></tr><tr><td>
+A:</td><td> The one 
+      (5) <input type="text" id="q5"> you were wearing yesterday.</td></tr><tr><td>
+B:</td><td> Go on then. Are you going out?</td></tr><tr><td>
+A:</td><td> Yeah, I'm meeting Laura. You know, the girl 
+      (6) <input type="text" id="q6"> is in my computer class.</td></tr><tr><td>
+B:</td><td> Where are you going?</td></tr><tr><td>
+A:</td><td> To Ricky's.</td></tr><tr><td>
+B:</td><td> Where?</td></tr><tr><td>
+A:</td><td> You know, the cafe 
+      (7) <input type="text" id="q7"> is in the park. It's the place
+
+      (8) <input type="text" id="q8"> her sister works.</td></tr><tr><td>
+B:</td><td> Have fun!
+ </td></tr></table>
+</div>
+          
+
+   
+</div>
+    
+  
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+    
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="tryAgainBtn">Try again</button>
+     
+    </div>
+  </div>
+</div>
+
+  <script>
+    const correctAnswers = [
+      "that", "where", "who", "that", "which", "who", "which", "where"
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 0; i < correctAnswers.length; i++) {
+        const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+        userAnswers.push(userInput);
+        const inputField = document.getElementById(`q${i + 1}`);
+
+        if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
+          inputField.style.backgroundColor = "lightgreen";
+          score++;
+        } else {
+          inputField.style.backgroundColor = "pink";
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      const inputFields = document.querySelectorAll("input[type='text']");
+      inputFields.forEach(input => {
+        input.style.backgroundColor = "white";
+        input.value = "";
+      });
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>

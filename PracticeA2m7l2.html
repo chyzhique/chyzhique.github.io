@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+</head>
+<body>
+
+<div class="outer" id="content">
+  <h3 class="header">Complete the dialogues with how, what, so or such.</h3>
+
+  <div class="inner">
+    <div>
+      
+<table style= "font-family: merriweather; font-size: 20px;"> 
+<colgroup> 
+<col style="background-color: pink"> 
+</colgroup> 
+<tr><td style="padding: 10px; background-color: #ffc119; text-align: center" colspan="2">
+<b> 1.</b> </td></tr><tr><td>
+A:</td><td> I had (1) <input type="text" id="q1"> a tiring day!</td></tr><tr><td>
+B:</td><td> Why? What happened?</td></tr><tr><td>
+A:</td><td> We had (2) <input type="text" id="q2"> a lot of work to do that we didn't have time for a break.</td></tr><tr><td>
+B:</td><td> So, you haven't eaten?</td></tr><tr><td>
+A:</td><td> No, I'm (3) <input type="text" id="q3"> hungry I could eat a horse!</td></tr>
+<tr><td style="padding: 10px; background-color: #ffc119; text-align: center" colspan="2">
+<b> 2.</b> </td></tr><tr><td>
+A:</td><td> Why are you late?</td></tr><tr><td>
+B:</td><td> l woke up (4) <input type="text" id="q4"> late that I missed the bus, and the next one was
+half an hour later.</td></tr><tr><td>
+A:</td><td> (5) <input type="text" id="q5"> a nightmare!</td></tr><tr><td>
+B:</td><td> Did Mr Humphries notice I wasn't here?</td></tr><tr><td>
+A:</td><td> No, he's (6) <input type="text" id="q6"> busy these days he never comes out of his office.</td></tr><tr><td>
+B:</td><td> (7) <input type="text" id="q7"> lucky I am!
+      
+                
+    </td></tr></table>                                
+                                    
+
+  </div>  
+</div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+    <button type="button" id="checkBtn" class="button-30">Check</button>
+  </div>
+  <div id="results" style="display: none; text-align: center;">
+    <h2 class="header">Results</h2>
+    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="tryAgainBtn">Try again</button>
+    </div>
+  </div>
+
+<script>
+    const answers = [
+      "such", "such", "so", 
+      "so", "What", "so", "how",
+    ];
+
+    const checkBtn = document.getElementById("checkBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    
+    checkBtn.addEventListener("click", () => {
+      let score = 0;
+
+      for (let i = 1; i <= answers.length; i++) {
+        const userAnswer = document.getElementById(`q${i}`).value;
+        const correctAnswer = answers[i - 1];
+
+        const questionElement = document.getElementById(`q${i}`);
+        if (userAnswer === correctAnswer) {
+          questionElement.classList.add("correct");
+          score++;
+        } else {
+          questionElement.classList.add("incorrect");
+        }
+      }
+
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = `${score} / 11`;
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "block";
+      
+      tryAgainBtn.style.display = "block";
+      checkBtn.style.display = "none";
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      for (let i = 1; i <= answers.length; i++) {
+        const questionElement = document.getElementById(`q${i}`);
+        questionElement.value = "";
+        questionElement.classList.remove("correct", "incorrect");
+      }
+
+      const resultsDiv = document.getElementById("results");
+      resultsDiv.style.display = "none";
+
+      tryAgainBtn.style.display = "none";
+      checkBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

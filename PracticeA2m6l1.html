@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <style>
+    .hdd{font-weight: bold; background-color: #ffc119; font-size: 27px; border-radius: 15px}
+    </style>
+  </head>
+<body>
+  <div class="outer">
+    <h3 class="header">Look at the pictures and say what will possibly happen.
+Use may (not), might (not) or could.</h3>
+<div class="inner">
+    <div class="text" style="height: 100%">
+      
+<div class="image">
+  <img style="float: left; width: 45%; z-index: 1" src="https://static.nike.com/a/images/w_1920,c_limit/06702acc-a7d5-4a9c-9428-e8d987c6c786/every-position-in-basketball-explained.jpg">
+  <img style="float: right; width: 45%" src= "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Football_in_Bloomington%2C_Indiana%2C_1996.jpg/1280px-Football_in_Bloomington%2C_Indiana%2C_1996.jpg">
+  <img style="width: 100%; float: middle" src="https://brand.assets.adidas.com/image/upload/f_auto,q_auto,fl_lossy/enGB/Images/tennis-fw23-us-open-launch-clp-masthead-large-dual-d_tcm143-1043174.jpg">
+  </div>
+      
+1. The soccer team <input type="text" id="q1"> win the championship, but they don't do well.<br><br>
+2. She <input type="text" id="q2"> become a professional athlete with her talent.<br><br>
+3. The tennis match <input type="text" id="q3"> take place as the courts are ready.<br><br>
+4. He <input type="text" id="q4"> break the world record. At least, he'll try.<br><br>
+5. If the weather clears up, the golf tournament <input type="text" id="q5"> continue as scheduled.
+  
+ 
+  </div>      
+</div>
+    
+  
+    <div style="display: flex; justify-content: center; align-items: center;">
+      <button type="button" id="submitBtn" class="button-30">Check</button>
+    </div>
+    
+    <div id="results" style="display: none; justify-content: center; align-items: center;">
+      <h2 class="header">Results</h2>
+      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
+      <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="tryAgainBtn">Try again</button>
+     
+    </div>
+  </div>
+</div>
+
+  <script>
+    const correctAnswers = [
+      "may", 
+      "could", 
+      "may", 
+      "might not",
+      "may"
+    ];
+
+    const submitBtn = document.getElementById("submitBtn");
+    const tryAgainBtn = document.getElementById("tryAgainBtn");
+    const resultsDiv = document.getElementById("results");
+    const scoreDiv = document.getElementById("score");
+
+    submitBtn.addEventListener("click", () => {
+      const userAnswers = [];
+      let score = 0;
+
+      for (let i = 0; i < correctAnswers.length; i++) {
+        const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+        userAnswers.push(userInput);
+        const inputField = document.getElementById(`q${i + 1}`);
+
+        if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
+          inputField.style.backgroundColor = "lightgreen";
+          score++;
+        } else {
+          inputField.style.backgroundColor = "pink";
+        }
+      }
+
+      displayResults(score);
+    });
+
+    tryAgainBtn.addEventListener("click", () => {
+      const inputFields = document.querySelectorAll("input[type='text']");
+      inputFields.forEach(input => {
+        input.style.backgroundColor = "white";
+        input.value = "";
+      });
+
+      resultsDiv.style.display = "none";
+      tryAgainBtn.style.display = "none";
+      submitBtn.style.display = "block";
+    });
+
+    function displayResults(score) {
+      resultsDiv.style.display = "block";
+      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+      submitBtn.style.display = "none";
+      tryAgainBtn.style.display = "block";
+    }
+  </script>
+</body>
+</html>
