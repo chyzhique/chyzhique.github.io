@@ -111,9 +111,10 @@ body {
             }
         }
       .pic {
-        width: 100%; margin-right: 10px;
-        
-      }
+        width: 100%; 
+        margin-right: 10px;
+        border-radius: 8px
+ }
 .hint {
     display: flex;
     align-items: center;
