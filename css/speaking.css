@@ -20,7 +20,7 @@ body {
           font-size: 150%;
           border-bottom: 1px solid black
         }
-      .task {text-align: left; padding: 15px; font-style: merriweather; font-size: 100%; }
+      .task {text-align: left; padding: 15px; font-style: merriweather; font-size: 2vh; }
 
       .cont {
           margin: 10px;
