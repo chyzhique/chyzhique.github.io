@@ -1,0 +1,154 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/speaking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+<style>
+
+.clickable-image {
+    cursor: pointer;
+  z-index: 0
+}
+
+.image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  overflow: auto;
+}
+
+.full-size-image {
+    max-width: 200%;
+    max-height: 200%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+  </style>
+  </head>
+  <body>
+
+      <div class="container">
+        <div class="left-block">
+            <h3 class="hd"> Speaking task:</h3>
+          <div class="task">
+            <span style="font-size: 36px; font-family:'Cormorant Garamond', serif; font-weight:bold">HR manager simulator </span><br>
+
+🔴 Imagine that you are responsible for hiring a clerk at a travel agency.<br> 
+🔴 Read the advertisement below and the profiles of the three people who have applied for the job. <br> 
+🔴 Discuss and decide which person would be the most suitable and why the others are not suitable. <br> 
+🔴 Use the words and expressions given.
+
+  </div>
+<div class="cont">
+
+          <div class="sampleA" style="width: 100%">
+          <p class="title" style="margin:0; padding:0">Words:</p> 
+
+<span id="clickable-word1" class="highlight">📌better qualified;</span><br>
+<span id="clickable-word2" class="highlight">📌more/less experienced;</span><br>
+<span id="clickable-word3" class="highlight">📌computer-literate;</span><br>
+<span id="clickable-word4" class="highlight">📌adequate/good knowledge of;</span><br>
+
+<div id="popup1" class="popup">
+    <h2>"better qualified;"</h2>
+    <p>Better qualified refers to having higher qualifications, skills, or education that make one more suitable for a particular job or task.</p>
+    <p>Synonyms: more qualified, highly skilled, better educated</p>
+    <button onclick="closePopup('popup1')">Close</button>
+</div>
+
+<div id="popup2" class="popup">
+    <h2>"more/less experienced;"</h2>
+    <p>More/less experienced describes the level of knowledge and practice gained through past activities, often in comparison to others.</p>
+    <p>Synonyms: highly experienced, less experienced, more seasoned</p>
+    <button onclick="closePopup('popup2')">Close</button>
+</div>
+
+<div id="popup3" class="popup">
+    <h2>"computer-literate;"</h2>
+    <p>Computer-literate means having the ability to use and work with computers and digital technology effectively.</p>
+    <p>Synonyms: tech-savvy, digitally skilled, computer-proficient</p>
+    <button onclick="closePopup('popup3')">Close</button>
+</div>
+
+<div id="popup4" class="popup">
+    <h2>"adequate/good knowledge of;"</h2>
+    <p>Adequate/good knowledge of refers to having a sufficient or strong understanding of a particular subject, topic, or skill.</p>
+    <p>Synonyms: solid knowledge of, sufficient understanding of, good grasp of</p>
+    <button onclick="closePopup('popup4')">Close</button>
+</div>
+
+            
+  </div>
+  <div class="sampleA" style="width: 100%">
+          <p class="title" style="margin:0; padding:0">Phrases:</p>
+
+   📌 I think...would be more suitable for the job because...<br>
+   📌 I believe ... is the best candidate because ...<br>
+   📌 I don't think ... would be suitable because...<br>
+   📌 In my opinion...is more suitable than...because<br>
+   📌 I agree, however, I think...is...
+    
+    </div>
+  </div>
+  </div>
+           <div class="right-block" style="width: 40%">
+        
+        <img src="https://drive.google.com/uc?export=view&id=
+1PiZe5DlnaID-IRLBtNMWc8YN6Ag4JTbW" alt="Click to open full-size" class="clickable-image" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; height: 100%">
+        <div class="image-overlay" id="overlay">
+            <img src="https://drive.google.com/uc?export=view&id=
+1PiZe5DlnaID-IRLBtNMWc8YN6Ag4JTbW" alt="Full-size image" class="full-size-image" id="fullSizeImage">
+            <span class="close-button" id="closeButton">&times;</span>
+        </div>
+    </div>      
+     
+          </div>       
+
+
+        </div>  
+
+
+<script src="https://chyzhique.github.io/word-definition.js">
+</script>
+    <script>
+const clickableImage = document.querySelector('.clickable-image');
+const overlay = document.getElementById('overlay');
+const fullSizeImage = document.getElementById('fullSizeImage');
+const closeButton = document.getElementById('closeButton');
+
+clickableImage.addEventListener('click', () => {
+    overlay.style.display = 'block';
+    fullSizeImage.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    fullSizeImage.style.display = 'none';
+});
+      </script>
+  </body>
+  </html>
+
+

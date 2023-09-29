@@ -1,0 +1,156 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/speaking.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap" rel="stylesheet">
+<style>
+
+.clickable-image {
+    cursor: pointer;
+  z-index: 0
+}
+
+.image-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    text-align: center;
+  overflow: auto;
+}
+
+.full-size-image {
+    max-width: 200%;
+    max-height: 200%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+  </style>
+  </head>
+  <body>
+
+      <div class="container">
+        <div class="left-block">
+            <h3 class="hd"> Speaking task:</h3>
+          <div class="task">
+            <span style="font-size: 36px; font-family:'Cormorant Garamond', serif; font-weight:bold">Look at the advertisements for two holidays. Decide which you would prefer to go on and why. You can use some of the words and expressions in the boxes. </span><br>
+
+🔴 What are the advantages of ecotourism?<br>
+🔴 Do you think that you do enough to protect the environment? Why/ Why not?<br>
+🔴 What can individuals do to protect the environment?
+
+
+
+
+
+  </div>
+<div class="cont">
+
+          <div class="sampleA" style="width: 100%">
+          <p class="title" style="margin:0; padding:0">Words:</p> 
+
+<span id="clickable-word1" class="highlight"> 📌 active;</span>&emsp;
+<span id="clickable-word2" class="highlight"> 📌 relaxing;</span>&emsp;
+<span id="clickable-word3" class="highlight"> 📌 educational;</span>&emsp;
+<span id="clickable-word4" class="highlight"> 📌 challenging;</span><br>
+
+<div id="popup1" class="popup">
+    <h2>"active;"</h2>
+    <p>Active describes a state of being physically and mentally engaged and involved in various activities or tasks.</p>
+    <p>Synonyms: energetic, lively, dynamic</p>
+    <button onclick="closePopup('popup1')">Close</button>
+</div>
+
+<div id="popup2" class="popup">
+    <h2>"relaxing;"</h2>
+    <p>Relaxing describes an experience or environment that promotes calmness, stress reduction, and a sense of ease.</p>
+    <p>Synonyms: soothing, tranquil, peaceful</p>
+    <button onclick="closePopup('popup2')">Close</button>
+</div>
+
+<div id="popup3" class="popup">
+    <h2>"educational;"</h2>
+    <p>Educational refers to activities or materials that provide knowledge, information, or learning opportunities.</p>
+    <p>Synonyms: instructive, informative, enlightening</p>
+    <button onclick="closePopup('popup3')">Close</button>
+</div>
+
+<div id="popup4" class="popup">
+    <h2>"challenging;"</h2>
+    <p>Challenging describes something that is demanding or requiring effort, skill, or determination to overcome.</p>
+    <p>Synonyms: demanding, difficult, testing</p>
+    <button onclick="closePopup('popup4')">Close</button>
+</div>
+
+
+            
+  </div>
+  <div class="sampleA" style="width: 100%">
+          <p class="title" style="margin:0; padding:0">Phrases:</p>
+
+📌 I would prefer to go to ... because ...<br>
+ 📌 I think... is better ... because it will give us the opportunity to ...<br>
+ 📌 I don't think we should go to ... because ...
+    
+    </div>
+  </div>
+  </div>
+           <div class="right-block" style="width: 40%">
+        
+        <img src="https://drive.google.com/uc?export=view&id=
+18Mmfv3BXYaiEI2WANEuQ1PZX_BFpME4_" alt="Click to open full-size" class="clickable-image" style="display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%; height: 100%">
+        <div class="image-overlay" id="overlay">
+            <img src="https://drive.google.com/uc?export=view&id=
+18Mmfv3BXYaiEI2WANEuQ1PZX_BFpME4_" alt="Full-size image" class="full-size-image" id="fullSizeImage">
+            <span class="close-button" id="closeButton">&times;</span>
+        </div>
+    </div>      
+     
+          </div>       
+
+
+        </div>  
+
+
+<script src="https://chyzhique.github.io/word-definition.js">
+</script>
+    <script>
+const clickableImage = document.querySelector('.clickable-image');
+const overlay = document.getElementById('overlay');
+const fullSizeImage = document.getElementById('fullSizeImage');
+const closeButton = document.getElementById('closeButton');
+
+clickableImage.addEventListener('click', () => {
+    overlay.style.display = 'block';
+    fullSizeImage.style.display = 'block';
+});
+
+closeButton.addEventListener('click', () => {
+    overlay.style.display = 'none';
+    fullSizeImage.style.display = 'none';
+});
+      </script>
+  </body>
+  </html>
+
+
