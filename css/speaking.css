@@ -2,50 +2,61 @@ body {
             margin: 0;
             padding: 0;
             width: 100%;
+            height: 100%;
             align-items: center;
             justify-content: center; 
-            background-color: #D32F2F
+            background-color: #D32F2F;
+            display: flex;
+             align-items: center;
         }
 
-        .hd {
+.hd {
           margin-top: 1px;
-            text-align: center;
-            color: black;
-            padding: 10px;
-            max-width: 1400px;
-          font-size: 150%;
+          text-align: center;
+          color: black;
+          padding: 5px;
+          font-size: 1rem;
           border-bottom: 1px solid black
         }
-      .task {
+
+
+.container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            text-align: center;
+            justify-content: space-between;
+            margin: 2vh;
+              max-width: 90vw;
+              display: flex;
+              gap: 10px;
+              align-items: stretch;
+        }
+
+.task {
                   text-align: left; 
                   padding: 15px; 
                   font-style: merriweather; 
                   font-size: 2vh; 
       }
 
-.container {
-          margin: 10px;
-              max-width: 1800px;
+.cont {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: stretch;
+            text-align: center;
+            justify-content: space-between;
+            margin: 2vh;
+              max-width: 90vw;
               display: flex;
-              grid-template-columns: 1fr 1fr;
-              gap: 10px; /* Adjust the gap between the blocks as needed */
-              align-items: center; /* Set align-items to stretch to make both blocks equal height */
-            margin-left: auto;
-            margin-right:auto
-        }
-
-     .cont {
-  margin: 10px;
-  max-width: 1800px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px; /* Adjust the gap between the blocks as needed */
-  align-items: stretch; /* Set align-items to stretch to make both blocks equal height */
-  text-align: center;
+              gap: 10px;
+              align-items: stretch;
 }
 
-.left-block,
-.right-block {
+.left-block{
+  flex-basis: 600px;
   height: 90vh;
   padding: 10px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
@@ -54,6 +65,18 @@ body {
   background-color: oldlace;
   border: 1px solid black;
 }
+
+.right-block {
+  max-width: 700px;
+  height: 90vh;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  background-color: oldlace;
+  border: 1px solid black;
+}
+
       .sampleA {
         background-color: #A0D7D9;
         text-align: left;
@@ -86,13 +109,18 @@ body {
 
 
         /* Media query for screens 600px and smaller */
-        @media (max-width: 900px) {
+        @media (max-width: 700px) {
+          .body{
+            height:100%
+          }
+          
             .container {
                 flex-direction: column;
             }
 
             .left-block {
                 width: 90%;
+                height: 100%;
                 display: block;
             }
 
@@ -100,13 +128,18 @@ body {
                 width: 90%;
               height: 100%
             }
+          .sampleA {
+                width: 90%;
+                height: 100%;
+                display: block;}
         }
       .pic {
-        display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
-        border-radius: 8px
+         display: block;
+         margin-left: auto;
+         margin-right: auto;
+         width: 100%;
+        height: 100%;
+         border-radius: 8px
  }
 .hint {
     display: flex;
