@@ -22,6 +22,16 @@ body {
         }
       .task {text-align: left; padding: 15px; font-style: merriweather; font-size: 2vh; }
 
+.container {
+          margin: 10px;
+  max-width: 1800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* Adjust the gap between the blocks as needed */
+  align-items: stretch; /* Set align-items to stretch to make both blocks equal height */
+  text-align: center;
+        }
+
      .cont {
   margin: 10px;
   max-width: 1800px;
@@ -70,16 +80,7 @@ body {
         margin-bottom: 3px
              }
       
-        .container {
-          margin: 10px;
-          max-width: 1200px;
-            flex-wrap: wrap;
-            display: flex;
-            flex-direction: row;
-            align-items: stretch;
-            justify-content: space-between;
-          
-        }
+        
 
 
         /* Media query for screens 600px and smaller */
