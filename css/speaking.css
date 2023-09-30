@@ -29,8 +29,7 @@ body {
               display: flex;
               grid-template-columns: 1fr 1fr;
               gap: 10px; /* Adjust the gap between the blocks as needed */
-              align-items: stretch; /* Set align-items to stretch to make both blocks equal height */
-              text-align: center;
+              align-items: center; /* Set align-items to stretch to make both blocks equal height */
         }
 
      .cont {
