@@ -22,17 +22,26 @@ body {
         }
       .task {text-align: left; padding: 15px; font-style: merriweather; font-size: 2vh; }
 
-      .cont {
-          margin: 10px;
-          max-width: 1800px;
-            flex-wrap: wrap;
-            display: flex;
-            flex-direction: row;
-            align-items: stretch; /* Set align-items to stretch to make both blocks equal height */
-            text-align: center;
-        justify-content: space-between;
-            
-        }
+     .cont {
+  margin: 10px;
+  max-width: 1800px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px; /* Adjust the gap between the blocks as needed */
+  align-items: stretch; /* Set align-items to stretch to make both blocks equal height */
+  text-align: center;
+}
+
+.left-block,
+.right-block {
+  height: 90vh;
+  padding: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  background-color: oldlace;
+  border: 1px solid black;
+}
       .sampleA {
         background-color: #A0D7D9;
         text-align: left;
@@ -72,28 +81,6 @@ body {
           
         }
 
-        .left-block {
-          height: 90vh;
-            width: 500px;
-            padding: 10px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            border-radius: 8px;
-            margin-right: 2px;
-            margin-bottom: 5px;
-            background-color: oldlace;
-            border: 1px solid black;
-        }
-
-        .right-block {
-            width: 400px;
-          height: 90vh;
-            padding: 10px;
-            box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
-            border-radius: 8px;
-            margin-bottom: 5px;
-            background-color: oldlace;
-            border: 1px solid black;
-        }
 
         /* Media query for screens 600px and smaller */
         @media (max-width: 900px) {
