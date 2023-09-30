@@ -27,9 +27,9 @@ body {
             align-items: center;
             text-align: center;
             justify-content: space-between;
-            margin: 2vh;
+            margin: 0px;
               max-width: 90vw;
-              gap: 10px;
+            padding:0px;
         }
 
 .task {
