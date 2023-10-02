@@ -1,0 +1,283 @@
+<html>
+  <head>
+    <style>
+      <title>20 best films to learn English by anglomova
+      </title>
+      * {
+	box-sizing: border-box;
+}
+
+:root {
+	--pad: clamp(1rem, 2vw, 3rem);
+}
+
+strong {
+  font-size: clamp(1rem, 2vw + 1rem, 1rem);
+	margin: 0;
+}
+
+img {
+	width: 100%;
+  height: 100%;
+	display: block;
+}
+
+body {
+	margin: 0;
+	padding: var(--pad) 0;
+	font-family: "Open Sans", sans-serif;
+}
+
+a {
+	color: inherit;
+}
+
+.wrapper {
+	max-width: 100rem;
+	margin: 0 auto;
+	padding: 0 var(--pad);
+}
+
+.wrapper > * + * {
+	margin-top: var(--pad);
+}
+
+ol {
+	list-style: none;
+	padding: 1.5rem;
+	border: 0.1rem solid lightgrey;
+	columns: 17rem;
+	column-gap: calc(var(--pad) * 2);
+	column-rule: 0.2rem dotted turquoise;
+	border-radius: 0.5rem;
+}
+
+li {
+	--y: calc(100% - 2rem);
+	display: grid;
+	grid-template-columns: minmax(3.75em, auto) 1fr;
+	gap: 0 0.5em;
+	break-inside: avoid;
+  page-break-inside: avoid;
+	background: radial-gradient(circle at 30% var(--y), rgb(50 50 50), rgb(0 0 0));
+	color: white;
+	border-radius: 0.75rem;
+	overflow: hidden;
+	box-shadow: 0.25rem 0.25rem 0.5rem rgb(0 0 0 / 0.17);
+
+}
+
+li + li {
+	margin-top: 1rem;
+}
+
+li img {
+	grid-column: 1 / 3;
+	grid-row: 1;
+	aspect-ratio: 0;
+	object-fit: cover;
+  
+}
+
+li::before {
+	counter-increment: list-item 1;
+	content: counter(list-item);
+	font-weight: 700;
+	font-size: 4.5em;
+	letter-spacing: -0.125em;
+	line-height: 1;
+	color: turquoise;
+	grid-column: 1;
+	grid-row: span 2;
+	align-self: end;
+	margin: 0 0 -0.15em 0.15em;
+}
+
+li span {
+	grid-column: 2;
+}
+
+li span:first-of-type {
+	font-size: 1.5em;
+	padding-top: 1rem;
+}
+
+li span:last-of-type {
+	font-style: italic;
+	padding-bottom: 1rem;
+}
+
+.divider {
+	background: lavender;
+	min-height: 6rem;
+	padding: var(--pad) 0;
+	width: 100vw;
+	margin-left: 50%;
+	transform: translate3d(-50%, 0, 0);
+}
+
+.divider a {
+	text-decoration: none;
+	display: inline-block;
+	background: turquoise;
+	padding: 0.5rem 1rem;
+	border-radius: 0.5rem;
+	font-size: 1.2rem;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: clamp(1.5rem, 1vw + 2rem, 3.5rem);
+}
+
+h2 {
+	font-size: clamp(1.3rem, 1vw + 1.6rem, 3rem);
+	margin: 0;
+}
+
+.divider * + * {
+	margin: 1.5rem 0 0 0;
+}
+
+.divider p {
+	font-size: 1.4rem;
+}
+      </style>
+    </head>
+
+  <body>
+<div class="wrapper">
+	<h1>20 Best Films to learn English</h1>
+
+	<ol>
+		<li>
+			<img src="https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+            <strong>The Godfather (1972)</strong><br>
+            Director: Francis Ford Coppola<br>
+            Main Actors: Marlon Brando, Al Pacino, James Caan
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BNDE3ODcxYzMtY2YzZC00NmNlLWJiNDMtZDViZWM2MzIxZDYwXkEyXkFqcGdeQXVyNjAwNDUxODI@._V1_FMjpg_UX1000_.jpg">
+            <strong>The Shawshank Redemption (1994)</strong><br>
+            Director: Frank Darabont<br>
+            Main Actors: Tim Robbins, Morgan Freeman
+        </li>
+        <li>
+            <img src="https://m.media-amazon.com/images/M/MV5BNDE4OTMxMTctNmRhYy00NWE2LTg3YzItYTk3M2UwOTU5Njg4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+          <strong>Schindler's List (1993)</strong><br>
+            Director: Steven Spielberg<br>
+            Main Actors: Liam Neeson, Ralph Fiennes
+        </li>
+        <li>
+            <img src="https://m.media-amazon.com/images/M/MV5BNGNhMDIzZTUtNTBlZi00MTRlLWFjM2ItYzViMjE3YzI5MjljXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+          <strong>Pulp Fiction (1994)</strong><br>
+            Director: Quentin Tarantino<br>
+            Main Actors: John Travolta, Samuel L. Jackson, Uma Thurman
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_.jpg">
+            <strong>The Dark Knight (2008)</strong><br>
+            Director: Christopher Nolan<br>
+            Main Actors: Christian Bale, Heath Ledger, Aaron Eckhart
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b3/CasablancaPoster-Gold.jpg">
+            <strong>Casablanca (1942)</strong><br>
+            Director: Michael Curtiz<br>
+            Main Actors: Humphrey Bogart, Ingrid Bergman
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/en/2/26/One_Flew_Over_the_Cuckoo%27s_Nest_poster.jpg">
+            <strong>One Flew Over the Cuckoo's Nest (1975)</strong><br>
+            Director: Milos Forman<br>
+            Main Actors: Jack Nicholson, Louise Fletcher
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BMWMwMGQzZTItY2JlNC00OWZiLWIyMDctNDk2ZDQ2YjRjMWQ0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+            <strong>The Godfather: Part II (1974)</strong><br>
+            Director: Francis Ford Coppola<br>
+            Main Actors: Al Pacino, Robert De Niro
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/12_Angry_Men_%281957_film_poster%29.jpg">
+            <strong>12 Angry Men (1957)</strong><br>
+            Director: Sidney Lumet<br>
+            Main Actors: Henry Fonda, Lee J. Cobb
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BNzA5ZDNlZWMtM2NhNS00NDJjLTk4NDItYTRmY2EwMWZlMTY3XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+            <strong>The Lord of the Rings: The Return of the King (2003)</strong><br>
+            Director: Peter Jackson<br>
+            Main Actors: Elijah Wood, Ian McKellen, Viggo Mortensen
+        </li>
+  
+        <li>
+         <img src=" https://m.media-amazon.com/images/M/MV5BNWIwODRlZTUtY2U3ZS00Yzg1LWJhNzYtMmZiYmEyNmU1NjMzXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_.jpg">
+            <strong>Forrest Gump (1994)</strong><br>
+            Director: Robert Zemeckis<br>
+            Main Actors: Tom Hanks, Robin Wright
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BYmU1NDRjNDgtMzhiMi00NjZmLTg5NGItZDNiZjU5NTU4OTE0XkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+            <strong>Star Wars: Episode V - The Empire Strikes Back (1980)</strong><br>
+            Director: Irvin Kershner<br>
+            Main Actors: Mark Hamill, Harrison Ford, Carrie Fisher
+        </li>
+      </ol>
+  
+  <ol start="13">
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BNzQzOTk3OTAtNDQ0Zi00ZTVkLWI0MTEtMDllZjNkYzNjNTc4L2ltYWdlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+            <strong>The Matrix (1999)</strong><br>
+            Director: The Wachowskis<br>
+            Main Actors: Keanu Reeves, Laurence Fishburne
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BNjNhZTk0ZmEtNjJhMi00YzFlLWE1MmEtYzM1M2ZmMGMwMTU4XkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+            <strong>The Silence of the Lambs (1991)</strong><br>
+            Director: Jonathan Demme<br>
+            Main Actors: Jodie Foster, Anthony Hopkins
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BY2NkZjEzMDgtN2RjYy00YzM1LWI4ZmQtMjIwYjFjNmI3ZGEwXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg">
+            <strong>Goodfellas (1990)</strong><br>
+            Director: Martin Scorsese<br>
+            Main Actors: Robert De Niro, Ray Liotta, Joe Pesci
+        </li> 
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BZjhkMDM4MWItZTVjOC00ZDRhLThmYTAtM2I5NzBmNmNlMzI1XkEyXkFqcGdeQXVyNDYyMDk5MTU@._V1_.jpg">
+            <strong>Saving Private Ryan (1998)</strong><br>
+            Director: Steven Spielberg<br>
+            Main Actors: Tom Hanks, Matt Damon
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BMTUxMzQyNjA5MF5BMl5BanBnXkFtZTYwOTU2NTY3._V1_FMjpg_UX1000_.jpg">
+            <strong>The Green Mile (1999)</strong><br>
+            Director: Frank Darabont<br>
+            Main Actors: Tom Hanks, Michael Clarke Duncan
+        </li>
+        <li>
+          <img src="https://m.media-amazon.com/images/M/MV5BYTViNjMyNmUtNDFkNC00ZDRlLThmMDUtZDU2YWE4NGI2ZjVmXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg">
+            <strong>The Usual Suspects (1995)</strong><br>
+            Director: Bryan Singer<br>
+            Main Actors: Kevin Spacey, Gabriel Byrne, Chazz Palminteri
+        </li>
+    <li>
+        <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/33/Taxi_Driver_%281976_film_poster%29.jpg/220px-Taxi_Driver_%281976_film_poster%29.jpg">
+       <strong>Taxi driver (1976) </strong><br>
+            Director: Martin Scorsese<br>
+            Main Actors: Robert De NiroJodie FosterCybill Shepherd"
+    </li>
+    <li>
+        <img src="https://upload.wikimedia.org/wikipedia/en/f/fb/Gladiator_%282000_film_poster%29.png">
+         <strong>Gladiator (2000) </strong><br>
+    Director: Ridley Scott <br>
+    Stars: Russell Crowe, Joaquin Phoenix, Connie Nielsen, Oliver Reed
+    
+    </li>
+    </ol>
+  
+</div>
+    
+    </body>
+  </html>
