@@ -1,4 +1,4 @@
-.bg {       max-width: 70vw;  
+.bg {       max-width: 60vw;  
             margin:auto; 
             border-radius: 15px; 
             border: 2px solid black; 
@@ -64,4 +64,5 @@ table{
     .highlight {
       background-color: #77DD77;
     }
-  
+
+.samples {padding:2vw; background-color: white}
