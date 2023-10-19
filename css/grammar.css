@@ -65,4 +65,14 @@ table{
       background-color: #77DD77;
     }
 
-.samples {padding:2vw; background-color: white}
+.samples {
+            padding:2vw; 
+            border-radius: 15px; 
+            border: 1px solid black; 
+            border-radius: 15px; 
+            border: 2px solid white; 
+            background-color: oldlace;
+            font-family:merriweather; 
+            line-height:normal;
+            font-size:20px;
+            color:black;}
