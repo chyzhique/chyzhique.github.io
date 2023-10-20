@@ -81,3 +81,8 @@ table{
             color:black;}
 
 .wrd{border:1px solid crimson; border-radius:15px; background-color: yellow; padding:0.5vw}
+
+input {
+            border:0; 
+            border-bottom: 1px solid black; 
+            font-size:2vh}
