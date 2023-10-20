@@ -82,6 +82,8 @@ table{
 
 .wrd{border:1px solid crimson; border-radius:15px; background-color: yellow; padding:0.5vw}
 
+select {font-size: 2vh}
+
 input {
             border:0; 
             border-bottom: 1px solid black; 
