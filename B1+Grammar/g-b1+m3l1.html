@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>PRESENT PERFECT SIMPLE/PRESENT PERFECT PROGRESSIVE</h1>
+<h2>FOCUS ON USE</h2>
+    <div class="part">  
+<div class="Samples">
+<h3>A. Read the extracts from the text and choose the correct explanation a or b.</h3>
+
+  <div class="var" style="padding: 1vw">
+ <i>1. Brad Charandoff <b>has enjoyed</b> an adrenaline rush since he was a child.</i>
+    <br>
+        <input type="radio" id="1" name="word1" value="eat" >
+        <label for="1">a. Brad used to enjoy an adrenaline rush.</label> <br>
+        <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
+        <label for="2">b. Brad still enjoys an adrenaline rush.</label>
+</div>
+
+    <div class="var" style="padding: 1vw">
+ <i>2. That way, even if a criminal <b>has changed</b> his name, he can be identified.</i><br>
+        <input type="radio" id="3" name="word2" value="eat"  data-correct="true">
+        <label for="3">a. What is important is the result of the action.</label> <br>
+        <input type="radio" id="4" name="word2" value="am eating">
+        <label for="4">b. The time of the action is important.</label>
+</div>
+  
+    <div class="var" style="padding: 1vw">
+<i>3. ... but I <b>have been playing</b> Twinkle for so long ...</i><br>
+        <input type="radio" id="5" name="word3" value="eat" >
+        <label for="5">a. He stopped playing Twinkle long ago.</label> <br>
+        <input type="radio" id="6" name="word3" value="am eating" data-correct="true">
+        <label for="6">b. He is still playing Twinkle.</label>
+</div>
+
+<h3>B. Read about the uses of the Present Perfect Simple and Present Perfect Progressive and find examples in the text</h3>
+
+  <div class="samples" style="border:1px solid black; background-color: white">
+  <div style="background-color:silver; font-weight:700; padding: 1vw;">The Present Perfect Simple is used for:</div>
+    <div style="background-color: white; margin:1vw">
+1. an action that happened in the past, but <b>the exact time is not mentioned</b>.<br>
+2. an action that happened in the past and <b>finished</b>, but <b>the results are obvious in the present</b>.<br>
+3. an action that <b>started in the past and continues up to the present</b> (emphasis on the action).
+<div style="background-color:crimson;font-weight:700; padding: 1vw;">TIME MARKERS:</div> 
+      <div style="background-color: white; margin:1vw">
+just, yet, already, ever, never, before, always, how long, for, since, recently, lately, so far
+    </div></div></div>
+<h4>We use the Past Simple for actions that happened in the past and the exact time is mentioned.</h4>
+
+<div class="samples" style="border:1px solid black; background-color: white">
+  <div style="background-color:silver; font-weight:700; padding: 1vw;">
+    The Present Perfect Progressive is used for:</div>
+    <div style="background-color: white; margin:1vw">
+- an action that started in the past and continues up to the present (emphasis on the duration of the action).
+<div style="background-color:crimson;font-weight:700; padding: 1vw;">TIME MARKERS:</div>
+      <div style="background-color: white; margin:1vw">
+how long, for, since, all day/morning, etc.
+  </div></div>  </div>  </div>  </div>
+
+  <h2>FOCUS ON FORM </h2>
+  <div class="part">
+<h3>Look at the examples.</h3>
+
+<h4>Present Perfect Simple:</h4> subject + 
+    <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="border:0; border-bottom: 1px solid black; width: 5vw">/
+    <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="border:0; border-bottom: 1px solid black; width: 5vw"> + past participle
+    
+    
+<h4>Present Perfect Progressive:</h4> subject + 
+    <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="border:0; border-bottom: 1px solid black; width: 5vw">/
+    <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="border:0; border-bottom: 1px solid black; width: 5vw"> + been + 
+    <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="border:0; border-bottom: 1px solid black; width: 5vw"> + -ing
+ 
+  </body>
+ 
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value1');
+    setTdBackgroundColor('select2', 'td2', 'value3');
+    setTdBackgroundColor('select3', 'td3', 'value2');
+    setTdBackgroundColor('select4', 'td4', 'value4');
+      
+    setTdBackgroundColor('select5', 'td5', 'value3');
+    setTdBackgroundColor('select6', 'td6', 'value1');
+    setTdBackgroundColor('select7', 'td7', 'value2');
+    setTdBackgroundColor('select8', 'td8', 'value5');
+    setTdBackgroundColor('select9', 'td9', 'value4');
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+  <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = ['have', 'has', 'have', 'has', 'verb']; // Define correct words for each input
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.toLowerCase();
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>	

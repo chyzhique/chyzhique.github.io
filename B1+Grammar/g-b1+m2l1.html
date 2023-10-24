@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>PAST SIMPLE / PAST PROGRESSIVE</h1>
+
+<h2>FOCUS ON USE</h2>
+    <div class="part">  
+
+<h3>A. Read the text below and match the rules about the uses of the Past Simple with the verbs in red in the text</h3>
+
+<div class="samples">
+
+A few years ago, I <span style="color: violet">was working </span>
+for an international company in Zurich. One Monday morning after an exhausting weekend, my alarm didn't go off, 
+so I <span style="color: red">got</span>
+to work late. I <span style="color: red">rushed </span>
+into my office, <span style="color: red">sat </span>
+down at my desk and tried to look busy. Like any Monday
+morning, some of my colleagues <span style="color: violet">were working </span>
+while others <span style="color: violet">were discussing </span>
+their weekend. At that moment, our boss walked in, and to our surprise, he announced, 
+'I have arranged a Corporate Clients weekend in Dubai for all the staff. As Dubai is hot, we all imagined ourselves in swimmmg suits on a beach. But that is not what happened. While we <span style="color: violet">were wondering </span>
+about what clothes to take for the weekend, our boss <span style="color: red">said, </span>
+'Don't forget to bring some warm clothes for skiing!' Of course, we thought he was joking, but as it turned out, we stayed at the Ski Dubai resort and went skiing every day' The biggest surprise of the whole weekend came when we saw
+our boss doing some really fancy tricks on a snowboard'.
+At work, he was always very serious and never <span style="color: red">showed </span>
+that there was an adventurous side to him.
+<hr>
+<div style="background-color: silver"><b>Past simple is used for:</b></div><br>
+1. completed actions in the past<br>
+2. completed actions that happened one after the other in the past<br>
+3. past habits or repeated actions in the past (often used with adverbs of frequency) <br>
+4. an action in the past that interrupted a 'longer' action in progress
+</div>
+<h3>B. Read the text again and match the rules about the uses of the Past Progressive with the verbs in blue in the text.</h3>
+<div class="samples">
+<div style="background-color: silver"><b>Past Progressive is used for:</b></div><br>
+5. temporary past states or actions<br>
+6. an action in progress in the past that was interrupted by another action<br>
+7. simultaneous actions in progress in the past<br>
+      </div>
+      </div>
+<h2>FOCUS ON FORM</h2>
+  <div class="part">
+<h3>Look back at the text and answer the following questions.</h3>
+
+- Which verb is used to to form the negative and question form of the Past Simple?<br>
+- In which person do we use <i>was</i> and in which do we use <i>were</i>?<br>
+- In which of the two past tenses do some verbs have an irregular form?
+  
+</div>
+      </div>
+	  
+	      <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value2');
+    setTdBackgroundColor('select2', 'td2', 'value1');
+    setTdBackgroundColor('select3', 'td3', 'value4');
+    setTdBackgroundColor('select4', 'td4', 'value3');
+    
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = ['comments', 'information', 'experience']; // Define correct words for each input
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.toLowerCase();
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+      
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+    </script>
+	
+	
+    </body>
+    </html>

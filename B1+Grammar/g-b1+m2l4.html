@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>USED TO - WOULD - WAS/WERE GOING TO</h1>
+
+    <div class="part">  
+
+<h3>A. Read the extracts from the interview that you heard in the listening section and answer the questions that follow.</h3>
+<div class="samples">
+<i>
+He told us about the old days when he <b>used to</b> be all alone and <b>wouldn't</b> see another human being for days.
+<br><br>
+We <b>were going to</b> go sailing on one of the lakes, too. But, unfortunately, something went wrong and that was cancelled.
+</i><br><br>
+1. Which structure refers to actions somebody intended to do in the past (but probably didn't)?<br>
+2. Which structures refer to repeated actions or situations in the past?</blockquote>
+</div>
+  
+<h3>B. Rewrite the sentences below using the words in brackets.  (Use capital letters where necessary)</h3>
+<div class="samples">
+1. In the past, I smoked, but I stopped a few months ago. 
+  <span class="wrd">(used)</span><br>
+  - <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="border:0; border-bottom: 1px solid black">, but I stopped a few months ago. <hr>
+2. I planned to get up early this morning, but my alarm didn't go off. 
+  <span class="wrd">(going)</span><br>
+  - <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="border:0; border-bottom: 1px solid black"> this morning, but my alarm didn't go off.<hr>
+3. Emily would work out at the gym every day before she got married. 
+  <span class="wrd">(used)</span><br>
+  - <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="border:0; border-bottom: 1px solid black"> at the gym every day before she got married.<hr>
+4. My parents wanted to travel by plane, but all the flights were fully booked. 
+  <span class="wrd">(going)</span><br>
+  - <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="border:0; border-bottom: 1px solid black">, but all the flights were fully booked.<hr>
+5. Our Maths teacher always helped us whenever we couldn't solve a problem. 
+  <span class="wrd">(would)</span><br>
+  - <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="border:0; border-bottom: 1px solid black"> us whenever we couldn't solve a problem.
+
+  </body>
+      <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value2');
+    setTdBackgroundColor('select2', 'td2', 'value1');
+    setTdBackgroundColor('select3', 'td3', 'value4');
+    setTdBackgroundColor('select4', 'td4', 'value3');
+    
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = ["I used to smoke", "I was going to get up early", "Emily used to work out", "My parents were going to travel by plane", "Our Math teacher would always help"]; // Define correct words for each input
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+      
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+    </script>

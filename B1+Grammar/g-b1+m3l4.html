@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>SHOULD / OUGHT TO / HAD BETTER</h1>
+  
+    <div class="part">  
+
+<h3>A. Read the examples below and answer the questions that follow.</h3>
+
+<div class="Samples">
+
+<table>
+<tr><td>1. </td><td>
+<div class="wrd">
+You <b>ought to</b> call the police if he threatens you again. <br>
+  You <b>should</b> see a doctor if the pain continues.</div><hr>
+• Is there any difference in meaning between the two verbs in bold?<br>
+• What is the speaker doing in each sentence?</td></tr>
+<tr><td>2. </td><td>
+<div class="wrd">
+I think he<b>'d better</b> stay in bed for another day.<br>
+Alex <b>should</b> be home by 6:00 o'clock.</div><hr>
+• In which sentence does the verb mean is expected to?<br>
+• What does the verb in the other sentence mean?</td></tr>
+<tr><td>3. </td><td>
+<div class="wrd">
+I <b>should have handed</b> in my research paper yesterday.</div><hr>
+• Did the speaker hand in his research paper yesterday?<br>
+• How does the speaker feel about it?</td></tr>
+<tr><td>4. </td><td>
+<div class="wrd">
+'Mum, my stomach hurts!'<br>
+'You know, Rod, you <b>shouldn't have eaten</b> all that chocolate.'</div><hr>
+• Did Rod eat a lot of chocolate?<br>
+• Does his mother think he did the right thing?</td></tr></table>
+</div>
+      
+<h3> Complete the sentences with <u>should or shouldn't</u> and the correct form of the verbs in brackets.</h3>
+<div class="samples">
+1. You 
+      <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 40%;">
+      (try) to get at least 6-8 hours of sleep each night. <br><br>
+2. Karen didn't do well in her exams. She 
+      <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="width: 40%;">
+      (study) harder for them.<br><br>
+3. Jose 
+      <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="width: 40%;">
+      (lie) to his best friend, George. Now George can't trust him anymore.<br><br>
+4. You 
+      <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="width: 40%;">
+      (take) a nice long holiday. I'm sure it will relax you.<br><br>
+5. Michael 
+      <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="width: 40%;">
+      (play) football until a doctor examines his knee.
+</div>
+
+  </body>
+ 
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value1');
+    setTdBackgroundColor('select2', 'td2', 'value4');
+    setTdBackgroundColor('select3', 'td3', 'value5');
+    setTdBackgroundColor('select4', 'td4', 'value3');
+      
+    setTdBackgroundColor('select5', 'td5', 'value2');
+    setTdBackgroundColor('select6', 'td6', 'value6');
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+  <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"should try",
+"should have studied",
+"shouldn't have lied",
+"should take",
+"shouldn't play"];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>

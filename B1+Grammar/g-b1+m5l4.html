@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>QUESTION TAGS</h1>
+   
+    <div class="part">  
+
+<h3>A. Read the extracts from the monologues you heard in the listening section and choose the correct words to complete the rules about question tags.</h3>
+
+<div class="samples">
+
+  
+- You know what I mean, <b>don't you?</b><br>
+- That's proper culture, <b>isn't it?</b><br>
+- ...you dont have so much spare time, <b>do you?</b>
+</div>
+      <div style="background-color: white; padding: 2vw; line-height: 1.5; font-family: sans-serif">
+<div id="td1" >
+1. Question tags are short questions placed at the
+ <select id="select1">
+            <option value="">          </option>
+            <option value="value1">beginning</option>
+            <option value="value2">end</option>
+          </select>
+of a statement. We use them when we are not sure of something or when we ask for confirmation.
+       </div>  
+        <hr>
+        <div id="td2" >
+2. Question tags are formed with the 
+          <select id="select2">
+            <option value="">          </option>
+            <option value="value1">auxiliary</option>
+            <option value="value2">main</option>
+          </select>
+  verb and a personal pronoun.
+        </div>   
+        <hr>
+        <div id="td3" > 
+3. If the statement is positive, the question tag is
+          <select id="select3">
+            <option value="">          </option>
+            <option value="value1">positive</option>
+            <option value="value2">negative</option>
+          </select></div>
+    <br>
+          <div id="td4" >
+4. If the statement is negative, the question tag is
+          <select id="select4">
+            <option value="">          </option>
+            <option value="value1">positive</option>
+            <option value="value2">negative</option>
+          </select>
+      </div> </div> 
+      
+<h3>B. Write an appropriate question tag at the end of each statement.</h3>
+
+       <div style="background-color: white; padding: 2vw; line-height: 1.5; font-family: sans-serif">
+1. The film wasn't very good, 
+         <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 30%">?<br>
+2. It's too hot today, 
+         <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="width: 30%">?<br>
+3. You're the new teacher, 
+         <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="width: 30%">?<br>
+4. You didn't break her vase, 
+         <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="width: 30%">?<br>
+5. Alex is working in a bank now, 
+         <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="width: 30%">?<br>
+6. Mary made this cake, 
+         <input type="text" id="wordInput6" placeholder="" class="changeDiv" id="changeDiv6" style="width: 30%">?<br>
+7. You will remember to buy me a present on my birthday, 
+         <input type="text" id="wordInput7" placeholder="" class="changeDiv" id="changeDiv7" style="width: 30%">?<br>
+8. Let's watch a DVD tonight, 
+         <input type="text" id="wordInput8" placeholder="" class="changeDiv" id="changeDiv8" style="width: 30%">?<br>
+9. You go to the gym every day, 
+         <input type="text" id="wordInput9" placeholder="" class="changeDiv" id="changeDiv9" style="width: 30%">?<br>
+10. Remember to buy a newspaper, 
+         <input type="text" id="wordInput10" placeholder="" class="changeDiv" id="changeDiv10" style="width: 30%">?<br>
+  
+  
+  </body>
+ 
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value2');
+    setTdBackgroundColor('select2', 'td2', 'value1');
+    setTdBackgroundColor('select3', 'td3', 'value2');
+    setTdBackgroundColor('select4', 'td4', 'value1');
+    setTdBackgroundColor('select5', 'td5', 'value2');
+    setTdBackgroundColor('select6', 'td6', 'value1');
+      
+    setTdBackgroundColor('select7', 'td7', 'value1');
+    setTdBackgroundColor('select8', 'td8', 'value1');
+    setTdBackgroundColor('select9', 'td9', 'value2');
+      
+    setTdBackgroundColor('select10', 'td10', 'value1');
+    setTdBackgroundColor('select11', 'td11', 'value1');
+    setTdBackgroundColor('select12', 'td12', 'value2');
+    setTdBackgroundColor('select13', 'td13', 'value1');
+    setTdBackgroundColor('select14', 'td14', 'value1');
+    setTdBackgroundColor('select15', 'td15', 'value2');
+
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+  <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"was it",
+"isn't it",
+"aren't you",
+"did you",
+    "isn't he",
+    "didn't she",
+    "won't you",
+    "shall we",
+    "don't you",
+    "will you"];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>

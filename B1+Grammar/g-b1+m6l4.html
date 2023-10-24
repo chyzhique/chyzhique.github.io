@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
+      <style>
+    /* Remove border and set transparent background for textareas */
+    .changeDiv {
+      border: none;
+      border-bottom: 1px solid black; /* Add border only at the bottom */
+      background: transparent;
+      position: relative;
+      font-size: 2vh
+    }
+
+    .overlay-text {
+      position: absolute;
+      top: 0;
+      left: 5px;
+      pointer-events: none;
+      color: #666;
+      font-size: 14px;
+    }
+         textarea {
+      resize: none;
+      overflow: hidden;
+    }
+  </style>
+  </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>CLAUSES OF CONCESSION</h1>
+      
+      <div class="part">
+
+<h3>A. Look at the following extracts from the interview that you heard in the listening section and decide what each of them means. Choose a or b.</h3>
+
+        <div class="samples">
+          
+          1. <b>Although</b> the storm weakened over land, it regained hurricane status about one hour after entering the Gulf of Mexico.<br>
+<div class="var">
+        <input type="radio" id="1" name="word1" value="eat" >
+        <label for="1">a. The storm regained hurricane status because it weakened over land.</label><br>
+        <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
+        <label for="2">b. The storm weakened over land, but it regained hurricane status.</label>
+      </div>
+<hr>
+
+
+2. <b>In spite of</b> the evacuation, many people could not leave town.
+
+       <div class="var">
+        <input type="radio" id="3" name="word2" value="eat" data-correct="true" >
+        <label for="3">a. The town was evacuated; however, many people couldn't leave.</label><br>
+        <input type="radio" id="4" name="word2" value="am eating">
+        <label for="4">b. Many people could not leave as a result of the evacuation.</label>
+      </div>
+<hr>   
+3. <b>Despite</b> what we may think, every little bit helps.
+
+<div class="var">
+        <input type="radio" id="5" name="word3" value="eat" >
+        <label for="5">a. We think that every little bit helps and we're right.</label><br>
+        <input type="radio" id="5" name="word3" value="am eating" data-correct="true">
+        <label for="6">b. We don't think that every little bit helps but we're wrong.</label>
+      </div>
+          </div>
+
+<h3>B. Read the rules below and rewrite sentences 1-5 in two different ways using the words given. </h3>
+<h4>Use <u>although, even though, in spite of and despite</u> to introduce an idea which is in contrast with the idea which is expressed in the main clause.</h4>
+
+          <div class="note">
+<b>although / even though</b> + subject + verb <br><br>
+<b>in spite of / despite</b> + noun / the fact that.. / what...
+-ing form
+    </div>
+    <br>
+            <div class="samples">
+              <ol>
+<li>The birds were covered with oil from the spill, but the volunteers expect them to survive.<br>
+✏️ 
+  <textarea id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 70%"  rows="1" oninput="autoExpand(this)">Even though</textarea><br>
+✏️ 
+  <textarea id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="width: 70%"  rows="1" oninput="autoExpand(this)">In spite of</textarea><hr>
+<li>The tiger jumped out of its cage, but it was recaptured.<br>
+✏️ 
+  <textarea id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="width: 70%"  rows="1" oninput="autoExpand(this)">Although</textarea><br>
+✏️ 
+  <textarea id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="width: 80%"  rows="1" oninput="autoExpand(this)">Despite</textarea><hr>
+<li>The beach was badly littered, but finally the volunteers managed to clean it up.<br>
+✏️ 
+  <textarea id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="width: 70%"  rows="1" oninput="autoExpand(this)">Even though</textarea><br>
+✏️ 
+  <textarea id="wordInput6" placeholder="" class="changeDiv" id="changeDiv6" style="width: 70%"  rows="1" oninput="autoExpand(this)">In spite of</textarea><hr>
+<li>Whales are an endangered species, but people continue to hunt them.<br>
+✏️ 
+  <textarea id="wordInput7" placeholder="" class="changeDiv" id="changeDiv7" style="width: 70%"  rows="1" oninput="autoExpand(this)">Although</textarea><br>
+✏️  
+  <textarea id="wordInput8" placeholder="" class="changeDiv" id="changeDiv8" style="width: 70%"  rows="1" oninput="autoExpand(this)">In spite of</textarea><hr>
+<li>The residents are objecting to the noise pollution of the new airport, but the government is still going ahead with the project.<br>
+✏️ 
+  <textarea id="wordInput9" placeholder="" class="changeDiv" id="changeDiv9" style="width: 70%"  rows="1" oninput="autoExpand(this)">Although</textarea><br>
+✏️  
+  <textarea id="wordInput10" placeholder="" class="changeDiv" id="changeDiv10" style="width: 70%"  rows="1" oninput="autoExpand(this)">Despite</textarea><hr>
+  
+  </div>
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valued');
+    setTdBackgroundColor('select2', 'td2', 'valuef');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valuee');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+    setTdBackgroundColor('select6', 'td6', 'valuec');
+
+
+  </script>
+    
+    
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+ <script>
+    const textAreas = document.querySelectorAll('textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "Even though the birds were covered with oil from the spill, the volunteers expect them to survive",
+      "In spite of the fact that the birds were covered with oil from the spill, the volunteers expect them to survive",
+      
+      "Although the tiger jumped out of its cage, it was recaptured",
+      "Despite the fact that the tiger jumped out of its cage, it was recapture",
+      
+      "Even though the beach was badly littered, the volunteers managed to clean it up",
+      "In spite of the fact that the beach was badly littered, the volunteers managed to clean it up",
+      
+      "Although whales are an endangered species, people continue to hunt them",
+      "In spite of the fact that whales are an endangered species, people continue to hunt them",
+      
+      "Although the residents are objecting to the noise pollution of the new airport, the government is still going ahead with the project",
+      "Despite the fact that the residents are objecting to the noise pollution of the new airport, the government is still going ahead with the project",
+    ];
+
+    textAreas.forEach((textarea, index) => {
+      textarea.addEventListener('input', function () {
+        const enteredWord = textarea.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+        <script>
+    function autoExpand(textarea) {
+      // Set the textarea's height to scrollHeight to expand with the content
+      textarea.style.height = 'auto';
+      textarea.style.height = textarea.scrollHeight + 'px';
+    }
+  </script>
