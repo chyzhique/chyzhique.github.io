@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    
+     <style>
+    /* Remove border and set transparent background for textareas */
+    .changeDiv {
+      border: none;
+      border-bottom: 1px solid black; /* Add border only at the bottom */
+      background: transparent;
+      position: relative;
+      overflow: hidden; /* Hide overflowing content */
+      margin-top:2vh;
+    }
+
+  </style>
+    
+    </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>CLAUSES OF RESULT</h1>
+  
+      <div class="part">    
+        
+    
+<h3>A. Read the extract from the programme that you heard in the listening section and answer the questions that follow.</h3>
+
+        <div class="note">
+          <div class="samples">
+Over the years, Veggie House was so successful that I opened up two more restaurants...</div><br>
+• Who or what was successful?<br>
+• What was the result of this?
+</div>
+  
+<h3>B. Now, read the sentence below and answer the questions that follow.</h3>
+  
+  <div class="note">
+    <div class="samples">
+Over the years, Veggie House was such a successful restaurant that I opened up two more restaurants...</div><br>
+• Does the sentence above mean the same as the sentence in A?<br>
+• What is the difference between so and such?
+    </div>
+    
+<h3>C. Read the rules below and rewrite the sentences 1-6 using so or such.</h3>
+
+        <h4>To express result we use:</h4>
+<div class="note">
+  • so + adjective or adverb + (that)<br><br>
+  • such + (a/an) + (adjective) + noun + (that)</div>
+        <h4>NOTE  </h4>
+<div class="note">
+  • so + much/many<br><br>
+  • such + a lot of</div>
+<br>
+        
+        <div class="samples">
+        <div class="note">
+                    1. The soup was very tasty, and I decided to have some more.<br>
+          <textarea id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 90%" rows="1" placeholder=""></textarea>
+</div><br>
+                  <div class="note">
+                    2. Robert drives very carelessly and he may have an accident.<br>
+          <textarea id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 90%" rows="1" placeholder=""></textarea>
+</div><br>
+                  <div class="note">
+                    3. This exercise is too difficult for me to do.<br>
+          <textarea id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 90%" rows="1" placeholder=""></textarea>
+</div><br>
+                  <div class="note">
+                    4. Sam has lots of money and he can lend you some.<br>
+          <textarea id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 90%" rows="1" placeholder=""></textarea>
+</div><br>
+                  <div class="note">
+                    5. Evelyn's party was a success and everyone remembered it for years.<br>
+          <textarea id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 90%" rows="1" placeholder=""></textarea>
+</div><br>
+                  <div class="note">
+                    6. I can't help you carry the box because I feel very weak.<br>
+          <textarea id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 90%" rows="1" placeholder=""></textarea>
+        </div>
+
+ 
+      </div>
+          </div>
+
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'value3');
+    setTdBackgroundColor('select2', 'td2', 'value4');
+    setTdBackgroundColor('select3', 'td3', 'value2');
+    setTdBackgroundColor('select4', 'td4', 'value2');
+    setTdBackgroundColor('select5', 'td5', 'value1');
+      
+    setTdBackgroundColor('select6', 'td6', 'value2');
+    setTdBackgroundColor('select7', 'td7', 'value3');
+    setTdBackgroundColor('select8', 'td8', 'value1');
+      
+       setTdBackgroundColor('select9', 'td9', 'value5');
+       setTdBackgroundColor('select10', 'td10', 'value4');
+       setTdBackgroundColor('select11', 'td11', 'value6');
+       setTdBackgroundColor('select12', 'td12', 'value1');
+       setTdBackgroundColor('select13', 'td13', 'value3');
+       setTdBackgroundColor('select14', 'td14', 'value2');
+
+  </script>
+
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+    <script>
+  function autoExpand(textarea) {
+    // Set the textarea's height to scrollHeight to expand with the content
+    textarea.style.height = 'auto';
+    textarea.style.height = textarea.scrollHeight + 'px';
+  }
+
+  const textAreas = document.querySelectorAll('textarea');
+  const changeDivs = document.querySelectorAll('.changeDiv');
+  const correctWords = [
+    ["The soup was so tasty that I decided to have some more", "It was such a tasty soup that I decided to have some more"],
+    ["Robert drives so carelessly that he may have an accident", "Robert is such a careless driver that he may have an accident"],
+    ["This exercise is so difficult that I can't do it", "It's such a difficult exercise that I can't do it"],
+    ["Sam has so much money that he can lend you some", "Sam is such a rich person that he can lend you some", "Sam is so rich that he can lend you some"],
+    ["Evelyn's party was so successful that everyone remembered it for years", "Evelyn's party was such a success that everyone remembered it for years"],
+    ["I feel so weak that I can't help you carry the box"]
+  ];
+
+  textAreas.forEach((textarea, index) => {
+    textarea.addEventListener('input', function () {
+      const enteredWord = textarea.value;
+      if (correctWords[index].includes(enteredWord)) {
+        changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+      } else {
+        changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+      }
+    });
+  });
+</script>
