@@ -78,7 +78,8 @@ table{
             font-family:merriweather; 
             line-height:normal;
             font-size:20px;
-            color:black;}
+            color:black;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
 
 .wrd{border:1px solid crimson; border-radius:15px; background-color: yellow; padding:0.5vw}
 
