@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>PRESENT PERFECT PROGRESSIVE
+  </h1>
+    
+      <div class="part">    
+       
+<h3>
+Read the example and answer the questions.</h3> 
+        
+   
+ 
+  <br>
+        
+<div class="samples">  
+
+<div class="note">The Harlem Globetrotters <b>have been touring</b> the world since 1972.</div>
+  <br>
+• When did the Harlem Globetrotters start touring?<br>
+• Do they still tour?
+</div>
+      
+        <h3>Then complete the rules about the formation and use of the Present Perfect Progressive.
+</h3>  
+        
+  <h2>Present Perfect Progressives structure:</h2>
+<div class="samples"> 
+  <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 20%"> or has + 
+  <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="width: 20%"> + verb + 
+  <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="width: 20%"> 
+</div>
+    <h2>Use:</h2>
+<div class="samples"> The Present Perfect Progressives for actions or situations that started in the 
+        <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="width: 20%">and continue up to the 
+        <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="width: 20%">
+  </div>
+  </div>
+  <h1>PRESENT PERFECT PROGRESSIVE vs PRESENT PERFECT SIMPLE</h1>
+  
+        <div class="part">  
+          
+          
+<h3>Read the sentences below.</h3> 
+          <div class="note">
+• The Cirque du Soleil <b>has performed</b> here 3 times this week.<br><br>
+• The Cirque du Soleil <b>has been performing</b> here for the last 3 months.
+    
+         
+<h4> Which tenses are used? </h4> 
+<h4> Which sentence emphasises the result and which the duration of the action?    </h4> 
+            
+            </div>
+
+          </div> 
+      
+          </div>
+
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valuec');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valuec');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "have",
+      "been",
+      "ing", "past", "present"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

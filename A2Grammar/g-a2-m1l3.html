@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>PREPOSITIONS OF TIME</h1>
+  
+      <div class="part">    
+
+<h3>A. Read the dialogue and find the prepositions of time. </h3>
+
+<table style= "width:100%;">
+<colgroup> 
+<col style="background-color: yellow"> 
+</colgroup>
+<tr><td style=" padding: 10px">
+Ann: </td><td style=" padding: 10px">  Let's meet tomorrow at 6:00.</td></tr><tr><td style=" padding: 10px">
+Keith:</td><td style=" padding: 10px">  I'm afraid I can't. On Wednesdays I work from 10:30 till 6:30. </td></tr><tr><td style=" padding: 10px">
+Ann: </td><td style=" padding: 10px">  OK, then. Do you want to meet in the evening, at around 8:00? </td></tr><tr><td style=" padding: 10px">
+Keith: </td><td style=" padding: 10px"> Sure, and we can go to the new Italian restaurant. I went there two weeks ago and
+the food was delicious. </td></tr>
+  
+</table>
+
+<h3>Then complete the table below with on, in or at.</h3>
+
+<table style= " width:100%"> 
+<colgroup> 
+<col style="background-color: crimson"> 
+</colgroup> 
+<tr style="border: 1px solid black"><th id="td1">
+<select id="select1">
+            <option value="">   </option>
+            <option value="valuea">on</option>
+            <option value="valueb">in</option>
+            <option value="valuec">at</option>
+          </select></th><td> 
+- nine o'clock / the weekend<br>
+- noon / night / midday / midnight<br>
+- the age of five
+</td></tr>
+<tr><th id="td2">
+<select id="select2">
+            <option value="">   </option>
+            <option value="valuea">on</option>
+            <option value="valueb">in</option>
+            <option value="valuec">at</option>
+          </select></th><td style=" padding: 10px"> 
+- the morning / the afternoon / the evening<br>
+- August / autumn / 2008 / the 21st century
+</td></tr>
+<tr style="border: 1px solid black"><th id="td3">
+<select id="select3">
+            <option value="">   </option>
+            <option value="valuea">on</option>
+            <option value="valueb">in</option>
+            <option value="valuec">at</option>
+          </select></td><td style=" padding: 10px"> 
+- Tuesday / 4 July<br>
+- a winter's night / a cold morning<br>
+- a Sunday afternoon
+</td></tr></table>
+<hr>
+  
+<h4>Other prepositions of time:</h4>
+  
+<p class="note">
+  📌 during 
+  📌 from ... to / till/ until 
+  📌 before 
+  📌 after 
+  📌 ago
+  </p>
+  
+   
+    </div>      
+      </div>
+          </div>
+
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuea');
+    setTdBackgroundColor('select4', 'td4', 'valued');
+    setTdBackgroundColor('select5', 'td5', 'value1');
+
+
+  </script>
+
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "called",
+      "took",
+      "could",
+      "was/were",
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

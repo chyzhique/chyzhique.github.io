@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>CONDITIONAL SENTENCES<br> TYPE 1
+  </h1>
+    
+      <div class="part">    
+       
+<h3>
+Read the examples and complete the rule.
+</h3>     
+        
+<div class="samples">
+
+- <b>If</b> you <b>wake up</b> early, you<b>'ll be able to</b> swim with the sharks before breakfast! <br>
+- <b>If</b> there<b>'s</b> time, your guides <b>might take</b> you to see the famous Guadalupe fur seals.<br>
+- <b>If</b> you <b>want</b> to see more sights, <b>ask</b> your hotel to recommend a tour guide.<br><br>
+<div class="note">
+  
+  <table style=" border-collapse: collapse; border: 1px solid white;">
+<tr style="border: 1px solid black;">
+  <td style="border-bottom: 1px solid black;">If + 
+    <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 50%">  Simple 
+  </td><td style="border-bottom: 1px solid black;"> → 
+  </td><td style="border-bottom: 1px solid black;">
+  <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="width: 20%"> 
+  , can, must, may, 
+  <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="width: 20%"> 
+  etc. 
+  </td><td style="border-bottom: 1px solid black;">+ base form
+  </td></tr>
+<tr><td>If + 
+  <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="width: 50%"> 
+  Simple 
+  </td><td>→ 
+  </td><td colspan="2"><center>imperative</center>
+</td></tr>
+  </table>
+  </div>  </div>  </div>
+  
+<h1> if vs when </h1>
+  
+  <div class="part">    
+       
+<h3>
+Read the examples and answer the questions.
+</h3>     
+        
+<div class="samples">
+  
+<div class="note">
+• <b>Kate:</b> I'll go skiing <b>if</b> it snows.<br><br>
+  • <b>Ryan:</b> I'll go skiing <b>when</b> it snows.</div>
+  <br>
+1. Do the sentences refer to the present/future or past?<br>
+2. Is Kate sure that it will snow?<br>
+3. Who will definitely go skiing?<br>
+4. Which sentence expresses a condition?
+    
+    
+
+
+          </div> 
+      
+          </div>
+
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "Present",
+      "will",
+      "might","Present"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

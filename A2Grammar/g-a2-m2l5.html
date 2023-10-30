@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+<div class="bg">
+  
+  <h1>PRESENT PERFECT SIMPLE with for, since, yet, already
+  </h1>
+    
+      <div class="part">    
+       
+<h3>A. Read the dialogue. When did Fred move to the city?</h3>
+
+        <div class="samples">
+A: How long have you had this house, Fred?<br>
+B: I've had it <b>for two years, since I moved</b> to this city, actually
+
+          <blockquote class="note">
+<h4 style="margin:0">for + period of time</h4><br>
+e.g. two years, a week, six months, an hour, five minutes
+</blockquote>
+          
+          <blockquote class="note">
+<h4 style="margin:0">since + a point in time</h4><br>
+e.g. Sunday, yesterday, two o'clock, last May, last week
+</blockquote>
+</div>
+
+  
+
+<h3>B. Read the following dialogue and complete the rules with the words</h3>
+
+        <div class="samples">
+          
+A: Andy is a reporter from London and he travels abroad all the time. He <b>has already been to</b> the USA and China but he <b>hasn't been to</b> France yet.<br>
+
+B: Really? Where is he now?<br>
+A: He <b>has gone to</b> New York. He's coming back next Tuesday.
+</div>
+        <div class="note">
+<blockquote class="wrd">
+<b><center> been &emsp; gone &emsp; already &emsp; yet </center></b>
+  </blockquote>
+<br><br>
+Use 
+          <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 10%"> 
+          in affirmative sentences and put it between have/has and the past participle.<br><br>
+Use 
+          <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 10%"> 
+          in questions and negative sentences and put it at the end of the sentence.<br><hr><br>
+Use have/has 
+          <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 10%"> 
+          <i>to a place</i> when someone is still at that place.<br><br>
+Use have/has 
+          <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="width: 10%"> 
+          <i>to a place</i> when someone has returned from the place.
+        </div>
+          
+ 
+    </div>      
+      </div>
+          </div>
+
+    
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valued');
+    setTdBackgroundColor('select5', 'td5', 'value1');
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "already",
+      "yet",
+      "gone",
+      "been",
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>
