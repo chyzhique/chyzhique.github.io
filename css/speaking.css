@@ -47,7 +47,7 @@ body {
             text-align: center;
             justify-content: space-between;
             margin: 2vh;
-              max-width: 90vw;
+              max-width: 100%;
               gap: 10px;
 }
 
