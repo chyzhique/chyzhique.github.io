@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <style>
+      .speech-bubble {
+  background: white;
+  color: #333;
+  display: inline-block;
+	font-size: 1.5 rem;
+  line-height: 1.5;
+  margin-bottom: 1em;
+	padding: 0 1em;
+	position: relative;
+	text-align: center;
+	vertical-align: top;
+	width: 40%;
+        padding:1rem
+}
+      .speech-bubble:after {
+	border: 1em solid transparent;
+	border-top-color: white;
+	content: '';
+
+	position: absolute;
+		top: 100%;
+		left: 50%;
+	width: 0;
+	height: 0;
+}
+      .speech-bubble.rounded {
+	border-radius: .4em;
+}
+      .jui {display:inline-block; width: 50%; font-family:cursive; background-color: white; border-radius: 15px; padding: 1vw; margin-bottom: 1rem}
+      </style>
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>Reported Speech (Statements) <br> Special Introductory Verbs
+  </h1>
+    
+    <div class="part">
+
+<h3>
+A. Read the following extracts from the dialogue and complete the speech
+bubbles with the speakers' exact words.
+</h3>
+
+      <div class="samples">
+<ol>
+<li style="border-bottom: 1px solid silver; margin-bottom: 1rem">
+<div class="jui">
+... he said he would pick me up in five minutes.</div>
+<div class="speech-bubble rounded">I 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 15%"> 
+  pick 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 15%"> 
+  up in five  minutes. 
+</li>
+<li style="border-bottom: 1px solid silver; margin-bottom: 1rem">
+<div class="jui">
+He said that he had arrived just minutes after I had called him the first time, but I had been nowhere in sight. </div>
+<div class="speech-bubble rounded">
+I arrived just minutes after 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 15%">
+  called 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 15%">
+  the first time, but 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 15%">
+  were nowhere in sight.</div>
+  </li>
+<li style="border-bottom: 1px solid silver; margin-bottom: 1rem">
+<div class="jui">
+... they kept telling me that I was going to be all right.</div>
+<div class="speech-bubble rounded">
+
+<input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 20%"> going to be all right.
+  </li>
+<li style="border-bottom: 1px solid silver; margin-bottom: 1rem">
+<div class="jui">
+... the doctor who examined me said my knee seemed perfectly fine and I didn't need an operation after all! </div>
+<div class="speech-bubble rounded">
+
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 15%">
+  knee 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 15%">
+  perfectly fine.<br>
+You
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 15%">
+  need an operation after all.
+</li>
+  </ol>
+        
+        </div>
+      
+<h3>B. Study the examples above and circle the correct words to complete the rules below.
+</h3>
+        
+      <div class="note">
+📌 We use Reported Speech when we report what someone said without using their exact words. <br>
+📌 We usually use the verbs <b>'say'</b> to introduce reported statements. <br>
+📌 We use <b>'tell'</b> when there is an indirect object (e.g. me, him, etc), but we use <b>'say'</b> when there is no indirect object.
+<br><br>
+📌 When we change from Direct to Reported Speech:<br>
+- Pronouns and Possessive adjectives change according to the meaning of the sentence.<br>
+- Tenses and modal verbs change as in the Grammar Book.
+       
+        </div>
+   
+   </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuec');
+    setTdBackgroundColor('select3', 'td3', 'valuea');
+      
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuef');
+      
+    setTdBackgroundColor('select6', 'td6', 'valueb');
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+
+    setTdBackgroundColor('select8', 'td8', 'valuec');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "will",
+      "you",
+      
+      "you",
+      "me",
+      "you",
+      
+      "You're",
+      "Your",
+      "seems",
+      "don't"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

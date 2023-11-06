@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>Future Will <BR>- Future Progressive -<BR> Future Perfect
+  </h1>
+    
+    <div class="part">
+     
+<h2>FUTURE TENSES</h2>
+        <h3>
+A. Read the dialogue below and match the phrases in bold with their functions a-c.
+</h3>
+
+      <div class="samples">
+<table>
+<tr><td>
+<b>A:</b>&emsp;  Next July, Phil and I <span id="td1"><b>are going to volunteer</b>
+          <select id="select1">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+          </select> </span>
+    with the National Science Foundation and help scientists save the Amazon rainforest. Would you like to come with us?<br>
+<b>B:</b>&emsp;   I'm not sure. I have no plans for July, but is it so important?<br>
+<b>A:</b>&emsp;   Of course! Scientists say that in a few years only half of the rainforests 
+  <span id="td2">
+    <b>will still exist</b>
+  
+          <select id="select2">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+          </select> </span>
+    . <br>
+<b>B:</b>&emsp;   In that case, 
+  <span id="td3">
+    <b>I'll come</b>
+  
+          <select id="select3">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+          </select> </span>
+    with you.
+</td><td style=" padding: 10px"> 
+a. a future prediction<br><br>
+b. something that someone has just decided to do<br><br>
+c. something that someone has already planned to do
+</td></tr></table>
+</div>
+      
+<h3>B. Look at the extracts from the text and answer the questions that follow.</h3>
+
+      <div class="samples">
+        
+1. <i>However, by 2020, logging <b>will have reduced</b> the size of rainforests by 60%.</i><br><br>
+• When will that happen?
+        <span class="var">
+        <input type="radio" id="1" name="word1" value="eat" data-correct="true" >
+        <label for="1">a. before 2020</label> &emsp; &emsp;
+        <input type="radio" id="2" name="word1" value="am eating">
+        <label for="2">b. after 2020</label><br>
+      </span>
+
+        <hr><br>
+        
+2. <i>During this 15-day adventure, you <b>will be helping</b> families in Bhaleswa, near New Delhi ...</i><br><br>
+• What is emphasised? <br>
+        <span class="var">
+        <input type="radio" id="3" name="word2" value="eat" >
+        <label for="3">a. a point of time in the future</label> &emsp; &emsp;
+        <input type="radio" id="4" name="word2" value="am eating" data-correct="true">
+        <label for="4">b. the duration of a future action.</label><br>
+      </span>
+
+</div>
+  
+<h3>C. Decide which of the examples from A and B above match the rules below.</h3>
+  
+<div class="note">
+<h4>• The Future will (will + base form)</h4> 🔴 is used for predictions.<br>
+<h4>• The Future will (will + base form)</h4> 🔴 is used for spotaneous decisions.<br>
+<h4>• The Future going to (am/is/are + going to + base form)</h4> 🔴 is used for people's intentions or plans that have already been made.<br>
+<h4>• The Future Progressive (will + be + -ing form)</h4> 🔴 is used to emphasise the duration of a future action.<br>
+<h4>• The Future Perfect (will + have+ past participle)</h4> 🔴 is used for actions that will be completed before a specific time or another action in the future.
+  </div>
+      <br>
+<div class="samples">
+<h2>NOTE</h2>
+• <b>The Present Progressive</b> is used when referring to people's plans and arrangements.<br>
+• When referring to the future, use <b>will</b> in the main clause, but use <b>the Present Simple</b> in the time clause (i.e. after when, as soon as, until, till, before, after and by the time), <br><br><i>
+e.g. You <b>will help to train</b> young and interested high school students <b>while they prepare</b> themselves for the green jobs of the future.</i></blockquote>
+       
+ </div>
+   </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "isn't",
+      "is",
+      
+      "Past", "Past Perfect", "should"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

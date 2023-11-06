@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>PRESENT PERFECT SIMPLE - PRESENT PERFECT PROGRESSIVE
+  </h1>
+    
+    <div class="part">
+      
+<h3>A. Look at the extracts from the texts and answer the questions that follow.
+      </h3>
+
+      <div class="samples"> 
+<div class="note">
+
+<b>1. I've met lots of interesting people ...</b> (Text B)<br>
+🔴  Does James say exactly when he met those people?<br>
+🔴  Which tense is used?<br><br>
+<b>2. Since I joined the group, I've taken part in three different plays. </b>(Text D)<br>
+🔴  Is Jenny still taking part in plays?<br>
+🔴  Which tense is used?<br><br>
+<b>3. I've been windsurfing for ages ... </b>(Text B)<br>
+🔴  Has James stopped windsurfing?<br>
+🔴  Which tense is used?
+  </div>
+         <br>
+🔴 Look at the extracts 2 and 3 again. Which of the two tenses emphasises <b>the result of the action</b> and which emphasises <b>the duration</b>?</h3>
+      
+         </div>
+      
+<h3>C. Complete the rules about the uses of the Present Perfect
+Simple and Present Perfect Progressive by choosing the correct words.</h3>
+  
+  <div class="note">
+• Use the 
+    <span class="var">
+        <input type="radio" id="1" name="word1" value="eat"  data-correct="true">
+        <label for="1">Present Perfect Simple</label>
+        <input type="radio" id="2" name="word1" value="am eating">
+        <label for="2">Past Simple</label>
+      </span>
+for an action which happened in the past, but the exact time is not mentioned.<br><br>
+• Use the 
+    <span class="var">
+        <input type="radio" id="3" name="word2" value="eat" data-correct="true" >
+        <label for="3">Present Perfect Simple</label>
+        <input type="radio" id="4" name="word2" value="am eating">
+        <label for="4">Present Perfect Progressive</label>
+      </span>
+for an action or state which started in the past and continues up to the present (emphasis on the action).<br><br>
+• Use the 
+    <span class="var">
+        <input type="radio" id="5" name="word3" value="eat" >
+        <label for="5">Present Perfect Simple</label>
+        <input type="radio" id="6" name="word3" value="am eating" data-correct="true">
+        <label for="6">Present Perfect Progressive</label>
+      </span>
+for an action or state which started in the past and continues up to the present (emphasis on the duration).<br><br>
+• Use 
+    <span class="var">
+        <input type="radio" id="7" name="word4" value="eat"  data-correct="true">
+        <label for="7">for</label>
+        <input type="radio" id="8" name="word4" value="am eating">
+        <label for="8">since</label>
+      </span>
++ a period of time and 
+      <span class="var">
+        <input type="radio" id="9" name="word5" value="eat" >
+        <label for="9">for</label>
+        <input type="radio" id="10" name="word5" value="am eating" data-correct="true">
+        <label for="10">since</label>
+      </span>
++ a specific point in time.
+  </div>
+  <h2>
+NOTE: We use the Past Simple for actions that happened in the past and the exact time is mentioned.</h2>
+     
+   </div> </div>  </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "isn't",
+      "is",
+      
+      "Past", "Past Perfect", "should"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

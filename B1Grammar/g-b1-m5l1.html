@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>Past Perfect Simple - Past Perfect Progressive
+  </h1>
+    
+    <div class="part">
+     
+
+<h3>
+A. Look at the extracts from the text and answer the questions that follow
+</h3>
+
+      <div class="samples">
+
+        <ol>
+<li><i>When he <b>looked back</b> again, the mirror <b>had closed</b>...</i><br><br>
+- Which action happened first?<br>
+- Which tenses are used?</li>
+          <br><br>
+<li><i>It <b>seemed</b> that the two women <b>had been talkin</b> to each other for quite some time.</i><br><br>
+- How long had the two women been talking?<br>
+- Which tense is used?</li>
+          </div>
+        
+        
+        <h2>
+Read about Past Perfect and Past Perfect Progressive</h2>
+        <div class="note">
+<h4>The Past Perfect Simpe (had + past participle)</h4><br>
+🔴 is used for an action which was completed before a specific time or another action in the past<br><br>
+<h4>The Past Perfect Progressive (had + been + -ing form)</h4><br>
+🔴 is used for an action which had been going on for some time before a specific time or another action in the past
+        </div>
+   
+   </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuec');
+    setTdBackgroundColor('select3', 'td3', 'valuea');
+      
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuef');
+      
+    setTdBackgroundColor('select6', 'td6', 'valueb');
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+
+    setTdBackgroundColor('select8', 'td8', 'valuec');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "isn't",
+      "is",
+      
+      "Past", "Past Perfect", "should"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

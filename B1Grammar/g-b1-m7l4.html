@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+   </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>Modal verbs + have + past participle
+  </h1>
+  
+    <div class="part">
+
+<h3>
+A. Look at the extracts and decide what they mean. Choose a or b.
+</h3>
+
+      <div class="samples">
+
+        <ol>
+          
+<li>The manager <b>must have noticed</b> my confusion ...
+            <div class="var" style="padding:1rem">
+        <input type="radio" id="1" name="word1" value="eat" >
+        <label for="1">a. The manager had to notice my confusion.</label><br>
+        <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
+        <label for="2">b. I'm sure the manager noticed my confusion.</label>
+      </div></li><hr>
+
+<li>We really <b>should have told</b> the waiter to give us takeaways instead!<br>
+  <div class="var" style="padding:1rem">
+        <input type="radio" id="3" name="word2" value="eat" data-correct="true">
+        <label for="3">a. We didn't tell the waiter to give us takeaways.</label><br>
+        <input type="radio" id="4" name="word2" value="am eating">
+        <label for="4">b. We had to tell the waiter to give us takeaways.</label>
+      </div></li><hr>
+
+<li>I <b>shouldn't have ordered</b> the extra-spicy curry - it was a little too hot for me! <br>
+  <div class="var" style="padding:1rem">
+        <input type="radio" id="5" name="word3" value="eat" >
+        <label for="5">a. I was not allowed to order the extra-spicy curry.</label><br>
+        <input type="radio" id="6" name="word3" value="am eating" data-correct="true">
+        <label for="6">b. I ordered the extra-spicy curry and that was a mistake.</label>
+      </div></li><hr>
+
+<li>Without that wonderful webcam, I <b>could have missed</b> my plane!<br>
+  <div class="var" style="padding:1rem">
+        <input type="radio" id="7" name="word4" value="eat" >
+        <label for="7">a. I was able to miss my plane.</label><br>
+        <input type="radio" id="8" name="word4" value="am eating" data-correct="true">
+        <label for="8">b. There was a possibility I would miss my plane but I didn't.</label>
+      </div></li>
+</div>
+
+<h3>B. Do the extracts above refer to the present or the past? Which verb form is used after the modal verbs?</h3>
+
+  
+<h3>C. Look at the extracts again and complete the rules below with the missing modal verbs must, could and should.</h3>
+  
+        <div class="note">
+<h4 style="margin:0">Use + 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 15%">+ have + past participle</h4>
+<br><i>🔴 to criticise or express regret about something that didn't happen in the past</i><br><br>
+<h4 style="margin:0">Use shouldn't + have + past participle</h4>
+<br><i>🔴 to criticise or express regret about something that happen in the past</i><br><br>
+<h4 style="margin:0">Use 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 15%">+ have + past participle</h4>
+<br><i>🔴 to express certainty that something happened in the past</i><br><br>
+<h4 style="margin:0">Use can't/couldn't + have + past participle</h4>
+<br><i>🔴 to express certainty that something didn't happen in the past</i><br><br>
+<h4 style="margin:0">Use may/might/
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 15%">
+          + have + past participle</h4>
+<br><i>🔴 to express possibility in the past</i><br><br>
+</div>
+      
+        </div>
+   
+   </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuec');
+    setTdBackgroundColor('select7', 'td7', 'valued');
+    setTdBackgroundColor('select8', 'td8', 'valuea');
+    setTdBackgroundColor('select9', 'td9', 'valueb');
+      
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "should",
+      "must",
+      "could"
+
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

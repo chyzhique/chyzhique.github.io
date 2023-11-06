@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>EXPRESSING POSSIBILITY<br> (MAY - MIGHT - COULD) <br>-<br> MAKING DEDUCTIONS<br> (MUST - CAN'T)
+  </h1>
+    
+    <div class="part">
+      
+<h3>A. Look at the extracts from the text and decide what all three verbs in bold express.
+Choose a, b or c.
+      </h3>
+
+    <div class="samples">
+📌 Here is some advice you <b>could</b> take into consideration the next time you have to go for a job interview. <br><br>
+📌 Videotaping yourself <b>might</b> help you as well.<br><br>
+📌 If you do, the interviewer <b>may</b> think that you only care about the benefits...<hr>
+      <div class="var">
+        <input type="radio" id="1" name="word1" value="eat" >
+        <label for="1">a. something that will certainly happen</label><br>
+        <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
+        <label for="2">b. something that will possibly happen</label><br>
+        <input type="radio" id="3" name="word1" value="am eatng">
+        <label for="3">c. something that is allowed to happen</label>
+      </div>
+
+      </div>
+      
+<h3>B. What do the sentences mean?</h3>
+
+      <div class="samples">
+<i>She <b>must</b> be interested in the money only.</i><br><br>
+        <div class="var">
+        <input type="radio" id="4" name="word2" value="eat" >
+        <label for="4">a. She has to be interested. in the money only.</label><br>
+        <input type="radio" id="5" name="word2" value="am eating" data-correct="true">
+        <label for="5">b. I believe she is interested in the money only.</label>
+          </div>
+<hr>
+<i>She <b>can't</b> possibly care about the job itself</i><br><br>
+        <div class="var">
+        <input type="radio" id="6" name="word3" value="am eatng" data-correct="true">
+        <label for="6">a. I'm sure she doesn't care about the job itself.</label><br>
+        <input type="radio" id="7" name="word3" value="am eating" >
+        <label for="7">b. She isn't able to care about the job itself.</label><br>
+          </div>
+<br>
+
+        
+        </div>
+
+<h3>C. Complete the table with may/ might/could, can't and must.</h3>
+      
+<div class="note">
+<h4 id="td1"> 
+          <select id="select1">
+            <option value="">?</option>
+            <option value="valuea">may/ might/could</option>
+            <option value="valueb">can't</option>
+            <option value="valuec">must</option>
+          </select> 
+    + base form</h4>
+🔴 something will possibly happen.
+<h4 id="td2">
+  <select id="select2">
+            <option value="">?</option>
+            <option value="valuea">may/ might/could</option>
+            <option value="valueb">can't</option>
+            <option value="valuec">must</option>
+          </select> 
+  + base form</h4>
+🔴 we are almost sure that something is true
+<h4 id="td3">
+  <select id="select3">
+            <option value="">?</option>
+            <option value="valuea">may/ might/could</option>
+            <option value="valueb">can't</option>
+            <option value="valuec">must</option>
+          </select> 
+  + base form</h4>
+🔴 we believe that something is impossible
+      
+ </div>
+   </div> </div>
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valuec');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "isn't",
+      "is",
+      
+      "Past", "Past Perfect", "should"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>

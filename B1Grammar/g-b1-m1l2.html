@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css"> 
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    </head>
+  <body>
+
+
+<div class="bg">
+  
+  <h1>QUESTIONS AND <br>QUESTION WORDS</h1>
+    
+    <div class="part">
+      
+<h3>A. Match the questions 1-4 with the answers a-d.</h3>
+
+      <div class="samples"> 
+
+        <table>
+          
+<tr><td id="td1">1. Who lives at 80 Abbey Road?
+  <select id="select1"  style="float:right">
+            <option value="">   </option>
+            <option value="valuea">a.</option>
+            <option value="valueb">b.</option>
+            <option value="valuec">c.</option>
+            <option value="valued">d.</option>
+          </select>
+          
+  </td><td rowspan="4">
+a. Chelsea's friend does.<br><br>
+b. The zebra.<br><br>
+c. Pedestrian crossing.<br><br>
+d. An old friend.</td></tr>
+          
+<tr><td  id="td2">2. Who does Chelsea want to visit?
+ <select id="select2"  style="float:right">
+            <option value="">   </option>
+            <option value="valuea">a.</option>
+            <option value="valueb">b.</option>
+            <option value="valuec">c.</option>
+            <option value="valued">d.</option>
+          </select>
+            
+          </td></tr>
+<tr><td  id="td3">3. Which animal looks like a horse and has black stripes?
+  <select id="select3"  style="float:right">
+            <option value="">   </option>
+            <option value="valuea">a.</option>
+            <option value="valueb">b.</option>
+            <option value="valuec">c.</option>
+            <option value="valued">d.</option>
+          </select>
+            
+          </td></tr>
+<tr><td  id="td4">4. What does zebra crossing mean?
+  <select id="select4"  style="float:right">
+            <option value="">   </option>
+            <option value="valuea">a.</option>
+            <option value="valueb">b.</option>
+            <option value="valuec">c.</option>
+            <option value="valued">d.</option>
+          </select>
+            
+          </td></tr></table>
+  </div>
+  </div>
+  
+  <h1>INDIRECT QUESTIONS 
+  </h1>
+    
+      <div class="part">    
+       
+<h3>
+A. Look at the questions 1-4. What's the difference?</h3> 
+   
+   <div class="samples"> 
+
+Where <b>is</b> <u>Abbey Road</u>? ➔ Could you tell me where <u>Abbey Road</u> <b>is</b>? <br><br>
+What <b>does</b> <u>this</u> <b>mean</b>? ➔ Can you tell me what <u>this </u><b>means</b>?<br><br>
+Where <b>did</b> <u>Tom</u> <b>go</b>? ➔ Do you know where <u>Tom</u> <b>went</b>?<br><br>
+
+</div>
+        
+<h3>B. Look at the questions 1-4 again and write the correct words to complete the rules below.</h3>
+		
+        <div class="note">
+• When we use the question words <b>who, what, which, how much and
+how many</b> to ask about the <u>subject</u> of the verb, the verb 
+          <input type="text" id="wordInput1" placeholder="is or isn't?" class="changeDiv" id="changeDiv1" style="width: 20%"> 
+          in the question form.
+</div>
+             <br>              
+                               
+        <div class="note">
+            <label for="q2">• With other question words (when, where, why, etc.), and when we use the question words like <b>what, which, how much and how many</b> to ask about the <u>object</u> of the verb, the verb 
+              <input type="text" id="wordInput2" placeholder="is or isn't?" class="changeDiv" id="changeDiv2" style="width: 20%">
+              in the question form.
+</div>
+          
+</body>
+</html>
+  
+ 
+  </body>
+ 
+              
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valueb');
+    setTdBackgroundColor('select4', 'td4', 'valuec');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valueb');
+
+
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "isn't",
+      "is",
+      
+      "Past", "Past Perfect", "should"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  <script>
+    function doPost(e) {
+  var data = JSON.parse(e.postData.contents);
+  var sheet = SpreadsheetApp.openById("YOUR_SPREADSHEET_ID").getActiveSheet();
+  
+  // Append data to the spreadsheet
+  sheet.appendRow([data.username, data.results]);
+
+  // Return a response
+  return ContentService.createTextOutput("Data saved successfully.");
+}
+  </script>
