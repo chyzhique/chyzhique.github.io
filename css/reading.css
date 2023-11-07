@@ -5,6 +5,7 @@
             grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             grid-gap: 10px; /* Spacing between grid items */
             margin: 10vw;
+	    margin-top: 0;
             display: grid;
             grid-template-columns: 40% 60%;
             grid-gap: 10px; 
