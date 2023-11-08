@@ -163,3 +163,9 @@
         display: none;
         float: right;
   }
+.article1 {
+	font-size:1.5rem; 
+	font-family: merryweather; 
+	padding:2rem; 
+	text-align: justify; 
+	line-height: 1.2;}
