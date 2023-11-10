@@ -181,3 +181,9 @@
        border-radius: 5vw; 
        background-color: #CDFAD5;
       font-size: 1rem}
+
+.options {
+	background-color: #FFCF96; 
+	border-radius:15px; 
+	padding: 0.5rem
+}
