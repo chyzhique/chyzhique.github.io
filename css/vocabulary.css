@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Indie+Flower&family=Merriweather:wght@300&display=swap');
+
 body {
             margin: 0;
             padding: 0;
@@ -55,4 +57,12 @@ body {
       }
       .highlight {
         background-color: #CDFAD5;
+      }
+
+      .bunch{
+        padding:1rem; 
+        background-color: #FFF8C9; 
+        font-size:1.5rem;
+        font-family: 'Indie Flower', cursive; 
+        text-align:center"
       }
