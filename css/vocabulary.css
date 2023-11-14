@@ -61,8 +61,21 @@ body {
 
       .bunch{
         padding:1rem; 
-        background-color: #FFF8C9; 
+        background-color: #FFF8C9;                   
         font-size:1.5rem;
         font-family: 'Indie Flower', cursive; 
         text-align:center"
+      }
+
+       input{
+        border:0;
+        border-bottom:1px solid black;
+        font-size: 1.3rem
+      }
+      .hint{
+        border: 5px solid red; 
+        padding: 1rem;
+        background-color: #ECEE81; 
+        font-size:1.5rem;
+        text-align: justify
       }
