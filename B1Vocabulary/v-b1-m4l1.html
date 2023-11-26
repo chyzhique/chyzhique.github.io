@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:300px;
+        height: 300px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      </style>
+   </head>
+    
+  <body> 
+   
+    <div class="bg">
+     
+      <div class="hd">Vocabulary</div>
+     <div class="excercise"> 
+<h1>LEXICAL SET (GEOGRAPHICAL FEATURES)</h1><h2>
+Look at the group of words below. <BR>
+      How many other words describing geographical features do you know?</h2>
+
+      <table>
+        <tr><td>
+<h3>Pond </h3><img src="https://globe-net.com/wp-content/uploads/2022/05/goulet-isabelle-t4Rp6r649CE-unsplash-scaled.jpg" ></td><td> 
+<h3>Ocean</h3> <img src="https://images.nationalgeographic.org/image/upload/t_edhub_resource_key_image/v1652341068/EducationHub/photos/ocean-waves.jpg" </td></tr><tr><td> 
+<h3>Desert </h3><img src="https://th-thumbnailer.cdn-si-edu.com/NsDNvU4moVeKqao5XfJgB8Ez8lg=/1072x720/filters:no_upscale()/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/f2/94/f294516b-db3d-4f7b-9a60-ca3cd5f3d9b2/fbby1h_1.jpg" </td><td> 
+<h3>Oasis </h3><img src="https://www.thoughtco.com/thmb/g4Mipo9grcj-8rjOLd7keVedYDo=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/oasis-with-palm-trees-in-the-middle-of-desert-157192238-bc7670d8152441aca329a8b94410ed2a.jpg"
+        </td></tr><tr><td>
+<h3>Canyon </h3><img src="https://www.americanrivers.org/wp-content/uploads/2022/12/AmyMartin_GC_from_above.jpg"</td><td> 
+<h3>Polar ice cap </h3><img src="https://idsb.tmgrup.com.tr/ly/uploads/images/2020/03/12/24886.jpg">
+    </td></tr></table>
+    </div>
+   
+</body>
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+  
+    setTdBackgroundColor('select5', 'td5', 'valueh');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valuei');
+    setTdBackgroundColor('select8', 'td8', 'valuej');
+  
+    setTdBackgroundColor('select9', 'td9', 'valueb');
+    setTdBackgroundColor('select10', 'td10', 'valuek');
+    setTdBackgroundColor('select11', 'td11', 'valuel');
+    setTdBackgroundColor('select12', 'td12', 'valuef');
+
+
+  </script>
+    <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "makes mistakes",	"did well", 	"make a decision",	"do", "a favour",	"did", "best",	"make", "noise",	"made an excuse",
+      "advertisement",	"developments",	"discussion",	"education",	"organisations",	"arrangements",	"invitation",	"directions"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>

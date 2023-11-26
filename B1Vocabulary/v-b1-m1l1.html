@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+   </head>
+    
+  <body> 
+   
+    <div class="bg">
+     
+      <div class="hd">Vocabulary</div>
+      
+<h1>WORDS EASILY CONFUSED </h1>
+      <h2>
+Choose the word that best completes each sentence.</h2>
+      <div class="excercise">
+        <ol>
+<li >When I go to а restaurant, I always like to 
+  <span class="var">
+        <input  type="radio" id="1" name="word1" value="a">
+        <label for="1">try on</label> 
+        <input type="radio" id="2" name="word1" value="b"  data-correct="true">
+        <label for="2">try out</label></input></span>
+        something different on the menu.</li>
+      
+<li>Susan asked the shop assistant if she could 
+  <span class="var">
+        <input  type="radio" id="3" name="word2" value="a"  data-correct="true">
+        <label for="3">try on</label> 
+        <input type="radio" id="4" name="word2" value="b">
+        <label for="4">try out</label></input></span>
+    
+    the bluе sandals.</li>
+<li>The Spring Festival will 
+  <span class="var">
+        <input  type="radio" id="5" name="word3" value="a">
+        <label for="5">take part</label> 
+        <input type="radio" id="6" name="word3" value="b"  data-correct="true">
+        <label for="6">take place</label></input></span>
+
+ in Braxton Park. </li>
+<li>Would you ever 
+  <span class="var">
+        <input  type="radio" id="7" name="word4" value="a"  data-correct="true">
+        <label for="7">take part</label> 
+        <input type="radio" id="8" name="word4" value="b">
+        <label for="8">take place</label></input></span>
+
+in а reality show?</li>
+<li>The organisers 
+  <span class="var">
+        <input  type="radio" id="9" name="word5" value="a">
+        <label for="9">wait</label> 
+        <input type="radio" id="10" name="word5" value="b"  data-correct="true">
+        <label for="10">expect</label></input></span>
+
+that more than 5,000 people will attend the concert. </li>
+<li>We've been here for 30 minutes. I can't 
+  <span class="var">
+        <input  type="radio" id="11" name="word6" value="a"  data-correct="true">
+        <label for="11">wait</label> 
+        <input type="radio" id="12" name="word6" value="b">
+        <label for="12">expect</label></input></span>
+
+any Ionger.</li>
+<li>
+  <span class="var">
+        <input  type="radio" id="13" name="word7" value="a"  data-correct="true">
+        <label for="13">Foreigners</label> 
+        <input type="radio" id="14" name="word7" value="b">
+        <label for="14">Strangers</label></input></span>
+
+need а visa to enter the country.</li>
+<li>It is common for mothers to tell their children not to talk to 
+  <span class="var">
+        <input  type="radio" id="15" name="word8" value="a">
+        <label for="15">foreigners</label> 
+        <input type="radio" id="16" name="word8" value="b"  data-correct="true">
+        <label for="16">strangers</label></input></span>
+
+.</li>
+<li>Аnn has а bad 
+  <span class="var">
+        <input  type="radio" id="17" name="word9" value="a"  data-correct="true">
+        <label for="17">habit</label> 
+        <input type="radio" id="18" name="word9" value="b">
+        <label for="18">custom</label></input></span>
+
+of not turning off the TV when she is not watching.</li>
+<li>Giving someone а gift on their birthday is а common 
+  <span class="var">
+        <input  type="radio" id="19" name="word10" value="a">
+        <label for="19">habit</label> 
+        <input type="radio" id="20" name="word10" value="b"  data-correct="true">
+        <label for="20">custom</label></input></span>
+
+in most countries.</li>
+<li>Соmе on, Uncle George, tell us а 
+  <span class="var">
+        <input  type="radio" id="21" name="word11" value="a">
+        <label for="21">history</label> 
+        <input type="radio" id="22" name="word11" value="b"  data-correct="true">
+        <label for="22">story</label></input></span>
+
+about your childhood.</li>
+<li>I always like to learn about the 
+  <span class="var">
+        <input  type="radio" id="23" name="word12" value="a"  data-correct="true">
+        <label for="23">history</label> 
+        <input type="radio" id="24" name="word12" value="b">
+        <label for="24">story</label></input></span>
+
+of the cities I visit.</li></div>
+
+</body>
+
+<script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
