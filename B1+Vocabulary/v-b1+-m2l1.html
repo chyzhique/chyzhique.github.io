@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>WORDS EASILY CONFUSED</h1>
+<div class="excercise">
+
+<h3>Complete the sentences using the correct form of the words in the boxes.</h3>
+<ol>
+<div class="bunch" style="text-align:center">🔴room 🔴  suite 🔴 cabin</div>
+<li>We stayed at the Radison Hotel in a luxurious 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 30%">with a living area, a separate dining area and a spacious bedroom.<br>
+<li>The ship we took the cruise on was huge, and our 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 30%">was comfortablt even though it was a bit small.<br>
+<li>Did you book a single or a double 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 30%">.
+
+<div class="bunch" style="text-align:center">🔴hotel 🔴 resort 🔴 hostel </div>
+<li>Many students prefer to stay in 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 30%">when they offer cheap accommodation.<br>
+<li>We stayed at a popular seaside holiday 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 30%">in Spain with great beaches and lots of discos.<br>
+<li>This brand new 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 30%">is located in the centre of the city, and facilities iclude a Health and Beauty Spa, a Fitness Centre and a Business Centre.
+
+<div class="bunch" style="text-align:center">🔴outing 🔴 tour 🔴 journey</div>
+<li>We had a long and hard 
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 30%">ahead of us, so we decided to make an early start.<br>
+<li>We stayed in the largest town on the island, but we organised several 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 30%">to nearby villages.<br>
+<li>On the first day in Rome, we went on a sightseeing 
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 30%">of the city.
+
+<div class="bunch" style="text-align:center">🔴voyage 🔴 trip 🔴 expedition</div>
+<li>Mr Johnson is on a business 
+  <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 30%">in South America and will be away for two weeks.<br>
+<li>The ship made its first cross-Atlantic 
+  <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 30%">in 1927.<br>
+<li>My cousin Kyle volunteered to join a scientific 
+  <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 30%">to the South Pole.
+
+<div class="bunch" style="text-align:center">🔴fee 🔴 bill 🔴 fare</div>
+<li>Some banks charge an extra 
+  <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 30%">for this service.<br>
+<li>How much is the bus 
+  <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 30%"><br>
+<li>I have to pay my electricity 
+  <input type="text" id="wordInput15" class="changeDiv" id="changeDiv15" style="width: 30%">tomorrow.
+
+<div class="bunch" style="text-align:center">🔴client 🔴 guest 🔴 customer</div>
+<li>Our neighbours are organising a party for 100 
+  <input type="text" id="wordInput16" class="changeDiv" id="changeDiv16" style="width: 30%">!<br>
+<li>The shop assistants at this shop are very polite and always try to satisfy 
+  <input type="text" id="wordInput17" class="changeDiv" id="changeDiv17" style="width: 30%">.<br>
+<li>He is a very successful lawyer and many of his 
+  <input type="text" id="wordInput18" class="changeDiv" id="changeDiv18" style="width: 30%">are well-known celebrities.
+
+  </ol>
+  
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuef');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuee');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"suite", "cabin", "room", "hostels", "resort", "hotel", "journey", "outing", "tour", "trip", "voyage", "expedition", "fee", "fare", "bill", "guests", "customers", "clients"
+      
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    

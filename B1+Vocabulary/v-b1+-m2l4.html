@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      .norm{
+        background-color: oldlace
+      }
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>ADVERBS OF MANNER</h1>
+<div class="excercise">
+
+<h3>A. Read the extract from the interview that you heard in the listening section. What was unfortunate?</h3>
+  
+  <div class="bunch">
+🗣️  Well, I heard plenty of stories about pumas but, <b>unfortunately</b>, I didn't actually see any.
+    </div>
+  
+<div class="hint">
+Adverbs of manner describe or add information to the meaning of a verb, an adjective, another adverb or a whole sentence.
+They are usually formed by adding -ly to an adjective (e.g. unfortunate - unfortunately).</b>
+</div>
+                  
+<h3>B. Read the sentences below and choose the correct answer.</h3>
+
+      <ol>
+<li>Dan lost his wallet but, <span class="var">
+        <input type="radio" id="1" name="word1" value="eat" data-correct="true">
+        <label for="1">fortunately</label> /
+        <input type="radio" id="2" name="word1" value="am eating">
+        <label for="2">completely</label></span> 
+ , the person who found it returned it to him.</li>
+<li>We were playing football when, 
+      <span class="var">
+        <input type="radio" id="1" name="word2" value="eat">
+        <label for="1">possibly</label> /
+        <input type="radio" id="2" name="word2" value="am eating" data-correct="true">
+        <label for="2">suddenly</label></span>
+, it started raining.</li>
+<li>It was 
+      <span class="var">
+        <input type="radio" id="1" name="word3" value="eat">
+        <label for="1">probably</label> /
+        <input type="radio" id="2" name="word3" value="am eating" data-correct="true">
+        <label for="2">incredibly</label></span>
+hot yesterday; they say the temperature reached 48 degrees.</li>
+<li> 
+      <span class="var">
+        <input type="radio" id="1" name="word4" value="eat" data-correct="true">
+        <label for="1">Naturally</label> /
+        <input type="radio" id="2" name="word4" value="am eating">
+        <label for="2">Luckily</label></span> 
+, Janet was happy to hear that she got the job she had applied for.</li>
+<li>I will 
+      <span class="var">
+        <input type="radio" id="1" name="word5" value="eat">
+        <label for="1">finally</label> /
+        <input type="radio" id="2" name="word5" value="am eating" data-correct="true">
+        <label for="2">probably</label></span> 
+   not go out tonight because I'm not feeling very well.</li>
+<li>Our team played as well as they 
+      <span class="var">
+        <input type="radio" id="1" name="word6" value="eat">
+        <label for="1">luckily</label> /
+        <input type="radio" id="2" name="word6" value="am eating" data-correct="true">
+        <label for="2">possibly</label></span> 
+could.</li>
+<li>There was a public transport strike yesterday, but 
+      <span class="var">
+        <input type="radio" id="1" name="word7" value="eat" data-correct="true">
+        <label for="1">luckily</label> /
+        <input type="radio" id="2" name="word7" value="am eating">
+        <label for="2">possibly</label></span> 
+, I found a taxi easily and managed to get to work on time.</li>
+
+  </ol>
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuef');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuee');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "noun", "danger", "ous",
+    "noun", "beauty", "ful",
+    "noun", "continent", "al",
+    "verb", "excite", "ing",
+    "verb", "use", "less",
+    "verb", "attract", "ive",
+     
+    "careless", "hungry", "colourful", "impressive", "excited", "natural", "mysterious", "frightened"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    

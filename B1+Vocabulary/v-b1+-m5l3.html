@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      .norm{
+        background-color: oldlace
+      }
+      .wrd {
+        border: 1px solid black; 
+        background-color: #FC2947;
+        border-radius: 15px;
+        padding: 0.2rem;
+        font-size: 1.5rem
+      }
+      .tt {color: crimson}
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>1. WORDS EASILY CONFUSED</h1>
+<div class="excercise">
+
+<H3>Use the words in the boxes to complete the sentences. ticket fare</H3>
+
+  <ol>
+<div class="bunch" style="text-align:center">✏️ ticket - ✏️ fare</div>
+<li>Don't forget to buy your 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">
+  for the concert!
+<li>It's better to take the bus if you can't afford the taxi 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">
+  .
+
+<div class="bunch" style="text-align:center">✏️ strange - ✏️ foreign</div>
+<li>There is a 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">
+  smell in the kitchen.
+<li>Students have to study one 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">
+  language and can choose either French or Spanish.
+
+<div class="bunch" style="text-align:center">✏️ mention - ✏️ report</div>
+<li>Did he 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%">
+  what time he would be home?
+<li>If your passport is stolen, you should 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 25%">
+  it to  the police.
+
+<div class="bunch" style="text-align:center">✏️ get off - ✏️ get out of</div>
+<li>We're going to 
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 25%">
+  the bus at the next stop.
+<li>I can't wait to 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 25%">
+  this car!
+
+<div class="bunch" style="text-align:center">✏️ similar - ✏️ identical</div>
+<li>The two films were so 
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 25%">
+  I felt like I had seen the same film twice.
+<li>Jeannie gave birth to 
+  <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 25%">
+  twins that look exactly alike.
+</li>
+    </ol>
+  
+<H1>2. COLLECTIVE NOUNS</H1>
+<div class="excercise">
+  
+<H3>Use the collective nouns in the box to form collocations.
+In somes cases more than one noun may be correct.</H3>
+
+<div class="bunch" style="text-align:center">
+📌 bunch - 📌 pack - 📌 set - 📌 pile
+</div>
+  <ol>
+<li>a <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 25%"> of flowers
+<li>a <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 25%"> of tools
+<li>a <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 25%"> of books
+<li>a <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 25%"> of cigarettes
+<li>a <input type="text" id="wordInput15" class="changeDiv" id="changeDiv15" style="width: 25%"> of rules
+<li>a <input type="text" id="wordInput16" class="changeDiv" id="changeDiv16" style="width: 25%"> of boxes
+<li>a <input type="text" id="wordInput17" class="changeDiv" id="changeDiv17" style="width: 25%"> of grapes
+<li>a <input type="text" id="wordInput18" class="changeDiv" id="changeDiv18" style="width: 25%"> of wolves
+<li>a <input type="text" id="wordInput19" class="changeDiv" id="changeDiv19" style="width: 25%"> of keys
+<li>a <input type="text" id="wordInput20" class="changeDiv" id="changeDiv20" style="width: 25%"> of furniture
+</ol>
+  </div>
+  
+<H1>3. ADJECTIVES + PREPOSITIONS</H1>
+
+<H3>A. Look at the following adjectives with prepositions. Which of them have a positive and which a negative meaning?</H3>
+
+  <div class="bunch" style="text-align:center">
+📌 interested in 
+📌 proud of 
+📌 bored with
+📌 sick of <br>
+📌 keen on 
+📌 fond of
+📌 disgusted by 
+📌 crazy about <br>
+📌 tired of
+📌 fed up with 
+📌 impressed by/with
+</div>
+  
+<H3>B. Complete the sentences below to make true statements about yourself.</H3>
+
+  <ol>
+<li>I'm very keen ...</li>
+<li>My dad is proud ...</li>
+<li>When I was younger, I was bored ...</li>
+<li>My best friend is crazy ...</li>
+<li>Most of my friends are interested ...</li>
+</ol>
+    </div>
+
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"ticket", "fare", "strange", "foreign", "mention", "report", "get off", "get out of", "similar", "identical", 
+      
+"bunch", "set", ["pile", "set"], "pack", "set", ["pile", "set"], "bunch", "pack", ["set", "bunch"], "set"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    

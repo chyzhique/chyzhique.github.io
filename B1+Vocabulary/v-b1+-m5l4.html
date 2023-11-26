@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      .norm{
+        background-color: oldlace
+      }
+      .wrd {
+        border: 1px solid black; 
+        background-color: #FC2947;
+        border-radius: 15px;
+        padding: 0.2rem;
+        font-size: 1.5rem
+      }
+      .tt {color: crimson}
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>WORDS RELATED TO THE THEATRE AND CINEMA</h1>
+<div class="excercise">
+
+<h3>A. Decide if the following words are related to the theatre, the cinema or both.</h3>
+
+  <ul>
+  <div class="bunch">
+    
+<li>production 
+  <span class="var">
+        <input type="radio" id="1" name="word1" value="eat">
+        <label for="1">a. theatre</label>
+        <input type="radio" id="2" name="word1" value="am eating">
+        <label for="2">b. cinema</label>
+        <input type="radio" id="3" name="word1" value="eat" data-correct="true">
+        <label for="3">c. both</label> &emsp; 
+        </span></li>
+<li>acting 
+  <span class="var">
+        <input type="radio" id="4" name="word2" value="eat">
+    <label for="4">a. theatre</label>
+        <input type="radio" id="5" name="word2" value="am eating">
+        <label for="5">b. cinema</label>
+        <input type="radio" id="6" name="word2" value="eat" data-correct="true">
+        <label for="6">c. both</label> &emsp; 
+        </span></li>
+<li>director
+  <span class="var">
+        <input type="radio" id="7" name="word3" value="eat">
+        <label for="7">a. theatre</label>
+        <input type="radio" id="8" name="word3" value="am eating">
+        <label for="8">b. cinema</label>
+        <input type="radio" id="9" name="word3" value="eat" data-correct="true">
+        <label for="9">c. both</label> &emsp; 
+        </span></li>
+<li>sets
+  <span class="var">
+        <input type="radio" id="10" name="word4" value="eat">
+        <label for="10">a. theatre</label>
+        <input type="radio" id="11" name="word4" value="am eating">
+        <label for="11">b. cinema</label>
+        <input type="radio" id="12" name="word4" value="eat" data-correct="true">
+        <label for="12">c. both</label> &emsp; 
+        </span></li>
+<li>special effects 
+  <span class="var">
+        <input type="radio" id="13" name="word5" value="eat">
+        <label for="13">a. theatre</label>
+        <input type="radio" id="14" name="word5" value="am eating" data-correct="true">
+        <label for="14">b. cinema</label>
+        <input type="radio" id="15" name="word5" value="eat">
+        <label for="15">c. both</label> &emsp; 
+        </span></li>
+<li>a play 
+  <span class="var">
+        <input type="radio" id="16" name="word6" value="eat" data-correct="true">
+        <label for="16">a. theatre</label>
+        <input type="radio" id="17" name="word6" value="am eating">
+        <label for="17">b. cinema</label>
+        <input type="radio" id="18" name="word6" value="eat">
+        <label for="18">c. both</label>
+        </span></li>
+<li>performance
+  <span class="var">
+        <input type="radio" id="19" name="word7" value="eat">
+        <label for="19">a. theatre</label>
+        <input type="radio" id="20" name="word7" value="am eating">
+        <label for="20">b. cinema</label>
+        <input type="radio" id="21" name="word7" value="eat" data-correct="true">
+        <label for="21">c. both</label> &emsp; 
+        </span></li>
+<li>rehearsal 
+  <span class="var">
+        <input type="radio" id="22" name="word8" value="eat" data-correct="true">
+        <label for="22">a. theatre</label>
+        <input type="radio" id="23" name="word8" value="am eating" >
+        <label for="23">b. cinema</label>
+        <input type="radio" id="24" name="word8" value="eat">
+        <label for="24">c. both</label> &emsp; 
+        </span></li>
+<li>foyer 
+  <span class="var">
+        <input type="radio" id="25" name="word9" value="eat" data-correct="true">
+        <label for="25">a. theatre</label>
+        <input type="radio" id="26" name="word9" value="am eating" >
+        <label for="26">b. cinema</label>
+        <input type="radio" id="27" name="word9" value="eat">
+        <label for="27">c. both</label> &emsp; 
+        </span></li>
+<li>complex 
+  <span class="var">
+        <input type="radio" id="28" name="word10" value="eat">
+        <label for="28">a. theatre</label>
+        <input type="radio" id="29" name="word10" value="am eating" data-correct="true">
+        <label for="29">b. cinema</label>
+        <input type="radio" id="30" name="word10" value="eat">
+        <label for="30">c. both</label> &emsp; 
+        </span></li>
+<li>stage
+  <span class="var">
+        <input type="radio" id="31" name="word11" value="eat" data-correct="true">
+        <label for="31">a. theatre</label>
+        <input type="radio" id="32" name="word11" value="am eating" >
+        <label for="32">b. cinema</label>
+        <input type="radio" id="33" name="word11" value="eat">
+        <label for="33">c. both</label> &emsp; 
+        </span></li>
+<li>screen 
+  <span class="var">
+        <input type="radio" id="34" name="word12" value="eat">
+        <label for="34">a. theatre</label>
+        <input type="radio" id="35" name="word12" value="am eating" data-correct="true">
+        <label for="35">b. cinema</label>
+        <input type="radio" id="36" name="word12" value="eat">
+        <label for="36">c. both</label> &emsp; 
+        </span></li>
+<li>blockbuster
+  <span class="var">
+        <input type="radio" id="37" name="word13" value="eat">
+        <label for="37">a. theatre</label>
+        <input type="radio" id="38" name="word13" value="am eating" data-correct="true">
+        <label for="38">b. cinema</label>
+        <input type="radio" id="39" name="word13" value="eat">
+        <label for="39">c. both</label> &emsp; 
+        </span></li>
+<li>cast 
+  <span class="var">
+        <input type="radio" id="40" name="word14" value="eat">
+        <label for="40">a. theatre</label>
+        <input type="radio" id="41" name="word14" value="am eating">
+        <label for="41">b. cinema</label>
+        <input type="radio" id="42" name="word14" value="eat" data-correct="true">
+        <label for="42">c. both</label> &emsp; 
+        </span></li>
+<li>plot
+  <span class="var">
+        <input type="radio" id="43" name="word15" value="eat">
+        <label for="43">a. theatre</label>
+        <input type="radio" id="44" name="word15" value="am eating">
+        <label for="44">b. cinema</label>
+        <input type="radio" id="45" name="word15" value="eat" data-correct="true">
+        <label for="45">c. both</label> &emsp; 
+        </span></li>
+<li>stuntman 
+  <span class="var">
+        <input type="radio" id="46" name="word16" value="eat">
+        <label for="46">a. theatre</label>
+        <input type="radio" id="47" name="word16" value="am eating" data-correct="true">
+        <label for="47">b. cinema</label>
+        <input type="radio" id="48" name="word16" value="eat">
+        <label for="48">c. both</label> &emsp; 
+        </span></li>
+<li>soundtrack
+  <span class="var">
+        <input type="radio" id="49" name="word17" value="eat">
+        <label for="49">a. theatre</label>
+        <input type="radio" id="50" name="word17" value="am eating" data-correct="true">
+        <label for="50">b. cinema</label>
+        <input type="radio" id="51" name="word17" value="eat">
+        <label for="51">c. both</label> &emsp; 
+        </span></li>
+    </ul>
+
+<h3>B. Read the sentences below and circle the correct answer.</h3>
+
+    <ol>
+<li>I saw the new 
+  <span class="var">
+        <input type="radio" id="52" name="word18" value="eat">
+        <label for="52">plot</label>
+        <input type="radio" id="53" name="word18" value="am eating" data-correct="true">
+        <label for="53">production</label>
+        </span>
+ of Midsummer Night's Dream last night; it was really funny.
+<li>John is really interested in a career in 
+  <span class="var">
+        <input type="radio" id="54" name="word19" value="eat" data-correct="true">
+        <label for="54">acting</label>
+        <input type="radio" id="55" name="word19" value="am eating">
+        <label for="55">stage</label>
+        </span>.
+<li>The 
+  <span class="var">
+        <input type="radio" id="56" name="word20" value="eat" data-correct="true">
+        <label for="56">director</label>
+        <input type="radio" id="57" name="word20" value="am eating">
+        <label for="57">production</label>
+        </span>
+ won an academy award for his latest film.
+<li>The latest Bond film had fantastic special 
+  <span class="var">
+        <input type="radio" id="58" name="word21" value="eat" >
+        <label for="58">soundtrack</label>
+        <input type="radio" id="59" name="word21" value="am eating" data-correct="true">
+        <label for="59">effects</label>
+        </span>
+ .
+<li> We went to see a 
+  <span class="var">
+        <input type="radio" id="60" name="word22" value="eat" data-correct="true">
+        <label for="60">play</label>
+        <input type="radio" id="61" name="word22" value="am eating" >
+        <label for="61">plot</label>
+        </span>
+ on Saturday night at the Royal Exchange Theatre.
+<li>Her 
+  <span class="var">
+        <input type="radio" id="62" name="word23" value="eat" data-correct="true">
+        <label for="62">performance</label>
+        <input type="radio" id="63" name="word23" value="am eating" >
+        <label for="63">production</label>
+        </span>
+ in the film was not convincing.
+<li>The 
+  <span class="var">
+        <input type="radio" id="64" name="word24" value="eat" data-correct="true">
+        <label for="64">foyer</label>
+        <input type="radio" id="65" name="word24" value="am eating" >
+        <label for="65">stage</label>
+        </span>
+ of the theatre was very crowded on the first night of the show.
+<li>A new cinema 
+  <span class="var">
+        <input type="radio" id="66" name="word25" value="eat">
+        <label for="66">screen</label>
+        <input type="radio" id="67" name="word25" value="am eating" data-correct="true">
+        <label for="67">complex</label>
+        </span>
+ has been built in the area.
+<li>The actress fell off the 
+  <span class="var">
+        <input type="radio" id="68" name="word26" value="eat">
+        <label for="68">play</label>
+        <input type="radio" id="69" name="word26" value="am eating" data-correct="true">
+        <label for="69">stage</label>
+        </span>
+ during the 
+  <span class="var">
+        <input type="radio" id="70" name="word27" value="eat" data-correct="true">
+        <label for="70">rehearsal</label>
+        <input type="radio" id="71" name="word27" value="am eating" >
+        <label for="71">acting</label>
+        </span>
+      .
+<li>Although she's an award winning actress, she doesn't like to watch herself on 
+  <span class="var">
+        <input type="radio" id="72" name="word28" value="eat" data-correct="true">
+        <label for="72">screen</label>
+        <input type="radio" id="73" name="word28" value="am eating" >
+        <label for="73">sets</label>
+        </span>
+ .
+<li>The latest adaptation of the latest Harry Potter novel was an instant 
+  <span class="var">
+        <input type="radio" id="74" name="word29" value="eat" data-correct="true">
+        <label for="74">blockbuster</label>
+        <input type="radio" id="75" name="word29" value="am eating" >
+        <label for="75">production</label>
+        </span>
+ .
+<li>The lead actress refused to have lunch with the rest of the 
+  <span class="var">
+        <input type="radio" id="76" name="word30" value="eat">
+        <label for="76">acting</label>
+        <input type="radio" id="77" name="word30" value="am eating" data-correct="true">
+        <label for="77">cast</label>
+        </span>
+ .
+<li>The film had a weak 
+  <span class="var">
+        <input type="radio" id="78" name="word31" value="eat" data-correct="true">
+        <label for="78">plot</label>
+        <input type="radio" id="79" name="word31" value="am eating">
+        <label for="79">director</label>
+        </span>
+ and the acting was bad.
+<li>The 
+  <span class="var">
+        <input type="radio" id="80" name="word32" value="eat">
+        <label for="80">director</label>
+        <input type="radio" id="81" name="word32" value="am eating" data-correct="true">
+        <label for="81">stuntman</label>
+        </span>
+ injured himself in the car chase scene.
+<li>The three film 
+  <span class="var">
+        <input type="radio" id="82" name="word33" value="eat" data-correct="true">
+        <label for="82">sets</label>
+        <input type="radio" id="83" name="word33" value="am eating">
+        <label for="83">rehearsals</label>
+        </span>
+ cost millions of dollars to create.
+  
+</li>
+    </div>
+
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"ticket", "fare", "strange", "foreign", "mention", "report", "get off", "get out of", "similar", "identical", 
+      
+"bunch", "set", ["pile", "set"], "pack", "set", ["pile", "set"], "bunch", "pack", ["set", "bunch"], "set"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    

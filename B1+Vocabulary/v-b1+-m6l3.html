@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      .norm{
+        background-color: oldlace
+      }
+      .wrd {
+        border: 1px solid black; 
+        background-color: #FC2947;
+        border-radius: 15px;
+        padding: 0.2rem;
+        font-size: 1.5rem
+      }
+      .tt {color: crimson}
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>1. PREPOSITIONAL PHRASES</h1>
+<div class="excercise">
+
+<h3>A. Look at the extract from the text and note the phrase in bold. <br>Can you think of any other phrases following the pattern [preposition + word + preposition]?</h3>
+
+  <div class="bunch">
+🗣️ The zoo has become one of the most important zoos <b>in terms of</b> breeding gorillas in captivity.
+</div>
+  
+<h3>B. Complete the sentences below with the prepositions in the box. You can use some prepositions more than once.</h3>
+
+ <div class="bunch">🔴 for - 🔴 in - 🔴 of - 🔴 to - 🔴 on - 🔴 as - 🔴 with</div>
+
+  <ol>
+<li>Ms Anderson is in charge 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">the marketing department. </li>
+<li>
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">behalf of the local Animal Welfare Society, I would like to thank the Town Council for their support.</li>
+<li>Are you in favour 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">banning cars from the city centre?</li>
+<li>The statue in front of the Town Hall was placed there 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">memory of the soldiers killed during World War II.</li>
+<li>Tom is very mature in comparison 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%">other children of his age.</li>
+<li>I'm not really in the mood 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 25%">Chinese food today. Let's order a pizza.</li>
+<li>I am writing in connection 
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 25%">the article you published about environmental pollution.</li>
+<li>The local residents have spoken out 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 25%">support of the Save Blackwood Forest Organisation.</li>
+<li>
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 25%">regard to the problem of rubbish disposal, I think we should encourage people to recycle.</li>
+<li>The coastline has been seriously polluted 
+  <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 25%">a result of an oil spill.</li>
+</ol>
+  </div>
+      
+<h1>2. NOUNS + PREPOSITIONS</h1>
+<div class="excercise">
+
+<h3>A. Complete the sentence below with the missing prepositions. Look at paragraph B of the text to check your answers.</h3>
+
+  <div class="bunch">
+🗣️ The Columbus Zoo has a reputation 
+    <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 25%">being a world leader 
+    <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 25%">reptile care.
+</div>
+  
+<h3>B. Complete the sentences with the nouns in the box.</h3>
+
+  <ol>
+  <div class="bunch">
+🔴 threat
+🔴 solution
+🔴 description
+🔴 reason
+🔴 damage
+🔴 specialist
+🔴 need
+</div>
+  
+<li>I hope you have good 
+  <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 25%">for being so late.
+<li>Mr Adams is a 
+  <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 25%">in marine biology.
+<li>There is a 
+  <input type="text" id="wordInput15" class="changeDiv" id="changeDiv15" style="width: 25%">for more recycling bins in our neighbourhood.
+<li>We are trying to find a 
+  <input type="text" id="wordInput16" class="changeDiv" id="changeDiv16" style="width: 25%">to the problem, but it will take time.
+<li>Is global warming really a 
+  <input type="text" id="wordInput17" class="changeDiv" id="changeDiv17" style="width: 25%">to all life on the planet?
+<li>Allowing large numbers of visitors into national parks and wildlife reserves can cause 
+  <input type="text" id="wordInput18" class="changeDiv" id="changeDiv18" style="width: 25%">to the natural habitats of many animals.
+<li>The manager of the bank gave the police a 
+  <input type="text" id="wordInput19" class="changeDiv" id="changeDiv19" style="width: 25%">of the robber.
+</ol>
+  </div>
+      
+<h1>3. COMPOUND NOUNS</h1>
+<div class="excercise">
+  
+<h3>A. Look at the example below and read the note. Can you find any other compound nouns in the text.</h3>
+
+  <div class="bunch">
+🗣️ ... due to the promotional efforts of former director and <b>animal expert</b> 'Jungle' Jack Hanna.
+</div>
+  
+    <div class="hint">
+"Animal expert" is a compound noun (a combination of two nouns that function as one word). The first noun defines the second one (e.g. an animal expert is an expert on animals).
+</div>
+  
+<h3>B. Match the nouns on the left with those on the right to form compound nouns.</h3>
+
+  <table>
+<tr><td>
+  ✏️ car 
+  <input type="text" id="wordInput20" class="changeDiv" id="changeDiv20" style="width: 25%"></td>
+<td rowspan="8" style="padding-left:1rem">
+  🔴 fire <br><br>🔴 jam <br><br>🔴 trail<br><br>🔴 park<br><br>🔴 march<br><br>🔴 rights<br><br>🔴 town<br><br>🔴 centre
+  </td></tr>
+  <tr><td>✏️ animal 
+      <input type="text" id="wordInput21" class="changeDiv" id="changeDiv21" style="width: 25%"></td></tr>
+  <tr><td>✏️ protest 
+      <input type="text" id="wordInput22" class="changeDiv" id="changeDiv22" style="width: 25%"></td></tr>
+  <tr><td>✏️ traffic 
+      <input type="text" id="wordInput23" class="changeDiv" id="changeDiv23" style="width: 25%"></td></tr>
+  <tr><td>✏️ forest 
+      <input type="text" id="wordInput24" class="changeDiv" id="changeDiv24" style="width: 25%"></td></tr>
+  <tr><td>✏️ nature 
+      <input type="text" id="wordInput25" class="changeDiv" id="changeDiv25" style="width: 25%"></td></tr>
+  <tr><td>✏️ city 
+      <input type="text" id="wordInput26" class="changeDiv" id="changeDiv26" style="width: 25%"></td></tr>
+  <tr><td>✏️ home 
+      <input type="text" id="wordInput27" class="changeDiv" id="changeDiv27" style="width: 25%">
+</td></tr>
+</table>
+    
+<h3>C. Complete the sentences with compound nouns from exercise B.</h3>
+
+  <ol>
+<li>The local residents object to the plans for a multi-storey 
+      <input type="text" id="wordInput28" class="changeDiv" id="changeDiv28" style="width: 25%"></li>
+<li>The hotel is located very conveniently in the 
+      <input type="text" id="wordInput29" class="changeDiv" id="changeDiv29" style="width: 25%">
+        
+      </li>
+<li>I was late for work because I got stuck in a(n)
+      <input type="text" id="wordInput30" class="changeDiv" id="changeDiv30" style="width: 25%">
+        
+      </li>
+<li>Wetook a guided walk along a(n)
+    <input type="text" id="wordInput31" class="changeDiv" id="changeDiv31" style="width: 25%">
+    and saw some lovely countryside.</li>
+<li>
+    <input type="text" id="wordInput32" class="changeDiv" id="changeDiv32" style="width: 25%">
+    organisations are protesting against cosmetics companies that test their products on animals.</li>
+                        </ol>
+                        
+    </div>
+
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"of", "on", "of", "in", "to/with", "for", "with", "in", "with/in", "as", 
+      
+      "for", "in",
+      
+"reason", "specialist", "need", "solution", "thread", "damage", "description", 
+      
+"park", "rights", "march", "jam", "fire", "trail", "centre", "town",
+      
+"car park", "city centre", "traffic jam", "nature trail", "Animal rights"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    

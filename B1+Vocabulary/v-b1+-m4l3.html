@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    <script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+    /* Style for the close button */
+    #closeBtn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+    }
+      #overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* Adjust the opacity for the desired level of blur */
+      backdrop-filter: blur(25px); /* Adjust the blur radius as needed */
+      z-index: 900;
+    }
+      .clickable-word {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+      margin-right: 10px; /* Adjust as needed */
+    }
+      .norm{
+        background-color: oldlace
+      }
+      .wrd {
+        border: 1px solid black; 
+        background-color: #FC2947;
+        border-radius: 15px;
+        padding: 0.2rem;
+      }
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>1. PREFIXES AND SUFFIXES</h1>
+<div class="excercise">
+  
+<h3>A. Look at the words in bold in the sentences below. What do you think they mean? Choose a or b.</h3>
+<ol>
+  <li>The possibilities are <b>endless</b>.
+    <div class="var" style="width:100%">
+        <input type="radio" id="1" name="word1" value="eat">
+        <label for="1">a. coming to an end</label> &emsp; 
+        <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
+        <label for="2">b. having no end</label> <br>
+        </div> </li>
+  <li>This project used advanced technology to digitally <b>rebuild</b> ancient Rome.
+        <div class="var" style="width:100%">
+        <input type="radio" id="3" name="word2" value="eat" data-correct="true">
+        <label for="3">a. build again</label> &emsp; 
+        <input type="radio" id="4" name="word2" value="am eating">
+        <label for="4">b. build a part of</label> <br>
+        </div> </li>
+  <li>If patients are distracted, anxiety is reduced and the procedure becomes less <b>painful</b>.
+        <div class="var" style="width:100%">
+        <input type="radio" id="5" name="word3" value="eat" data-correct="true">
+        <label for="5">a. causing pain</label> &emsp; 
+        <input type="radio" id="6" name="word3" value="am eating">
+        <label for="6">b. without pain</label>
+        </div> </li>
+  <li>The doctor's diagnosis was <b>incorrect</b> so they didn't give the patient the right medicine.
+        <div class="var" style="width:100%">
+        <input type="radio" id="7" name="word4" value="eat">
+        <label for="7">a. accurate</label> &emsp; 
+        <input type="radio" id="8" name="word4" value="am eating" data-correct="true">
+        <label for="8">b. wrong</label> <br>
+        </div> </li>
+  <li>This information is <b>unimportant</b> and I'm not going to consider it.
+        <div class="var" style="width:100%">
+        <input type="radio" id="9" name="word5" value="eat">
+        <label for="9">a. very important</label> &emsp; 
+        <input type="radio" id="10" name="word5" value="am eating" data-correct="true">
+        <label for="10">b. not important</label> <br>
+        </div> </li>
+</ol>
+  
+  <div class="hint">
+• The prefixes <b>un-</b> and <b>in-</b> are used before adjectives and adverbs to give them the <b>opposite meaning </b>(able - unable, correct - incorrect).<hr>
+• The prefix <b>re-</b> is used before verbs and nouns deriving from verbs, and often means <b>again</b> (build - rebuild).<hr>
+• The suffix <b>-ful </b>is used after a noun to form an adjective which means <b>having enough of</b> (success - successful).<hr>
+• The suffix <b>-less</b> is used after a noun to form an adjective which means <b>not having</b> (doubt - doubtless).
+    </div>
+  
+<h4>B. Complete the sentences using the correct form of the words in capitals.</h4>
+  <ol>
+<li>Helen should be more 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 35%">with her work; there were a lot of silly mistakes in her exam paper.
+  <span class="wrd" style="float: right">CARE</span></li>
+<li>Scientists believe too much sunbathing is 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 35%">to your health. 
+    <span class="wrd" style="float: right">HARM</span></li>
+<li>Tom is an 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 35%">leader; he doesn't know how to motivate people. 
+    <span class="wrd" style="float: right">EFFECTIVE</span></li>
+<li>Spiders make me feel very 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 35%">. 
+    <span class="wrd" style="float: right">COMFORTABLE</span></li>
+<li>If you want to be 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 35%">in business, you have to plan carefully. 
+    <span class="wrd" style="float: right">SUCCESS</span></li>
+<li>The woman was very 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 35%">; she showed us how to get back to our hotel. 
+    <span class="wrd" style="float: right">HELP</span></li>
+<li>Since he lost his job and the bank took back his house, Kevin has been 
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 35%">.
+    <span class="wrd" style="float: right">HOME</span></li>
+<li>They are trying to 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 35%">the buildings that were damaged in the earthquake. 
+    <span class="wrd" style="float: right">CONSTRUCT</span></li>
+    </ol>
+</div>
+      
+<h1>2. EXPRESSIONS WITH THE WORD 'EYE'</h1>
+<div class="excercise">
+  
+<h3>A. Look at the following extract from text B. What does the expression in bold mean?</h3>
+      
+      <div class="bunch">
+🗣️ Furthermore, once they have planted their crops, farmers will be able <b>to keep an eye on</b> them and improve plant care...</b>
+    </div>
+    
+<h3>B. Read the sentences below and match the expressions in bold with their meanings a-d.</h3>
+
+      <ol>
+<li id="td1">'The bracelet <b>caught my eye</b>; it was made of diamonds and emeralds.
+  <select id="select1" style="float:right">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+            <option value="valued">d</option>
+          </select></li>
+<li id="td2">'Tom and Betty can never see <b>eye to eye</b> on anything.
+    <select id="select2" style="float:right">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+            <option value="valued">d</option>
+          </select></li>
+<li id="td3">Sheila <b>closed her eyes</b> to David's many faults.
+    <select id="select3" style="float:right">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+            <option value="valued">d</option>
+          </select></li>
+<li id="td4">My grandmother always <b>had an eye</b> for a bargain.
+    <select id="select4" style="float:right">
+            <option value="">?</option>
+            <option value="valuea">a</option>
+            <option value="valueb">b</option>
+            <option value="valuec">c</option>
+            <option value="valued">d</option>
+          </select></li>
+</ol>
+            
+    <div class="bunch">
+      <ol style="list-style-type: lower-latin">
+<li>to be able to judge if something is valuable or attractive</li>
+<li>to attract one's attention</li>
+<li>to ignore something</li>
+<li>to agree about something</li>
+        </ol>
+    </div>
+
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valued');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"careful", "harmful", "ineffective", "uncomfortable", "successful", "helpful", "homeless", "reconstruct"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
