@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #8DDFCB;}
+      img {
+        display:block;
+      max-width:300px;
+        height: 300px;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+      </style>
+   </head>
+    
+  <body> 
+   
+    <div class="bg">
+     
+      <div class="hd">Vocabulary</div>
+     <div class="excercise"> 
+<h1>WORDS EASILY CONFUSED</h1>
+  
+       <ol>
+         
+<li>Peter stood and watched the smoke 
+  <span class="var" class="choose">
+        <input type="radio" id="1" name="word1" value="a"  data-correct="true">
+        <label for="1">rise</label>
+        <input type="radio" id="2" name="word1" value="b">
+        <label for="2">raise</label>
+      </span>
+from the burning building.</li>
+<li>The teacher asked her students to  
+    <span class="var" class="choose">
+        <input type="radio" id="3" name="word2" value="a">
+        <label for="3">rise</label>
+        <input type="radio" id="4" name="word2" value="b"  data-correct="true">
+        <label for="4">raise</label>
+      </span>
+their hands before they ask a question.</li>
+<li>I've told you before not to 
+    <span class="var" class="choose">
+        <input type="radio" id="5" name="word3" value="a">
+        <label for="5">disturb</label>
+        <input type="radio" id="6" name="word3" value="b"  data-correct="true">
+        <label for="6">interrupt</label>
+      </span>
+me when I'm talking.</li>
+<li>Please turn that music down. You will 
+    <span class="var" class="choose">
+        <input type="radio" id="7" name="word4" value="a"  data-correct="true">
+        <label for="7">disturb</label>
+        <input type="radio" id="8" name="word4" value="b">
+        <label for="8">interrupt</label>
+      </span>
+your brother; he's studying for an exam.</li>
+<li>Iraq is one of the world's leading 
+    <span class="var" class="choose">
+        <input type="radio" id="9" name="word5" value="a"  data-correct="true">
+        <label for="9">oil</label>
+        <input type="radio" id="10" name="word5" value="b">
+        <label for="10">petrol</label>
+      </span>
+producers.</li>
+<li>Remind me to stop at the first 
+    <span class="var" class="choose">
+        <input type="radio" id="11" name="word6" value="a">
+        <label for="11">oil</label>
+        <input type="radio" id="12" name="word6" value="b"  data-correct="true">
+        <label for="12">petrol</label>
+      </span>
+station we find.</li>
+<li>The cat lay down on the floor and sunned itself in the 
+    <span class="var" class="choose">
+        <input type="radio" id="13" name="word7" value="a">
+        <label for="13">hot</label>
+        <input type="radio" id="14" name="word7" value="b"  data-correct="true">
+        <label for="14">warm</label>
+      </span>
+sunshine.</li>
+<li>The food was too 
+    <span class="var" class="choose">
+        <input type="radio" id="15" name="word8" value="a"  data-correct="true">
+        <label for="15">hot</label>
+        <input type="radio" id="16" name="word8" value="b">
+        <label for="16">warm</label>
+      </span>
+to eat so we left it to cool down</li>
+<li>Don't 
+    <span class="var" class="choose">
+        <input type="radio" id="17" name="word9" value="a"  data-correct="true">
+        <label for="17">give up</label>
+        <input type="radio" id="18" name="word9" value="b">
+        <label for="18">give in</label>
+      </span>
+on your dreams; keep on trying until you succeed.</li>
+<li>Finally, the teacher 
+    <span class="var" class="choose">
+        <input type="radio" id="19" name="word10" value="a">
+        <label for="19">gave up</label>
+        <input type="radio" id="20" name="word10" value="b"  data-correct="true">
+        <label for="20">gave in</label>
+      </span>
+to the students' request to go on an excursion.
+
+    </div>
+   
+</body>
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuec');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+  
+    setTdBackgroundColor('select5', 'td5', 'valueh');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+    setTdBackgroundColor('select7', 'td7', 'valuei');
+    setTdBackgroundColor('select8', 'td8', 'valuej');
+  
+    setTdBackgroundColor('select9', 'td9', 'valueb');
+    setTdBackgroundColor('select10', 'td10', 'valuek');
+    setTdBackgroundColor('select11', 'td11', 'valuel');
+    setTdBackgroundColor('select12', 'td12', 'valuef');
+
+
+  </script>
+    <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "makes mistakes",	"did well", 	"make a decision",	"do", "a favour",	"did", "best",	"make", "noise",	"made an excuse",
+      "advertisement",	"developments",	"discussion",	"education",	"organisations",	"arrangements",	"invitation",	"directions"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
