@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #EBEF95;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+      
+<h1>WORDS EASILY CONFUSED</h1>
+<div class="excercise">
+
+<h3>Complete with the words in the boxes.</h3>
+
+  <ol>
+<div class="bunch">🔴 album - 🔴 single</div>
+
+<li>I love all the songs on Justin Timberlake's new 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">.<br>
+<li>Have you seen Madonna's music video for her new 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">?<br>
+
+<div class="bunch">🔴 record - 🔴 compose</div>
+
+<li>Beyonce wrote the lyrics to this song, but she didn't 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">the music.<br>
+<li>The lead singer has a problem with her voice so the band can't 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">their new songs at the moment.<br>
+
+<div class="bunch">🔴 track - 🔴 soundtrack</div>
+
+<li>How much does the Pulp Fiction 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%"> cost?<br>
+<li>Move on to the next 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 25%">. I don't like this song.<br>
+
+<div class="bunch">🔴 turn on - 🔴 turn off - 🔴 turn up - 🔴 turn down</div>
+<li>Could you please 
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 25%">the music a bit? I like this song.<br>
+<li>
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 25%">the TV before you go to bed.<br>
+<li>
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 25%">that lamp. It's dark in here.<br>
+<li>
+  <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 25%">the volume! It's too loud.
+</div>   
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuea');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valueb');
+    setTdBackgroundColor('select6', 'td6', 'valueb');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuea');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    <script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "album", "single", "compose", "record", "soundtrack", "track", 
+      "turn up", "Turn off", "Turn on", "turn down"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
