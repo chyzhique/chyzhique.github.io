@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    
+    <style>
+
+      th, td {padding:0.4em;
+              background-color: #EBEF95;}
+      img {
+        display:block;
+      max-width:100%;
+        height: 100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px}
+      table{
+        width:100%
+      }
+      .choose{padding:0.2rem; border:2px solid white; font-size:1.7rem; font-weight: 800}
+
+      ::marker {
+  color: blue;
+  font-size: 1.2em;
+        font-weight:800
+}
+      li{
+        flex: 15vw;
+        word-wrap: normal
+      }
+      th{
+        background-color: crimson; color: white
+      }
+      .wrd{
+        background-color: crimson; color: white; float: right}
+      </style>
+   </head>
+    
+  <body> 
+
+    <div class="bg">  
+      <div class="hd">Vocabulary</div>
+  
+<h1>WORDS RELATED TO TRAINING COURSES</h1>
+<div class="excercise">
+  
+<h3>Read the sentences and try to guess the meaning of the words/ phrases in bold.</h3>
+
+  <ol>
+<li>Sam signed up for a Spanish class but she's broke, so I don't know how she's going to pay the <b>fees</b>.
+<li>If you want to get a <b>certificate</b> at the end of the course, you have to attend all the classes. 
+<li>My sister is trying to manage having both a family and a <b>career</b>.
+<li>You can't really learn gardening from a book. You need to get out there and do some <b>practical work</b>.
+<li>Jason has just <b>completed</b> his Master's degree and is nowlooking for job.
+  </ol>
+</div>   
+</div>     
+</body>
+
+   <script>
+    // Get references to elements
+    const clickableWords = document.querySelectorAll('.clickable-word');
+    const overlay = document.getElementById('overlay');
+    const popup = document.getElementById('popup');
+
+    // Attach click event to all clickable words
+    clickableWords.forEach(word => {
+      word.addEventListener('click', () => {
+        // Show the overlay and popup
+        overlay.style.display = 'block';
+        popup.style.display = 'block';
+      });
+    });
+
+    // Function to close the popup
+    function closePopup() {
+      // Hide the overlay and popup
+      overlay.style.display = 'none';
+      popup.style.display = 'none';
+    }
+  </script>
+
+
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valueb');   
+    setTdBackgroundColor('select4', 'td4', 'valuec');
+    setTdBackgroundColor('select5', 'td5', 'valueb');
+    setTdBackgroundColor('select6', 'td6', 'valuec');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuec');
+    setTdBackgroundColor('select8', 'td8', 'valuea');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+  
+  </script>
+    
+   <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "thriller", "biography", "crime drama", "romantic comedy",
+  "film critic", "cast", "leading actor", "director",
+  "hilarious", "action-packed", "(un)realistic", "violent"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
