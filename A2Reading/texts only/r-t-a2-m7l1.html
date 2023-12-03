@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+   </head>
+  
+<body>
+
+  <div class="container">
+
+<table>
+<colgroup> 
+<col style="background-color: #fad7df">
+</colgroup> 
+<tr> 
+<tr><th id="td1" style="text-align:center" colspan="2">
+  <div class="box">1. 📌
+  <select id="select1">
+            <option value="">?</option>
+            <option value="valuea">at the bank</option>
+            <option value="valueb">at a cash machine</option>
+            <option value="valuec">at a bureau de change</option>
+          </select></div>
+       </th></tr><tr><td>
+Clerk </td><td>Good morning, how can I help you?</td></tr><tr><td>
+Woman </td><td>I'd like to exchange some euros into Japanese yen. What's the exchange rate?</td></tr><tr><td>
+Clerk </td><td>One euro is 122 yen.</td></tr><tr><td>
+Woman</td><td> OK, let me see. How much will I need to spend? Erm ... Here's €200. You charge commission, don't you?</td></tr><tr><td>
+Clerk</td><td> Yes, we charge 1 % commission. Is that OK?</td></tr><tr><td>
+Woman</td><td> That's fine.</td></tr><tr><td>
+Clerk</td><td> So, here's your money.</td></tr><tr><td>
+Woman</td><td> Thank you.</td></tr>
+  
+<tr><th id="td2" style="text-align:center" colspan="2">
+  <div class="box">2. 📌
+  <select id="select2">
+            <option value="">?</option>
+            <option value="valuea">at the bank</option>
+            <option value="valueb">at a cash machine</option>
+            <option value="valuec">at a bureau de change</option>
+          </select></div>
+       </th></tr><tr><td>
+Man</td><td> What's taking you so long?</td></tr><tr><td>
+Woman</td><td> I'm trying to withdraw some money.</td></tr><tr><td>
+Man</td><td> Didn't you want to make a deposit?</td></tr><tr><td>
+Woman</td><td> I've already done that. Then I took my card and got the receipt, but I realised we need money for the supermarket, so I tried to withdraw some.</td></tr><tr><td>
+Man</td><td> And?</td></tr><tr><td>
+Woman</td><td> It won't accept my PIN number.</td></tr><tr><td>
+Man</td><td> Maybe you entered it incorrectly.</td></tr><tr><td>
+Woman</td><td> But it worked before, didn't it? Let me try once more.</td></tr><tr><td>
+Man</td><td> How many times have you entered it?</td></tr><tr><td>
+Woman</td><td> This is the third time.</td></tr><tr><td>
+Man</td><td> I hope it doesn't swallow your card.</td></tr><tr><td>
+Woman</td><td> It's OK, it's working now.</td></tr>
+  
+<tr><th id="td3" style="text-align:center" colspan="2">
+  <div class="box">3. 📌
+  <select id="select3">
+            <option value="">?</option>
+            <option value="valuea">at the bank</option>
+            <option value="valueb">at a cash machine</option>
+            <option value="valuec">at a bureau de change</option>
+          </select></div>
+       </th></tr><tr><td>
+Bank clerk </td><td>Good afternoon.</td></tr><tr><td>
+Customer</td><td> Hello, I'd like to open a new account.</td></tr><tr><td>
+Bank clerk</td><td> OK. Let me tell you about our latest account. It's called Silversaver and it has an interest rate of 5%.</td></tr><tr><td>
+Customer</td><td> Sounds good.</td></tr><tr><td>
+Bank clerk</td><td> And we will also give you a debit card free of charge.</td></tr><tr><td>
+Customer</td><td> Isn't that the same as a cash card?</td></tr><tr><td>
+Bank clerk</td><td> No, with a debit card you can pay for things and the amount is directly taken from your account.</td></tr><tr><td>
+Customer</td><td> I can't use Internet banking with that account, can I?</td></tr><tr><td>
+Bank clerk</td><td> Of course, you can. You can also get up to £50 cashback at various shops and supermarkets.</td></tr><tr><td>
+Customer</td><td> That's useful.</td></tr><tr><td>
+Bank clerk</td><td> Here's a brochure. If you have any questions, don't hesitate to ask.</td></tr></table>
+  
+</div>
+
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuea');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    
+</html>

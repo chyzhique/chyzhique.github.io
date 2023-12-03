@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barlow+Condensed:400,400i,700,700i" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,500,700');
+
+* {
+  padding:0;
+  margin:0;
+  font-family: 'Roboto', sans-serif;
+}
+
+#switch-device{
+  position:absolute;
+  top:10px;
+  left:10px;
+  padding:5px;
+  width: 150px;
+  border-radius:5px;
+  background:none;
+  border: 2px solid gray;
+  outline:none;
+  cursor:pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.iphone {
+  position:relative;
+  margin: 3em auto;
+  background: #E3E3E3;
+  border-radius: 30px;
+  height: 80vh;
+  width: 275px;
+  transition:all 0.5s;
+  z-index:45;
+}
+
+.iphone::after {
+  content:"";
+  position:absolute;
+  background: white;
+  top:40px; bottom 5px; left:12.5px; right:5px;
+  border:0px solid red;
+  height:82.5%;
+  width: 250px;
+  transition:all 0.5s;
+  z-index:50;
+}
+
+.ipad {
+  position:relative;
+  margin: 5em auto;
+  padding:5px;
+  background: #E3E3E3;
+  border-radius: 15px;
+  height: 80vh;
+  width: 775px;
+  transition:all 0.5s;
+  z-index:45;
+  overflow: hidden;
+}
+
+.ipad::after {
+  content:"";
+  position:absolute;
+  background: white;
+  top:44.5px; bottom 5px; left:17.5px; right:5px;
+  border:0px solid red;
+  height:90%;
+  width:750px;
+  transition:all 0.5s;
+  z-index:50;
+}
+
+#content {
+  position:relative;
+  background: #4b4b4b;
+  z-index: 75;
+  transition: all 0.5s;
+  overflow-y: hidden;
+}
+
+.iphone-content {
+  height: 82.5%;
+  max-height: 82.5%;
+  width: 250px;
+  top:40px; left: 12.5px;
+}
+
+.ipad-content {
+  max-height:91%;
+  height:91%;
+  width:750px;
+  top:40px; left: 12.5px;
+}
+
+#top-bar {
+  display: flex;
+  background: #4b4b4b;
+}
+
+#top-bar div {
+  margin:5px;
+  height: 30px;
+}
+
+#icon {
+  position:relative;
+  background: url('https://i.kinja-img.com/gawker-media/image/upload/s--d5x3CWAf--/c_scale,f_auto,fl_progressive,q_80,w_800/xgdilxxhd0l3knrvnaau.jpg');
+  background-size:cover;
+  background-position:center;
+  border-radius: 2.5px;
+  background-repeat:no-repeat;
+  top:5px; left:6.5px;
+  height: 20px!important;
+  width: 20px;
+}
+
+#buttons {
+  margin:5px auto!important;
+}
+
+
+#buttons ul {
+  padding:0;
+  margin:0;
+  color: white;
+  height:100%;
+  font-weight: 400;
+}
+
+#buttons ul li {
+  width: 60px;
+  height:100%;
+  padding-top:6px;
+  font-size: 0.9em;
+  display: inline-block;
+}
+
+#sub-bar {
+  height: 17px;
+  padding: 7px;
+  color: #d0d0d0;
+  font-size: 0.8em;
+  background:#303030;
+  display:flex;
+  justify-content:space-between;
+}
+
+#sub-bar-left {
+  position:relative;
+  left:5px;
+}
+
+#sub-bar-right {
+  position:relative;
+  right:5px;
+}
+
+#card-content {
+  max-height:90vh;
+  overflow-y: auto;
+  transition:all 0.5s;
+}
+
+.iphone-card-content {
+  max-height:340px;
+}
+
+.ipad-card-content {
+  max-height:745px!important;
+}
+
+
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+.card {
+  background:#303030;
+  color: #d0d0d0;
+  margin:5px auto;
+  width: auto;
+}
+
+.card div {
+  padding: 5px 15px;
+}
+
+.card-heading {
+  font-size: 0.6em;
+}
+
+.card-body {
+  font-size: 0.75em!important;
+  font-weight:bold;
+}
+
+.card-body img {
+  
+}
+
+.card-options {
+  font-size: 0.6em;
+  display:flex;
+  justify-content:space-between;
+}
+
+#bottom-controls {
+  color: #d0d0d0;
+  display:flex;
+  justify-content:space-between;
+}
+
+#bottom-controls div {
+  font-size:1.1em;
+  margin:11.5px auto;
+  cursor:pointer;
+  transition:all 0.5s;
+}
+
+#bottom-controls div:hover {
+  color: #ff4500;
+}
+      </style>
+   </head>
+  
+<body>
+  
+ <div class="container" style="background-color: #303030">
+
+
+
+      <div id="top-bar">
+        <div id="icon">
+          
+        </div>
+        <div id="buttons">
+          <ul>
+            <li>News</li>
+            <li>Home</li>
+            <li>Popular</li>
+          </ul>
+        </div>
+      </div>
+      <div id="sub-bar">
+        <div id="sub-bar-left">
+          <i class="fas fa-fire"></i> <h2>JOBFORUM </h2>
+        </div>
+        <div id="sub-bar-right">
+          <i class="fas fa-sort"></i>
+        </div>
+      </div>
+      <div id="card-content" class="iphone-card-content">
+              
+        <div class="card">
+          <div class="card-heading">
+            r/jobs<br>
+            u/CITIZENFOUR - 6hr - imgur
+          </div>
+          <div class="card-body">
+            Tell us your bad job experiences. It can't be that bad, can it?
+          </div>
+          <div class="card-options">
+            <div class="options-vote">
+              <i class="fas fa-arrow-up"></i> ♥️15.2k <i class="fas fa-arrow-down"></i>
+            </div>
+            <div class="options-comments">
+              <i class="fas fa-comment"></i> 📩350
+            </div>
+            <div class="options-share">
+              <i class="fas fa-share"></i> Share
+            </div>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-heading">
+            r/jobs<br>
+            u/Laura Mitchell, Southampton - 6hr - imgur
+          </div>
+          <div class="card-body">
+            I once worked at a sweet factory putting sugar on sweets
+and biscuits. I thought it would be nice because I was a
+big fan of sweets. Well, I used to go home with sugar in
+my hair, up my nose and in my ears! It was disgusting and
+the smell was so strong that I couldn't get used to it. I
+only lasted a week, but one good thing did come out of
+my experience. By the time I left, I had given up sweets
+altogether.
+          </div>
+          <div class="card-options">
+            <div class="options-vote">
+              <i class="fas fa-arrow-up"></i> ♥️9.2k <i class="fas fa-arrow-down"></i>
+            </div>
+            <div class="options-comments">
+              <i class="fas fa-comment"></i> 📩260
+            </div>
+            <div class="options-share">
+              <i class="fas fa-share"></i> Share
+            </div>
+          </div>
+        </div>
+   
+
+<div class="card">
+          <div class="card-heading">
+            r/jobs<br>
+            u/Don Given, Hemsby - 6hr - imgur
+          </div>
+          <div class="card-body">
+I worked for one summer at a safari park. I liked feeding
+the penguins and the other animals in general, but cleaning
+up after them wasn't much fun, as you can imagine. The
+worst job I had was in the monkey reserve. You see, as
+visitors drove through, monkeys usually climbed on their
+cars for a free ride. At the exit of the reserve, one of us had
+to stop the monkeys from getting into the next reserve.
+I can tell you, chasing monkeys around with a stick in the
+middle of the summer is not fun at all.
+</div>
+          <div class="card-options">
+            <div class="options-vote">
+              <i class="fas fa-arrow-up"></i> ♥️8.2k <i class="fas fa-arrow-down"></i>
+            </div>
+            <div class="options-comments">
+              <i class="fas fa-comment"></i> 📩243
+            </div>
+            <div class="options-share">
+              <i class="fas fa-share"></i> Share
+            </div>
+          </div>
+        </div>        
+        
+<div class="card">
+          <div class="card-heading">
+            r/jobs<br>
+            u/Eleonor Ignes, Uxbridge - 6hr - imgur
+          </div>
+          <div class="card-body">        
+My job can be really hard sometimes as it involves taking
+customers' orders, answering calls and in general. dealing
+with people and their complaints. You see, I work at a call
+centre and the things I have to put up with are awful. Just
+because people can't see you face-to-face, they think it's OK
+to be rude. It was really difficult in the beginning, but by
+the end of the first month, I had learnt not to take it too
+personally. Once, I got so angry with a customer, I shouted
+back at him, and it almost cost me my job.
+</div>
+          <div class="card-options">
+            <div class="options-vote">
+              <i class="fas fa-arrow-up"></i> ♥️25.2k <i class="fas fa-arrow-down"></i>
+            </div>
+            <div class="options-comments">
+              <i class="fas fa-comment"></i> 📩160
+            </div>
+            <div class="options-share">
+              <i class="fas fa-share"></i> Share
+            </div>
+          </div>
+        </div>       
+        
+<div class="card">
+          <div class="card-heading">
+            r/jobs<br>
+            u/Willy Hawkins, Bath - 6hr - imgur
+          </div>
+          <div class="card-body">        
+I often remind myself, no matter how bad things get, they
+could be worse. I could still be working there. I don't know
+how I lasted a month at the box factory. I'd had enough
+before the end of the first week. It was exhausting on the
+body, but what it did to your mind was most worrying.
+Boring, just isn't a strong enough word. I worked with a
+man who had been there for twenty years! He told me he
+dreamt of boxes, he saw boxes when he closed his eyes,
+and he even tasted boxes when he ate. I was so glad when
+I was fired!<br>
+Willy Hawkins, Bath
+</div>
+          <div class="card-options">
+            <div class="options-vote">
+              <i class="fas fa-arrow-up"></i> ♥️6.2k <i class="fas fa-arrow-down"></i>
+            </div>
+            <div class="options-comments">
+              <i class="fas fa-comment"></i> 📩200
+            </div>
+            <div class="options-share">
+              <i class="fas fa-share"></i> Share
+            </div>
+          </div>
+        </div>        
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valued');   
+    setTdBackgroundColor('select4', 'td4', 'valuee');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+
+  </script>
+    
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barlow+Condensed:400,400i,700,700i" rel="stylesheet">
+   </head>
+  
+<body>
+  
+ <div class="container" style="background-color: #F1C93B">
+  
+ <h1 class="header" id="td1">
+  <span class="box">
+  <select id="select1">
+            <option value="">Choose the best title:</option>
+            <option value="valuea">✏️ a. Relaxing holiday in Mexico</option>
+            <option value="valueb">✏️ b. Adventure! Mexican Style</option>
+            <option value="valuec">✏️ c. Sightseeing in Mexico</option>
+          </select></span></h1> 
+   
+   <div class="container-2column" style="background-color: #83A2FF; ">
+     
+<div class="container" style="background-color: oldlace">    
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>1</h2>
+You will arrive in Ensenada and from there you'll travel by boat to Guadalupe Island, one of the best places in
+the world to see great white sharks. You'll spend the first two nights of your trip on the boat and you will
+have the opportunity to eat some traditional Mexican food. In the afternoon, you'll watch a diving safety video. If there's time, your guides might take you to see the famous Guadalupe fur seals.
+  </div><div class="container" style="background-color: oldlace"> 
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>2</h2>
+There are five shark cages on the boat and they will be open for diving at 6am, so if you wake up early, you'll
+be able to swim with the sharks before breakfast! You will spend most of the day diving with sharks. But if you
+change your mind, you can sit and watch all the action on a 42' TV in the main salon through a special underwater 'shark cam'.
+     </div><div class="container" style="background-color: oldlace"> 
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>3</h2>
+You will arrive in Cancun early in the morning. After checking into the hotel, you will spend the rest
+of the day taking part in some exciting extreme sports. Activities on offer include bungee jumping and 
+windsurfing. You'll also be able to go parasailing if it's not too windy.
+     </div><div class="container" style="background-color: oldlace"> 
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>4</h2>
+During your second day in Cancun, you'll get the chance to go sightseeing. You can see fascinating Mayan ruins at the El Rey archaeological site. Also, if you visit the Interactive Aquarium, you'll have the
+opportunity to swim with dolphins and touch sea urchins and stingrays. If you want to see more sights, ask your hotel to recommend a tour guide.
+     </div><div class="container" style="background-color: oldlace"> 
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>5</h2>
+You will arrive in Acapulco. When you check into the hotel, a coach will take you to the Papagayo River.
+There are a number of sports activities on offer there, including kayaking and rock climbing. Alternatively,
+you can ride down the river in a speedboat.
+     </div><div class="container" style="background-color: oldlace"> 
+<h2 style="float:left; background-color:#C51605; padding:1rem; margin:1rem; text-align:center; color:white">DAY <br>6</h2>
+This is the last day of your trip, so you'll have to get up early for the goodbye gathering. It will take place
+in the breakfast area. There will be music, and all participants will receive photos of the trip. You must
+check out of the hotel by midday. If you book your taxi to the airport in advance, you'll get a 10% discount.</div></div>
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valued');   
+    setTdBackgroundColor('select4', 'td4', 'valuee');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+
+  </script>
+    
+</html>

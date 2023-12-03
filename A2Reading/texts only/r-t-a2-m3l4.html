@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barlow+Condensed:400,400i,700,700i" rel="stylesheet">
+   </head>
+  
+<body>
+<div class="container" style="background-color: #FFCF96; ">
+  
+<h1 class="header" style="color:#E9B824; background-color: #C70039; width:50%; margin:auto; border-radius:25px">
+  <i>Come to Sichuan</i></h1>
+
+<h1></canter></h1>
+With its beautiful scenery, friendly people and great food, Sichuan Province in China is the ideal holiday destination.
+Sichuan is in southwest China and it has many mountains, including the Himalayas to the west. The famous
+Yangtze River runs through China, from west to east, crossing Sichuan. The Yangtze isn't as long as the Amazon or the Nile but it's the longest river in Asia.
+<br><br>
+One of the most impressive sights in Sichuan is the Leshan Giant Buddha, a huge statue carved out of a cliff on the side
+of Lingyun Mountain. The statue is more than a thousand years old and over 71 metres tall. It is the largest carved stone
+Buddha in the world. 
+<br><br>
+Not far from the Buddha is Mount Emei. Here you can visit temples or just take photos of the many waterfalls. For
+some more beautiful scenery, visit Jiuzhaigou Valley. Jiuzhaigou Valley, in the north of Sichuan , is one of the most
+<mark>spectacular</mark> places in China with snow-covered mountains, colourful lakes and beautiful forests.
+<br><br>
+Chengdu is the capital of Sichuan and is the cultural and industrial centre of the <mark>region</mark>. Chengdu is also home to the
+Chengdu Giant Panda Research Base, one of the most important centres in the world for the protection of the Giant
+Panda. The Research Centre has <mark>developed</mark> into China Panda City with a museum and a zoo.
+<br><br>
+After all that sightseeing, you must <mark>definitely</mark> have something to eat. The Sichuanese cook with a lot of chilli
+peppers and garlic, and Sichuanese food is hotter and spicier than other types of Chinese cuisine, but it's delicious!</div></div>
+
+
+ 
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valued');   
+    setTdBackgroundColor('select4', 'td4', 'valuee');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+
+  </script>
+    
+</html>

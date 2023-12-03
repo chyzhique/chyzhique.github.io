@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+   </head>
+  
+<body>
+<div class="container">
+  
+  <h1 class="header">Lewis Hamilton</h1>
+&emsp; British-born Formula One driver, Lewis Hamilton, is the rising star of the racing scene. 
+With Lewis, the sport has become more popular especially with young people in the UK.<br>
+&emsp;Lewis began karting as a hobby at the age of 8. One thing was clear. He was very talented, and he soon won races and championships.<br> 
+&emsp;Today, Lewis doesn't have much free time on his hands and spends many hours at the gym every day. Few people know that F1 drivers need to train hard and be very fit.
+They need to have strong muscular bodies and very little body fat. <br>
+&emsp;After winning his first F1 World Championship in 2008, the future is bright for Lewis. Driving is his passion and he's at his happiest when he's <mark>behind the wheel</mark>.
+
+<h1 class="header">Angelina Jolie</h1>
+&emsp; Angelina Jolie is one of the most famous actresses in the world. She is a very beautiful woman and she is <mark>well-known</mark> for her charity work.<br>
+&emsp; Angelina Jolie has played many roles <mark>on screen</mark> and won an Academy award for her role in the film Girl Interrupted in 1999. However, she became 
+an international superstar after her performances in the Lara Croft films. During filming for Lara Croft, Angelina spent some time in Cambodia. 
+There, she <mark>became aware of</mark> the poverty in Asia and the problems refugees face all over the world. She realised that she <mark>was in a position to</mark> do 
+something and became a goodwill ambassador.<br>
+&emsp;Her charity work has also affected her family. She has six children in all; three with Brad Pitt and three adopted children from Cambodia, Vietnam and Ethiopia.</div></div>
+
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuea');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    
+</html>

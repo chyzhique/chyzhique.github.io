@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Barlow+Condensed:400,400i,700,700i" rel="stylesheet">
+   </head>
+  
+<body>
+  
+ <div class="container" style="background-color: #C63D2F">
+   
+   <h1 class="header" style="background-color:black; color:white">
+     The last of Mohicans</h1>
+   <h3 class="header" style="background-color:black; color:white">
+     by James Fenimore Cooper</h3><hr>
+<h1 class="header" style="background-color:black; color:white">
+       CHAPTER 3</h1>  
+ <div class="container-2column" style="background-color: #FEE8B0">
+   
+   <div class="column">
+&emsp; With fall approaching, the evenings were getting colder. Two men were talking by a river. One of them had dark skin and his body was painted with different colors. He had a shaved head, apart from a crest down
+the middle and his name was Chingachgook. He wore buckskin pants and he held a tomahawk and a <mark>rifle</mark>. The other man was of European origin, but his skin was dark from the sun. He was dressed like a Native American too, and had a rifle-of great length. Chingachgook was telling him stories of his fathers, who were proud <mark>warriors</mark> before the white men came from the setting sun.<br>
+&emsp; 'l wish there were more of my people. But when I die, my son Uncas, will be the last of the Mohicans,' said Chingachgook.<br>
+&emsp; 'Uncas is here!' said another voice, and a young warrior came and sat with them. The father showed no surprise and they all sat silently for several minutes.<br>
+'Did you see any of those <mark>thieves</mark> from the Maquas tribe?' asked Chingachgook.<br>
+&emsp; 'I have been on their <mark>trail</mark>, and there are as many as the fingers on both my hands. But they hide like cowards!' replied his son.
+     </div>
+   <div class="column">
+&emsp; Chingacbgook turned to his friend and said: "Hawkeye, let us eat well tonight and show those Maquas that we are men tomorrow.'<br>
+lt was not long before they heard an animal moving in the <mark>bushes</mark>. Hawkeye raised his rifle, but Uncas whispered to him.<br>
+&emsp; 'If l were you, I wouldn't shoot. The Maquas will hear. Those thieves would want to eat too if you killed the animal.'<br>
+&emsp; Hawkeye put his rifle down and watched as Uncas threw himself to the ground and moved silently towards his prey. Soon enough, there was an arrow in its side. The <mark>wounded</mark> animal jumped out of the bushes and Uncas finished the job with his knife.<br>
+&emsp; 'Shhhh! I bear something,' said Chingachgook.<br>
+&emsp; 'Maybe it's wolves following the animal,' suggested Hawkeye.<br>
+&emsp; 'No. The horses of white men are coming. Hawkeye, they are your brothers, speak to them. With the Maquas nearby, this is a dangerous place for them,' said Chingachgook.
+<hr>
+fall (AmE) - autumn (BrE)<br>
+pants (A mE) - trousers (BrE)<br>
+color (AmE) - colour (BrE)
+
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valueb');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valued');   
+    setTdBackgroundColor('select4', 'td4', 'valuee');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+
+  </script>
+    
+</html>

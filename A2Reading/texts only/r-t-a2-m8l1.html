@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+   </head>
+  
+<body>
+
+  <div class="container">
+
+<table style="background-color:#F3B664; border-radius:15px">
+<tr><td>
+Clerk </td><td>Good morning, how can I help you?</td></tr><tr><td>
+Sean</td><td> ... Where are you?</td></tr><tr><td>
+Vicky</td><td> I'm outside the vintage music store with Jay. I've just bought this great jazz compilation.</td></tr><tr><td>
+Sean</td><td> Nice! Jay's there, huh? You should play him a few songs from my new alburn on your
+phone. He'll like them.</td></tr><tr><td>
+Vicky</td><td> OK. See you later.
+  </td></tr></table>
+
+  <table>
+<colgroup> 
+<col style="background-color: #dd008b">
+</colgroup> 
+<tr><th>
+Jay</th><td>Who was that?</td></tr><tr><th>
+Vicky</th><td>It was my brother, Sean.</td></tr><tr><th>
+Jay</th><td>I haven't seen him since Gary's party. Is he still in that band?</td></tr><tr><th>
+Vicky</th><td> Yes, and he told me I should play you a few songs from his new album.</td></tr><tr><th>
+Jay</th><td> Does he have an album out?</td></tr><tr><th>
+Vicky</th><td> Well, you can't buy it in the Apple Music, Deezer or anything. But his band went to a proper studio for the recording. It was quite expensive but the end result was great.</td></tr><tr><th>
+Jay</th><td>They're becoming quite professional.</td></tr><tr><th>
+Vicky</th><td>The studio engineer told them that they were the best he had heard for ages.</td></tr><tr><th>
+Jay</th><td>Wow! He's going to be famous.</td></tr><tr><th>
+Vicky</th><td>Here, listen to track 3. It's wicked!</td></tr><tr><th>
+Jay</th><td>Turn down the volume. It's a bit loud ... That's better. Hmm ... lt has a strong beat. It's like a mixture of rock and hip hop. I like it.</td></tr><tr><th>
+Vicky</th><td>He said you would.</td></tr><tr><th>
+Jay</th><td>Who writes the lyrics?</td></tr><tr><th>
+Vicky</th><td>My brother. He plays the guitar, too.</td></tr><tr><th>
+Jay</th><td>The lead singer has a great voice. Listen, I'd love to get a hold of a copy of this album.
+</td></tr><tr><th>
+Vicky</th><td>I can get you one. I forgot! They have a SoundCloud account where you can download the whole album if you want. </td></tr><tr><th>
+Jay</th><td>That sounds good .
+  </td></tr>
+    </table>
+</div>
+
+</body>
+
+    <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valuea');   
+    setTdBackgroundColor('select4', 'td4', 'valueb');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+    setTdBackgroundColor('select6', 'td6', 'valuep');
+  
+    setTdBackgroundColor('select7', 'td7', 'valuee');
+    setTdBackgroundColor('select8', 'td8', 'valueb');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+    setTdBackgroundColor('select12', 'td12', 'valueh');
+    setTdBackgroundColor('select13', 'td13', 'valuec');
+    setTdBackgroundColor('select14', 'td14', 'valueg');
+
+  </script>
+    
+</html>
