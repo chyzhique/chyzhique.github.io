@@ -23,14 +23,17 @@
             line-height:1.5;
             font-size:1.5rem; 
             color:black;
-             padding: 2rem
+             padding: 2rem;
+		align-items: start;
         }
 
         .right-side {
             background-color: oldlace;
+		align-items: start;
       }
       
-      .head-img {width: 100%; 
+      .head-img {
+	width: 100%; 
         height: 75vh; 
         object-fit: cover;
         object-position: 50% 50%;
