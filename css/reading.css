@@ -1,18 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap');
       
 
-       .grid-container {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-            grid-gap: 10px; /* Spacing between grid items */
-            margin: 5vw;
-	    margin-top: 0;
-	    margin-bottom:0;
-            display: grid;
-            grid-template-columns: 40% 60%;
-            grid-gap: 10px; 
-            background-color: white;
-	    align-items: start;
-        }
+      .grid-container {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 10px; /* Spacing between grid items */
+    margin: 0 5vw; /* Adjust margin as needed */
+    background-color: white;
+    align-items: start;
+}
 
         .left-side {
 	    align-items: start;
