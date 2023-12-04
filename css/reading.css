@@ -11,6 +11,7 @@
 }
 
         .left-side {
+		font-size: 1rem; 
 	    align-items: start;
             background-color: white;
             margin:auto; 
@@ -25,6 +26,7 @@
         }
 
         .right-side {
+		font-size: 1rem; 
             background-color: oldlace;
 		align-items: start;
       }
@@ -54,7 +56,7 @@
                border-collapse: separate; 
                text-align: start; 
                font-family: garamond; 
-               font-size: 1.2rem; 
+               font-size: 1rem; 
                line-height: normal;
                color: #292929;
                font-family: 'Cormorant Garamond', serif;
