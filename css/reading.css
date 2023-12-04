@@ -10,7 +10,8 @@
             display: grid;
             grid-template-columns: 40% 60%;
             grid-gap: 10px; 
-            background-color: white
+            background-color: white;
+	    align-items: start;
         }
 
         .left-side {
