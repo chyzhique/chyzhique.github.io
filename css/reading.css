@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap');
       
 
-      .grid-container {
+.grid-container {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: minmax(40%, auto) minmax(60%, 1fr);
     grid-gap: 10px; /* Spacing between grid items */
     margin: 0 5vw; /* Adjust margin as needed */
     background-color: white;
