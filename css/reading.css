@@ -15,16 +15,17 @@
         }
 
         .left-side {
+	    align-items: start;
             background-color: white;
             margin:auto; 
             border-radius: 15px; 
             background-color: white;
             font-family:merriweather; 
             line-height:1.5;
-            font-size:1.5rem; 
+            font-size:1rem; 
             color:black;
-             padding: 2rem;
-		align-items: start;
+            padding: 1rem;
+		
         }
 
         .right-side {
