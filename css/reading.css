@@ -10,19 +10,16 @@
     align-items: start;
 }
 
-        .left-side {
-		font-size: 1rem; 
-	    align-items: start;
-            background-color: white;
-            margin:auto; 
-            border-radius: 15px; 
-            background-color: white;
-            font-family:merriweather; 
-            line-height:1.5;
-            font-size:1rem; 
-            color:black;
-            padding: 1rem;
-		
+.left-side {
+	font-size: 1rem; 
+	align-items: start;
+	background-color: white;
+	border-radius: 15px; 
+	background-color: white;
+	font-family:merriweather; 
+	line-height:1.5;
+	font-size:1.2rem; 
+	color:black;
         }
 
         .right-side {
