@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap');
+
+body{
+  font-family: merriweather;
+  margin:1rem;
+  font-size: 1.2rem;
+  line-height:1.8
+}   
+    </style>
+    
+    <body>
+<h2>A. Read and find out why they are good role models.</h2>
+
+<h2>B. Read again and complete with the names Lewis or Angelina.</h2>
+
+<div id="td1">1. <select id="select1">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select> showed great talent at an early age.</div>
+<div id="td2">2. <select id="select2">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select>   won an award in 1999.</div>
+<div id="td3">3. <select id="select3">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select>   tries to help other people.</div>
+<div id="td4">4. <select id="select4">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select>   turned a hobby into a career.</div>
+<div id="td5">5. <select id="select5">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select>   needs to be very fit for his/her job</div>
+<div id="td6">6. <select id="select6">
+            <option value="">?</option>
+            <option value="valuea">Lewis</option>
+            <option value="valueb">Angelina</option>
+          </select>   has a big family</div>
+  
+  
+  </body>
+  
+  <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+    setTdBackgroundColor('select2', 'td2', 'valueb');
+    setTdBackgroundColor('select3', 'td3', 'valueb');   
+    setTdBackgroundColor('select4', 'td4', 'valuea');
+    setTdBackgroundColor('select5', 'td5', 'valuea');
+      
+    setTdBackgroundColor('select6', 'td6', 'valueb');
+    setTdBackgroundColor('select7', 'td7', 'valued');
+    setTdBackgroundColor('select8', 'td8', 'valuea');
+    setTdBackgroundColor('select9', 'td9', 'valueb');
+      
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+    setTdBackgroundColor('select11', 'td11', 'valuea');
+
+  </script>
+  
+  </html>
