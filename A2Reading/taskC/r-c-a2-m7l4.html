@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+.taskC{
+grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+grid-gap: 10px; /* Spacing between grid items */
+margin-left: 10vw;
+margin-right: 10vw;
+display: grid;
+grid-template-columns: 50% 50%;
+grid-gap: 10px; 
+background-color: white;
+  font-size:1.3rem
+}
+h2{
+  grid-column: 1 / 3
+}
+h3{
+  text-align:center; 
+  font-family: cursive
+}
+.sum{
+  background-color: #F8DE22; 
+  grid-column: 1 / 3; 
+  padding-left: 5vw; 
+  padding-right: 5vw; 
+  padding-bottom: 4vw;
+  font-size:1.2rem; 
+}
+.var {padding:1rem; 
+      font-size:1.2rem; 
+     }
+.highlight {background-color: #A7D397
+    }
+    table {
+  grid-column: 1 / 3;
+	width:80%;
+  margin-left:auto;
+  margin-right:auto;
+  border:collapse;
+}
+    td{
+      background-color:#3C486B;
+      color: white;
+      padding:1rem;
+      font-family: merriweather;
+      font-size:1.2rem;
+      font-weight: 500;
+    }
+    .td{
+      background-color: #F0F0F0;
+      color: black
+    }
+    select{float:right}
+    mark{
+      padding:0.2rem;
+      border-radius: 50% 10% 15% 5%;
+      font-style: oblique;
+    }
+    </style>
+  
+    <div class="taskC">
+      
+<h2>C.Find words/ phrases in the text that mean the following:</h2>
+
+<table>
+  <tr><td>1. extremely unpleasant, horrible <mark>(Laura)</mark>:</td><td class="td"><input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 100%"></td></tr>
+  <tr><td>2. an area of land that is protected <mark>(Dan)</mark>:</td><td class="td"><input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 100%"></td></tr>
+  <tr><td>3. a thin piece of wood <mark>(Dan)</mark>:</td><td class="td"><input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 100%"></td></tr>
+  <tr><td>4. accept something that is annoying, without complaining <mark>(Eleanor)</mark>:</td><td class="td"><input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 100%"></td></tr>
+  <tr><td>5. help somebody remember something <mark>(Willy)</mark>:</td><td class="td"><input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 100%"></td></tr>
+  <tr><td>6. really tiring <mark>(Willy)</mark>:</td><td class="td"><input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 100%"></td></tr>
+</table>
+
+
+
+      <div class="sum">
+        
+      <h3>Let's summarise!</h3>
+❓ Which of the jobs in the text would you least like
+to do? Why?
+        
+            <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valued');
+    setTdBackgroundColor('select2', 'td2', 'valuea');
+    setTdBackgroundColor('select3', 'td3', 'valuee');
+    setTdBackgroundColor('select4', 'td4', 'valuef');
+    setTdBackgroundColor('select5', 'td5', 'valuec');
+      
+    setTdBackgroundColor('select6', 'td6', 'valueb');
+    setTdBackgroundColor('select7', 'td7', 'valuec');
+
+  </script>
+
+    <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('highlight');
+            } else {
+              resultMessage.classList.remove('highlight');
+            }
+          }
+        });
+      });
+    });
+  </script>
+    
+    <script>
+    // Function to save the result
+    function saveResult() {
+      const result = document.getElementById('resultMessage').textContent;
+      localStorage.setItem('userResult', result);
+    }
+
+    // Function to load and display the saved result
+    function loadResult() {
+      const savedResult = localStorage.getItem('userResult');
+      if (savedResult) {
+        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
+      }
+    }
+  </script>
+    
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "disgusting", "reserve", "stick", "put up with", "remind", "exhausting", 
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
