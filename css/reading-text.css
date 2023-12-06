@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Indie+Flower&family=Lora&family=Merriweather:wght@300&family=Playfair+Display+SC:wght@900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Indie+Flower&family=Lora&family=Merriweather:wght@300&display=swap');
 body {
-  margin: 0;
+  margin-left: 3vw;
+  margin-right: 3vw;
   padding: 0;
   font-family: 'Playfair', serif;
   font-size: 1.3rem;
