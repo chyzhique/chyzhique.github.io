@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital@1&family=Merriweather:wght@300&display=swap');
+
+    body {
+      font-family: merriweather;
+      margin: 1rem;
+      font-size: 1rem;
+      vertical-align: top; /* Ensure content aligns to the top */
+    }
