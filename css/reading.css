@@ -4,7 +4,7 @@
 
 .grid-container {
     display: grid;
-    grid-template-columns: minmax(40%, auto) minmax(60%, 1fr);
+    grid-template-columns: minmax(40%, auto) minmax(60%, 700px);
     grid-gap: 15px; /* Spacing between grid items */
     margin: 0 2vw; /* Adjust margin as needed */
     background-color: white;
