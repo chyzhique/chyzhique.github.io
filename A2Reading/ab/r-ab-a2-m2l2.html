@@ -9,33 +9,33 @@
 </head>
 
 <body>
-  
-  <h2>B. Read again and choose T for True, F for False or NM for Not Mentioned.</h2>
+
+<h2>B. Read again and write T for True, F for False or NM for Not Mentioned.</h2>
 <ol>
-  <li data-correct="F">The writer saw durians in an advertisement for the first time. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
-  <li data-correct="NM">In Singapore, they sell durians only in markets. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
-  <li data-correct="T">The writer thought the strong smell was rotten food. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
-  <li data-correct="F">The writer cut the durian, then ate a piece. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
-  <li data-correct="F">The merchant served the fruit with some cream and butter. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
-  <li data-correct="T">The writer enjoyed the durian and wanted some more. <br>
-    <button onclick="checkAnswer(this)">T</button>
-    <button onclick="checkAnswer(this)">F</button>
-    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="b">The writer saw durians in an advertisement for the first time. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
+  <li data-correct="c">In Singapore, they sell durians only in markets. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
+  <li data-correct="a">The writer thought the strong smell was rotten food. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
+  <li data-correct="b">The writer cut the durian, then ate a piece. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
+  <li data-correct="b">The merchant served the fruit with some cream and butter. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
+  <li data-correct="a">The writer enjoyed the durian and wanted some more. <br>
+    <button onclick="checkAnswer(this)"  id="a">T</button>
+    <button onclick="checkAnswer(this)"  id="b">F</button>
+    <button onclick="checkAnswer(this)"  id="c">NM</button></li>
 </ol>
 
 <script>
@@ -48,10 +48,14 @@
 
     // Check if the selected answer is correct
     let correctAnswer = button.parentElement.getAttribute('data-correct');
-    if (button.textContent === correctAnswer) {
+    if (button.id === correctAnswer) {
       button.classList.add('correct');
     } else {
       button.classList.add('incorrect');
     }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
   }
 </script>
