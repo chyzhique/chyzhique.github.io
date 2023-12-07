@@ -51,3 +51,26 @@
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+    input{
+      border:0;
+      border-bottom: 2px solid black;
+      pointer: crosshair
+    }
+    table{
+      width:100%;
+      background-color: #F9B572;
+      border-collapse: separate;
+      
+    }
+    td{
+      padding:1rem;
+      border: 1px solid white
+    }
+    .highlight{
+      background-color: #F9B572;
+    }
+    .var{
+      padding:1rem;
+      margin-bot:0.4rem;
+    
+    }
