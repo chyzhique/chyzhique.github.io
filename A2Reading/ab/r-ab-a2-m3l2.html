@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+	
+</head>
+
+<body>
+
+<h2>A. Read the text quickly and match the questions a-e with the paragraphs 1-5.</h2>
+<ul>
+  <li onclick="toggleCrossed(this)">a. Do you need special training?</li>
+  <li onclick="toggleCrossed(this)">b. How did it all start?</li>
+  <li onclick="toggleCrossed(this)">c. Apart from strong boots and helmets, what safety equipment do you need?</li>
+  <li onclick="toggleCrossed(this)">d. Why is caving so popular?</li>
+  <li onclick="toggleCrossed(this)">e. What's the most important thing to remember?</li>
+</ul>
+
+<h2>B. Read again and write T for True or F for False.</h2>
+<ol>
+<li data-correct="b">Scientists started cave exploration in the 19th century. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="a">Cavers enjoy getting into caves more than getting out. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="b">You do the first part of the training in a cave. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="a">Teens under 16 can't go cave exploring.<br>
+    <button onclick="checkAnswer(this)" id="a">TRUE 
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="b">Only experienced cavers should explore caves alone. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="a">All members of a group must have more than one light. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</li>
+<li data-correct="b">Special clothes are necessary. <br>
+    <button onclick="checkAnswer(this)" id="a">TRUE </button>
+    <button onclick="checkAnswer(this)" id="b">FALSE</button></li>
+</ol>
+
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

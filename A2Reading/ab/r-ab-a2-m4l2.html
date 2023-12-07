@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </style>
+</head>
+
+<body>
+
+<h2>A. Read the text quickly and choose the most suitable introduction for it, a, b, or c.</h2>
+  <div data-correct="b">
+    <button  onclick="checkAnswer(this)"  id="a">a. It is very difficult to make correct predictions about the future, but four famous people have tried. So, let's see what the future holds.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. With the world changing so quickly, it is very difficult to make correct predictions about the future. Some people get it right, others get it wrong. Some people, however, are a long way off. Here are a few examples.</button>
+    <button  onclick="checkAnswer(this)"  id="c">c. Nowadays, we fly planes, use computers and relax in front of the TV. We don't think it's something special. But how about in the past? What was life like then?</button>
+</div>
+
+<h2>B. Read again and write T for True or F for False.</h2>
+<ol>
+  <li data-correct="b">1. The Wright brothers flew a plane for the first time in 1901.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="b">2. The first non-stop transatlantic flight was in 1918.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="a">3. In 1950, the world market didn't have a need for computers.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="b">4. About 2 billion people use computers today.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="a">5. Zanuck predicted that people wouldn't like watching TV.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="a">6. In the USA, people have their TV sets on for about 7 hours a day.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+  <li data-correct="b">7. Steve Chen owns YouTube.<br>
+    <button  onclick="checkAnswer(this)"  id="a">True</button>
+    <button  onclick="checkAnswer(this)"  id="b">False</button></li>
+</ol>
+
+
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

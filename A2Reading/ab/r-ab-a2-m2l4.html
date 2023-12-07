@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+	
+</head>
+
+<body>
+
+<h2>A. Read the text quickly and match the headings a-e with the paragraphs 1-4. There is one extra heading you do not need to use.</h2>
+<ul>
+  <li onclick="toggleCrossed(this)">a. Weather</li>
+  <li onclick="toggleCrossed(this)">b. The best time to visit</li>
+  <li onclick="toggleCrossed(this)">c. A word of warning</li>
+  <li onclick="toggleCrossed(this)">d. What is it?</li>
+  <li onclick="toggleCrossed(this)">e. Nature</li>
+</ul>
+
+<h2>B. Read again and answer the following questions. Choose a, b or c:</h2>
+<ol>
+  <li data-correct="b">According to the text, what is true about the Antarctic?
+    <br>
+    <button onclick="checkAnswer(this)" id="a">a. It's bigger than the Sahara</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="b">b. It's a kind of desert.</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="c">c. There's no life there.</button>
+    <br>
+  </li>
+
+  <li data-correct="b">Why does the writer mention camels and cacti?
+    <br>
+    <button onclick="checkAnswer(this)" id="a">a. Because they have been in the desert for centuries.</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="b">b. Because they can live without water for a long time.</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="c">c. Because people cannot survive in the desert without them.</button>
+    <br>
+  </li>
+
+  <li data-correct="a">Which of the following would be most useful when traveling in the desert?
+    <br>
+    <button onclick="checkAnswer(this)" id="b">a. a hat</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="b">b. a pair of shorts</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="b">c. a pair of boots</button>
+    <br>
+  </li>
+
+  <li data-correct="b">What is not true about Anna?
+    <br>
+    <button onclick="checkAnswer(this)" id="a">a. She found the advice useful.</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="b">b. She spent only a week in North Africa.</button>
+    <br>
+    <button onclick="checkAnswer(this)" id="c">c. She visited the desert.</button>
+    <br>
+  </li>
+</ol>
+
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

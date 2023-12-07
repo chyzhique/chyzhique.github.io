@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+</head>
+
+<body>
+
+<h2>A. Read an extract an adapted version of the Last of The Mohicans. Who is Hawkeye?</h2>
+
+<h2>B. Read again and answer the questions. Choose a, b or c.</h2>
+  <ol>
+<li data-correct="d"> Who was wearing Native American clothes?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. Chingachgook</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. Hawkeye</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. Both of them</button></li>
+<li data-correct="a"> What's the first thing Chingachgook did when his son arrived?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. He didn't speak.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. He asked him a question.</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. He listened to what he had to say.</button></li>
+<li data-correct="b"> Where had Uncas been?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. hiding in the bushes</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. following the Maquas tribe</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. looking for food</button></li>
+<li data-correct="d"> Why did Chingachgook say: 'Let us eat well tonight'?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. They didn't know if they would find food the following day.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. They hadn't eaten for days because they were following the Maquas tribe.</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. They were planning to fight and needed to be strong.</button></li>
+<li data-correct="b"> What did Uncas use to kill the animal?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. a rifle</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. an arrow and a knife</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. a knife and his hands</button></li>
+<li data-correct="b"> What does Chingachgook want Hawkeye to do?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. tell the white men about the animals</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. warn the white men</button>
+    <button  onclick="checkAnswer(this)"  id="d">c. find a safe place for them</button></li>
+ </ol>
+ 
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "dry-cleaning", "cars", "eat", 
+      "basketball", "tennis", "to go home", 
+      "Employees", "work", "meditation room"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  
+   <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('correct');
+            } else {
+              resultMessage.classList.remove('correct');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

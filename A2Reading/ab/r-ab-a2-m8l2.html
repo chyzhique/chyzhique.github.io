@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  <style>
+    input{
+      border:0;
+      border-bottom: 2px solid black;
+      pointer: crosshair
+    }
+    table{
+      width:100%;
+      background-color: #F9B572;
+      border-collapse: separate;
+      
+    }
+    td{
+      padding:1rem;
+      border: 1px solid white
+    }
+    .highlight{
+      background-color: #F9B572;
+    }
+    .var{
+      padding:1rem;
+      margin-bot:0.4rem;
+    
+    }
+  </style>
+</head>
+
+<body>
+
+<h2>A. Guess the answers to the questions below. Then read and check your answers.</h2>
+  <ol>
+<li data-correct="b">What do Russians do just before going on a journey?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. They call their family to say goodbye.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. They sit quietly for a short while in their house.</button>
+</li>
+<li data-correct="a">What's a common way for people in Belgium to greet each other?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. They kiss three times on the cheek.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. They shake hands.</button>
+</li>
+<li data-correct="a">What does pulling the skin down under your eye mean in Japan?<br>
+    <button  onclick="checkAnswer(this)"  id="a">a. Something is boring.</button>
+    <button  onclick="checkAnswer(this)"  id="b">b. Something is interesting.</button>
+</li>
+    </ol>
+
+<h2>B. Read again and answer the questions.</h2>
+1. Why did Dimitri ask John to be quiet?<br>
+2. How did John react?<br>
+3. Why did Tracy extend her hand?<br>
+4. How did Tracy feel when the man kissed her?<br>
+5. Why did Peter pull the skin down under his eye?<br>
+6. What did Peter do after the misunderstanding?
+
+        </div>
+
+ 
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "dry-cleaning", "cars", "eat", 
+      "basketball", "tennis", "to go home", 
+      "Employees", "work", "meditation room"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  
+   <script>
+    const varSpans = document.querySelectorAll('.var');
+
+    varSpans.forEach(varSpan => {
+      const radios = varSpan.querySelectorAll('input[type="radio"]');
+      const resultMessage = varSpan;
+
+      radios.forEach(radioButton => {
+        radioButton.addEventListener('change', function() {
+          if (radioButton.checked) {
+            if (radioButton.getAttribute('data-correct') === 'true') {
+              resultMessage.classList.add('correct');
+            } else {
+              resultMessage.classList.remove('correct');
+            }
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>

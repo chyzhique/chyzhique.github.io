@@ -1,0 +1,45 @@
+<h2>B. Read again and write T for True, F for False or NM for Not Mentioned.</h2>
+<ol>
+  <li data-correct="F">The writer saw durians in an advertisement for the first time. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="NM">In Singapore, they sell durians only in markets. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="T">The writer thought the strong smell was rotten food. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="F">The writer cut the durian, then ate a piece. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="F">The merchant served the fruit with some cream and butter. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+  <li data-correct="T">The writer enjoyed the durian and wanted some more. <br>
+    <button onclick="checkAnswer(this)">T</button>
+    <button onclick="checkAnswer(this)">F</button>
+    <button onclick="checkAnswer(this)">NM</button></li>
+</ol>
+
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.textContent === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+</script>
