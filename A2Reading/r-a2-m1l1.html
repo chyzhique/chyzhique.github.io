@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+	<script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <style>
+.head-img {
+	width: 100%; 
+        height: 75vh; 
+        object-fit: cover;
+        object-position: 50% 50%;
+        -webkit-filter: contrast(130%);
+        z-index:-1
+      }
+</style>
+    
+   </head>
+    
+  <body> 
+
+    <div class= "note-container" style="text-align:justify">
+     <i class="pin"></i>
+  <blockquote class="note yellow">
+      <h3>Think about or discuss:</h3>
+❓Do you talk with your friend on the phone a lot? <br>
+❓What do you usually talk about? </div>
+     </blockquote>
+  </div>  
+    
+    <img src="https://drive.google.com/uc?export=view&id=1Le-Z2cPygX-SzCttEZRfRt_5EAk6t75Q" class="head-img">
+      </div>  
+    
+    <div class="grid-container">
+         
+<div class="left-side" id="leftColumn"></div>
+<div class="right-side" id="rightColumn"></div>
+            
+</div>
+ 
+      
+</body>
+
+<script>
+    async function fetchAndPopulateContent(columnId, url) {
+        try {
+            const response = await fetch(url);
+            const content = await response.text();
+            
+            // Create a shadow DOM for each column
+            const shadow = document.getElementById(columnId).attachShadow({ mode: 'closed' });
+            
+            // Create a container div for the content
+            const container = document.createElement('div');
+            
+            // Apply styles to align content to the top
+            container.style.verticalAlign = 'top';
+
+            container.innerHTML = content;
+
+            // Append the container to the shadow DOM
+            shadow.appendChild(container);
+        } catch (error) {
+            console.error(`Error loading content for ${columnId}: ${error.message}`);
+        }
+    }
+
+    // Example usage
+    const leftColumnUrl = 'https://chyzhique.github.io/A2Reading/ab/r-ab-a2-m1l1.html';
+    const rightColumnUrl = 'https://chyzhique.github.io/A2Reading/texts%20only/r-t-a2-m1l1.html';
+
+    fetchAndPopulateContent('leftColumn', leftColumnUrl);
+    fetchAndPopulateContent('rightColumn', rightColumnUrl);
+</script>
+
+
