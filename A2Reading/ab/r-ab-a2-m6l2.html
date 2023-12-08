@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  <style>
+    input{
+      border:0;
+      border-bottom: 2px solid black;
+      pointer: crosshair;
+      height:1.5rem; 
+      width:20%;
+      input:1.2rem
+    }
+  </style>
+</head>
+
+<body>
+<h2>A. Read the text quickly and choose the best title a, b or c.</h2>
+<ul>
+<li onclick="toggleCrossed(this)">a. Relaxing holiday in Mexico &emsp; 
+<li onclick="toggleCrossed(this)">b. Adventure! Mexican Style <br>
+<li onclick="toggleCrossed(this)">c. Sightseeing in Mexico
+</ul>
+  
+<h2>B. Read again and complete the postcard.</h2>
+
+  <div style="background-color:#F0DBAF; border-radius:5px; padding:1rem; margin:1rem; font-size:1.2rem">
+<h4>Hi Lizzie,</h4>
+I'm having a great time in Mexico.
+Right now I'm in (1) 
+    <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1">,
+    and I'm going to visit the Interactive Aquarium and swim with (2) 
+    <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2">. I also want to visit the (3) 
+    <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3">ruins later. They should be interesting.<br>
+&emsp; Yesterday I went bungee jumping. Can you believe it? I wanted to go parasailingtoo, but it was too (4) 
+    <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4">so I couldn't. I didn't manage to swim with (5) 
+    <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5">either. Unfortunatelly, I got scared and didn't go.
+Tomorrow I'm going to (6) 
+    <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6">. They will take us to the Papagayo River and I might do some water sports like (7)
+    <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7">.
+<h4>See you in few days,<br>
+Natalie</h4>
+
+
+<script>
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "Cancun", "dolphins", "Mayan", "windy", "sharks", "Acapulco", "kayaking"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value;
+        if (enteredWord === correctWords[index]) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  </script>
+  
+<script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>  
