@@ -48,6 +48,7 @@ h2{
 
 ol, ul{font-size:1.1rem;}
 li{background-color:#FFB6D9; padding: 0.5rem}
+input{font-size:1.2rem; font-family: merriweather}
 
 .new-message-box {
     margin: 15px 0;
