@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+
+<h3>Read the texts A-D quickly and match them with the headings below.</h3>
+<ol>
+<li onclick="toggleCrossed(this)">I'm only a text message away
+<li onclick="toggleCrossed(this)">A friend in need is a friend online
+<li onclick="toggleCrossed(this)">Till work do us part
+<li onclick="toggleCrossed(this)">Lots of instant messages
+  </ol>
+  
+<h2>B. SCANNING FOR SPECIFIC INFORMATION</h2>
+
+  <div class="hint" style="background-color:#FF8080; padding: 1rem; border-radius:15px; ">
+⭐ When matching questions with short texts, scan each text and look for the
+specific information mentioned in each question.<br>
+⭐ Find the part of the text which correctly answers the question.<br>
+⭐ Be careful! Don'1 choose a text just because the vocabulary or phrasing in
+the text is similar to that of the question.
+  </div>
+  
+<h3>Read the texts A-D and answer the questions 1-10.</h3>
+<h4>Which people...</h4>
+<ol>
+<li data-correct="f">got to know each other through the Internet?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="f">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="b">find it hard to have a relationship because they are in different countries?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="f">like to talk online because it's easier to say important things?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="f">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="b">use a kind of technology that allows them to see each other?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="b">have difficulty living together because of their work?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="a">use technology to communicate even when they are in the same house?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="d">feel that the Internet improved their relationship?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="f">sometimes feel awkward talking in person?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="f">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="a">think they might be using technology too much?<br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>
+<li data-correct="d">lost contact with each other for some time?  <br>
+    <button  onclick="checkAnswer(this)"  id="a">A</button>
+    <button  onclick="checkAnswer(this)"  id="b">B</button>
+    <button  onclick="checkAnswer(this)"  id="с">C</button>
+    <button  onclick="checkAnswer(this)"  id="d">D</button>              
+  
+  
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

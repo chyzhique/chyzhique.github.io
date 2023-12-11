@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+Read the article quickly and answer the following question.
+
+<li data-correct="b" type="I"><b>Why was the article written?</b><br>
+    <button onclick="checkAnswer(this)" id="a">a. to amuse </button>
+    <button onclick="checkAnswer(this)" id="b">b. to inform </button>
+    <button onclick="checkAnswer(this)" id="c">c. to persuade</button>
+    <button onclick="checkAnswer(this)" id="d">d. to warn</button>
+</li>
+
+<h2>B. READING FOR SPECIFIC INFORMATION<h2>
+<h3>Read the article again and answer the questions 1-5.</h3>
+  
+  <ol>
+  <!-- Question 1 -->
+<li data-correct="d">Why were flying cars only a dream in the past?<br>
+    <button onclick="checkAnswer(this)" id="a">The technology wasn't advanced enough.</button>
+    <button onclick="checkAnswer(this)" id="b">There was little interest in them.</button>
+    <button onclick="checkAnswer(this)" id="c">They were considered impossible to build.</button>
+    <button onclick="checkAnswer(this)" id="d">They were expensive and not very practical.</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="d">What is NASA working on?<br>
+    <button onclick="checkAnswer(this)" id="a">its own flying car</button>
+    <button onclick="checkAnswer(this)" id="b">ground stations for flying cars</button>
+    <button onclick="checkAnswer(this)" id="c">computers for flying cars</button>
+    <button onclick="checkAnswer(this)" id="d">air routes for flying cars</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="a">What is characteristic of a 'volantor'?<br>
+    <button onclick="checkAnswer(this)" id="a">It can run on a variety of fuels.</button>
+    <button onclick="checkAnswer(this)" id="b">It takes off in the same way an aeroplane does.</button>
+    <button onclick="checkAnswer(this)" id="c">It is slower than most aircraft.</button>
+    <button onclick="checkAnswer(this)" id="d">It consumes much more than a medium-sized car.</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="b">How will passengers be protected in case of an accident?<br>
+    <button onclick="checkAnswer(this)" id="a">Computers will make sure that nothing goes wrong.</button>
+    <button onclick="checkAnswer(this)" id="b">Internal and external airbags as well as parachutes will be installed.</button>
+    <button onclick="checkAnswer(this)" id="c">Flying cars will be able to make emergency landings anywhere.</button>
+    <button onclick="checkAnswer(this)" id="d">Computers will locate the nearest airport or heliport.</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="c">How will the flying car affect the environment?<br>
+    <button onclick="checkAnswer(this)" id="a">Its impact cannot yet be determined.</button>
+    <button onclick="checkAnswer(this)" id="b">People will only live in the country and not in cities.</button>
+    <button onclick="checkAnswer(this)" id="c">It will reduce air and noise pollution.</button>
+    <button onclick="checkAnswer(this)" id="d">There will only be 'sky highways and no more concrete highways.</button>
+</li>
+</ol>
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

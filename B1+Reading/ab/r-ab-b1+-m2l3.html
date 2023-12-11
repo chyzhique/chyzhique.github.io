@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+
+The text is an extract from a novel.<br>
+Read it quickly and answer the following question.
+
+  <h3>In which order can you find the following in the text?</h3>
+    <ul>
+  <li onclick="toggleCrossed(this)"><b>a.</b> a description of the main character</li>
+  <li onclick="toggleCrossed(this)"><b>b.</b> a description of where the story takes place</li>
+  <li onclick="toggleCrossed(this)"><b>c.</b> a conversation between two characters</li>
+  <li onclick="toggleCrossed(this)"><b>d.</b> a description of a particular location</li>
+    </ul>
+ <table style="width:100%">
+   <tr><th>1</th><th>2</th><th>3</th><th>4</th></tr>
+   <tr><td>
+     <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width:100%"></td>
+  <td>
+     <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width:100%"></td>
+     <td>
+     <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width:100%"></td>
+     <td>
+     <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width:100%"></td>
+  </table>
+<h2>B. READING FOR DETAILS</h2>
+  <h3>Read the text again and answer the questions 1-7.
+Choose a, b, c or d.  </h3>
+  
+  <ol>
+    <!-- Question 1 -->
+<li data-correct="b">What is characteristic of the landscape?<br>
+    <button onclick="checkAnswer(this)" id="a">a. It consists only of enormous plains.</button>
+    <button onclick="checkAnswer(this)" id="b">b. It combines various natural features.</button>
+    <button onclick="checkAnswer(this)" id="c">c. It is always covered with grey dust.</button>
+    <button onclick="checkAnswer(this)" id="d">d. It is inhabited by various animal species.</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="a">What does the pathway prove?<br>
+    <button onclick="checkAnswer(this)" id="a">a. that other travellers had tried to cross the desert</button>
+    <button onclick="checkAnswer(this)" id="b">b. that other travellers had found water</button>
+    <button onclick="checkAnswer(this)" id="c">c. that the man was not alone</button>
+    <button onclick="checkAnswer(this)" id="d">d. that there was no reason to despair</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="c">What does the traveller see on the pathway?<br>
+    <button onclick="checkAnswer(this)" id="a">a. man-made objects</button>
+    <button onclick="checkAnswer(this)" id="b">b. white sand</button>
+    <button onclick="checkAnswer(this)" id="c">c. bones</button>
+    <button onclick="checkAnswer(this)" id="d">d. men and oxen</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="c">What conclusion do we reach after reading the traveller's description?<br>
+    <button onclick="checkAnswer(this)" id="a">a. He is tired but feels optimistic.</button>
+    <button onclick="checkAnswer(this)" id="b">b. He is sixty but looks forty.</button>
+    <button onclick="checkAnswer(this)" id="c">c. He is very weak.</button>
+    <button onclick="checkAnswer(this)" id="d">d. He has a strong chance of survival.</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="b">Why had the man climbed the Sierra Blanco?<br>
+    <button onclick="checkAnswer(this)" id="a">a. to see the dry land</button>
+    <button onclick="checkAnswer(this)" id="b">b. to look for signs of water</button>
+    <button onclick="checkAnswer(this)" id="c">c. to find the pathway</button>
+    <button onclick="checkAnswer(this)" id="d">d. to view the plain from above</button>
+</li>
+
+<!-- Question 6 -->
+<li data-correct="d">What do we learn about the little girl?<br>
+    <button onclick="checkAnswer(this)" id="a">a. She is dying.</button>
+    <button onclick="checkAnswer(this)" id="b">b. She is big for her age.</button>
+    <button onclick="checkAnswer(this)" id="c">c. She has injured herself badly.</button>
+    <button onclick="checkAnswer(this)" id="d">d. She is healthier than the man.</button>
+</li>
+
+<!-- Question 7 -->
+<li data-correct="d">It is evident from the passage that ...<br>
+    <button onclick="checkAnswer(this)" id="a">a. the man doesn't care about the little girl.</button>
+    <button onclick="checkAnswer(this)" id="b">b. the little girl's mother is going to join them.</button>
+    <button onclick="checkAnswer(this)" id="c">c. the man is sure that everything is going to be alright.</button>
+    <button onclick="checkAnswer(this)" id="d">d. the man is worried about the little girl.</button>
+</li>
+</ol>
+  
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

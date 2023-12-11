@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+Read the text quickly without paying any attention to the missing sentences. What are the three jobs described in it?
+
+<h2>B. RECONSTRUCTING A GAPPED TEXT</h2>
+<h3>Six sentences have been removed from the text.
+Choose from the sentences A-G the one which best fits each
+gap (1-6). There is one extra sentence which you do not need to use.</h3>
+<ol style="list-style-type: upper-latin">
+<li onclick="toggleCrossed(this)">He compares the prints found at a crime scene with those in the police database. </li>
+<li onclick="toggleCrossed(this)">That gives him a sense of satisfaction because he is helping make the world a better place.</li>
+<li onclick="toggleCrossed(this)">He got his present job through an audition.</li>
+<li onclick="toggleCrossed(this)">Pingerprint analysts need to take a special course to learn the skills needed for their job, which they may do at a college or through the police station.</li>
+<li onclick="toggleCrossed(this)">He learnt to ride a horse when he was about two years old.</li>
+<li onclick="toggleCrossed(this)">He has received twenty broken bones, four concussions, and has needed stitches more times than he can count.</li>
+<li onclick="toggleCrossed(this)">The rodeo clowns distract the bull long enough so that the cowboy can get away safely.</li>
+  </ol>
+  
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

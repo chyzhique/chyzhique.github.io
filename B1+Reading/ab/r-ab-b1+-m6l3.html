@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A.  READING FOR GIST</h2>
+<h3>Read the text quickly and match the headings 1-6 below with the paragraphs A-F of the text.</h3>
+<ol>
+  <li  onclick="toggleCrossed(this)">Family Bonds</li>
+  <li  onclick="toggleCrossed(this)">Year Round Fun</li>
+  <li  onclick="toggleCrossed(this)">Habitat for Big Inhabitants</li>
+  <li  onclick="toggleCrossed(this)">An Impressive Reputation</li>
+  <li  onclick="toggleCrossed(this)">Record Size, Record Price</li>
+  <li  onclick="toggleCrossed(this)">Aquatic Habitats</li>
+  </ol>
+
+<h2>B. READING FOR DETAILS</h2>
+<h3>Read the article again and answer questions 1-8.
+Choose a, b, c or d.</h3>
+<ol>
+  <!-- Question 1 -->
+<li data-correct="d">What is one of the reasons that the Columbus Zoo is among the most well-known in the world?<br>
+    <button onclick="checkAnswer(this)" id="a">a. It is very close to the city of Columbus.</button>
+    <button onclick="checkAnswer(this)" id="b">b. It has been operating since 1927.</button>
+    <button onclick="checkAnswer(this)" id="c">c. It includes an aquarium.</button>
+    <button onclick="checkAnswer(this)" id="d">d. Its director has worked hard to publicize it.</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="a">What is true about Fluffy?<br>
+    <button onclick="checkAnswer(this)" id="a">a. No larger snake has ever been kept in a zoo.</button>
+    <button onclick="checkAnswer(this)" id="b">b. He is endangered.</button>
+    <button onclick="checkAnswer(this)" id="c">c. He is the most expensive addition to the 200.</button>
+    <button onclick="checkAnswer(this)" id="d">d. He was expensive because he is so handsome.</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="c">What is special about the pachyderm building?<br>
+    <button onclick="checkAnswer(this)" id="a">a. It is the second largest in North America.</button>
+    <button onclick="checkAnswer(this)" id="b">b. It is the largest building of its kind.</button>
+    <button onclick="checkAnswer(this)" id="c">c. There is only one larger habitat of this kind in the world.</button>
+    <button onclick="checkAnswer(this)" id="d">d. It has an outdoor area for elephants in the summer.</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="c">How many individual animals does the pachyderm building hold?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 10</button>
+    <button onclick="checkAnswer(this)" id="b">b. 4</button>
+    <button onclick="checkAnswer(this)" id="c">c. 15</button>
+    <button onclick="checkAnswer(this)" id="d">d. 8</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="d">Which of the following is a feature of the Manatee Coast that allows it to be open throughout the year?<br>
+    <button onclick="checkAnswer(this)" id="a">a. the saltwater tank</button>
+    <button onclick="checkAnswer(this)" id="b">b. the live coral reef</button>
+    <button onclick="checkAnswer(this)" id="c">c. its impressive collection</button>
+    <button onclick="checkAnswer(this)" id="d">d. the special roof</button>
+</li>
+
+<!-- Question 6 -->
+<li data-correct="a">What is special about Colo?<br>
+    <button onclick="checkAnswer(this)" id="a">a. She was the first gorilla born in a zoo.</button>
+    <button onclick="checkAnswer(this)" id="b">b. She is the oldest gorilla in captivity.</button>
+    <button onclick="checkAnswer(this)" id="c">c. She is related to the other gorillas in the 200.</button>
+    <button onclick="checkAnswer(this)" id="d">d. She is very popular with zoo-goers.</button>
+</li>
+
+<!-- Question 7 -->
+<li data-correct="c">Which of the following does not exist at the zoo now but will in the near future?<br>
+    <button onclick="checkAnswer(this)" id="a">a. a pond</button>
+    <button onclick="checkAnswer(this)" id="b">b. a special winter lights show</button>
+    <button onclick="checkAnswer(this)" id="c">c. a water park</button>
+    <button onclick="checkAnswer(this)" id="d">d. an Australian region</button>
+</li>
+
+<!-- Question 8 -->
+<li data-correct="b">Where in the zoo can visitors see turtles?<br>
+    <button onclick="checkAnswer(this)" id="a">a. the Asia Quest area and the reptile habitat</button>
+    <button onclick="checkAnswer(this)" id="b">b. the Shores area and the reptile habitat</button>
+    <button onclick="checkAnswer(this)" id="c">c. the African Forest area and the Shores</button>
+    <button onclick="checkAnswer(this)" id="d">d. the Asia Quest area and the Shores area</button>
+</li>
+
+
+
+</ol>
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+  <script>
+  function collerAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

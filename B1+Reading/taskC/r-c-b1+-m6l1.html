@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-C.css">
+  <script src="https://kit.fontawesome.com/a15cf25df2.js" crossorigin="anonymous"></script>
+
+  </head>
+ <body>
+   
+<h2>GUESSING THE MEANING OF UNKNOWN WORDS</h2>
+<h3>A. Look at the following words from the text and choose the most suitable meaning a, b, c or d.</h3>
+
+   <ol>
+     <li data-correct="a">choked with 
+    <button onclick="checkAnswer(this)" id="a">a. full of </button>
+    <button onclick="checkAnswer(this)" id="b">b. suitable for</button>
+    <button onclick="checkAnswer(this)" id="c">c. dependent on</button>
+    <button onclick="checkAnswer(this)" id="d">d. safe from</button>
+    </li><hr>
+     <li data-correct="c">vintage
+    <button onclick="checkAnswer(this)" id="a">a. useful</button>
+    <button onclick="checkAnswer(this)" id="b">b. harmful</button>
+    <button onclick="checkAnswer(this)" id="c">c. classic</button>
+    <button onclick="checkAnswer(this)" id="d">d. modern</button>
+    </li>    
+       </ol>
+<h3>B. Match the highlighted phrasal verbs in the article with their meanings.</h3>
+   
+   <table>
+  <tr>
+    <td id="td1">
+      1. clean up
+      <select id="select1">
+        <option value="">?</option>
+        <option value="valuea">a</option>
+        <option value="valueb">b</option>
+        <option value="valuec">c</option>
+        <option value="valued">d</option>
+        <option value="valuee">e</option>
+      </select>
+    </td>
+    <td rowspan="5" class="td">
+      a. find by chance<br><br>
+      b. separate into parts<br><br>
+      c. remove dirt or pollution<br><br>
+      d. stop work and activities forever<br>
+      e. lift<br>
+    </td>
+  </tr>
+  <tr>
+    <td id="td2">
+      2. pick up
+      <select id="select2">
+        <option value="">?</option>
+        <option value="valuea">a</option>
+        <option value="valueb">b</option>
+        <option value="valuec">c</option>
+        <option value="valued">d</option>
+        <option value="valuee">e</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td id="td3">
+      3. came across
+      <select id="select3">
+        <option value="">?</option>
+        <option value="valuea">a</option>
+        <option value="valueb">b</option>
+        <option value="valuec">c</option>
+        <option value="valued">d</option>
+        <option value="valuee">e</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td id="td4">
+      4. closed down
+      <select id="select4">
+        <option value="">?</option>
+        <option value="valuea">a</option>
+        <option value="valueb">b</option>
+        <option value="valuec">c</option>
+        <option value="valued">d</option>
+        <option value="valuee">e</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <td id="td5">
+      5. break down
+      <select id="select5">
+        <option value="">?</option>
+        <option value="valuea">a</option>
+        <option value="valueb">b</option>
+        <option value="valuec">c</option>
+        <option value="valued">d</option>
+        <option value="valuee">e</option>
+      </select>
+    </td>
+  </tr>
+</table>
+   
+
+                      <div class="sum">
+        
+      <h3>Let's summarise!</h3>
+❓ Have you ever participated in an event like the annual Pathway and River Cleanup? <br>
+                        &emsp;🗣️ If yes, what did you do?<br>
+&emsp;🗣️ If not, would you be interested in doing something like that?<hr>
+❓ What do you you keriblie Bargmann's idea to clean up Blacklick Creek?
+
+ <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+                        
+<script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuec');
+    setTdBackgroundColor('select2', 'td2', 'valuee');
+    setTdBackgroundColor('select3', 'td3', 'valuea');
+    setTdBackgroundColor('select4', 'td4', 'valued');
+    setTdBackgroundColor('select5', 'td5', 'valueb');
+    setTdBackgroundColor('select6', 'td6', 'valuea');
+              
+    setTdBackgroundColor('select7', 'td7', 'valuea');
+    setTdBackgroundColor('select8', 'td8', 'valuec');
+    setTdBackgroundColor('select9', 'td9', 'valued');
+    setTdBackgroundColor('select10', 'td10', 'valueb');
+
+</script>
+
+</body>
+</html>

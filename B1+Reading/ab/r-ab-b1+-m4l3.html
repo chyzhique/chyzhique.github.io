@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+Read the texts A-D about people who are using or developing virtual reality technology. 
+<h4>Which aspect of virtual reality is each of the four texts about?</h4>
+
+<h2>3. SCANNING FOR SPECIFIC INFORMATION</h2>
+Read the texts again and answer the questions 1-12.
+Choose A, B, C or D in the boxes.
+<h4>Which text(s):</h4>
+  <ol>
+<!-- Question 1 -->
+<li data-correct="A">Refer to research that is still incomplete? (2 options)<br>
+    <button onclick="collerAnswer(this)" id="A">A</button>
+    <button onclick="collerAnswer(this)" id="A">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="D">Refers to a person who benefited personally from the use of virtual reality technology?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="C">Refers to technology that is of educational value?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="A">Refers to a person who tried something else before using virtual reality technology?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="A">Refer to a project that is of medical value?<br>
+    <button onclick="collerAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="collerAnswer(this)" id="A">D</button>
+</li>
+
+<!-- Question 8 -->
+<li data-correct="D">Refers to a programme which can be revised to include all the latest information?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 9 -->
+<li data-correct="B">Refers to technology that will help people avoid unnecessary visits to hospitals?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 10 -->
+<li data-correct="D">Refers to technology that minimizes human error?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+<!-- Question 11 -->
+<li data-correct="A">Refers to a technique that reduces feelings of discomfort?<br>
+    <button onclick="checkAnswer(this)" id="A">A</button>
+    <button onclick="checkAnswer(this)" id="B">B</button>
+    <button onclick="checkAnswer(this)" id="C">C</button>
+    <button onclick="checkAnswer(this)" id="D">D</button>
+</li>
+
+</ol>
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+  <script>
+  function collerAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

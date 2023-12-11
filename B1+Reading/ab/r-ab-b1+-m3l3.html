@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST</h2>
+Read the text quickly and compare with your personal opinion.
+
+<h2>B. READING FOR SPECIFIC INFORMATION</h2>
+<h3>Read the text again and answer the questions 1-5.</h3>
+  <ol>
+  <!-- Question 1 -->
+<li data-correct="d">Who believes that the mass media have an important role in today's society?<br>
+    <button onclick="checkAnswer(this)" id="a">a. only university students</button>
+    <button onclick="checkAnswer(this)" id="b">b. a small minority of Americans</button>
+    <button onclick="checkAnswer(this)" id="c">c. influential members of society</button>
+    <button onclick="checkAnswer(this)" id="d">d. nearly everyone</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="a">Who is responsible for Mass Media Studies being a successful school subject?<br>
+    <button onclick="checkAnswer(this)" id="a">a. course planners</button>
+    <button onclick="checkAnswer(this)" id="b">b. the press</button>
+    <button onclick="checkAnswer(this)" id="c">c. technologists</button>
+    <button onclick="checkAnswer(this)" id="d">d. students</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="c">Why is Film Studies a popular course?<br>
+    <button onclick="checkAnswer(this)" id="a">a. because students want to enter the movie making business</button>
+    <button onclick="checkAnswer(this)" id="b">b. because it provides variety in students' curricula</button>
+    <button onclick="checkAnswer(this)" id="c">c. because students have a keen interest in movies</button>
+    <button onclick="checkAnswer(this)" id="d">d. because students are taught in Hollywood studios</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="a">According to the text, what is one of the advantages of doing Media Studies?<br>
+    <button onclick="checkAnswer(this)" id="a">a. It helps students understand the world around them.</button>
+    <button onclick="checkAnswer(this)" id="b">b. It helps students become more creative.</button>
+    <button onclick="checkAnswer(this)" id="c">c. It helps students make a career choice.</button>
+    <button onclick="checkAnswer(this)" id="d">d. It helps students become more independent.</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="c">Why did it take a long time for schools to include Mass Media Studies in the courses offered?<br>
+    <button onclick="checkAnswer(this)" id="a">a. There was not enough information on movie stars.</button>
+    <button onclick="checkAnswer(this)" id="b">b. The term 'celebrities' had not yet been invented.</button>
+    <button onclick="checkAnswer(this)" id="c">c. There was a fear that it was not a serious subject.</button>
+    <button onclick="checkAnswer(this)" id="d">d. Too many people were gossiping about education.</button>
+</li>
+</ol>
+  
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

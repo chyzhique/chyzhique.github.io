@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A. READING FOR GIST<h2>
+Read the advertisements 1-5 quickly and answer the following questions,.
+<h3>Which theme park: </h3>
+  <ol type="a">
+<li data-correct="e">is based on a famous movie? (one park)<br>
+    <button onclick="collerAnswer(this)" id="a">1</button>
+    <button onclick="collerAnswer(this)" id="b">2</button>
+    <button onclick="collerAnswer(this)" id="c">3</button>
+    <button onclick="collerAnswer(this)" id="d">4</button>
+    <button onclick="collerAnswer(this)" id="e">5</button>
+</li>
+<li data-correct="b">give you the chance to travel back in time? (three parks)<br>
+    <button onclick="collerAnswer(this)" id="a">1</button>
+    <button onclick="collerAnswer(this)" id="b">2</button>
+    <button onclick="collerAnswer(this)" id="b">3</button>
+    <button onclick="collerAnswer(this)" id="b">4</button>
+    <button onclick="collerAnswer(this)" id="e">5</button>
+</li>
+<li data-correct="a">give you the chance to be close to nature? (two parks)<br>
+    <button onclick="collerAnswer(this)" id="a">1</button>
+    <button onclick="collerAnswer(this)" id="a">2</button>
+    <button onclick="collerAnswer(this)" id="c">3</button>
+    <button onclick="collerAnswer(this)" id="d">4</button>
+    <button onclick="collerAnswer(this)" id="e">5</button>
+
+<h2>B. SCANNING FOR SPECIFIC INFORMATION</h2>
+Imagine that you are on vacation in the USA and you are interested in visiting one or more theme parks.
+Read the advertisements again and answer the questions 1-9. <br>Choose a, b, c or d.
+  <ol>
+    <!-- Question 1 -->
+<li data-correct="c">You love nature and want to go to a mountainous area. Where can you go?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 1 & 3</button>
+    <button onclick="checkAnswer(this)" id="b">b. 1 & 4</button>
+    <button onclick="checkAnswer(this)" id="c">c. 1 & 2</button>
+    <button onclick="checkAnswer(this)" id="d">d. 2 & 3</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="b">You want to go somewhere that has food on site because you will be there all day with your children. Which option will not work for you?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 2</button>
+    <button onclick="checkAnswer(this)" id="b">b. 3</button>
+    <button onclick="checkAnswer(this)" id="c">c. 4</button>
+    <button onclick="checkAnswer(this)" id="d">d. 5</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="a">You require a place that will allow your dog to travel with you. Which are the best places for you?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 2 & 3</button>
+    <button onclick="checkAnswer(this)" id="b">b. 3 & 4</button>
+    <button onclick="checkAnswer(this)" id="c">c. 2 & 4</button>
+    <button onclick="checkAnswer(this)" id="d">d. 4 & 5</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="d">Which theme parks offer discounts when booking tickets online?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 3 & 4</button>
+    <button onclick="checkAnswer(this)" id="b">b. 4 & 5</button>
+    <button onclick="checkAnswer(this)" id="c">c. 2 & 5</button>
+    <button onclick="checkAnswer(this)" id="d">d. 3 & 5</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="c">If you want to spend some time 'in prison' on your vacation, where should you go?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 2</button>
+    <button onclick="checkAnswer(this)" id="b">b. 3</button>
+    <button onclick="checkAnswer(this)" id="c">c. 4</button>
+    <button onclick="checkAnswer(this)" id="d">d. 5</button>
+</li>
+
+<!-- Question 6 -->
+<li data-correct="b">Your boss has asked you to plan a company trip that will include corporate workshops. Suggest<br>
+    <button onclick="checkAnswer(this)" id="a">a. 1</button>
+    <button onclick="checkAnswer(this)" id="b">b. 2</button>
+    <button onclick="checkAnswer(this)" id="c">c. 3</button>
+    <button onclick="checkAnswer(this)" id="d">d. 4</button>
+</li>
+
+<!-- Question 7 -->
+<li data-correct="a">You want to take a vacation at a place where you and your family can also camp there or nearby. What are the best places to do this?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 1&2</button>
+    <button onclick="checkAnswer(this)" id="b">b. 1&4</button>
+    <button onclick="checkAnswer(this)" id="c">c. 2&4</button>
+</li>
+
+<!-- Question 8 -->
+<li data-correct="d">Which place has a minimum height requirement?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 1</button>
+    <button onclick="checkAnswer(this)" id="b">b. 3</button>
+    <button onclick="checkAnswer(this)" id="c">c. 4</button>
+    <button onclick="checkAnswer(this)" id="d">d. 5</button>
+</li>
+
+<!-- Question 9 -->
+<li data-correct="b">At which place can children keep some of the things they find?<br>
+    <button onclick="checkAnswer(this)" id="a">a. 2</button>
+    <button onclick="checkAnswer(this)" id="b">b. 3</button>
+    <button onclick="checkAnswer(this)" id="c">c. 4</button>
+    <button onclick="checkAnswer(this)" id="d">d. 5</button>
+</li>
+
+  
+</ol>
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+  <script>
+  function collerAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  </head>
+  
+<h2>A.  READING FOR GIST</h2>
+<h3>Read the text and answer the question.</h3>
+  <ul>
+<li data-correct="b">What is the writer's main purpose?<br>
+    <button onclick="checkAnswer(this)" id="a">a. to explain the medical benefits of massage</button>
+    <button onclick="checkAnswer(this)" id="b">b. to describe a personal experience</button>
+    <button onclick="checkAnswer(this)" id="c">c. to discuss the positive and negative features of a spa</button>
+  </li>
+    </ul>
+
+<h2>B. READING FOR DETAILS</h2>
+<h3>Read the text again and answerthe questions 1-7.</h3>
+  <ol>
+  <!-- Question 1 -->
+<li data-correct="a">What is meant by <b>put the 'miracle' massage to the test</b> (para 1)?<br>
+    <button onclick="checkAnswer(this)" id="a">a. find out how effective massage is</button>
+    <button onclick="checkAnswer(this)" id="b">b. ask questions about how a massage is done</button>
+    <button onclick="checkAnswer(this)" id="c">c. take a medical test</button>
+    <button onclick="checkAnswer(this)" id="d">d. investigate a miracle</button>
+</li>
+
+<!-- Question 2 -->
+<li data-correct="b">The Miraval Spa and Resort is located in<br>
+    <button onclick="checkAnswer(this)" id="a">a. a tropical forest.</button>
+    <button onclick="checkAnswer(this)" id="b">b. a desert.</button>
+    <button onclick="checkAnswer(this)" id="c">c. an oasis.</button>
+    <button onclick="checkAnswer(this)" id="d">d. the mountains.</button>
+</li>
+
+<!-- Question 3 -->
+<li data-correct="b">Why did the author have second thoughts about getting the hot stone massage?<br>
+    <button onclick="checkAnswer(this)" id="a">a. She would have preferred the hydrotherapy massage.</button>
+    <button onclick="checkAnswer(this)" id="b">b. She saw the steaming stones and was afraid.</button>
+    <button onclick="checkAnswer(this)" id="c">c. She was tired and wanted to take a nap.</button>
+    <button onclick="checkAnswer(this)" id="d">d. She felt uncomfortable because of the heat.</button>
+</li>
+
+<!-- Question 4 -->
+<li data-correct="d">How did the author feel about going to the Jacuzzi?<br>
+    <button onclick="checkAnswer(this)" id="a">a. She instantly agreed and got up.</button>
+    <button onclick="checkAnswer(this)" id="b">b. She liked the idea at first but then changed her mind.</button>
+    <button onclick="checkAnswer(this)" id="c">c. She preferred taking a nap in her room.</button>
+    <button onclick="checkAnswer(this)" id="d">d. She didn't feel like going at first but she did.</button>
+</li>
+
+<!-- Question 5 -->
+<li data-correct="a">The author thought the breakfast was<br>
+    <button onclick="checkAnswer(this)" id="a">a. satisfying.</button>
+    <button onclick="checkAnswer(this)" id="b">b. not tasty enough.</button>
+    <button onclick="checkAnswer(this)" id="c">c. not enough.</button>
+    <button onclick="checkAnswer(this)" id="d">d. served too early.</button>
+</li>
+
+<!-- Question 6 -->
+<li data-correct="d">How did the author describe her horseback riding experience?<br>
+    <button onclick="checkAnswer(this)" id="a">a. refreshing and relaxing.</button>
+    <button onclick="checkAnswer(this)" id="b">b. a bit scary.</button>
+    <button onclick="checkAnswer(this)" id="c">c. an unbelievable experience.</button>
+    <button onclick="checkAnswer(this)" id="d">d. comparable to being in a film.</button>
+</li>
+
+<!-- Question 7 -->
+<li data-correct="c">The author left the Miraval feeling<br>
+    <button onclick="checkAnswer(this)" id="a">a. relieved to be going back home.</button>
+    <button onclick="checkAnswer(this)" id="b">b. happy but with no plans of returning.</button>
+    <button onclick="checkAnswer(this)" id="c">c. at peace and hoping to come back soon.</button>
+    <button onclick="checkAnswer(this)" id="d">d. healthy but very tired.</button>
+</li>
+
+</ol>
+  <script>
+  function checkAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+      buttons[i].classList.remove('correct', 'incorrect');
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+  <script>
+  function collerAnswer(button) {
+    // Reset all buttons to default state
+    let buttons = button.parentElement.getElementsByTagName('button');
+    for (let i = 0; i < buttons.length; i++) {
+    }
+
+    // Check if the selected answer is correct
+    let correctAnswer = button.parentElement.getAttribute('data-correct');
+    if (button.id === correctAnswer) {
+      button.classList.add('correct');
+    } else {
+      button.classList.add('incorrect');
+    }
+  }
+
+  function toggleCrossed(element) {
+    element.classList.toggle("crossed");
+  }
+</script>
+
+</body>
+</html>
