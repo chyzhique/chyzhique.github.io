@@ -7,7 +7,7 @@
             background-color: #ffb347;
             font-family:merriweather; 
             line-height:normal;
-            font-size:20px;
+            font-size:1rem;
             color:black;
 }
   
@@ -77,7 +77,7 @@ table{
             background-color: #ffffba;
             font-family:merriweather; 
             line-height:normal;
-            font-size:20px;
+            font-size:1rem;
             color:black;
             box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
 
@@ -88,4 +88,4 @@ select {font-size: 2vh}
 input {
             border:0; 
             border-bottom: 1px solid black; 
-            font-size:2vh}
+            font-size:1rem}
