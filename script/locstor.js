@@ -1,50 +1,53 @@
-    function saveToLocalStorage() {
-        // Iterate over text inputs
-        for (let i = 1; i <= 50; i++) {
-            const wordInputValue = document.getElementById(`wordInput${i}`).value;
-            localStorage.setItem(`wordInput${i}`, wordInputValue);
-        }
+function saveToLocalStorage(identifier) {
+    // Iterate over text inputs
+    document.querySelectorAll(`.${identifier}-word-input`).forEach((input, i) => {
+        const wordInputValue = input.value;
+        localStorage.setItem(`${identifier}-wordInput${i + 1}`, wordInputValue);
+    });
 
-        // Iterate over radio buttons
-        for (let i = 1; i <= 50; i++) {
-            const radioChecked = document.querySelector(`input[name="word${i}"]:checked`);
-            if (radioChecked) {
-                localStorage.setItem(`radio${i}Value`, radioChecked.value);
-            }
+    // Iterate over radio buttons
+    document.querySelectorAll(`.${identifier}-radio`).forEach((radio, i) => {
+        const radioChecked = radio.querySelector('input[name^="word"]:checked');
+        if (radioChecked) {
+            localStorage.setItem(`${identifier}-radio${i + 1}Value`, radioChecked.value);
         }
+    });
 
-        // Iterate over select boxes
-        for (let i = 1; i <= 50; i++) {
-            const selectValue = document.getElementById(`select${i}`).value;
-            localStorage.setItem(`select${i}Value`, selectValue);
-        }
+    // Iterate over select boxes
+    document.querySelectorAll(`.${identifier}-select`).forEach((select, i) => {
+        const selectValue = select.value;
+        localStorage.setItem(`${identifier}-select${i + 1}Value`, selectValue);
     }
+}
 
-    // Function to load input values from local storage
-    function loadFromLocalStorage() {
-        // Iterate over text inputs
-        for (let i = 1; i <= 50; i++) {
-            const wordInputValue = localStorage.getItem(`wordInput${i}`);
-            document.getElementById(`wordInput${i}`).value = wordInputValue || '';
+function loadFromLocalStorage(identifier) {
+    // Iterate over text inputs
+    document.querySelectorAll(`.${identifier}-word-input`).forEach((input, i) => {
+        const wordInputValue = localStorage.getItem(`${identifier}-wordInput${i + 1}`);
+        input.value = wordInputValue || '';
+    });
+
+    // Iterate over radio buttons
+    document.querySelectorAll(`.${identifier}-radio`).forEach((radio, i) => {
+        const radioValue = localStorage.getItem(`${identifier}-radio${i + 1}Value`);
+        if (radioValue) {
+            radio.querySelector(`input[name^="word"][value="${radioValue}"]`).checked = true;
         }
+    });
 
-        // Iterate over radio buttons
-        for (let i = 1; i <= 50; i++) {
-            const radioValue = localStorage.getItem(`radio${i}Value`);
-            if (radioValue) {
-                document.querySelector(`input[name="word${i}"][value="${radioValue}"]`).checked = true;
-            }
-        }
+    // Iterate over select boxes
+    document.querySelectorAll(`.${identifier}-select`).forEach((select, i) => {
+        const selectValue = localStorage.getItem(`${identifier}-select${i + 1}Value`);
+        select.value = selectValue || '';
+    });
+}
 
-        // Iterate over select boxes
-        for (let i = 1; i <= 50; i++) {
-            const selectValue = localStorage.getItem(`select${i}Value`);
-            document.getElementById(`select${i}`).value = selectValue || '';
-        }
-    }
+// Example: Load values when the page is loaded
+window.addEventListener('load', function() {
+    loadFromLocalStorage('document1');
+});
 
-    // Load values when the page is loaded
-    window.addEventListener('load', loadFromLocalStorage);
-
-    // Save values when the page is unloaded
-    window.addEventListener('beforeunload', saveToLocalStorage);
+// Example: Save values when the page is unloaded
+window.addEventListener('beforeunload', function() {
+    saveToLocalStorage('document1');
+});
