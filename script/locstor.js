@@ -17,7 +17,13 @@ function saveToLocalStorage(identifier) {
     document.querySelectorAll(`.${identifier}-select`).forEach((select, i) => {
         const selectValue = select.value;
         localStorage.setItem(`${identifier}-select${i + 1}Value`, selectValue);
-    }
+    });
+
+    // Save class names for elements that may change dynamically
+    document.querySelectorAll(`.${identifier}-dynamic-class`).forEach((element, i) => {
+        const elementClassNames = Array.from(element.classList);
+        localStorage.setItem(`${identifier}-dynamicClassNames${i + 1}`, JSON.stringify(elementClassNames));
+    });
 }
 
 function loadFromLocalStorage(identifier) {
@@ -39,6 +45,15 @@ function loadFromLocalStorage(identifier) {
     document.querySelectorAll(`.${identifier}-select`).forEach((select, i) => {
         const selectValue = localStorage.getItem(`${identifier}-select${i + 1}Value`);
         select.value = selectValue || '';
+    });
+
+    // Restore class names for dynamically changing elements
+    document.querySelectorAll(`.${identifier}-dynamic-class`).forEach((element, i) => {
+        const storedClassNames = localStorage.getItem(`${identifier}-dynamicClassNames${i + 1}`);
+        if (storedClassNames) {
+            const classNamesArray = JSON.parse(storedClassNames);
+            element.classList.add(...classNamesArray);
+        }
     });
 }
 
