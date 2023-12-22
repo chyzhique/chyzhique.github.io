@@ -119,6 +119,24 @@ about your childhood.</li>
 
 of the cities I visit.</li></div>
 
+      <script>
+        // Your document-specific code
+
+        // Example: Load values for Document 1 when the page is loaded
+        window.addEventListener('load', function() {
+            const documentId = 'document1';
+            const data = loadFromLocalStorage(documentId);
+            // Use data as needed in your document
+        });
+
+        // Example: Save values for Document 1 when the page is unloaded
+        window.addEventListener('beforeunload', function() {
+            const documentId = 'document1';
+            const dataToSave = /* extract the data you want to save */;
+            saveToLocalStorage(documentId, dataToSave);
+        });
+    </script>
+      
 </body>
 
   </html>
