@@ -58,11 +58,7 @@ function loadFromLocalStorage(identifier) {
 }
 
 // Example: Load values when the page is loaded
-window.addEventListener('load', function() {
-    loadFromLocalStorage('document1');
-});
+window.addEventListener('load', () => loadFromLocalStorage('document1'));
 
 // Example: Save values when the page is unloaded
-window.addEventListener('beforeunload', function() {
-    saveToLocalStorage('document1');
-});
+window.addEventListener('beforeunload', () => saveToLocalStorage('document1'));
