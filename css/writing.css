@@ -146,6 +146,7 @@ h4 {
 /* Letter CSS */
 .letter{
   background-color: #FFE7C1;
+  text-align: justify;
   border-radius: 5px;   
   line-height:1.55;
   font-size:1.3rem;
