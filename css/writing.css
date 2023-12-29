@@ -157,3 +157,7 @@ h4 {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
+
+li{
+  margin-bottom:0.5rem;
+}
