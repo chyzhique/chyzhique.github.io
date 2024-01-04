@@ -36,30 +36,33 @@
 
       // Load values from local storage on page load for each select element
       document.addEventListener('DOMContentLoaded', function() {
-        // Get the document title
-        var documentTitle = document.title;
+  // Get the document title
+  var documentTitle = document.title;
 
-        // Load values from local storage and set them to the select elements
-        Array.from(selectElements).forEach(function(selectElement) {
-          var storedValue = localStorage.getItem(documentTitle + '_' + selectElement.id);
-          // Check if value is stored and not null
-          if (storedValue !== null) {
-            selectElement.value = storedValue;
-          }
+  // Load values from local storage and set them to the select elements
+  Array.from(selectElements).forEach(function(selectElement) {
+    var storedValue = localStorage.getItem(documentTitle + '_' + selectElement.id);
+    // Check if value is stored and not null
+    if (storedValue !== null) {
+      selectElement.value = storedValue;
+    }
+  });
 
-        Array.from(inputElements).forEach(function(inputElement) {
-          var storedValue = localStorage.getItem(documentTitle + '_' + inputElement.id);
-          // Check if value is stored and not null
-          if (storedValue !== null) {
-            inputElement.value = storedValue;
-          }
+  // Load values from local storage and set them to the input elements
+  Array.from(inputElements).forEach(function(inputElement) {
+    var storedValue = localStorage.getItem(documentTitle + '_' + inputElement.id);
+    // Check if value is stored and not null
+    if (storedValue !== null) {
+      inputElement.value = storedValue;
+    }
+  });
 
-        Array.from(tdElements).forEach(function(tdElement) {
-          var storedValue = localStorage.getItem(documentTitle + '_' + tdElement.id);
-          // Check if value is stored and not null
-          if (storedValue !== null) {
-            inputElement.value = storedValue;
-          }
-        });
-      });
-    });
+  // Load values from local storage and set them to the td elements
+  Array.from(tdElements).forEach(function(tdElement) {
+    var storedValue = localStorage.getItem(documentTitle + '_' + tdElement.id);
+    // Check if value is stored and not null
+    if (storedValue !== null) {
+      tdElement.value = storedValue; // Fix the typo here
+    }
+  });
+});
