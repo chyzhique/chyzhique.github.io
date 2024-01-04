@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tds = document.querySelectorAll('li');
 
   selects.forEach(select => {
-    const key = select.id;
+    const key = `${document.title}_${select.id}`; // Using document title as a prefix
 
     // Check if there is a saved value in local storage
     const savedValue = localStorage.getItem(key);
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   tds.forEach(td => {
-    const key = td.id;
+    const key = `${document.title}_${td.id}`; // Using document title as a prefix
 
     // Check if there is a saved background color in local storage
     const savedColor = localStorage.getItem(key + '-color');
@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // Add click event listener to change background color and save to local storage
   tds.forEach(td => {
     td.addEventListener('click', function () {
-      const key = td.id;
-      const newColor = getRandomColor(); // You can replace this with your logic to get a new color
+      const key = `${document.title}_${td.id}`; // Using document title as a prefix
+      const newColor = getRandomColor(); // Replace this with your logic to get a new color
 
       td.style.backgroundColor = newColor;
       localStorage.setItem(key + '-color', newColor);
