@@ -1,14 +1,16 @@
 // your-script.js
-function SaveInputValue(input) {
+function SaveInputValueAndColor(input) {
   if (input instanceof HTMLInputElement) {
-    localStorage.setItem(input.id, input.value);
+    localStorage.setItem(input.id, JSON.stringify({ value: input.value, bgColor: input.style.backgroundColor }));
   }
 }
 
-function setInputValue(inputId, savedValue) {
+function setInputValueAndColor(inputId, savedValue) {
   const input = document.getElementById(inputId);
-  if (input instanceof HTMLInputElement) {
-    input.value = savedValue;
+  if (input instanceof HTMLInputElement && savedValue) {
+    const parsedValue = JSON.parse(savedValue);
+    input.value = parsedValue.value;
+    input.style.backgroundColor = parsedValue.bgColor;
   }
 }
 
@@ -21,23 +23,23 @@ document.addEventListener('DOMContentLoaded', function () {
   // Get all input elements on the page
   const allInputs = document.querySelectorAll('input');
 
-  // Iterate over each input element and set its value
+  // Iterate over each input element and set its value and background color
   allInputs.forEach(function (input) {
     // Set dynamic prefixed ID for the input element
     const originalId = input.id;
     const dynamicPrefixedId = getDynamicPrefixedId(originalId);
     input.id = dynamicPrefixedId;
 
-    // Get saved value from local storage and set input value
+    // Get saved value and background color from local storage and set input value and background color
     const savedValue = localStorage.getItem(dynamicPrefixedId);
-    setInputValue(dynamicPrefixedId, savedValue);
+    setInputValueAndColor(dynamicPrefixedId, savedValue);
   });
 });
 
 document.addEventListener('input', function (event) {
-  // Save value when an input element changes
+  // Save value and background color when an input element changes
   const targetElement = event.target;
   if (targetElement instanceof HTMLInputElement) {
-    SaveInputValue(targetElement);
+    SaveInputValueAndColor(targetElement);
   }
 });
