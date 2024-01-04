@@ -1,18 +1,13 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const inputFields = document.querySelectorAll('input[type="text"]');
-    const changeDivs = document.querySelectorAll('.changeDiv');
+  $(document).ready(function() {
+    $(".changeDiv").on("input", function() {
+      var userInput = $(this).val().toLowerCase();
+      var correctOptions = JSON.parse($(this).data("correct-options").toLowerCase().replace(/'/g, "\""));
+      var parentLi = $(this).closest("li");
 
-    inputFields.forEach((input, index) => {
-      const correctOptions = input.dataset.correctOptions.split(',').map(option => option.trim().toLowerCase());
-
-      input.addEventListener('input', function () {
-        const enteredWord = input.value.trim().toLowerCase();
-
-        if (correctOptions.includes(enteredWord)) {
-          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
-        } else {
-          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
-        }
-      });
+      if (correctOptions.includes(userInput)) {
+        parentLi.removeClass("incorrect").addClass("correct");
+      } else {
+        parentLi.removeClass("correct").addClass("incorrect");
+      }
     });
   });
