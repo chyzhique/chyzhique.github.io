@@ -27,19 +27,6 @@
       const documentTitle = document.title.replace(/[^a-z0-9]/gi, ''); // Remove non-alphanumeric characters
       return `${documentTitle}-${originalId}`;
     }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get all select elements on the page
-      const allSelects = document.querySelectorAll('select');
-
-      // Iterate over each select element and set its selected option
-      allSelects.forEach(function (select) {
-        const originalId = select.id;
-        const dynamicPrefixedId = getDynamicPrefixedId(originalId);
-        const savedValue = localStorage.getItem(dynamicPrefixedId);
-        setSelectedOption(dynamicPrefixedId, savedValue);
-      });
-    });
   </script>
     <title>v-a2-m1l5.html</title>
 </head>
@@ -167,6 +154,30 @@
 
 </div>   
 </div> 
-     
+
+      <script>
+    // Set selected options on page load
+    document.addEventListener('DOMContentLoaded', function () {
+      // Example: Set selected option for select1
+      const originalIdSelect1 = 'select1';
+      const dynamicPrefixedIdSelect1 = getDynamicPrefixedId(originalIdSelect1);
+      const savedValueSelect1 = localStorage.getItem(dynamicPrefixedIdSelect1);
+      setSelectedOption(dynamicPrefixedIdSelect1, savedValueSelect1);
+
+      // Repeat for other selects as needed
+      // Example: Set selected option for select2
+      const originalIdSelect2 = 'select2';
+      const dynamicPrefixedIdSelect2 = getDynamicPrefixedId(originalIdSelect2);
+      const savedValueSelect2 = localStorage.getItem(dynamicPrefixedIdSelect2);
+      setSelectedOption(dynamicPrefixedIdSelect2, savedValueSelect2);
+
+      // Repeat for other selects as needed
+      // Example: Set selected option for select3
+      const originalIdSelect3 = 'select3';
+      const dynamicPrefixedIdSelect3 = getDynamicPrefixedId(originalIdSelect3);
+      const savedValueSelect3 = localStorage.getItem(dynamicPrefixedIdSelect3);
+      setSelectedOption(dynamicPrefixedIdSelect3, savedValueSelect3);
+    });
+  </script>
 </body>
 </html>
