@@ -1,36 +1,26 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const selects = document.querySelectorAll('select');
   const tds = document.querySelectorAll('li');
 
-  selects.forEach(select => {
-    const key = `${document.title}_${select.id}`;
+  // Add click event listener to change background color
+  tds.forEach(td => {
+    td.addEventListener('click', function () {
+      const newColor = getRandomColor(); // Replace this with your logic to get a new color
 
-    const savedValue = localStorage.getItem(key);
-    if (savedValue) {
-      select.value = savedValue;
-    }
-
-    select.addEventListener('change', function () {
-      localStorage.setItem(key, select.value);
+      td.style.backgroundColor = newColor;
+      
+      // Save the new background color to local storage
+      const key = `${document.title}_${td.id}`;
+      localStorage.setItem(key + '-color', newColor);
     });
   });
 
-  tds.forEach(td => {
-    const key = `${document.title}_${td.id}`;
-
-    const savedColor = localStorage.getItem(key + '-color');
-    if (savedColor) {
-      td.style.backgroundColor = savedColor;
+  // Function to generate a random color (replace with your logic if needed)
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
     }
-  });
-
-  // After loading data, initiate select-drop.js
-  initSelectDrop();
-});
-
-function initSelectDrop() {
-  // Assuming there is an initialization function in select-drop.js, replace it accordingly
-  if (typeof initSelectDropScript === 'function') {
-    initSelectDropScript();
+    return color;
   }
-}
+});
