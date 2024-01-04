@@ -1,4 +1,5 @@
-    function SaveSelectValue(select) {
+
+        function SaveSelectValue(select) {
       localStorage.setItem(select.id, select.value);
     }
 
@@ -36,3 +37,4 @@
         setSelectedOption(dynamicPrefixedId, savedValue);
       });
     });
+    
