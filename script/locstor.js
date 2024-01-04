@@ -21,8 +21,8 @@
       saveToLocalStorage();
     });
 
-    // Load values from local storage on page load
-    window.onload = function() {
+    // Load values from local storage on DOMContentLoaded
+    document.addEventListener('DOMContentLoaded', function() {
       // Get the document title
       var documentTitle = document.title;
 
@@ -33,4 +33,4 @@
       // Load values from local storage and set them to the elements
       selectElement.value = localStorage.getItem(documentTitle + '_selectElement') || '';
       inputElement.value = localStorage.getItem(documentTitle + '_inputElement') || '';
-    };
+    });
