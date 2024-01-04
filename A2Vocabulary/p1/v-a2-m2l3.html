@@ -45,5 +45,19 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
   <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%" data-correct-options='["then", "after that", "finally"]'>she called the police.
   </ol>
 </div>   
-</div>     
+</div>  
+      <script>
+  $(document).ready(function() {
+    $(".changeDiv").on("input", function() {
+      var userInput = $(this).val().toLowerCase();
+      var correctOptions = JSON.parse($(this).data("correct-options").toLowerCase().replace(/'/g, "\""));
+
+      if (correctOptions.includes(userInput)) {
+        $(this).css("background-color", "lightgreen");
+      } else {
+        $(this).css("background-color", "lightcoral");
+      }
+    });
+  });
+</script>
 </body>
