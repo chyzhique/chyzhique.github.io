@@ -1,33 +1,66 @@
-  // Function to save values to local storage
-    function saveToLocalStorage(elementId) {
-      var element = document.getElementById(elementId);
+    // Function to save values to local storage with title prefix
+    function SaveSelectValue(el) {
       var documentTitle = document.title;
-
-      localStorage.setItem(documentTitle + '_' + elementId, element.value || element.innerText);
+      localStorage.setItem(documentTitle + '_' + el.name, el.value);
     }
 
-    // Event listeners to trigger save automatically for each element
-    $('.select-element, .input-element, .td-element').on('input change', function() {
-      saveToLocalStorage(this.id);
-    });
+    // Function to load values from local storage with title prefix
+    function LoadSelectValue(el) {
+      var documentTitle = document.title;
+      return localStorage.getItem(documentTitle + '_' + el.name);
+    }
+
+    // Function to save values to local storage with title prefix
+    function SaveInputValue(el) {
+      var documentTitle = document.title;
+      localStorage.setItem(documentTitle + '_' + el.name, el.value);
+    }
+
+    // Function to load values from local storage with title prefix
+    function LoadInputValue(el) {
+      var documentTitle = document.title;
+      return localStorage.getItem(documentTitle + '_' + el.name);
+    }
+
+    // Function to save values to local storage with title prefix
+    function SaveTdValue(el) {
+      var documentTitle = document.title;
+      localStorage.setItem(documentTitle + '_' + el.name, el.innerText);
+    }
+
+    // Function to load values from local storage with title prefix
+    function LoadTdValue(el) {
+      var documentTitle = document.title;
+      return localStorage.getItem(documentTitle + '_' + el.name);
+    }
 
     // Load values from local storage on page load for each element
     function loadSettings() {
       var documentTitle = document.title;
 
-      $('.select-element, .input-element, .td-element').each(function() {
-        var storedValue = localStorage.getItem(documentTitle + '_' + this.id);
+      document.querySelectorAll('.select-element').forEach(function(selectElement) {
+        var storedValue = LoadSelectValue(selectElement);
         if (storedValue !== null) {
-          if ($(this).is('select')) {
-            $(this).val(storedValue);
-          } else if ($(this).is('input') || $(this).is('td')) {
-            $(this).val(storedValue);
-          }
+          selectElement.value = storedValue;
+        }
+      });
+
+      document.querySelectorAll('.input-element').forEach(function(inputElement) {
+        var storedValue = LoadInputValue(inputElement);
+        if (storedValue !== null) {
+          inputElement.value = storedValue;
+        }
+      });
+
+      document.querySelectorAll('.td-element').forEach(function(tdElement) {
+        var storedValue = LoadTdValue(tdElement);
+        if (storedValue !== null) {
+          tdElement.innerText = storedValue;
         }
       });
     }
 
     // Call loadSettings when the document is ready
-    $(document).ready(function() {
+    document.addEventListener('DOMContentLoaded', function() {
       loadSettings();
     });
