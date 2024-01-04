@@ -1,36 +1,36 @@
     // Function to save values to local storage
-    function saveToLocalStorage() {
+    function saveToLocalStorage(selectId) {
       // Get the document title
       var documentTitle = document.title;
 
-      // Get the select and input elements
-      var selectElement = document.getElementById('selectElement');
-      var inputElement = document.getElementById('inputElement');
+      // Get the select element
+      var selectElement = document.getElementById(selectId);
 
-      // Save values to local storage with prefixed IDs
-      localStorage.setItem(documentTitle + '_selectElement', selectElement.value);
-      localStorage.setItem(documentTitle + '_inputElement', inputElement.value);
+      // Save value to local storage with prefixed ID
+      localStorage.setItem(documentTitle + '_' + selectId, selectElement.value);
     }
 
-    // Event listeners to trigger save automatically
-    document.getElementById('selectElement').addEventListener('change', function() {
-      saveToLocalStorage();
-    });
+    // Event listeners to trigger save automatically for each select element
+    var selectElements = document.getElementsByClassName('select-element');
+    
+    Array.from(selectElements).forEach(function(selectElement) {
+      selectElement.addEventListener('change', function() {
+        saveToLocalStorage(selectElement.id);
+      });
 
-    document.getElementById('inputElement').addEventListener('input', function() {
-      saveToLocalStorage();
-    });
+      // Load values from local storage on page load for each select element
+      document.addEventListener('DOMContentLoaded', function() {
+        // Get the document title
+        var documentTitle = document.title;
 
-    // Load values from local storage on DOMContentLoaded
-    document.addEventListener('DOMContentLoaded', function() {
-      // Get the document title
-      var documentTitle = document.title;
+        // Load values from local storage and set them to the select elements
+        Array.from(selectElements).forEach(function(selectElement) {
+          var storedValue = localStorage.getItem(documentTitle + '_' + selectElement.id);
 
-      // Get the select and input elements
-      var selectElement = document.getElementById('selectElement');
-      var inputElement = document.getElementById('inputElement');
-
-      // Load values from local storage and set them to the elements
-      selectElement.value = localStorage.getItem(documentTitle + '_selectElement') || '';
-      inputElement.value = localStorage.getItem(documentTitle + '_inputElement') || '';
+          // Check if value is stored and not null
+          if (storedValue !== null) {
+            selectElement.value = storedValue;
+          }
+        });
+      });
     });
