@@ -1,15 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Handling <select> elements
   const selects = document.querySelectorAll('select');
-  const tds = document.querySelectorAll('li');
 
-  // Function to get a unique key based on document title and element ID
-  function getKey(element) {
-    return `${document.title}_${element.id}`;
-  }
-
-  // Handle select elements
   selects.forEach(select => {
-    const key = getKey(select);
+    const key = select.id;
 
     // Check if there is a saved value in local storage
     const savedValue = localStorage.getItem(key);
@@ -23,22 +17,30 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // Handle li elements (background color changes)
-  tds.forEach(td => {
-    const key = getKey(td);
+  // Handling <li> elements
+  const lis = document.querySelectorAll('li');
 
-    // Check if there is a saved background color in local storage
+  // Add click event listener to change background color
+  lis.forEach(li => {
+    const key = `${document.title}_${li.id}`;
     const savedColor = localStorage.getItem(key + '-color');
-    if (savedColor) {
-      td.style.backgroundColor = savedColor;
+
+    // Set background color based on comparison with data-correct-value
+    if (savedColor === li.dataset.correctValue) {
+      li.style.backgroundColor = '#77DD77'; // Green color
+    } else {
+      li.style.backgroundColor = '#ff6961'; // Red color
     }
 
-    // Add click event listener to change background color and save to local storage
-    td.addEventListener('click', function () {
-      const newColor = /* get the new color from your existing logic */;
-      td.style.backgroundColor = newColor;
+    // Add click event listener to update and save background color
+    li.addEventListener('click', function () {
+      // Example: Get the new color from your existing logic or set it to a specific color
+      const newColor = 'lightblue';
+
+      li.style.backgroundColor = newColor;
 
       // Save the new background color to local storage
       localStorage.setItem(key + '-color', newColor);
     });
   });
+});
