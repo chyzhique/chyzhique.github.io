@@ -23,8 +23,11 @@
       }
     }
 
-      </script>
-    <title>v-a2-m1l5.html</title>
+    function getPrefixedId(originalId) {
+      const documentTitle = document.title.replace(/[^a-z0-9]/gi, ''); // Remove non-alphanumeric characters
+      return `${documentTitle}-${originalId}`;
+    }
+    <title>v-a2-m1l5</title>
 </head>
     
   <body> 
@@ -155,23 +158,10 @@
     document.addEventListener('DOMContentLoaded', function () {
       // Example: Set selected option for select1
       const originalIdSelect1 = 'select1';
-      const dynamicPrefixedIdSelect1 = getDynamicPrefixedId(originalIdSelect1);
-      const savedValueSelect1 = localStorage.getItem(dynamicPrefixedIdSelect1);
-      setSelectedOption(dynamicPrefixedIdSelect1, savedValueSelect1);
-
+      const prefixedIdSelect1 = getPrefixedId(originalIdSelect1);
+      const savedValueSelect1 = localStorage.getItem(prefixedIdSelect1);
+      setSelectedOption(prefixedIdSelect1, savedValueSelect1);
       // Repeat for other selects as needed
-      // Example: Set selected option for select2
-      const originalIdSelect2 = 'select2';
-      const dynamicPrefixedIdSelect2 = getDynamicPrefixedId(originalIdSelect2);
-      const savedValueSelect2 = localStorage.getItem(dynamicPrefixedIdSelect2);
-      setSelectedOption(dynamicPrefixedIdSelect2, savedValueSelect2);
-
-      // Repeat for other selects as needed
-      // Example: Set selected option for select3
-      const originalIdSelect3 = 'select3';
-      const dynamicPrefixedIdSelect3 = getDynamicPrefixedId(originalIdSelect3);
-      const savedValueSelect3 = localStorage.getItem(dynamicPrefixedIdSelect3);
-      setSelectedOption(dynamicPrefixedIdSelect3, savedValueSelect3);
     });
   </script>
 </body>
