@@ -1,36 +1,36 @@
-// Handling <select> elements
-const selects = document.querySelectorAll('select');
+    // Function to save values to local storage
+    function saveToLocalStorage() {
+      // Get the document title
+      var documentTitle = document.title;
 
-selects.forEach(select => {
-  const key = select.id;
+      // Get the select and input elements
+      var selectElement = document.getElementById('selectElement');
+      var inputElement = document.getElementById('inputElement');
 
-  const savedValue = localStorage.getItem(key);
-  
-  select.value = savedValue || (select.options[0] && select.options[0].value);
+      // Save values to local storage with prefixed IDs
+      localStorage.setItem(documentTitle + '_selectElement', selectElement.value);
+      localStorage.setItem(documentTitle + '_inputElement', inputElement.value);
+    }
 
-  select.addEventListener('change', () => {
-    localStorage.setItem(key, select.value);
-  });
-});
+    // Event listeners to trigger save automatically
+    document.getElementById('selectElement').addEventListener('change', function() {
+      saveToLocalStorage();
+    });
 
-// Handling <li> elements
-const lis = document.querySelectorAll('li');
+    document.getElementById('inputElement').addEventListener('input', function() {
+      saveToLocalStorage();
+    });
 
-lis.forEach(li => {
-  const key = `${document.title}_${li.id}`;
-  const savedColor = localStorage.getItem(key + '-color');
+    // Load values from local storage on page load
+    window.onload = function() {
+      // Get the document title
+      var documentTitle = document.title;
 
-  if (savedColor) {
-    li.style.backgroundColor = savedColor;
-  } else {
-    const defaultColor = savedColor === li.dataset.correctValue ? '#77DD77' : '#ff6961';
+      // Get the select and input elements
+      var selectElement = document.getElementById('selectElement');
+      var inputElement = document.getElementById('inputElement');
 
-    li.style.backgroundColor = defaultColor;
-  }
-
-  li.addEventListener('click', () => {
-    const newColor = 'lightblue';
-    li.style.backgroundColor = newColor;
-    localStorage.setItem(key + '-color', newColor);
-  });
-});
+      // Load values from local storage and set them to the elements
+      selectElement.value = localStorage.getItem(documentTitle + '_selectElement') || '';
+      inputElement.value = localStorage.getItem(documentTitle + '_inputElement') || '';
+    };
