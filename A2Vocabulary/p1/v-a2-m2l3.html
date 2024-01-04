@@ -50,7 +50,7 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
   $(document).ready(function() {
     $(".changeDiv").on("input", function() {
       var userInput = $(this).val().toLowerCase();
-      var correctOptions = JSON.parse($(this).data("correct-options").toLowerCase().replace(/'/g, "\""));
+      var correctOptions = JSON.parse($(this).data("data-correct-options").toLowerCase().replace(/'/g, "\""));
 
       if (correctOptions.includes(userInput)) {
         $(this).css("background-color", "lightgreen");
