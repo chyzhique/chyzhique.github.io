@@ -32,16 +32,16 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
       <div class="bg">
   <ol>
 <li>We were having dinner when 
-  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%" data-correct-options='["suddenly", unluckily"]'>
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">
   the lights went out. <br>
 <li>Mark had a car accident last night, but 
-  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%" data-correct-options='["fortunately", "amazingly"]'> he didn't get hurt.<br>
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%"> he didn't get hurt.<br>
 <li>Karen 
-  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%" data-correct-options="amazingly">found her keys under the sofa.<br>
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">found her keys under the sofa.<br>
 <li>Dan wanted to go swimming on Sunday, but 
-  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%" data-correct-options='["unfortunately", "unluckily"]'>it was raining.<br>
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">it was raining.<br>
 <li>When Angela realised that someone was following her, she ran home, locked the door and 
-  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%" data-correct-options='["then", "after that", "finally"]'>she called the police.
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%">she called the police.
   </ol>
 </div>   
 </div>  
@@ -50,7 +50,11 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
-      "intriguing", "bustling", "far and wide", "stroll", "packed with", "a night on the town"
+      ["suddenly", "unluckily"],
+        ["fortunately", "amazingly"],
+        "amazingly",
+        ["unfortunately", "unluckily"],
+        ["then", "after that", "finally"]
     ];
 
     inputFields.forEach((input, index) => {
