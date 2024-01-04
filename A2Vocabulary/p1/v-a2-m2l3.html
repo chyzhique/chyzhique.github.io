@@ -46,17 +46,25 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
   </ol>
 </div>   
 </div>  
-      <script>
-  $(document).ready(function() {
-    $(".changeDiv").on("input", function() {
-      var userInput = $(this).val().toLowerCase();
-      var correctOptions = JSON.parse($(this).data("data-correct-options").toLowerCase().replace(/'/g, "\""));
+     <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "intriguing", "bustling", "far and wide", "stroll", "packed with", "a night on the town"
+    ];
 
-      if (correctOptions.includes(userInput)) {
-        $(this).css("background-color", "lightgreen");
-      } else {
-        $(this).css("background-color", "lightcoral");
-      }
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
     });
   });
 </script>
