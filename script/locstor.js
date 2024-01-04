@@ -1,68 +1,33 @@
-    // Function to save values to local storage
-    function saveToLocalStorage(selectId) {
-      // Get the document title
+  // Function to save values to local storage
+    function saveToLocalStorage(elementId) {
+      var element = document.getElementById(elementId);
       var documentTitle = document.title;
 
-      // Get the select element
-      var selectElement = document.getElementById(selectId);
-        var inputElement = document.getElementById(inputId);
-        var bgElement = document.getElementById(tdId);
-
-      // Save value to local storage with prefixed ID
-      localStorage.setItem(documentTitle + '_' + selectId, selectElement.value);
-        localStorage.setItem(documentTitle + '_' + inputId, selectElement.value);
-        localStorage.setItem(documentTitle + '_' + tdId, selectElement.value);
+      localStorage.setItem(documentTitle + '_' + elementId, element.value || element.innerText);
     }
 
-    // Event listeners to trigger save automatically for each select element
-    var selectElements = document.getElementsByClassName('select-element');
-    var inputElements = document.getElementsByClassName('input-element');
-    var tdElements = document.getElementsByClassName('td-element');
-    
-    Array.from(selectElements).forEach(function(selectElement) {
-      selectElement.addEventListener('change', function() {
-        saveToLocalStorage(selectElement.id);
+    // Event listeners to trigger save automatically for each element
+    $('.select-element, .input-element, .td-element').on('input change', function() {
+      saveToLocalStorage(this.id);
+    });
+
+    // Load values from local storage on page load for each element
+    function loadSettings() {
+      var documentTitle = document.title;
+
+      $('.select-element, .input-element, .td-element').each(function() {
+        var storedValue = localStorage.getItem(documentTitle + '_' + this.id);
+        if (storedValue !== null) {
+          if ($(this).is('select')) {
+            $(this).val(storedValue);
+          } else if ($(this).is('input') || $(this).is('td')) {
+            $(this).val(storedValue);
+          }
+        }
       });
-
-    Array.from(inputElements).forEach(function(inputElement) {
-      inputElement.addEventListener('change', function() {
-        saveToLocalStorage(inputElement.id);
-      });
-
-    Array.from(tdElements).forEach(function(tdElement) {
-      tdElement.addEventListener('change', function() {
-        saveToLocalStorage(tdElement.id);
-      });
-
-      // Load values from local storage on page load for each select element
-      document.addEventListener('DOMContentLoaded', function() {
-  // Get the document title
-  var documentTitle = document.title;
-
-  // Load values from local storage and set them to the select elements
-  Array.from(selectElements).forEach(function(selectElement) {
-    var storedValue = localStorage.getItem(documentTitle + '_' + selectElement.id);
-    // Check if value is stored and not null
-    if (storedValue !== null) {
-      selectElement.value = storedValue;
     }
-  });
 
-  // Load values from local storage and set them to the input elements
-  Array.from(inputElements).forEach(function(inputElement) {
-    var storedValue = localStorage.getItem(documentTitle + '_' + inputElement.id);
-    // Check if value is stored and not null
-    if (storedValue !== null) {
-      inputElement.value = storedValue;
-    }
-  });
-
-  // Load values from local storage and set them to the td elements
-  Array.from(tdElements).forEach(function(tdElement) {
-    var storedValue = localStorage.getItem(documentTitle + '_' + tdElement.id);
-    // Check if value is stored and not null
-    if (storedValue !== null) {
-      tdElement.value = storedValue; // Fix the typo here
-    }
-  });
-});
+    // Call loadSettings when the document is ready
+    $(document).ready(function() {
+      loadSettings();
+    });
