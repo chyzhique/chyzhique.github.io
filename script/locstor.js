@@ -20,16 +20,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // Handling <li> elements
   const lis = document.querySelectorAll('li');
 
-  // Add click event listener to change background color
+  // Restore background color based on saved data
   lis.forEach(li => {
     const key = `${document.title}_${li.id}`;
     const savedColor = localStorage.getItem(key + '-color');
 
-    // Set background color based on comparison with data-correct-value
-    if (savedColor === li.dataset.correctValue) {
-      li.style.backgroundColor = '#77DD77'; // Green color
+    // Set background color based on saved data
+    if (savedColor) {
+      li.style.backgroundColor = savedColor;
     } else {
-      li.style.backgroundColor = '#ff6961'; // Red color
+      // If no saved color, set the default color based on data-correct-value
+      if (savedColor === li.dataset.correctValue) {
+        li.style.backgroundColor = '#77DD77'; // Green color
+      } else {
+        li.style.backgroundColor = '#ff6961'; // Red color
+      }
     }
 
     // Add click event listener to update and save background color
