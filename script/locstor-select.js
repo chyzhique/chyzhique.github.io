@@ -5,5 +5,7 @@ function LoadSelectValue(el) {
   return localStorage.getItem(el.name);
 }
 
-let selectCheck = document.querySelector("[name='selectcheck']");
-selectCheck.value = LoadSelectValue(selectCheck);
+for (let i = 1; i <= 55; i++) {
+    let selectCheck = document.querySelector("[name='selectcheck" + i + "']");
+    selectCheck.value = LoadSelectValue(selectCheck);
+  }
