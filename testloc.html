@@ -1,0 +1,17 @@
+<select name="selectcheck" onchange="SaveSelectValue(this)">
+  <option value="green">Зеленый</option>
+  <option value="blue">blue</option>
+  <option value="red">red</option>
+</select>
+
+<script>
+function SaveSelectValue(el) {
+  localStorage.setItem(el.name, el.value);
+}
+function LoadSelectValue(el) {
+  return localStorage.getItem(el.name);
+}
+
+let selectCheck = document.querySelector("[name='selectcheck']");
+selectCheck.value = LoadSelectValue(selectCheck);
+</script>
