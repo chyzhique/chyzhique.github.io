@@ -3,48 +3,9 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
-    <script src="https://chyzhique.github.io/locstor-select.j"></script>
     <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
-    <script>
-        function SaveSelectValue(select) {
-      localStorage.setItem(select.id, select.value);
-    }
-
-    function setSelectedOption(selectId, savedValue) {
-      const select = document.getElementById(selectId);
-      if (select) {
-        const options = select.options;
-        for (let i = 0; i < options.length; i++) {
-          if (options[i].value === savedValue) {
-            options[i].selected = true;
-            break;
-          }
-        }
-      }
-    }
-
-    function getDynamicPrefixedId(originalId) {
-      const documentTitle = document.title.replace(/[^a-z0-9]/gi, ''); // Remove non-alphanumeric characters
-      return `${documentTitle}-${originalId}`;
-    }
-
-    document.addEventListener('DOMContentLoaded', function () {
-      // Get all select elements on the page
-      const allSelects = document.querySelectorAll('select');
-
-      // Iterate over each select element and set its selected option
-      allSelects.forEach(function (select) {
-        // Set dynamic prefixed ID for the select element
-        const originalId = select.id;
-        const dynamicPrefixedId = getDynamicPrefixedId(originalId);
-        select.id = dynamicPrefixedId;
-
-        // Get saved value from local storage and set selected option
-        const savedValue = localStorage.getItem(dynamicPrefixedId);
-        setSelectedOption(dynamicPrefixedId, savedValue);
-      });
-    });
-    </script>
+    <script src="https://chyzhique.github.io/locstor-select.js" defer></script>
+   
     <title>v-a2-m1l5</title>
 </head>
     
