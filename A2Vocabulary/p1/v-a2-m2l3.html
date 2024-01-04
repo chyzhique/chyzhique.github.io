@@ -6,6 +6,7 @@
     <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/input-check.js" defer></script>
    
     <title>v-a2-m1l5</title>
 </head>
@@ -31,41 +32,17 @@ them to complete the sentences 1-5. In some cases there is more than one answer.
       <div class="bg">
   <ol>
 <li>We were having dinner when 
-  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%" data-correct-options='["suddenly", unluckily"]'>
   the lights went out. <br>
 <li>Mark had a car accident last night, but 
-  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">he didn't get hurt.<br>
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%" data-correct-options='["fortunately", "amazingly"]'> he didn't get hurt.<br>
 <li>Karen 
-  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">found her keys under the sofa.<br>
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%" data-correct-options="amazingly">found her keys under the sofa.<br>
 <li>Dan wanted to go swimming on Sunday, but 
-  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">it was raining.<br>
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%" data-correct-options='["unfortunately", "unluckily"]'>it was raining.<br>
 <li>When Angela realised that someone was following her, she ran home, locked the door and 
-  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%">she called the police.
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%" data-correct-options='["then", "after that", "finally"]'>she called the police.
   </ol>
 </div>   
 </div>     
 </body>
-    
-   <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const inputFields = document.querySelectorAll('input[type="text"]');
-    const changeDivs = document.querySelectorAll('.changeDiv');
-    const correctWords = [
-      ["suddenly", "unluckily", "all of a sudden"], ["fortunately", "amazingly"], 
-      "amazingly", ["unfortunately", "unluckily"], ["then", "after that", "finally"]	
-    ];
-
-    inputFields.forEach((input, index) => {
-      input.addEventListener('input', function () {
-        const enteredWord = input.value.trim().toLowerCase();
-        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
-
-        if (correctOptions.includes(enteredWord)) {
-          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
-        } else {
-          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
-        }
-      });
-    });
-  });
-</script>
