@@ -7,8 +7,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Check if there is a saved value in local storage
     const savedValue = localStorage.getItem(key);
+    
     if (savedValue) {
+      // Set the selected value based on the saved data
       select.value = savedValue;
+    } else {
+      // If no saved value, set the default selected value
+      const defaultOption = select.options[0];
+      if (defaultOption) {
+        select.value = defaultOption.value;
+      }
     }
 
     // Add change event listener to save selected value to local storage
