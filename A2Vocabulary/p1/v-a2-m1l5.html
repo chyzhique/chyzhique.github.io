@@ -22,6 +22,24 @@
         }
       }
     }
+
+    function getDynamicPrefixedId(originalId) {
+      const documentTitle = document.title.replace(/[^a-z0-9]/gi, ''); // Remove non-alphanumeric characters
+      return `${documentTitle}-${originalId}`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+      // Get all select elements on the page
+      const allSelects = document.querySelectorAll('select');
+
+      // Iterate over each select element and set its selected option
+      allSelects.forEach(function (select) {
+        const originalId = select.id;
+        const dynamicPrefixedId = getDynamicPrefixedId(originalId);
+        const savedValue = localStorage.getItem(dynamicPrefixedId);
+        setSelectedOption(dynamicPrefixedId, savedValue);
+      });
+    });
   </script>
     <title>v-a2-m1l5.html</title>
 </head>
@@ -38,7 +56,7 @@
 
   <ol>
 <li id="td1" class="td-element">I can't talk to Bill about anything. He's so <b>quick-tempered</b>!
-  <select id="select1"style="float:right" data-correct-value="valueg"  onchange="SaveSelectValue(this)">
+  <select id="select1"style="float:right" data-correct-value="valueg" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -50,7 +68,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td2" class="td-element">One of Mary's bad qualities is that she's <b>bossy</b>. She keeps telling us what to do and what not to do!
-  <select id="select2" style="float:right" data-correct-value="valuec">
+  <select id="select2" style="float:right" data-correct-value="valuec" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -62,7 +80,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td3" class="td-element">Julia is so <b>lazy</b>. She just sits there all day doing nothing.
-  <select id="select3" style="float:right" data-correct-value="valuea"">
+  <select id="select3" style="float:right" data-correct-value="valuea" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -74,7 +92,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td4" class="td-element">Don't be <b>shy</b>. Come and say hello to my family.
-  <select id="select4" style="float:right" data-correct-value="valuef">
+  <select id="select4" style="float:right" data-correct-value="valuef" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -86,7 +104,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td5" class="td-element">Oliver is an <b>outgoing</b> person and loves going to parties.
-  <select id="select5" style="float:right" data-correct-value="valued">
+  <select id="select5" style="float:right" data-correct-value="valued" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -98,7 +116,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td6" class="td-element">My sister's an <b>honest</b> person. She never lies to me.
-  <select id="select6" class="select-element"  style="float:right" data-correct-value="valuee" onchange="SaveSelectValue(this)">
+  <select id="select6" style="float:right" data-correct-value="valuee" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -110,7 +128,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td7" class="td-element">A very <b>kind</b> young man helped me carry my shopping bags up the stairs.
-  <select id="select7" class="select-element"  style="float:right" data-correct-value="valueh" onchange="SaveSelectValue(this)">
+  <select id="select7" style="float:right" data-correct-value="valueh" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -122,7 +140,7 @@
     <option value="valueh">h</option>
     </select></li>
 <li id="td8" class="td-element">Wendy is a <b>confident</b> woman, so job interviews are very easy for her.
-  <select id="select8" class="select-element"  style="float:right" data-correct-value="valueb" onchange="SaveSelectValue(this)">
+  <select id="select8" style="float:right" data-correct-value="valueb" onchange="SaveSelectValue(this)">
     <option value="">?</option>
     <option value="valuea">a</option>
     <option value="valueb">b</option>
@@ -149,14 +167,6 @@
 
 </div>   
 </div> 
-      <script>
-    // Set selected options on page load
-    document.addEventListener('DOMContentLoaded', function () {
-      // Example: Set selected option for select1
-      const savedValueSelect1 = localStorage.getItem('select1');
-      setSelectedOption('select1', savedValueSelect1);
-      // Repeat for other selects as needed
-    });
-  </script>
+     
 </body>
 </html>
