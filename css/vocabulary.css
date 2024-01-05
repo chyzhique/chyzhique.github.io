@@ -9,7 +9,7 @@ body {
   justify-content: center; 
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-gap: 8px;
+  grid-gap: 0;
   align-items: start;
         }
 /* TOP */
