@@ -121,38 +121,7 @@ give them the <b>opposite meaning</b> <i>(happiness - unhappiness, correct - inc
 </body>
 
 <script>
-    function setTdBackgroundColor(selectId, tdId, correctValue) {
-      const select = document.getElementById(selectId);
-      const td = document.getElementById(tdId);
-
-      select.addEventListener('change', function () {
-        if (select.value === correctValue) {
-          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
-        } else {
-          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
-        }
-      });
-    }
-
-    // Call the function for each select and corresponding td
-    setTdBackgroundColor('select1', 'td1', 'valuee');
-    setTdBackgroundColor('select2', 'td2', 'valuec');
-    setTdBackgroundColor('select3', 'td3', 'valueg');   
-    setTdBackgroundColor('select4', 'td4', 'valued');
-  
-    setTdBackgroundColor('select5', 'td5', 'valueh');
-    setTdBackgroundColor('select6', 'td6', 'valuea');
-    setTdBackgroundColor('select7', 'td7', 'valuei');
-    setTdBackgroundColor('select8', 'td8', 'valuej');
-  
-    setTdBackgroundColor('select9', 'td9', 'valueb');
-    setTdBackgroundColor('select10', 'td10', 'valuek');
-    setTdBackgroundColor('select11', 'td11', 'valuel');
-    setTdBackgroundColor('select12', 'td12', 'valuef');
-
-
-  </script>
-    <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
@@ -165,12 +134,15 @@ give them the <b>opposite meaning</b> <i>(happiness - unhappiness, correct - inc
 
     inputFields.forEach((input, index) => {
       input.addEventListener('input', function () {
-        const enteredWord = input.value;
-        if (enteredWord === correctWords[index]) {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
           changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
           changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
       });
     });
-  </script>
+  });
+</script>
