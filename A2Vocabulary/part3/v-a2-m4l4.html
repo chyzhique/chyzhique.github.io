@@ -47,21 +47,25 @@
 </div>     
 </body>
 
-    <script>
+ <script>
+  document.addEventListener('DOMContentLoaded', function () {
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
-   "d", "e", "a", "c", "f", "b"
+     "d", "e", "a", "c", "f", "b"
     ];
 
     inputFields.forEach((input, index) => {
       input.addEventListener('input', function () {
-        const enteredWord = input.value;
-        if (enteredWord === correctWords[index]) {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
           changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
           changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
       });
     });
-  </script>
+  });
+</script>
