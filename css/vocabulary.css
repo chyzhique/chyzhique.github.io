@@ -30,6 +30,7 @@ header {
   display: grid;
     grid-template-columns: 80% 20%;
     grid-gap: 0;
+  border-bottom: 3px solid black
 }
 
 header .overlay{
@@ -44,7 +45,7 @@ header .overlay{
 }
 /*HEADERs*/
 h1 {
- font-family: Playfair Display SC;
+ font-family: 'Bevan';
  font-size:3rem;
  margin: 0 0 1rem 1.5rem;
  color: yellow;
