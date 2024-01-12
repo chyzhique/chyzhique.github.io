@@ -38,7 +38,7 @@ header .overlay{
   font-size: 2rem;
   font-weight: 700;
   font-family: 'Playfair Display', sans-serif;
-  color: purple;
+  color: #6F61C0;
   text-shadow: 1px 1px 1px #333;
   background-image: linear-gradient( 135deg, #FAEF5D 10%, #FEFFAC 100%); 
 }
