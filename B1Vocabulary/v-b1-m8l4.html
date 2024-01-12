@@ -66,7 +66,7 @@
 
       <ol>
 <li id="td1">It took me nearly two weeks to <b>get over</b> the flu.
-            <select id="select1" style="float:right">
+            <select id="select1" style="float:right" data-correct-value="valuef" onchange="SaveSelectValue(this)">
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -78,7 +78,7 @@
             <option value="valueh">h</option>
           </select></li>
 <li id="td2">The singer was not able to perform because she <b>came down</b> with a cold.
-            <select id="select2" style="float:right">
+            <select id="select2" style="float:right"data-correct-value="valued" onchange="SaveSelectValue(this)">
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -90,7 +90,7 @@
             <option value="valueh">h</option>
           </select></li>
 <li id="td3">When I <b>came round</b>, I was lying in a hospital bed.
-            <select id="select3" style="float:right">
+            <select id="select3" style="float:right" data-correct-value="valuee" onchange="SaveSelectValue(this)"  >
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -102,7 +102,7 @@
             <option value="valueh">h</option>
           </select></li>
 <li id="td4">When the doctor <b>brought</b> me <b>round</b>, I didn't know what had happened to me.
-            <select id="select4" style="float:right">
+            <select id="select4" style="float:right" data-correct-value="valueb" onchange="SaveSelectValue(this)">
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -114,7 +114,7 @@
             <option value="valueh">h</option>
           </select></li>
 <li id="td5">The painkiller started to <b>wear off</b> after about an hour and my leg started really hurting me.
-            <select id="select5" style="float:right">
+            <select id="select5" style="float:right" data-correct-value="valuec" onchange="SaveSelectValue(this)">
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -126,7 +126,7 @@
             <option value="valueh">h</option>
           </select></li>
 <li id="td6">The doctor told Julie she was <b>worn out</b> from looking after her five children and that she needed to get some rest.
-            <select id="select6" style="float:right">
+            <select id="select6" style="float:right" data-correct-value="valuea" onchange="SaveSelectValue(this)">
             <option value="">?</option>
             <option value="valuea">a</option>
             <option value="valueb">b</option>
@@ -155,45 +155,11 @@
       
 </body>
 
-<script>
-    function setTdBackgroundColor(selectId, tdId, correctValue) {
-      const select = document.getElementById(selectId);
-      const td = document.getElementById(tdId);
-
-      select.addEventListener('change', function () {
-        if (select.value === correctValue) {
-          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
-        } else {
-          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
-        }
-      });
-    }
-
-    // Call the function for each select and corresponding td
-    setTdBackgroundColor('select1', 'td1', 'valuef');
-    setTdBackgroundColor('select2', 'td2', 'valued');
-    setTdBackgroundColor('select3', 'td3', 'valuee');   
-    setTdBackgroundColor('select4', 'td4', 'valueb');
-    setTdBackgroundColor('select5', 'td5', 'valuec');
-    setTdBackgroundColor('select6', 'td6', 'valuea');
-  
-    setTdBackgroundColor('select7', 'td7', 'valuee');
-    setTdBackgroundColor('select8', 'td8', 'valueb');
-    setTdBackgroundColor('select9', 'td9', 'valued');
-    setTdBackgroundColor('select10', 'td10', 'valueb');
-    setTdBackgroundColor('select11', 'td11', 'valuea');
-    setTdBackgroundColor('select12', 'td12', 'valueh');
-    setTdBackgroundColor('select13', 'td13', 'valuec');
-    setTdBackgroundColor('select14', 'td14', 'valueg');
-
-  </script>
     <script>
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
 "hurt", "injured", "harm", "pain", "injury", "bruise", "blister", "rash", "scratches", "gasped", "fainted", "choked"
-      
-      
     ];
 
     inputFields.forEach((input, index) => {
@@ -204,27 +170,6 @@
         } else {
           changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      });
-    });
-  </script>
-
-    <script>
-    const varSpans = document.querySelectorAll('.var');
-
-    varSpans.forEach(varSpan => {
-      const radios = varSpan.querySelectorAll('input[type="radio"]');
-      const resultMessage = varSpan;
-
-      radios.forEach(radioButton => {
-        radioButton.addEventListener('change', function() {
-          if (radioButton.checked) {
-            if (radioButton.getAttribute('data-correct') === 'true') {
-              resultMessage.classList.add('highlight');
-            } else {
-              resultMessage.classList.remove('highlight');
-            }
-          }
-        });
       });
     });
   </script>
