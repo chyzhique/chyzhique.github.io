@@ -11,17 +11,16 @@
 </head>
     
   <body> 
+        <div class="bg">
+              <div class="bg-left">
 <header>
+   <h4>vocabulary</h4>
 <div><h1>1. NOUNS DESCRIBING OCCUPATIONS</h1></div>
- <div class="overlay">vocabulary</div>
-</header>
-    
-    <div class="bg">
+</header>  
   
 <div class="hint">Many nouns used to describe <mark>occupations</mark> end in suffixes such as <b>-ist</b>, <b>-er</b> and <b>-ian</b>.</div>
 
 <h3>Write the correct names of the occupations.</h3>
-
 
 <table>
 <tr>
@@ -40,6 +39,13 @@
   <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 70%"></td></tr>
 </table>
 
+	      </div>
+      
+   <div class="bg-right">   
+   <header>
+      <h4>📕</h4>
+</header> 
+	   
 <h3>Use some of the words above, transform them and use to complete the following sentences</h3>
 
   <ol>
@@ -57,19 +63,45 @@
   <input type="text" id="wordInput15" class="changeDiv" id="changeDiv15" style="width: 50%">James Reese, will give us the latest news on this issue.
 </ol>
   </div>
+
+	    </div></div>
+  <div class="bg">
+      
+   <div class="bg-left">   
+   <header>
+      <h4>📕</h4>
+</header> 
+	   
 <h1>2. PREPOSITIONAL PHRASES WITH 'AT' AND 'IN' </h2>
-<div class="excercise">
 
 <h3>Find prepositional phrases with <i>at</i> and <i>in</i> in the text on Reading page . Can you think of any other common ones?</h3>
       
-<div class="bunch" style="text-align:center">
-📌 at first &emsp; 📌 at the age of &emsp;  📌in a hurry <br>
-📌in detail &emsp;  📌 at last &emsp;  📌 at least <br>
-📌 at once &emsp;  📌 at the latest &emsp;  📌 at the moment<br>
-📌 in a good/bad mood &emsp;  📌 in a mess &emsp;  📌 in general<br>
-📌 in other words &emsp;  📌 in particular
+<table class="bunch" style="text-align:justify; line-height:1.5">
+  <tr><td>
+📌 at first <br> 
+📌 at the age of <br> 
+📌 in a hurry <br>
+📌 in detail <br>
+📌 at last <br>  
+📌 at least <br>
+📌 at once  
+    </td><td>
+📌 at the latest <br>
+📌 at the moment <br>
+📌 in a good / bad mood <br>  
+📌 in a mess <br>  
+📌 in general <br>
+📌 in other words <br> 
+📌 in particular
+</table>
+  
+ <h3> Use the prepositional phrases to complete the phrases.</h3>
 </div>
-
+        <div class="bg-right">   
+   <header>
+      <h4>📕</h4>
+</header> 
+          
 <ol>
 <li> 
   <input type="text" id="wordInput16" class="changeDiv" id="changeDiv16" style="width: 50%">
@@ -98,11 +130,15 @@ is no time to waste.<br><br>
   call her to let her know.
   </ol>
   </div>
+ 	    </div>
       
+   <div class="bg-right">   
+   <header>
+      <h4>📕</h4>
+</header>      
 <h1>3. ADJECTIVE SUFFIXES </h1>
-<div class="excercise">
   
-<div class="hint">Many adjectives are formed by adding the suffixes <b>-ent</b>, <b>-al</b> and <b>-ly</b> to a noun or verb.</div>
+<div class="hint" style="margin:auto">Many adjectives are formed by adding the suffixes <b>-ent</b>, <b>-al</b> and <b>-ly</b> to a noun or verb.</div>
 
 <h3>Look at the adjectives in the table below. Decide which words they come from and what they mean. </h3>
 
@@ -171,27 +207,6 @@ is no time to waste.<br><br>
         } else {
           changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      });
-    });
-  </script>
-
-    <script>
-    const varSpans = document.querySelectorAll('.var');
-
-    varSpans.forEach(varSpan => {
-      const radios = varSpan.querySelectorAll('input[type="radio"]');
-      const resultMessage = varSpan;
-
-      radios.forEach(radioButton => {
-        radioButton.addEventListener('change', function() {
-          if (radioButton.checked) {
-            if (radioButton.getAttribute('data-correct') === 'true') {
-              resultMessage.classList.add('highlight');
-            } else {
-              resultMessage.classList.remove('highlight');
-            }
-          }
-        });
       });
     });
   </script>
