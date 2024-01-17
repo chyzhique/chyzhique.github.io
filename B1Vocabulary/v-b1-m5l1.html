@@ -7,42 +7,48 @@
     <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
-    <title>v-b1-m5l1</title>
+<title>v-b1-m5l1</title>
 </head>
     
   <body> 
-<header>
-<div><h1>REPORTING VERBS</h1></div>
- <div class="overlay">vocabulary</div>
-</header>
-    
     <div class="bg">
+      <div class="bg-left">
+<header>
+   <h4>vocabulary</h4>
+<div><h1>REPORTING VERBS</h1></div>
+</header>
        
-<h3>Look at the following extracts from the text. What do you think the verbs in bold mean?</h3>
+<h3>Look at the following extracts from the text.</h3> 
+<h3>What do you think the verbs in bold mean?</h3>
 
        <div class="bunch" style="text-align:center">
-🗣️ Explain yourself, I <b><u>beg</u></b> you!<br>
+🗣️ Explain yourself, I <b><u>beg</u></b> you!<br><br>
 <div class="var" style="width: 100%;text-align:center">
         <input type="radio" id="1" name="word1" value="a"  data-correct="true">
         <label for="1">a. ask eagerly</label>
         <input type="radio" id="2" name="word1" value="b">
-        <label for="2">b. promise</label>
+        <label for="2">b. promise</label><br>
         <input type="radio" id="3" name="word1" value="c">
         <label for="3">c. order</label>
-      </div>
-
+      </div></div>
          <hr>
-🗣️ "Who is this Erik?' he <b><u>wondered</u></b> aloud.<br>
+        <div class="bunch" style="text-align:center">
+🗣️ "Who is this Erik?' he <b><u>wondered</u></b> aloud.<br><br>
          <div class="var" style="width: 100%;text-align:center">
         <input type="radio" id="4" name="word2" value="a">
         <label for="4">a. answered</label>
         <input type="radio" id="5" name="word2" value="b"  data-correct="true">
-        <label for="5">b. thought</label>
+        <label for="5">b. thought</label><br>
         <input type="radio" id="6" name="word2" value="c">
         <label for="6">c. cried</label>
       </div>
 
-         </div>
+         </div></div>
+        
+              <div class="bg-right">
+       <header>
+      <h4>📕</h4>
+</header>
          
          <h3>Read the sentences below and match the verbs in bold with their meanings a-f.</h3>
        <div class="bunch">
@@ -54,7 +60,7 @@
 <li> make someone remember</li>
 <li>not accept
   </ul>
-         </div><br>
+         </div>
        <ol>
 <li id="td1">Sally <b>refused</b> to help me with the washing-up.
 <select id="select1" style="float:right">
@@ -168,27 +174,6 @@
         } else {
           changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      });
-    });
-  </script>
-
-    <script>
-    const varSpans = document.querySelectorAll('.var');
-
-    varSpans.forEach(varSpan => {
-      const radios = varSpan.querySelectorAll('input[type="radio"]');
-      const resultMessage = varSpan;
-
-      radios.forEach(radioButton => {
-        radioButton.addEventListener('change', function() {
-          if (radioButton.checked) {
-            if (radioButton.getAttribute('data-correct') === 'true') {
-              resultMessage.classList.add('highlight');
-            } else {
-              resultMessage.classList.remove('highlight');
-            }
-          }
-        });
       });
     });
   </script>
