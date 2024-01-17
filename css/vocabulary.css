@@ -85,6 +85,7 @@ h4 {
    background-color: #ECEE81; 
    text-align: justify;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
   
       }
 .tip{
@@ -206,12 +207,6 @@ ol, ul {
         border:0;
         border-bottom:1px solid black;
       }
-      .hint{
-        border: 5px solid red; 
-        padding: 1rem;
-        background-color: #ECEE81; 
-        font-size:1.5rem;
-        text-align: justify
-      }
+     
 .wrd{
         background-color: crimson; color: white; float: right}
