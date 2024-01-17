@@ -7,23 +7,27 @@
     <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
-    <title>v-b1-m3l1</title>
+<title>v-b1-m3l1</title>
 </head>
     
   <body> 
-<header>
-<div><h1>SPORTS ACTIVITIES</h1></div>
- <div class="overlay">vocabulary</div>
-</header>
-    
     <div class="bg">
+      <div class="bg-left">
+<header>
+   <h4>vocabulary</h4>
+<div><h1>SPORTS ACTIVITIES</h1></div>
+</header>
 
 <h3>Complete the table below with the correct name of the sport. Choose from the sports in the box. </h3>
-
-<div class="bunch">
-✏️ boxing &emsp; ✏️ snowboarding &emsp; ✏️ windsurfing &emsp; ✏️ football &emsp; ✏️ tennis &emsp; ✏️ water polo &emsp; ✏️ basketball</div>
-      
-<div class="excercise">
+          <div class="bunch">
+✏️ boxing <br> ✏️ snowboarding <br> ✏️ windsurfing <br> ✏️ football <br> ✏️ tennis <br> ✏️ water polo <br> ✏️ basketball
+     </div>      
+        
+               </div>
+   <div class="bg-right">   
+   <header>
+      <h4>📕</h4>
+</header> 
       <table style="width: 100%"> 
 <colgroup> 
 <col style="background-color: #fad7df;"> 
@@ -67,46 +71,13 @@
   <br><br></td>
 <td>Pitch</td>
 <td>ball, boots, shorts, shin pads</td></tr>
-  
 </table>
-      
+ 
      
-    </div>
 
-</body>
+     </div>
+      </body>
 
-<script>
-    function setTdBackgroundColor(selectId, tdId, correctValue) {
-      const select = document.getElementById(selectId);
-      const td = document.getElementById(tdId);
-
-      select.addEventListener('change', function () {
-        if (select.value === correctValue) {
-          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
-        } else {
-          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
-        }
-      });
-    }
-
-    // Call the function for each select and corresponding td
-    setTdBackgroundColor('select1', 'td1', 'valueb');
-    setTdBackgroundColor('select2', 'td2', 'valued');
-    setTdBackgroundColor('select3', 'td3', 'valuec');   
-    setTdBackgroundColor('select4', 'td4', 'valuea');
-  
-    setTdBackgroundColor('select5', 'td5', 'valueh');
-    setTdBackgroundColor('select6', 'td6', 'valuea');
-    setTdBackgroundColor('select7', 'td7', 'valuei');
-    setTdBackgroundColor('select8', 'td8', 'valuej');
-  
-    setTdBackgroundColor('select9', 'td9', 'valueb');
-    setTdBackgroundColor('select10', 'td10', 'valuek');
-    setTdBackgroundColor('select11', 'td11', 'valuel');
-    setTdBackgroundColor('select12', 'td12', 'valuef');
-
-
-  </script>
     <script>
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
@@ -126,65 +97,5 @@
     });
   </script>
 
-  <script>
-    let itemsRearranged = false;
-
-    function allowDrop(event) {
-        event.preventDefault();
-    }
-
-    function drag(event) {
-        event.dataTransfer.setData("text", event.target.id);
-    }
-
-    function drop(event) {
-        event.preventDefault();
-        const data = event.dataTransfer.getData("text");
-        const draggedItem = document.getElementById(data);
-        const targetColumn = event.target.closest('.column');
-
-        if (targetColumn && targetColumn.id === 'column2') {
-            const items = Array.from(targetColumn.querySelectorAll('.item'));
-            const index = items.indexOf(draggedItem);
-
-            // Move the dragged item to the correct position
-            if (index > -1) {
-                targetColumn.removeChild(draggedItem);
-                const newPosition = getNewPosition(event, items, index);
-                targetColumn.insertBefore(draggedItem, items[newPosition]);
-            }
-
-            // Check if items are in the correct order only if they have been rearranged
-            if (itemsRearranged) {
-                const correctItems = document.querySelectorAll('.correct');
-                const sortedItems = Array.from(correctItems).sort((a, b) =>
-                    a.dataset.position - b.dataset.position
-                );
-                let isCorrectOrder = true;
-
-                sortedItems.forEach((item, index) => {
-                    if (item.dataset.position !== (index + 1).toString()) {
-                        isCorrectOrder = false;
-                    }
-                });
-
-                if (isCorrectOrder) {
-                    document.querySelector('.board').classList.add('correct');
-                } else {
-                    document.querySelector('.board').classList.remove('correct');
-                }
-            } else {
-                itemsRearranged = true;
-            }
-        }
-    }
-
-    function getNewPosition(event, items, currentIndex) {
-        const mouseY = event.clientY;
-        const rect = items[currentIndex].getBoundingClientRect();
-        const itemHeight = rect.height;
-
-        // Determine whether to move up or down based on the mouse position
-        return mouseY < rect.top + itemHeight / 2 ? currentIndex - 1 : currentIndex + 1;
-    }
-</script>
+    </html>
+      
