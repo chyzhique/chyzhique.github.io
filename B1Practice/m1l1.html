@@ -1,196 +1,103 @@
-<html>
-<head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta charset="utf-8">
-		 <style>
-.outer {margin: auto; max-width: 700px; border-radius: 15px; border: 1px solid black; border-radius: 25px; background-color:  #A0D7D9;font-family:merriweather; line-height:normal;font-size:20px;color:black;}
-.inner {margin: 5%; border-radius: 15px; border: 1px solid black; border-radius: 15px; background-color: oldlace;font-family:merriweather; line-height:normal;font-size:20px;color:black; paddipx}
-.text {padding-left: 25px; margin: auto}
-.header {text-align: center; max-width: 500px; margin-left:auto; margin-right: auto}
-.correct {color: green;}
-.incorrect {color: red;}
-input[type="text"] {background: transparent;border: none;
-border-bottom: 1px solid #000;padding: 5px;outline: none;}
-.button-30 {display: flex;
-    justify-content: center;
-    align-items: center; align-items: center;appearance: none;background-color: #FCFCFD;border-radius: 4px;border-width: 0;box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; box-sizing: border-box;  color: #36395A;
-  cursor: pointer;  display: inline-flex;  font-family: "JetBrains Mono",monospace;  height: 48px;  justify-content: center;
-  line-height: 1;  list-style: none;  overflow: hidden;
-  padding-left: 20%;  padding-right: 20%;  position: relative;
-  text-align: left;  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;  touch-action: manipulation;  white-space: nowrap;  will-change: box-shadow,transform;  font-size: 18px;}
-.button-30:focus { box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;}
-.button-30:hover {  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
-  transform: translateY(-2px);}
-.button-30:active {  box-shadow: #D6D6E7 0 3px 7px inset;
-  transform: translateY(2px);}
-.try {  align-items: center;  appearance: none;  background-color: orange;  border-radius: 4px;  border-width: 0;  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;  box-sizing: border-box;
-  color: #36395A;  cursor: pointer;  display: inline-flex;  height: 35px;  justify-content: center;  line-height: 1;  list-style: none;  overflow: hidden;  padding-left: 16px;  padding-right: 16px;
-  position: relative;  text-align: left;
-  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;
-  touch-action: manipulation;  white-space: nowrap;
-  will-change: box-shadow,transform;  font-size: 18px;}
-  
-  .question-container {
-      float: left;
-      width: 50%;
-    }
-    .answer-container {
-      float: left;
-      width: 50%;
-    }
-    .question {
-      cursor: pointer;
-      padding: 7px;
-      margin: 5px;
-      transition: background-color 0.3s ease;
-      background-color: white;
-    }
-    .question.correct {
-      background-color: #8BC34A;
-    }
-    .question.selected {
-      background-color: #FFEB3B;
-    }
-    .answer {
-      cursor: pointer;
-      padding: 5px;
-      border: 1px solid #ccc;
-      margin: 5px;
-      border-radius: 25px;
-      background-color: oldlace;
-    }
-    .answer.correct {
-      background-color: #8BC34A;
-    }
-    .incorrect {
-      background-color: #FF5722;
-    }
-    table { font-family: merriweather; font-size: 20px; line-height: normal; padding: 5px}
-    td { style="width: 80px; height: 25px; color: black; border-bottom: 1px solid black"}
-    </style>
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/gramma.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-b1-m1l1</title>
+		 
 </head>
   
 <body>
-  <div class="outer" id="content">
+  <div class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Real-life situation</h1>
+ </header> 
     
-<h3 class="header">Complete the dialogue with the Present Simple or the Present Progressive of the verbs in brackets. </h3>
+<h3>Complete the dialogue with the Present Simple or the Present Progressive of the verbs in brackets. </h3>     
     
-    
-  <form id="beTestForm" class="inner">
-        
-		
-<table> 
-<colgroup> 
-<col style="background-color: #fad7df;" id="layer1"> 
-</colgroup> 
-<tr> 
-<td id="layer2">Alice: </td>
-<td>Hi, Gary. What а surprise to see you in the public library! What (1) <input type="text" id="q1" name="q1"> (you / do) here so early in the morning? </td></tr><tr>
-<td>Gary:</td>
-<td>Yeah, well I (2) <input type="text" id="q2" name="q2"> (travel) to India with mу раrеnts next month and they (3) <input type="text" id="q3" name="q3"> (want) mе to learn а bit about Indian history and culture. </td></tr><tr>
-<td>Alice: </td>
-<td>You are so lucky! I (4) <input type="text" id="q4" name="q4"> (love) to travel, but I (5) <input type="text" id="q5" name="q5"> (never get) the сhапсе to go anywhere.</td></tr><tr>
-<td>Gary:</td>
-<td>So, what briпgs you to the library? </td></tr><tr>
-<td>Alice:</td>
-<td>Oh, I'm here with Kelly. We (6) <input type="text" id="q6" name="q6"> (not go) anywhere this summeг, so we decided to look for а job. 
-We (7)<input type="text" id="q7" name="q7"> (apply) for а paгt-time job here.</td></tr><tr>
-<td>Gary: </td>
-<td>I (8) <input type="text" id="q8" name="q8"> (not think) I’d Iike to work during the summer, but good luck!</td></tr><tr>
-<td>Alice: </td>
-<td>Thanks. Ву the way, (9) <input type="text" id="q9" name="q9"> (you / need) any help finding books about India? I’d bе glad to help. </td></tr><tr>
-<td>Gary: </td>
-<td>No, I’ll bе ОК. </td></tr><tr>
-<td>Alice: </td>
-<td>Well, bуе then. And I (10) <input type="text" id="q10" name="q10"> (hope) you enjoy your trip to India! 
-</td></tr>
-</table>
-                                                                                            
-    </div></div>
-  
-  
-    <div style="display: flex;
-    justify-content: center;
-    align-items: center;">
- <button type="button" id="submitBtn" class="button-30">Check</button>
-    </form>
+    <table>
+        <tr>
+            <th>Alice: </th>
+            <td>Hi, Gary. What а surprise to see you in the public library! What (1)
+                <input type="text" id="q1" class= "changeDiv"> (you / do) here so early in the morning? </td>
+        </tr>
+        <tr>
+            <th>Gary:</th>
+            <td>Yeah, well I (2) <input type="text" id="q2" name="q2" class= "changeDiv"> (travel) to India with mу раrеnts next month and they (3)
+                <input type="text" id="q3" name="q3" class= "changeDiv"> (want) mе to learn а bit about Indian history and culture. </td>
+        </tr>
+        <tr>
+            <th>Alice: </th>
+            <td>You are so lucky! I (4) <input type="text" id="q4"  class= "changeDiv"> (love) to travel, but I (5)
+                <input type="text" id="q5"  class= "changeDiv"> (never get) the сhапсе to go anywhere.</td>
+        </tr>
+        <tr>
+            <th>Gary:</th>
+            <td>So, what brings you to the library? </td>
+        </tr>
+        <tr>
+            <th>Alice:</th>
+            <td>Oh, I'm here with Kelly. We (6) <input type="text" id="q6"  class= "changeDiv"> (not go) anywhere this summeг, so we
+                decided to look for а job.
+                We (7)<input type="text" id="q7"  class= "changeDiv"> (apply) for а paгt-time job here.</td>
+        </tr>
+        <tr>
+            <th>Gary: </th>
+            <td>I (8) <input type="text" id="q8" class= "changeDiv"> (not think) I’d Iike to work during the summer, but good
+                luck!</td>
+        </tr>
+        <tr>
+            <th>Alice: </th>
+            <td>Thanks. Ву the way, (9) <input type="text" id="q9"  class= "changeDiv"> (you / need) any help finding books about
+                India? I’d bе glad to help. </td>
+        </tr>
+        <tr>
+            <th>Gary: </th>
+            <td>No, I’ll bе ОК. </td>
+        </tr>
+        <tr>
+            <th>Alice: </th>
+            <td>Well, bуе then. And I (10) <input type="text" id="q10"  class= "changeDiv"> (hope) you enjoy your trip to India!
+            </td>
+        </tr>
+    </table>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="clearBtn" class="button-30">Try again</button>
+    </div>
+
 </div>
-  
-    <div id="results" style="display: none; justify-content: center; align-items: center;">
-        <h2 class= "header">Results</h2>
-      
-        <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-      <div style="display: flex;
-    justify-content: center;
-    align-items: center;">
-        <button type="button" id="redoBtn">Try again </button>
-    </div></div>
-  
+
 <script>
-        const correctAnswers = ["are you doing", "am travelling", "want", "love", "never get", "aren't going", "are applying", "don't think", "do you need", "hope"];
 
-        const form = document.getElementById("beTestForm");
-        const submitBtn = document.getElementById("submitBtn");
-        const redoBtn = document.getElementById("redoBtn");
-        const resultsDiv = document.getElementById("results");
-        const scoreDiv = document.getElementById("score");
+ document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+     "are you doing", "am travelling", "want", "love", "never get", ["are not going", "aren't going"], "are applying", "don't think", "do you need", "hope"
+    ];
 
-        submitBtn.addEventListener("click", () => {
-            const userAnswers = [];
-            let score = 0;
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-            for (let i = 0; i < correctAnswers.length; i++) {
-                const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase();
-                userAnswers.push(userAnswer);
-                const input = document.getElementById(`q${i + 1}`);
-                
-                if (userAnswer === correctAnswers[i]) {
-                    score++;
-                    input.classList.remove("incorrect");
-                    input.classList.add("correct");
-                } else {
-                    input.classList.remove("correct");
-                    input.classList.add("incorrect");
-                }
-            }
-
-            displayResults(userAnswers, score);
-        });
-
-        redoBtn.addEventListener("click", () => {
-            form.reset();
-            resultsDiv.style.display = "none";
-            submitBtn.disabled = false;
-            
-            const inputs = document.querySelectorAll("input[type='text']");
-            inputs.forEach(input => {
-                input.classList.remove("correct", "incorrect");
-            });
-
-            const questionDivs = document.querySelectorAll(".question label");
-            questionDivs.forEach(label => {
-                label.innerHTML = label.textContent.split(" Your")[0];
-            });
-        });
-
-        function displayResults(userAnswers, score) {
-            resultsDiv.style.display = "block";
-            scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
-
-            const questionDivs = document.querySelectorAll(".question");
-
-            for (let i = 0; i < questionDivs.length; i++) {
-                const label = questionDivs[i].querySelector("label");
-                const userAnswer = userAnswers[i] || "(no answer)";
-                      }
-
-            submitBtn.disabled = true;
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-    </script>
-	
-	</div></div></div>
+      });
+    });
+  });
+</script>
 
-	</body>	
-
+</body>
 </html>
-
