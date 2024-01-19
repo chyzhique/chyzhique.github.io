@@ -6,4 +6,7 @@
         inputs.forEach(input => {
             input.value = '';
         });
+        inputs.forEach(input => {
+            input.style.backgroundColor = '#fff';
+        });
     });
