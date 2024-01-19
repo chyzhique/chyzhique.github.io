@@ -1,0 +1,67 @@
+select {
+  -webkit-appearance: none;
+  padding: 7px 40px 7px 12px;
+  border: 1px solid #E8EAED;
+ border-radius: 5px;
+  background: white;
+  box-shadow: 0 1px 3px -2px #9098A9;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 16px;
+  transition: all 150ms ease;
+  margin-top: 0.5rem;
+  background-color: oldlace
+}
+
+&:required:invalid{
+      color: #5A667F
+}   
+option {
+      color: #223254
+      &[value=""][disabled]
+          display: none
+}
+&:focus{
+      outline: none
+      border-color: #0077FF
+      box-shadow: 0 0 0 2px rgba(#0077FF,.2)
+}
+&:hover + svg{
+      stroke: #0077FF
+}
+input[type="text"] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 5px;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.26) 0px 1px 4px;
+}
+
+input:focus { 
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  background-color:white
+}
+input:hover {  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+  background-color:white
+}
+.button-30 {
+  display: flex;
+    justify-content: center;
+    align-items: center; align-items: center;appearance: none;background-color: #FCFCFD;border-radius: 4px;border-width: 0;box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset; box-sizing: border-box;  color: #36395A;
+  cursor: pointer;  display: inline-flex;  font-family: "JetBrains Mono",monospace;  height: 48px;  justify-content: center;
+  line-height: 1;  list-style: none;  overflow: hidden;
+  padding-left: 20%;  padding-right: 20%;  position: relative;
+  text-align: left;  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;  touch-action: manipulation;  white-space: nowrap;  will-change: box-shadow,transform;  font-size: 18px;}
+.button-30:focus { 
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.button-30:hover {  
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);}
+.button-30:active { 
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
+}
