@@ -1,114 +1,81 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m8l1</title>
 </head>
+  
 <body>
+  <div class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Paraphrasing</h1>
+ </header> 
 
-<div class="outer" id="content">
-  <h3 class="header">Imagine that you have downloaded a new music album and have
-just played it for your friends. <br>
-      Read the comments they made and complete the sentences below using reported speech.</h3>
+<h3>Imagine that you have downloaded a new music album and have
+just played it for your friends. </h3>
+    
+<h3>Read the comments they made and complete the sentences below using reported speech.</h3>
 
-  <div class="inner">
-    <div class="text">
-      <h4 class="header">Example.</h4>
-      
-      <div class="samples">
-      "It's very interesting. I like it" (Tony)</div><br>
+     <div class="samples">
+      <h2 class="header">Example.</h2>
+      "It's very interesting. I like it" (Tony)
       <center><i>0. <b>Tony said</b> that was very interesting and he liked it.
         </i></center>
       <hr>
+
 <ol>      
-<div class="samples">           
-It's really boring. I can't stand it. <br>(Brian)</div>
-   
-      <li>  Brian said <input type="text" id="q1" style="width: 80%"></li><hr>
-           
-<div class="samples">   
-I want to download it. I'll do it tomorrow. <br>(William)</div>
-  
-      <li> William said <input type="text" id="q2" style="width: 80%"></li><hr>
+<li>           
+"It's really boring. I can't stand it." (Brian)<br>
+ Brian said <input type="text" id="q1" class="changeDiv" style="width: 80%"></li>
+<li>   
+I want to download it. I'll do it tomorrow. (William)<br>
+William said <input type="text" id="q2" class="changeDiv"  style="width: 80%"></li><hr>
      
-<div class="samples">
-My brother downloaded the same album for me last week. <br>(Ruth) </div>
-  
-      <li> Ruth said <input type="text" id="q3" style="width: 80%"></li><hr>
-  
-<div class="samples">
-  I've heard it before. <br>(Fred)</div>
-  
-  <li>Fred said <input type="text" id="q4" style="width: 80%"></li><hr>
-  
-  
+<li>
+My brother downloaded the same album for me last week. (Ruth) <br>
+Ruth said <input type="text" id="q3" class="changeDiv"  style="width: 80%"></li><hr>
+<li>
+I've heard it before. (Fred)<br>
+Fred said <input type="text" id="q4" class="changeDiv"  style="width: 80%"></li><hr>
       </ol>
 
-</div>
+
+</div>    
 </div>
   
-    <div style="display: flex; justify-content: center; align-items: center;">
-    <button type="button" id="checkBtn" class="button-30">Check</button>
-  </div>
-  <div id="results" style="display: none; text-align: center;">
-    <h2 class="header">Results</h2>
-    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="button" id="tryAgainBtn">Try again</button>
-    </div>
-  </div>
-
 <script>
-    const answers = [
-      "that was really boring and he couldn't stand that", 
-      "that he wanted to download that and he would do that the next day", 
-      "that her brother had downloaded the same album for her the previous week", 
-      "that he had heard it before"
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "that was really boring and he couldn't stand that", 
+    "that he wanted to download that and he would do that the next day", 
+    "that her brother had downloaded the same album for her the previous week", 
+    "that he had heard it before"
     ];
 
-    const checkBtn = document.getElementById("checkBtn");
-    const tryAgainBtn = document.getElementById("tryAgainBtn");
-    
-    checkBtn.addEventListener("click", () => {
-      let score = 0;
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-      for (let i = 1; i <= answers.length; i++) {
-        const userAnswer = document.getElementById(`q${i}`).value;
-        const correctAnswer = answers[i - 1];
-
-        const questionElement = document.getElementById(`q${i}`);
-        if (userAnswer === correctAnswer) {
-          questionElement.classList.add("correct");
-          score++;
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
-          questionElement.classList.add("incorrect");
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      }
-
-      const scoreElement = document.getElementById("score");
-      scoreElement.textContent = `${score} / 4`;
-
-      const resultsDiv = document.getElementById("results");
-      resultsDiv.style.display = "block";
-      
-      tryAgainBtn.style.display = "block";
-      checkBtn.style.display = "none";
+      });
     });
+  });
+</script>
 
-    tryAgainBtn.addEventListener("click", () => {
-      for (let i = 1; i <= answers.length; i++) {
-        const questionElement = document.getElementById(`q${i}`);
-        questionElement.value = "";
-        questionElement.classList.remove("correct", "incorrect");
-      }
-
-      const resultsDiv = document.getElementById("results");
-      resultsDiv.style.display = "none";
-
-      tryAgainBtn.style.display = "none";
-      checkBtn.style.display = "block";
-    });
-  </script>
 </body>
 </html>
