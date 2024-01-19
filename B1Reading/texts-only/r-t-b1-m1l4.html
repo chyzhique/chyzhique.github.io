@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+   </head>
+  
+<body>
+<div class="container" style="background-color: #FFB84C">
+   
+<div  class="container">
+  
+<h1 id="td1" style="text-align:center; background-color: #FFB84C; border: 1px solid black; border-radius:7px; color:white">
+  <select id="select1" style="font-size:1rem">
+<option value="">?</option>
+<option value="valuea">A. The Power of Colour: the meaning of colours in different culture</option>
+<option value="valueb">B. Colours: choosing the right</option>
+<option value="valuec">C. The meaning of colours in the past</option>
+          </select></span></h1>
+  
+You probably know that colour can <mark> influence </mark> your mood and feelings, but did you know that colours mean different things in different cultures? Take the colour white, for example. In Western culture, white represents goodness and purity, while in Asian cultures, white is <mark> associated </mark> with funerals and mournings. In Japan, for example, a white carnation symbolises death, and in India, some people believe that a married woman dressed in all white is inviting death and unhappiness.
+<br><br>
+In China, red is the colour of good luck and prosperity. When the Chinese give gifts of money on special occasions, they usually put the money in a red envelope. Chinese brides aren't dressed in white; they wear bright red wedding dresses. On the other hand, in the Western world, red represents danger, which is why warning signs and road signs are often red.
+<br><br>
+In the past, the Cherokee Indians of North America used to associate colour with the four directions; that is, blue <mark> represented </mark> north, white represented south, red represented east and black represented west. These four colours had other meanings too; blue meant defeat, white meant happiness, red meant success and black meant death. The Cherokees also used coloured beads to <mark> achieve </mark> certain goals; they thought, for example, that red beads had the power to help people recover from illness or find love. Black beads were used to ask the 'black spirits' to help the Cherokees win battles.
+<br><br>
+Yellow is another colour that has various meanings in different cultures. In the West, yellow is associated with weakness, while in Japan, yellow means courage. In China, the colour yellow represents royalty, but in Myanmar, yellow is associated with mourning.
+<br><br>
+Green is one of the few colours that most cultures <mark> view </mark> as being a positive colour; in both the East and the West, green is the colour of health and life. For the ancient Egyptians, green was a sacred colour that symbolised hope and the joy of spring. In Ireland, it is a lucky colour and, all over the world, green is a symbol of ecological Awareness.
+<br><br>
+Learning about what meanings colours have in different cultures is interesting and satisfies our curiosity. It can also be very useful for travellers and in the world of business. Knowing what colours represent in other countries can help to increase our understanding of other cultures and help us avoid misunderstandings.
+  
+  
+  
+  </div>
+   <script>
+    function setTdBackgroundColor(selectId, tdId, correctValue) {
+      const select = document.getElementById(selectId);
+      const td = document.getElementById(tdId);
+
+      select.addEventListener('change', function () {
+        if (select.value === correctValue) {
+          td.style.backgroundColor = '#77DD77';// Change the background color for the correct value
+        } else {
+          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
+        }
+      });
+    }
+
+    // Call the function for each select and corresponding td
+    setTdBackgroundColor('select1', 'td1', 'valuea');
+  </script>
+  
+  </body>
+  </html>
+
+  

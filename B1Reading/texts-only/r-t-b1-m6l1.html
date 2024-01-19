@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+   </head>
+  
+<body>
+<div class="container" style="background-color: #3E001F">
+  
+<div class="container">
+<h1> <center> PEDAL AWAY</center></h1>
+ 
+&emsp; Does the idea of combining exploration with the challenge of physical exercise appeal to you? If yes, then the guided bicycle tour from Amsterdam to Brussels is the perfect choice for you. The <mark> route </mark> is cycled, under the supervision of a guide, over the <mark> span </mark> of eight days. 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 5%">
+  Riders cycle about 24 miles per day on average and they also travel by train, barge and ferry. 
+<br>
+&emsp; <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 5%">
+  Then, cyclists are taken by a ferry to the city of Breukelen, where the route continues for about 23 miles to the next city.  Along the way, cyclists pass by many well-known sites, such as the impressive Castle de Haar. This castle was originally <mark> constructed </mark> in the 15th century but, because it was attacked repeatedly, it had to be <mark> restored </mark> several times. Major work was done to the castle from 1892 until 1912.
+<br>
+&emsp; Cyclists continue, after resting, to the old town ofHertogenbosch. Here, a must-see is the Cathedral of St. Jans, which has been  admired for years for its Gothic architecture and richly decorated  interior. 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 5%">
+  Next, there are a few more ferry trips and a lot more cycling until the Belgian border is finally crossed. Cyclists get the chance to explore the Flemish port town of   Antwerp as well as the beautiful Flemish countryside. Next, the cyclists board a train which finally takes them to Brussels. 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 5%">
+  A final dinner of typical Belgian <mark> specialities </mark>such as mussels, chips  and waffles is offered to the cyclists.  
+<br>
+&emsp; The cost of the guided cycling tour, including meals,  accommodation, train and ferry <mark> fares </mark> , is around 635 euros. 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5 " style="width: 5%">
+  The bike tour is only available from the months of May to  September, when the weather is guaranteed to provide a safe and  enjoyable journey.
+
+</div>
+  </div>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"b", "c", "a", "f", "e"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+  </body>
+  </html>
+
+  

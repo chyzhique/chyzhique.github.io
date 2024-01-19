@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-text.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+   </head>
+  
+<body>
+<div class="container" style="background-color: #ECEE81">
+  
+  <h1 id="td1" style="text-align:center; background-color: #EDB7ED; border: 1px solid black; border-radius:7px; color:white">
+  <select id="select1" style="font-size:1rem" data-correct-value="valuea" onchange="SaveSelectValue(this)">
+<option value="">?</option>
+<option value="valuea">a. Tips for successful interview		</option>
+<option value="valueb">b. How to dress for success</option>
+<option value="valuec">c. What to say at a job interview</option>
+          </select></span></h1>
+<div class="container">   
+
+It is normal to feel nervous before an interview, especially if you are entering the world of work for the first time. However, you can save yourself a lot of stress and <mark> anxiety </mark> by doing a few simple things. Here is some advice you could take into consideration the next time you have to go for a job interview. <br><br>
+The key to a successful job interview is preparation. 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 5%">
+  It is very important to make sure your CV is <mark> up-to-date </mark> and free of mistakes. Also, you should make use of the Internet, as well as magazines and newspapers, in order to <mark> gather </mark> information about the company or organisation you are applying to. Furthermore, you must know some things about the specific job position, including general responsibilities and daily duties. 
+<br><br>
+Next, it is helpful to prepare for the interview itself by answering typical interview questions. 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 5%">You can try answering these specific questions in front of a friend or family member. Videotaping yourself might help you as well. 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 5%">
+  Remember, there is always room for improvement; the more you practise, the more confident you will be that you won't mess things up during the interview. You should also prepare questions to ask during the interview. These questions should reflect your research on the company and position. However, remember not to  ask any questions about salary on your first interview. If you do, the interviewer may think that you only care about the benefits and that your interest in the company isn't <mark> genuine </mark> .<br><br>
+Final preparations include choosing what to wear. It is important to <mark> select </mark> something appropriate. A business suit is always acceptable. If your clothing is clean and well pressed, the interviewer will think that you are a neat and organised person. Also, you must know the <mark> location </mark> of your interview. <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 5%">
+  You should arrive at the interview ten minutes in advance. You must also remember to bring extra copies of your CV with you. Bringing a small notebook for notes is also a good idea. Remember to stay  calm and project an image of self-confidence. <br><br>
+<input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 5%">
+  In it, you should emphasise your interest  and restate your specific qualifications for the position.  Remember, the more you prepare, the more successful your interview will be.
+  
+     <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"b", "a", "d", "c", "f"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+  
+  </body>
+  </html>
+
+  
