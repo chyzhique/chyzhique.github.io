@@ -307,4 +307,7 @@ ol, ul {
       }
      
 .wrd{
-        background-color: crimson; color: white; floa
+        background-color: crimson; color: white; float}
+ mark {        
+        background-color: yellow; font-weight:bold; padding:0.15rem; border:1px solid silver; border-radius: 15px
+      }
