@@ -1,35 +1,96 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Resize Iframe to Fit Content with Max Height and Width</title>
-  <style>
-    body {height: 100%; width: 100%;
-    
-     -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */}
-    body::-webkit-scrollbar {
-  display: none;
-}
-    frame::-webkit-scrollbar {
-  display: none;
-}
-    
-    .frame {width: 100%; height: 100%; position: absolute; overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */}}
-    </style>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-b1-m1l2</title>
 </head>
+  
 <body>
-  <div id="parent">
-    <div id="wrapper" style="position:relative; height: 100vh">
+  <div class="bg">
+    <div class="bg-left">
+  <header>
+    <h4>practice</h4>
+    <h1>Make questions</h1>
+ </header> 
+  
+<h3>A. Write questions for the answers given. The words in bold are the answers.</h3>
+<ol>
+ <li>A: <input type="text" id="q1" class="changeDiv"> ?<br>
+                B: I bought <mark>a skirt and a pair of shoes</mark> when I went shopping.
+ <li> A: <input type="text" id="q2" class="changeDiv"> ?<br>
+                B: <mark>Jane</mark> is going to the cinema with Fay.<br><br>
+ <li> A: <input type="text" id="q3" class="changeDiv"> ?<br>
+                B: I caught <mark>five</mark> fish yesterday.<br><br>
+ <li> A: <input type="text" id="q4" class="changeDiv"> ?<br>
+                B: I usually go to <mark>Cornwall</mark> during the summer.<br><br>
+ <li> A: <input type="text" id="q5" class="changeDiv"> ?<br>
+                B: Tom goes jogging <mark>in the morning</mark>.<br><br>
+ <li> A: <input type="text" id="q6" class="changeDiv"> ?<br>
+                B: They like <mark>the blue</mark> car.<br>
+            </ol>
+    </div>
       
-    <iframe frameborder="0" class="frame" id="myIframe" 
-            src="https://chyzhique.github.io/P b1m1l2 p1.html"></iframe>
-       </div>
-       <div id="wrapper" style="position:relative; height: 100vh">
-  <iframe frameborder="0" class="frame" id="myIframe" 
-            src="https://chyzhique.github.io/P b1m1l2 p2.html"></iframe>
-    </div>
+   <div class="bg-right">  
+     <header>
+    <h4>practice 2</h4>
+    <h1>Indirect questions</h1>
+ </header> 
+<h3>B. Rewrite the sentences with the new beginning using indirect questions.</h3>
 
-    </div>
-</div>
+<ol>			
+<li> How many eggs do we need for the cake?<br>
+  <ul><li>Do you know <input type="text" id="q7" class="changeDiv">for the cake?</li></ul>
+<li> How much did that jacket cost?<br>
+	<ul><li>Can you <input type="text" id="q8" class="changeDiv">?</li></ul>
+<li> Where is the bus stop?<br>
+	<ul><li>Do you know <input type="text" id="q9"  class="changeDiv">?</li></ul>
+<li> Why is Sally crying?<br>
+	<ul><li>Can you <input type="text" id="q10" class="changeDiv">?</li></ul>
+<li> When is Karen's birthday?<br>
+	<ul><li>Do you remember <input type="text" id="q11" class="changeDiv">?</li></ul>
+  </ol>
+  <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="clearBtn" class="button-30">Try again</button>
+    </div>    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+     "What did you buy",
+    "Who is going to the cinema with Fay",
+    "How many fish did you catch",
+    "Where do you usually go during the summer",
+    "When does Tom go jogging",
+    "Which car do they like",
+      "how many eggs we need", 
+			"tell me how much that jacket cost", 
+			"where the bus stop is", 
+			"tell me why Sally is crying", 
+			"when Karen's birthday is"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
