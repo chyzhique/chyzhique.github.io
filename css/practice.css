@@ -1,0 +1,295 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background: #eeeeee;
+  margin: 2em;
+  font-family: "Roboto", sans-serif;
+}
+.bg {        
+  margin: 1em auto;  
+  background-color: #ffb347;
+  font-family:merriweather; 
+  line-height:normal;
+  font-size:1rem;
+  color:black;
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+  width: 100%;
+  box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
+}
+header {
+  text-align: center;
+  margin: 0 auto 2em;
+}
+.bg-left {
+  background: white;
+  padding: 0 3em 0;
+  border-right: 1px solid silver;
+}
+
+.bg-right {
+  background: white;
+  padding: 0 3em 0;
+}
+ 
+/*HEADERs*/
+h1 {
+  font-family: "Playfair Display", serif;
+  line-height: normal;
+  margin:0;
+  padding:0;
+  font-size: 30px;
+  text-align: center
+  }
+
+h2 {
+    padding: 2vh;
+    text-align: center;
+    background-color: #4169E1;
+  color: white
+}
+
+h3 {
+  padding-left: calc(1.5rem + 16px);
+  max-width: 1400px;
+  font-family: "Playfair Display", serif;
+  margin-bottom: 1rem;
+  grid-column:1/3;
+  line-height: 1
+}  
+
+h4 {
+  font-family: "Playfair Display", serif;
+  background-color: #45FFCA;
+  color: white;
+  text-align: center;
+}
+
+table{  
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  width:100%;
+  font-weight: normal;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #ffffba;
+  margin-bottom: 1rem
+  }
+
+th, td {
+  padding:0.5rem;
+  background-color: #ffffba;
+  vertical-align:top;
+  
+  }
+th {
+  background-color: crimson; 
+  color: white
+      }
+.note{
+ padding: 1rem 1.5rem 1rem 1.5rem;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: white;
+  margin-bottom: 1rem;
+  }
+
+.samples {
+  padding:2vw; 
+  border-radius: 15px; 
+  border: 1px solid black; 
+  border-radius: 15px; 
+  border: 2px solid white; 
+  background-color: #ffffba;
+  font-family:merriweather; 
+  line-height:normal;
+  font-size:1rem;
+  color:black;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;}
+
+.wrd{
+  border:1px solid crimson; 
+  border-radius:15px; 
+  background-color: yellow; 
+  padding:0.5vw
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
+
+.hint{
+  max-width: 700px;
+   margin-top: 1rem;
+  border-radius: 0 15% 0 10%;
+   border: 5px solid red; 
+   padding: 1rem;
+   background-color: #ECEE81; 
+   text-align: justify;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+      }
+  
+      }
+.tip{
+  text-align:center; 
+  background-color: red; 
+  color: white
+}
+/*letter correction css */
+    .editable {
+  cursor: pointer;
+  display: inline-block;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  color: black;
+  text-decoration-style: solid;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 200px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      position: absolute;
+      z-index: 1;
+      bottom: 125%;
+      left: 50%;
+      margin-left: -100px;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+      opacity: 1;
+    }
+
+/* Letter CSS */
+.letter{
+  background-color: #FFE7C1;
+  text-align: justify;
+  border-radius: 5px;   
+  line-height:1.55;
+  color: black; 
+  font-family: 'Single Day', cursive; 
+  font-style: italic;
+  padding:1.3rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+img {
+      display:block;
+      max-width:100%;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+      border-radius:15px
+}
+
+      .choose{
+        padding:0.2rem; 
+        border:2px solid white; 
+        font-weight: 800}
+
+      ::marker {
+  color: blue;
+        font-weight:800
+}
+
+ol, ul {
+  margin-top:0;
+  padding-left: 1rem;
+}
+      li{
+        margin-bottom:0.5rem;
+        flex: 15vw;
+        word-wrap: normal
+      }
+
+
+.var{
+        padding:0.15rem;  
+        border:2px solid black;
+        border-radius: 15px;
+        background-color: #FFF8C9;
+        display:inline-block
+      }
+      label{
+        font-weight: 600;
+        
+      }
+      .highlight {
+        background-color: #CDFAD5;
+      }
+     
+.wrd{
+  background-color: crimson; color: white; }
+
+.outer {
+  margin: auto; 
+  max-width: 700px;  
+  font-family:merriweather; 
+  line-height:normal;
+  color:black;
+  background-color:white;
+  padding: 0 3em 0;
+  box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
+       }
+
+.text {padding-left: 25px; margin: auto
+       }
+.header {text-align: center; max-width: 500px; margin-left:auto; margin-right: auto
+       }
+.correct {color: green;
+       }
+.incorrect {color: red;
+       }
+
+.try {  align-items: center;  appearance: none;  background-color: orange;  border-radius: 4px;  border-width: 0;  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;  box-sizing: border-box;
+  color: #36395A;  cursor: pointer;  display: inline-flex;  height: 35px;  justify-content: center;  line-height: 1;  list-style: none;  overflow: hidden;  padding-left: 16px;  padding-right: 16px;
+  position: relative;  text-align: left;
+  text-decoration: none;  transition: box-shadow .15s,transform .15s;  user-select: none;  -webkit-user-select: none;
+  touch-action: manipulation;  white-space: nowrap;
+  will-change: box-shadow,transform;  font-size: 18px;}
+  
+  .question-container {
+      float: left;
+      width: 50%;
+    }
+    .answer-container {
+      float: left;
+      width: 50%;
+    }
+    .question {
+      cursor: pointer;
+      padding: 7px;
+      margin: 5px;
+      transition: background-color 0.3s ease;
+      background-color: white;
+    }
+    .question.correct {
+      background-color: #8BC34A;
+    }
+    .question.selected {
+      background-color: #FFEB3B;
+    }
+    .answer {
+      cursor: pointer;
+      padding: 5px;
+      border: 1px solid #ccc;
+      margin: 5px;
+      border-radius: 25px;
+      background-color: oldlace;
+    }
