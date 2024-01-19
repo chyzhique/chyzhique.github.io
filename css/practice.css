@@ -301,5 +301,5 @@ mark {
   hsla(48,92%,75%,.1)
   );
   border-radius: 1em 0;
-  padding: .3em;
+  padding: 0 5px 0 5px;
   }
