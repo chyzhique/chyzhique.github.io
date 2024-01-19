@@ -1,35 +1,114 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Resize Iframe to Fit Content with Max Height and Width</title>
-  <style>
-    body {height: 100%; width: 100%;
-    
-     -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */}
-    body::-webkit-scrollbar {
-  display: none;
-}
-    frame::-webkit-scrollbar {
-  display: none;
-}
-    
-    .frame {width: 100%; height: 100%; position: absolute; overflow: auto;
-    -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */}}
-    </style>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-b1-m1l4</title>
 </head>
+  
 <body>
-  <div id="parent">
-    <div id="wrapper" style="position:relative; height: 100vh">
-      
-    <iframe frameborder="0" class="frame" id="myIframe" 
-            src="https://chyzhique.github.io/P b1m1l4 p1.html"></iframe>
-       </div>
-       <div id="wrapper" style="position:relative; height: 100vh">
-  <iframe frameborder="0" class="frame" id="myIframe" 
-            src="https://chyzhique.github.io/P b1m1l4 p2.html"></iframe>
-    </div>
+  <div class="bg">
+    <div class="bg-left">
+  <header>
+    <h4>practice</h4>
+    <h1>Real situations</h1>
+ </header> 
+  
+<h3>Complete the dialogues with the Past Simple of the verbs in brackets.<br> Use “used to” where possible. 
+</h3>
 
-    </div>
+
+<ol type="A">
+<h2 class="header">Dialogue 1:</h2>
+<li>(1) 
+  <input type="text" id="q1" class="changeDiv"> (you / buy) а newspaper this morning?<br> 
+<li>No, I didn't. I (2) 
+  <input type="text" id="q2" class="changeDiv"> (buу) one every morning, but now I only buy the Sunday paper. 
+  </ol>
+  <ol type="A">
+<h2 class="header">Dialogue 2</h2>
+<li >I (3) 
+  <input type="text" id="q3" class="changeDiv"> (go) to Madonna's concert last Saturday and I really (4) 
+  <input type="text" id="q4" class="changeDiv"> (enjoy) it. Madonna's great! <br>
+<li>Yeah, she (5) 
+  <input type="text" id="q5" class="changeDiv"> (bе) mу favourite singer, but I don't like her new stuff so much.
+    </ol>
+  <ol type="A">
+<h2 class="header">Dialogue 3:</h2>
+<li>(6) 
+  <input type="text" id="q6" class="changeDiv"> (you / know) that Donna (7) 
+  <input type="text" id="q7" class="changeDiv"> (jog) every morning before (8)
+  <input type="text" id="q8" class="changeDiv">(come) to work? <br>
+<li>Of course. Don't tell me that you (9) 
+  <input type="text" id="q9" class="changeDiv">  (not know) that. She (10) 
+  <input type="text" id="q10" class="changeDiv"> (stop) jogging а month ago
+ because of а knее ргоblеm. 
+
 </div>
+      
+   <div class="bg-right">  
+     <header>
+    <h4>practice 2</h4>
+    <h1>ONLY ONE</h1>
+ </header> 
+<h3>Complete with the word that best fits the blank. Use only 1 word</h3>
+
+     <div class="samples">
+<h2 class="header"> Japanese tea ceremony</h2>
+
+  <div class="image" style="float:right; width:40%">
+    <img src="https://www.sugimotousa.com/asset/5f1208aa97626" alt="Japanese Tea Ceremony" /> </div>
+    
+In а Japanese tea ceremony, а hostess prepares tea and serves it 
+(1) <input type="text" id="q11" class="changeDiv"> guests. The habit of drinking  tea first started in Japan when 
+(2) <input type="text" id="q12" class="changeDiv"> Buddhist monk called Eichu made tea for the Emperor. Later, when а better kind of tea was brought to Japan 
+(3) <input type="text" id="q13" class="changeDiv"> China, the tea ceremony became very popular. The Japanese believe that each tea ceremony is а very special experience that will never happen again in the same way. For this reason, 
+(4) <input type="text" id="q14" class="changeDiv"> enjoy every part of the ceremony as much as possible. In the past, the hostess and guests 
+(5) <input type="text" id="q15" class="changeDiv"> to wear а kimono during the ceremony, but today, they саn wear either а kimono or formal clothes. When the guests arrive, they are led to а waiting area and they are offered hot water. While the guests are 
+(6) <input type="text" id="q16" class="changeDiv">, the hostess washes her hands and mouth with water. The guests are then led to а tea room. The hostess cleans the cups аnd everything else she uses in front of the guests, and after 
+(7) <input type="text" id="q17" class="changeDiv"> she makes and serves the tea. The Japanese tea ceremony is associated 
+(8) <input type="text" id="q18" class="changeDiv"> harmony and celebrates the  simple beauty of life and nature. 
+  <div style="display: flex; justify-content: center; align-items: center;">
+        <button type="button" id="clearBtn" class="button-30">Try again</button>
+    </div>    
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "Did you buy", 
+			"used to buy", 
+			"went", 
+			"enjoyed", 
+			"used to be", 
+			"Did you know", 
+			"used to jog", 
+			"came", 
+			"didn't know", 
+			"stopped",
+      "to", "a", "from", "they", "used", ["waiting", "there"], "that", "with"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
