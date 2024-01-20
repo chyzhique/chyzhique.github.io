@@ -1,53 +1,51 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
-  <style>
-    .till {font-weight: bold}
-    </style>
-  </head>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m8l2</title>
+</head>
+  
 <body>
+  <div class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Paraphrasing</h1>
+ </header> 
 
-<div class="outer" id="content">
-  <h3 class="header">Complete the sentences using Reported Speech.</h3>
+<h3>Complete the sentences using Reported Speech.</h3>
 
-  <div class="inner">
-    <div class="text">      
-<div class="till">1. 'What are you eating?' Jeremy asked. </div><br>
-      Jeremy asked me <input type="text" id="q1" style="width: 50%"><br><hr>
-<div class="till">2. 'Please let me borrow your jacket,' Fay said to her sister. </div><br>
-      Fay asked her sister <input type="text" id="q2" style="width: 50%"><br><hr>
-<div class="till">3. 'Stop right there!' the police officer said to the man. </div><br>
+  <div class="samples">
+    <ol>      
+<li>'What are you eating?' Jeremy asked.<br>
+      Jeremy asked me <input type="text" id="q1" style="width: 70%"><br><hr>
+<li>'Please let me borrow your jacket,' Fay said to her sister. <br>
+      Fay asked her sister <input type="text" id="q2" style="width: 70%"><br><hr>
+<li>'Stop right there!' the police officer said to the man. <br>
       The police officer told the man <input type="text" id="q3" style="width: 50%"><br><hr>
-<div class="till">4. 'Do you need any help?' my mum asked.</div><br>
-      My mum asked me <input type="text" id="q4" style="width: 50%"><br><hr>
-<div class="till">5. 'Don't open that window!' Harry said to the children. </div><br>
-      Harry told the children <input type="text" id="q5" style="width: 50%"><br><hr>
-<div class="till">6. 'Why did you come back so soon?' Ted asked Jill. </div><br>
-      Ted asked Jill <input type="text" id="q6" style="width: 50%"><hr>
-      
-      
+<li>'Do you need any help?' my mum asked.<br>
+      My mum asked me <input type="text" id="q4" style="width: 70%"><br><hr>
+<li>'Don't open that window!' Harry said to the children.<br>
+      Harry told the children <input type="text" id="q5" style="width: 70%"><br><hr>
+<li>'Why did you come back so soon?' Ted asked Jill.<br>
+      Ted asked Jill <input type="text" id="q6" style="width: 70%"><hr>
+</ol>
 
-
-</div>
+</div>    
 </div>
   
-    <div style="display: flex; justify-content: center; align-items: center;">
-    <button type="button" id="checkBtn" class="button-30">Check</button>
-  </div>
-  <div id="results" style="display: none; text-align: center;">
-    <h2 class="header">Results</h2>
-    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="button" id="tryAgainBtn">Try again</button>
-    </div>
-  </div>
-
 <script>
-    const answers = [
-      "what I was eating", 
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "what I was eating", 
       "to let her borrow her jacket", 
       "to stop right there", 
       "if I need any help",
@@ -55,48 +53,20 @@
       "why she had come back so soon"
     ];
 
-    const checkBtn = document.getElementById("checkBtn");
-    const tryAgainBtn = document.getElementById("tryAgainBtn");
-    
-    checkBtn.addEventListener("click", () => {
-      let score = 0;
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-      for (let i = 1; i <= answers.length; i++) {
-        const userAnswer = document.getElementById(`q${i}`).value;
-        const correctAnswer = answers[i - 1];
-
-        const questionElement = document.getElementById(`q${i}`);
-        if (userAnswer === correctAnswer) {
-          questionElement.classList.add("correct");
-          score++;
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
-          questionElement.classList.add("incorrect");
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      }
-
-      const scoreElement = document.getElementById("score");
-      scoreElement.textContent = `${score} / 4`;
-
-      const resultsDiv = document.getElementById("results");
-      resultsDiv.style.display = "block";
-      
-      tryAgainBtn.style.display = "block";
-      checkBtn.style.display = "none";
+      });
     });
+  });
+</script>
 
-    tryAgainBtn.addEventListener("click", () => {
-      for (let i = 1; i <= answers.length; i++) {
-        const questionElement = document.getElementById(`q${i}`);
-        questionElement.value = "";
-        questionElement.classList.remove("correct", "incorrect");
-      }
-
-      const resultsDiv = document.getElementById("results");
-      resultsDiv.style.display = "none";
-
-      tryAgainBtn.style.display = "none";
-      checkBtn.style.display = "block";
-    });
-  </script>
 </body>
 </html>
