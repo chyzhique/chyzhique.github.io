@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+   
+    <title>v-b2-m1l5</title>
+</head>
+    
+  <body> 
+<div class="bg">
+  <div class="bg-left">
+<header>
+   <h4>vocabulary</h4>
+<h1>1. ADJECTIVES ENDING IN -ED AND -ING</h1>
+</header>
+ 
+<h3>
+A. Read the following sentences. What’s the difference
+between excited and exciting? Can you think of any
+other adjectives ending in -ed and -ing?</h3>
+    
+    <div class="bunch">
+I was very <b>excited</b> about moving to New York City.
+My trip to Australia was one of the most <b>exciting</b> in my life.
+ </div>
+    <div class="hint">
+🔴 Adjectives ending in -ed describe the feeling
+or attitude one experiences (e.g. bored =
+experiencing the feeling of boredom). <br>
+🔴 Adjectives
+ending in -ing describe what or who causes the
+feeling or attitude (interesting = causing interest).
+<br>🔴 Note the following irregularities:
+<i>impressed BUT impressive, <br>scared BUT scary</i>
+      </div>
+    
+<h3>B. Complete the sentences below with the correct form
+of the words in capitals.</h3>
+    <ol>
+
+<li>My older sister has an 
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 40%">
+  (IMPRESS) collection of coins.
+<li>The sight of the burnt countryside filled me with an 
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 40%">
+  (OVERWHELM) feeling of sadness.
+<li>The famous artist said that he was 
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 40%">
+  (THRILL)  to visit his hometown.
+<li>When I saw the bear coming towards me, I was too 
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 40%">
+  (SCARE) to move.
+<li>If you get lost in a forest, it can be very 
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 40%">
+  (FRIGHTEN).
+<li>Rob was 
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 40%">
+  (DISAPPOINT) when he found out he was not going to play for the team.
+</ol>
+      </div>   
+    
+   <div class="bg-right"> 
+   <header>
+   <h4>vocabulary 2</h4>
+<h1>2. ADJECTIVES DESCRIBING PEOPLE AND PLACES
+</h1>
+</header> 
+    
+<h3>A. Look at the adjectives in the box and decide if they
+are used to describe people, places or both, and if
+they have a positive, negative or neutral meaning.</h3>
+     
+<div class="bunch">brilliant - nervous - glorious - homesick
+- grateful - miserable - enormous - attractive
+- dull - plain - mysterious - picturesque
+- remote - splendid - graceful
+     </div>
+     
+<h3>B. Complete the sentences below with some of the words in the box above.</h3>
+     <ol>
+<li>Tom is studying in another country but is
+  <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 40%"> for his family.
+<li>The swan was very in its 
+  <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 40%">
+movements.
+<li>The company manager’s office is 
+  <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 40%">;
+it must be at least 100 square metres.
+<li>The sailors explored the 
+  <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 40%">
+ship in the hope of finding an explanation for what had happened to the crew.
+<li>Mr Pound is a(n) 
+  <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 40%">
+  mathematician.
+<li>I would be 
+  <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 40%">
+  for any advice you can give me.
+<li>After the earthquake, it was difficult for rescue teams
+to reach the 
+  <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 40%">
+  areas of the country.
+<li>People are often 
+  <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 40%">
+  before a job interview.  
+     </ol>
+
+    </div>
+</body>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+     "impressive", "overwhelming", "thrilled", "scared", "frightening", "disappointed", "homesick", "graceful", "enormous", "mysterious", "brilliant", "grateful", "remote", "nervous"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
