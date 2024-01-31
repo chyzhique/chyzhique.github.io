@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <title>g-b2-m1l5</title>
+</head>
+    
+<body>
+
+<div class="bg">
+  <div class="bg-left">
+    <header>
+    <h4 class="first">grammar</h4>
+  <h1>ARTICLES</h1>
+</header>
+
+<h3>A. Read the examples below and answer the
+questions that follow.</h3>
+<ol>
+<li>I’d always wanted to visit <b>Australia</b>, and when my
+friend, <b>Brad</b>, who lives in <b>Sydney</b>, invited me to his
+wedding, I accepted <b>the invitation</b> immediately.
+<li>I really liked <b>the Sydney Aquarium</b>. There’s <b>a glass
+chamber</b> in <b>the aquarium</b> that allows visitors to
+get a close look at some incredible sea creatures -
+including <b>sharks</b>!
+<li>I decided to rent <b>a small cabin</b> near <b>Lake Winston</b>,
+which is about <b>a two-hour drive</b> from <b>the town</b>
+where I live.
+<li>I’ve been working as <b>an accountant</b> for about ten
+years.
+<li>I’ve always loved <b>animals</b> and was thrilled when my
+cousin agreed to let me help him with some of <b>the
+chores</b> on the farm
+  </ul>
+    </div>
+  <div class="bg-right">
+        <header>
+    <h4 class="first">grammar 2</h4>
+</header>
+
+<h3>B. Read the texts and complete the blanks with
+a, an, the or - .</h3>
+          <div class="note">
+A. Furnishing (1)
+            <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 20%">
+            new flat is something that needs (2)
+            <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 20%">
+            time and (3)
+            <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 20%">
+            attention. Very (4)
+            <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 20%">
+            few of us are rich enough to be able to hire (5)
+            <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 20%">
+            interior decorator. (6)
+            <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 20%">
+majority of people must do it by themselves. Nowadays, there are lots of design shops which offer (7)
+            <input type="text" id="wordInput7" class="changeDiv" id="changeDiv7" style="width: 20%">
+            wide range of (8)
+            <input type="text" id="wordInput8" class="changeDiv" id="changeDiv8" style="width: 20%">
+            products at affordable prices.
+            </div>
+    <div class="note">
+      B. (9)
+      <input type="text" id="wordInput9" class="changeDiv" id="changeDiv9" style="width: 20%">
+      Museum of (10)
+      <input type="text" id="wordInput10" class="changeDiv" id="changeDiv10" style="width: 20%">
+      Modern Art in New York is (11)
+      <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 20%">
+      great museum. Not only does it contain beautiful paintings by (12)
+      <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 20%">
+famous artists, such as Monet and Picasso, but (13)
+      <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 20%">
+      building itself is also (14)
+      <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 20%">
+excellent work of (15)
+      <input type="text" id="wordInput15" class="changeDiv" id="changeDiv15" style="width: 20%">
+      architecture.
+      </div>
+      
+   </div>     
+  
+</body>
+  <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "a", "-", "-", "-", "an", "the", "a", "-",
+      "the", "-", "a", "-", "the", "an", "-"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
