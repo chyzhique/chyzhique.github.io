@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
 
 body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            align-items: center;
-            justify-content: center; 
-            background-color: #D32F2F;
-            display: flex;
-             align-items: center;
+           background: #eeeeee;
+  margin: 2em;
+  font-family: "Roboto", sans-serif;
         }
 
 .hd {
@@ -21,11 +15,10 @@ body {
 
 
 .container {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+           display: grid;
+             grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+             width: 100%;
             align-items: center;
-            text-align: center;
             justify-content: center;
             margin: 0px;
             padding:0px;
