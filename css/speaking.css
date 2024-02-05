@@ -111,14 +111,11 @@ padding: 1rem;
          border-radius: 5px
  }
 .hint {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 5px;
-    background-color: #fff;
+    padding: 1.5rem;
+    background-color: oldlace;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     max-width: 500px;
-    margin: 10px auto;
+    margin: 1rem auto;
 }
 
 .mark {
