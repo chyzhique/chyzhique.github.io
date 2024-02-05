@@ -39,15 +39,14 @@ body {
       }
 
 .cont {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
+             display: grid;
+             grid-template-columns: minmax(300px, 1fr) minmax(300px, 1fr);
+             width: 100%;
+            box-shadow: 0 5px 10px hsla(0, 0, 50%, 0.5);
             align-items: center;
             text-align: center;
             justify-content: space-between;
-            margin: 2vh;
-              max-width: 100%;
-              gap: 10px;
+            margin: 1rem;
 }
 
 .left-block{
