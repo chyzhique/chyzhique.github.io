@@ -5,25 +5,39 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Test</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
+  
     body {
     font-family: Arial, sans-serif;
     margin: 0;
     display: grid;
       place-items: start center;
-      
+      background-color:silver;
+      z-index: 1
   }
 
+h1, h3 {
+  font-family: "Playfair Display", serif;
+  line-height: normal;
+  margin:0;
+  padding:0;
+}
+  h3{
+    color: crimson
+  }
+    
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
     width: 80%;
-    height: 80%;
     align-items: start;
     border: 1px solid silver;
     border-radius:7px;
     box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-    margin: 1rem 0 0 1rem
+    margin: 1rem 0 0 1rem;
+      background-color:white;
+    padding: 1rem
   }
 
   .left {
@@ -87,7 +101,8 @@
         text-align: center;
     }
     .check-table tbody>tr>:nth-child(1){
-  background-color: #7BD3EA
+  background-color: #7BD3EA;
+      font-weight: 800;
 }
 
 input{
@@ -95,11 +110,40 @@ input{
   width:100%;
   height:100%
 }
+  .block{
+    text-align:justify;
+    width: 60%;
+    grid-column: 1/3;
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: #FFBB64;
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding:1rem;
+    
+  }
+  ul{
+    margin-top:0;
+    padding: 1rem;
+  }
 </style>
 </head>
 <body>
 <div class="container">
-  <h1 style="grid-column:1/3; text-align:center">List of Irregular Verbs. Beginner</h1>
+  <div style="grid-column:1/3; ">
+  <h1 style="text-align:center">Irregular Verbs Trainer</h1>
+    <h3 style="text-align:center">LVL: Beginner</h3>
+  <div class="block">
+📌 We call <b>Regular verbs</b> the ones that take <b>-ed</b> ending for Past and Perfect Tenses (<i>e.g. show - showed, call - called</i>). <br>
+📌 We call <b>Irregular verbs</b> the ones that <b>do not</b> take <b>-ed</b> ending and may change completely.<br>
+🔴 Instruction:
+    <ul>
+   <li> Hover over the left part. Examine irregular verbs
+   <li> Complete the table to the right.
+   <li> You may peep. Try not just to rewrite the correct answer, but to memorise it.
+     </ul>
+      </div>
+  </div>
   <div class="left" id="blurryText">
 <table class="verb-table">
     <thead>
@@ -165,7 +209,7 @@ input{
 
   </div>
   <div class="right">
-    <h2>Check yourself!</h2>
+    
 <table class="check-table">
   <tr>
     <td><label for="question1">be</label></td>
