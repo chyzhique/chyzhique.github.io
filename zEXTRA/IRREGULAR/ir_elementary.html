@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Test</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
+  
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: grid;
+      place-items: start center;
+      background-color:silver;
+      z-index: 1
+  }
+
+h1, h3 {
+  font-family: "Playfair Display", serif;
+  line-height: normal;
+  margin:0;
+  padding:0;
+}
+  h3{
+    color: crimson
+  }
+    
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    width: 80%;
+    align-items: start;
+    border: 1px solid silver;
+    border-radius:7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 1rem 0 0 1rem;
+      background-color:white;
+    padding: 1rem
+  }
+
+  .left {
+    background-color: #f0f0f0;
+    padding: 20px;
+    filter: blur(5px);
+    cursor: pointer;
+  }
+
+  .right {
+    padding: 20px;
+    display: grid;
+    grid-gap: 10px;
+  }
+
+  .correct-answer {
+    background-color: green;
+  }
+
+  .unblur {
+    filter: none !important;
+  }
+
+.verb-table {
+        margin: auto;
+        font-family: Merriweather, serif;
+        font-size: 1.1rem;
+        border-collapse: collapse;
+        border-radius: 15px;
+      width:100%
+    }
+
+    .verb-table th, .verb-table td {
+        padding: 0.5rem;
+        border: 1px solid black;
+        text-align: center;
+    }
+
+    .verb-table thead {
+        background-color: turquoise;
+    }
+
+    .verb-table tbody tr:nth-child(even) {
+        background-color: #FDFFAB;
+    }
+    .verb-table tbody tr:nth-child(odd) {
+        background-color: #FF8080;
+    }
+.check-table {
+        margin: auto;
+        font-family: Merriweather, serif;
+        font-size: 1.1rem;
+        border-collapse: collapse;
+        border-radius: 15px;
+      width:100%
+    }
+
+    .check-table th, .check-table td {
+        padding: 0.5rem;
+        border: 1px solid black;
+        text-align: center;
+    }
+    .check-table tbody>tr>:nth-child(1){
+  background-color: #7BD3EA;
+      font-weight: 800;
+}
+
+input{
+  border:none;
+  width:100%;
+  height:100%
+}
+  .block{
+    text-align:justify;
+    width: 60%;
+    grid-column: 1/3;
+    margin-left: auto; 
+    margin-right: auto; 
+    background-color: #FFBB64;
+    margin-top: 1rem;
+    border-radius: 15px;
+    padding:1rem;
+    
+  }
+  ul{
+    margin-top:0;
+    padding: 1rem;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div style="grid-column:1/3; ">
+  <h1 style="text-align:center">Irregular Verbs Trainer</h1>
+    <h3 style="text-align:center">LVL: Elementary</h3>
+  <div class="block">
+📌 We call <b>Regular verbs</b> the ones that take <b>-ed</b> ending for Past and Perfect Tenses (<i>e.g. show - showed, call - called</i>). <br>
+📌 We call <b>Irregular verbs</b> the ones that <b>do not</b> take <b>-ed</b> ending and may change completely.<br>
+🔴 Instruction:
+    <ul>
+   <li> Hover over the left part. Examine irregular verbs
+   <li> Complete the table to the right.
+   <li> You may peep. Try not just to rewrite the correct answer, but to memorise it.
+     </ul>
+      </div>
+  </div>
+  <div class="left" id="blurryText">
+<table class="verb-table">
+    <thead>
+        <tr>
+<th><br>Base Form (Infinitive)<br><br></th>
+<th><br>Past Simple<br><br></th>
+<th><br>Past Participle<br><br></th>
+        </tr>
+    </thead>
+<tr>
+<td>be</td><td>was/were</td><td>been</td></tr>
+<tr><td>become</td><td>became</td><td>become</td></tr>
+<tr><td>begin</td><td>began</td><td>begun</td></tr>
+<tr><td>blow</td><td>blew</td><td>blown</td></tr>
+<tr><td>break</td><td>broke</td><td>broken</td></tr>
+<tr><td>bring</td><td>brought</td><td>brought</td></tr>
+<tr><td>build</td><td>built</td><td>built</td></tr>
+<tr><td>buy</td><td>bought</td><td>bought</td></tr>
+<tr><td>catch</td><td>caught</td><td>caught</td></tr>
+<tr><td>choose</td><td>chose</td><td>chosen</td></tr>
+<tr><td>come</td><td>came</td><td>come</td></tr>
+<tr><td>cost</td><td>cost</td><td>cost</td></tr>
+<tr><td>do</td><td>did</td><td>done</td></tr>
+<tr><td>draw</td><td>drew</td><td>drawn</td></tr>
+<tr><td>drink</td><td>drank</td><td>drunk</td></tr>
+<tr><td>drive</td><td>drove</td><td>driven</td></tr>
+<tr><td>eat</td><td>ate</td><td>eaten</td></tr>
+<tr><td>fall</td><td>fell</td><td>fallen</td></tr>
+<tr><td>feed</td><td>fed</td><td>fed</td></tr>
+<tr><td>feel</td><td>felt</td><td>felt</td></tr>
+<tr><td>fight</td><td>fought</td><td>fought</td></tr>
+<tr><td>find</td><td>found</td><td>found</td></tr>
+<tr><td>fly</td><td>flew</td><td>flown</td></tr>
+<tr><td>forget</td><td>forgot</td><td>forgotten</td></tr>
+<tr><td>get</td><td>got</td><td>got</td></tr>
+<tr><td>give</td><td>gave</td><td>given</td></tr>
+<tr><td>go</td><td>went</td><td>gone</td></tr>
+<tr><td>grow</td><td>grew</td><td>grown</td></tr>
+<tr><td>hang</td><td>hung</td><td>hung</td></tr>
+<tr><td>have</td><td>had</td><td>had</td></tr>
+<tr><td>hear</td><td>heard</td><td>heard</td></tr>
+<tr><td>hide</td><td>hid</td><td>hidden</td></tr>
+<tr><td>hit</td><td>hit</td><td>hit</td></tr>
+<tr><td>hurt</td><td>hurt</td><td>hurt</td></tr>
+<tr><td>keep</td><td>kept</td><td>kept</td></tr>
+<tr><td>know</td><td>knew</td><td>known</td></tr>
+<tr><td>learn</td><td>learnt/learned</td><td>learnt/learned</td></tr>
+<tr><td>leave</td><td>left</td><td>left</td></tr>
+<tr><td>lend</td><td>lent</td><td>lent</td></tr>
+<tr><td>let</td><td>let</td><td>let</td></tr>
+<tr><td>lose</td><td>lost</td><td>lost</td></tr>
+<tr><td>make</td><td>made</td><td>made</td></tr>
+<tr><td>mean</td><td>meant</td><td>meant</td></tr>
+<tr><td>meet</td><td>met</td><td>met</td></tr>
+<tr><td>pay</td><td>paid</td><td>paid</td></tr>
+<tr><td>put</td><td>put</td><td>put</td></tr>
+<tr><td>read</td><td>read</td><td>read</td></tr>
+<tr><td>ride</td><td>rode</td><td>ridden</td></tr>
+<tr><td>ring</td><td>rang</td><td>rung</td></tr>
+<tr><td>run</td><td>ran</td><td>run</td></tr>
+<tr><td>say</td><td>said</td><td>said</td></tr>
+<tr><td>see</td><td>saw</td><td>seen</td></tr>
+<tr><td>sell</td><td>sold</td><td>sold</td></tr>
+<tr><td>send</td><td>sent</td><td>sent</td></tr>
+<tr><td>show</td><td>showed</td><td>shown</td></tr>
+<tr><td>sing</td><td>sang</td><td>sung</td></tr>
+<tr><td>sit</td><td>sat</td><td>sat</td></tr>
+<tr><td>sleep</td><td>slept</td><td>slept</td></tr>
+<tr><td>speak</td><td>spoke</td><td>spoken</td></tr>
+<tr><td>spend</td><td>spent</td><td>spent</td></tr>
+<tr><td>stand</td><td>stood</td><td>stood</td></tr>
+<tr><td>steal</td><td>stole</td><td>stolen</td></tr>
+<tr><td>swim</td><td>swam</td><td>swum</td></tr>
+<tr><td>take</td><td>took</td><td>taken</td></tr>
+<tr><td>teach</td><td>taught</td><td>taught</td></tr>
+<tr><td>tell</td><td>told</td><td>told</td></tr>
+<tr><td>think</td><td>thought</td><td>thought</td></tr>
+<tr><td>throw</td><td>threw</td><td>thrown</td></tr>
+<tr><td>understand</td><td>understood</td><td>understood</td></tr>
+<tr><td>wake</td><td>woke</td><td>woken</td></tr>
+<tr><td>wear</td><td>wore</td><td>worn</td></tr>
+<tr><td>win</td><td>won</td><td>won</td></tr>
+<tr><td>write</td><td>wrote</td><td>written</td></tr></table>
+
+  </div>
+  <div class="right">
+    
+<table class="check-table">
+  <tr>
+    <td><label for="be">be</label></td>
+    <td><input type="text" id="be_2nd"></td>
+    <td><input type="text" id="be_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="become">become</label></td>
+    <td><input type="text" id="become_2nd"></td>
+    <td><input type="text" id="become_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="begin">begin</label></td>
+    <td><input type="text" id="begin_2nd"></td>
+    <td><input type="text" id="begin_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="blow">blow</label></td>
+    <td><input type="text" id="blow_2nd"></td>
+    <td><input type="text" id="blow_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="break">break</label></td>
+    <td><input type="text" id="break_2nd"></td>
+    <td><input type="text" id="break_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="bring">bring</label></td>
+    <td><input type="text" id="bring_2nd"></td>
+    <td><input type="text" id="bring_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="build">build</label></td>
+    <td><input type="text" id="build_2nd"></td>
+    <td><input type="text" id="build_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="buy">buy</label></td>
+    <td><input type="text" id="buy_2nd"></td>
+    <td><input type="text" id="buy_3rd"></td>
+  </tr>
+   <tr>
+    <td><label for="catch">catch</label></td>
+    <td><input type="text" id="catch_2nd"></td>
+    <td><input type="text" id="catch_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="choose">choose</label></td>
+    <td><input type="text" id="choose_2nd"></td>
+    <td><input type="text" id="choose_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="come">come</label></td>
+    <td><input type="text" id="come_2nd"></td>
+    <td><input type="text" id="come_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="cost">cost</label></td>
+    <td><input type="text" id="cost_2nd"></td>
+    <td><input type="text" id="cost_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="do">do</label></td>
+    <td><input type="text" id="do_2nd"></td>
+    <td><input type="text" id="do_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="draw">draw</label></td>
+    <td><input type="text" id="draw_2nd"></td>
+    <td><input type="text" id="draw_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="drink">drink</label></td>
+    <td><input type="text" id="drink_2nd"></td>
+    <td><input type="text" id="drink_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="drive">drive</label></td>
+    <td><input type="text" id="drive_2nd"></td>
+    <td><input type="text" id="drive_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="eat">eat</label></td>
+    <td><input type="text" id="eat_2nd"></td>
+    <td><input type="text" id="eat_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="fall">fall</label></td>
+    <td><input type="text" id="fall_2nd"></td>
+    <td><input type="text" id="fall_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="feed">feed</label></td>
+    <td><input type="text" id="feed_2nd"></td>
+    <td><input type="text" id="feed_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="feel">feel</label></td>
+    <td><input type="text" id="feel_2nd"></td>
+    <td><input type="text" id="feel_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="fight">fight</label></td>
+    <td><input type="text" id="fight_2nd"></td>
+    <td><input type="text" id="fight_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="find">find</label></td>
+    <td><input type="text" id="find_2nd"></td>
+    <td><input type="text" id="find_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="fly">fly</label></td>
+    <td><input type="text" id="fly_2nd"></td>
+    <td><input type="text" id="fly_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="forget">forget</label></td>
+    <td><input type="text" id="forget_2nd"></td>
+    <td><input type="text" id="forget_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="get">get</label></td>
+    <td><input type="text" id="get_2nd"></td>
+    <td><input type="text" id="get_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="give">give</label></td>
+    <td><input type="text" id="give_2nd"></td>
+    <td><input type="text" id="give_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="go">go</label></td>
+    <td><input type="text" id="go_2nd"></td>
+    <td><input type="text" id="go_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="grow">grow</label></td>
+    <td><input type="text" id="grow_2nd"></td>
+    <td><input type="text" id="grow_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="hang">hang</label></td>
+    <td><input type="text" id="hang_2nd"></td>
+    <td><input type="text" id="hang_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="have">have</label></td>
+    <td><input type="text" id="have_2nd"></td>
+    <td><input type="text" id="have_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="hear">hear</label></td>
+    <td><input type="text" id="hear_2nd"></td>
+    <td><input type="text" id="hear_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="hide">hide</label></td>
+    <td><input type="text" id="hide_2nd"></td>
+    <td><input type="text" id="hide_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="hit">hit</label></td>
+    <td><input type="text" id="hit_2nd"></td>
+    <td><input type="text" id="hit_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="hurt">hurt</label></td>
+    <td><input type="text" id="hurt_2nd"></td>
+    <td><input type="text" id="hurt_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="keep">keep</label></td>
+    <td><input type="text" id="keep_2nd"></td>
+    <td><input type="text" id="keep_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="know">know</label></td>
+    <td><input type="text" id="know_2nd"></td>
+    <td><input type="text" id="know_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="learn">learn</label></td>
+    <td><input type="text" id="learn_2nd"></td>
+    <td><input type="text" id="learn_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="leave">leave</label></td>
+    <td><input type="text" id="leave_2nd"></td>
+    <td><input type="text" id="leave_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="lend">lend</label></td>
+    <td><input type="text" id="lend_2nd"></td>
+    <td><input type="text" id="lend_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="let">let</label></td>
+    <td><input type="text" id="let_2nd"></td>
+    <td><input type="text" id="let_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="lose">lose</label></td>
+    <td><input type="text" id="lose_2nd"></td>
+    <td><input type="text" id="lose_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="make">make</label></td>
+    <td><input type="text" id="make_2nd"></td>
+    <td><input type="text" id="make_3rd"></td>
+  </tr>
+   <tr>
+    <td><label for="mean">mean</label></td>
+    <td><input type="text" id="mean_2nd"></td>
+    <td><input type="text" id="mean_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="meet">meet</label></td>
+    <td><input type="text" id="meet_2nd"></td>
+    <td><input type="text" id="meet_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="pay">pay</label></td>
+    <td><input type="text" id="pay_2nd"></td>
+    <td><input type="text" id="pay_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="put">put</label></td>
+    <td><input type="text" id="put_2nd"></td>
+    <td><input type="text" id="put_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="read">read</label></td>
+    <td><input type="text" id="read_2nd"></td>
+    <td><input type="text" id="read_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="ride">ride</label></td>
+    <td><input type="text" id="ride_2nd"></td>
+    <td><input type="text" id="ride_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="ring">ring</label></td>
+    <td><input type="text" id="ring_2nd"></td>
+    <td><input type="text" id="ring_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="run">run</label></td>
+    <td><input type="text" id="run_2nd"></td>
+    <td><input type="text" id="run_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="say">say</label></td>
+    <td><input type="text" id="say_2nd"></td>
+    <td><input type="text" id="say_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="see">see</label></td>
+    <td><input type="text" id="see_2nd"></td>
+    <td><input type="text" id="see_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="sell">sell</label></td>
+    <td><input type="text" id="sell_2nd"></td>
+    <td><input type="text" id="sell_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="send">send</label></td>
+    <td><input type="text" id="send_2nd"></td>
+    <td><input type="text" id="send_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="show">show</label></td>
+    <td><input type="text" id="show_2nd"></td>
+    <td><input type="text" id="show_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="sing">sing</label></td>
+    <td><input type="text" id="sing_2nd"></td>
+    <td><input type="text" id="sing_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="sit">sit</label></td>
+    <td><input type="text" id="sit_2nd"></td>
+    <td><input type="text" id="sit_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="sleep">sleep</label></td>
+    <td><input type="text" id="sleep_2nd"></td>
+    <td><input type="text" id="sleep_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="speak">speak</label></td>
+    <td><input type="text" id="speak_2nd"></td>
+    <td><input type="text" id="speak_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="spend">spend</label></td>
+    <td><input type="text" id="spend_2nd"></td>
+    <td><input type="text" id="spend_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="stand">stand</label></td>
+    <td><input type="text" id="stand_2nd"></td>
+    <td><input type="text" id="stand_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="steal">steal</label></td>
+    <td><input type="text" id="steal_2nd"></td>
+    <td><input type="text" id="steal_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="swim">swim</label></td>
+    <td><input type="text" id="swim_2nd"></td>
+    <td><input type="text" id="swim_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="take">take</label></td>
+    <td><input type="text" id="take_2nd"></td>
+    <td><input type="text" id="take_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="teach">teach</label></td>
+    <td><input type="text" id="teach_2nd"></td>
+    <td><input type="text" id="teach_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="tell">tell</label></td>
+    <td><input type="text" id="tell_2nd"></td>
+    <td><input type="text" id="tell_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="think">think</label></td>
+    <td><input type="text" id="think_2nd"></td>
+    <td><input type="text" id="think_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="throw">throw</label></td>
+    <td><input type="text" id="throw_2nd"></td>
+    <td><input type="text" id="throw_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="understand">understand</label></td>
+    <td><input type="text" id="understand_2nd"></td>
+    <td><input type="text" id="understand_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="wake">wake</label></td>
+    <td><input type="text" id="wake_2nd"></td>
+    <td><input type="text" id="wake_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="wear">wear</label></td>
+    <td><input type="text" id="wear_2nd"></td>
+    <td><input type="text" id="wear_3rd"></td>
+  </tr>
+  <tr>
+    <td><label for="win">win</label></td>
+    <td><input type="text" id="win_2nd"></td>
+    <td><input type="text" id="win_3rd"></td>
+  </tr>
+    <tr>
+    <td><label for="write">write</label></td>
+    <td><input type="text" id="write_2nd"></td>
+    <td><input type="text" id="write_3rd"></td>
+  </tr>
+</table>
+
+
+
+  </div>
+</div>
+
+<script>
+  // Function to handle blur effect on input fields
+  const blurryText = document.getElementById('blurryText');
+  const inputFields = document.querySelectorAll('.right input[type="text"]');
+  blurryText.addEventListener('mouseenter', function() {
+    this.classList.add('unblur');
+  });
+  blurryText.addEventListener('mouseleave', function() {
+    if (!this.contains(document.activeElement)) {
+      this.classList.remove('unblur');
+    }
+  });
+
+
+  // Function to check answers and highlight correct ones
+  function checkAnswer(inputId, correctAnswer) {
+    const input = document.getElementById(inputId);
+    input.addEventListener('input', function() {
+      if (input.value.trim() === correctAnswer) {
+        input.style.backgroundColor = '#A1EEBD';
+      } else {
+        input.style.backgroundColor = '';
+      }
+    });
+  }
+
+  // Define correct answers and corresponding input IDs
+const answers = {
+  be: ["was/were", "been"],
+  become: ["became", "become"],
+  begin: ["began", "begun"],
+  blow: ["blew", "blown"],
+  break: ["broke", "broken"],
+  bring: ["brought", "brought"],
+  build: ["built", "built"],
+  buy: ["bought", "bought"],
+  catch: ["caught", "caught"],
+  choose: ["chose", "chosen"],
+  come: ["came", "come"],
+  cost: ["cost", "cost"],
+  do: ["did", "done"],
+  draw: ["drew", "drawn"],
+  drink: ["drank", "drunk"],
+  drive: ["drove", "driven"],
+  eat: ["ate", "eaten"],
+  fall: ["fell", "fallen"],
+  feed: ["fed", "fed"],
+  feel: ["felt", "felt"],
+  fight: ["fought", "fought"],
+  find: ["found", "found"],
+  fly: ["flew", "flown"],
+  forget: ["forgot", "forgotten"],
+  get: ["got", "got"],
+  give: ["gave", "given"],
+  go: ["went", "gone"],
+  grow: ["grew", "grown"],
+  hang: ["hung", "hung"],
+  have: ["had", "had"],
+  hear: ["heard", "heard"],
+  hide: ["hid", "hidden"],
+  hit: ["hit", "hit"],
+  hurt: ["hurt", "hurt"],
+  keep: ["kept", "kept"],
+  know: ["knew", "known"],
+  learn: ["learnt/learned", "learnt/learned"],
+  leave: ["left", "left"],
+  lend: ["lent", "lent"],
+  let: ["let", "let"],
+  lose: ["lost", "lost"],
+  make: ["made", "made"],
+  mean: ["meant", "meant"],
+  meet: ["met", "met"],
+  pay: ["paid", "paid"],
+  put: ["put", "put"],
+  read: ["read", "read"],
+  ride: ["rode", "ridden"],
+  ring: ["rang", "rung"],
+  run: ["ran", "run"],
+  say: ["said", "said"],
+  see: ["saw", "seen"],
+  sell: ["sold", "sold"],
+  send: ["sent", "sent"],
+  show: ["showed", "shown"],
+  sing: ["sang", "sung"],
+  sit: ["sat", "sat"],
+  sleep: ["slept", "slept"],
+  speak: ["spoke", "spoken"],
+  spend: ["spent", "spent"],
+  stand: ["stood", "stood"],
+  steal: ["stole", "stolen"],
+  swim: ["swam", "swum"],
+  take: ["took", "taken"],
+  teach: ["taught", "taught"],
+  tell: ["told", "told"],
+  think: ["thought", "thought"],
+  throw: ["threw", "thrown"],
+  understand: ["understood", "understood"],
+  wake: ["woke", "woken"],
+  wear: ["wore", "worn"],
+  win: ["won", "won"],
+  write: ["wrote", "written"]
+};
+ // Loop through answers and set up event listeners for input fields
+  Object.keys(answers).forEach((word) => {
+    const inputId2nd = `${word}_2nd`;
+    const inputId3rd = `${word}_3rd`;
+    const [correctAnswer2nd, correctAnswer3rd] = answers[word];
+    
+    checkAnswer(inputId2nd, correctAnswer2nd);
+    checkAnswer(inputId3rd, correctAnswer3rd);
+  });
+
+  // Function to check answers and highlight correct ones
+   function checkAnswer(inputId, correctAnswer) {
+    const input = document.getElementById(inputId);
+    input.addEventListener('input', function() {
+      if (input.value.trim() === correctAnswer) {
+        input.style.backgroundColor = '#A1EEBD'; // Highlight correct answer
+        input.parentNode.style.backgroundColor = '#A1EEBD'; // Highlight parent <td>
+      } else {
+        input.style.backgroundColor = ''; // Remove highlight if incorrect
+        input.parentNode.style.backgroundColor = ''; // Remove highlight from parent <td>
+      }
+    });
+  }
+</script>
+</script>
+</body>
+</html>
