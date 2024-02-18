@@ -1,0 +1,74 @@
+  @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
+  
+    body {
+      font-family:merriweather;  
+    margin: 0;
+    display: grid;
+      place-items: start center;
+      z-index: 1;
+      
+  }
+
+.container {
+    width: 80%;
+    align-items: start;
+    border: 1px solid silver;
+    border-radius:7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 1rem 0 0 1rem;
+      background-color: #FFF8C9;
+    padding: 1rem
+  }
+h1, h2{
+  text-align:center;
+}
+h2{
+  margin:0;
+  padding:0.4rem;
+  background-color: #BEADFA
+}
+h3{
+  background-color:#DFCCFB; 
+  padding:0.5rem;
+  text-align:justify;
+  margin-bottom: 0.3rem
+}
+
+table{
+  margin:auto;
+  width:100%
+}
+th{
+  padding:1rem; 
+  font-weight:900;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+    padding: 1rem
+  }
+.card{
+  border: 1px solid silver;
+    border-radius:7px;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    margin: 1rem 0 0 1rem;
+      background-color:white;
+    padding: 1rem
+}
+
+ol, ul{
+  font-family:merriweather; 
+  color: black; 
+  border-radius: 7px; 
+  padding: 0rem 1rem 1rem 2rem;
+  
+}
+li{
+  margin-bottom:0.3rem;
+}
+::marker {
+  color: crimson;
+  font-size: 1.2em;
+}
