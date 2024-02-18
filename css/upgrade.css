@@ -8,7 +8,9 @@
       z-index: 1;
       
   }
-
+html {
+  scroll-behavior: smooth;
+}
 .container {
     width: 80%;
     align-items: start;
