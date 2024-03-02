@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m6l4</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Perfect Tenses</h1>
+ </header> 
+
+<h3>Complete with the Present Perfect Simple or the Present Perfect Progressive of the verbs in brackets.</h3>
+   <table style= "font-family: merriweather; font-size: 20px;"> 
+<colgroup> 
+<col style="background-color: pink"> 
+</colgroup> 
+<tr><th>      
+A:</td><td> Can I take your order?</td></tr><tr><th>
+B:</td><td> Hello Steve! I didn't know you were a waiter here.</td></tr><tr><th>
+A:</td><td> Well, I am.</td></tr><tr><th>
+B:</td><td> I come here all the time and I 
+  (1) <input type="text" id="q1" class="changeDiv"> (never/ see) you here before.</td></tr><tr><th>
+A:</td><td> I'm new here. I 
+  (2) <input type="text" id="q2" class="changeDiv"> (work) here for a week now.</td></tr><tr><th>
+B:</td><td> So, 
+  (3) <input type="text" id="q3" class="changeDiv"> (you / give up) trying to be an artist?</td></tr><tr><th>
+A:</td><td> No, but I need the extra money. So, I 
+  (4) <input type="text" id="q4" class="changeDiv"> (try) different part-time jobs since last year.</td></tr><tr><th>
+B:</th><td> Sounds interesting. My boss 
+  (5) <input type="text" id="q5" class="changeDiv"> ( look for) someone to work as a part-time secretary for quite some time now, so if this place doesn't work out for you, let me know.</td></tr><tr><th>
+A:</td><td> Thanks. So, what would you like? 
+  (6) <input type="text" id="q6" class="changeDiv"> (you / try) the vegetable soup?</td></tr><tr><th>
+B:</th><td> Of course, I 
+  (7) <input type="text" id="q7" class="changeDiv"> (come) here for years. I know the menu very well.</td></tr><tr><th>
+A:</th><td> Great.                                
+    </td></tr>
+    </table>      
+    
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "have never seen", 
+      "have been working", 
+      "have you given up", 
+      "have tried", 
+      "has been looking for",
+      "have you tried", 
+      "have been comming",
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
