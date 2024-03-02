@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m5l3</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Paraphrasing</h1>
+ </header> 
+
+<h3>Rewrite the sentences using the words given.</h3>
+    <ol>
+<li>You must go now because you're going to be late. <mark>(had better)</mark><br>
+      <input type="text" id="q1" style="width: 80%"><br><br>
+<li>It's not a good idea to leave your mobile in the car.<mark>(should)</mark><br>
+      <input type="text" id="q2" style="width: 80%"><br><br>
+<li>Never borrow my car without asking!<mark>(had better)</mark><br>
+      <input type="text" id="q3" style="width: 80%"><br><br>
+<li>Don't be late because Karen will leave without you.<mark>(had better)</mark><br>
+      <input type="text" id="q4" style="width: 80%"><br><br>
+<li>It's a good idea to visit a psychologist.<mark>(should)</mark><br>
+      <input type="text" id="q5" style="width: 80%"><br><br>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "You had better go now because you're going to be late", 
+      "You should not leave your mobile in the car", 
+      "You had better not borrow my car without asking",
+      "You had better not be late because Karen will leave without you",
+      "You should visit a psychologist"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
