@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m3l1</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Modal verbs</h1>
+ </header> 
+
+<h3>Read the situations and form sentences using the words in brackets.</h3>
+   <ol>
+<li> You want to borrow your friend's mobile phone. What do you say?<br>
+<input type="text" id="q1" class="changeDiv" style="width: 500px"> <span class="hdd">(can)</span><br><br>
+<li>  You couldn't meet your sister at the airport yesterday. Apologise to her.</span><br>
+<input type="text" id="q2" class="changeDiv" style="width: 500px"> <span class="hdd">(able)</span><br><br>
+<li>  You're thirsty. Ask the flight attendant for some water.<br>
+<input type="text" id="q3" class="changeDiv" style="width: 500px">  <span class="hdd">(could)</span><br><br>
+<li>  You are not able to find your boarding card. Tell the clerk.<br>
+<input type="text" id="q4" class="changeDiv" style="width: 500px">  <span class="hdd">(can)</span><br><br>
+<li>  You want to use your laptop on the plane. Ask for permission.<br>
+<input type="text" id="q5" class="changeDiv" style="width: 500px">  <span class="hdd">(may)</span>
+
+  </ol>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      ["Can I borrow your phone?", "Can you lend me your phone?"],
+      "I wasn't able to meet you", 
+      "Could you bring me some water", 
+      "Can you help me find my boarding card?", 
+      "May I use my laptop?"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
