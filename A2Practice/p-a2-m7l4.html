@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m7l4</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Past Simple vs Past Perfect</h1>
+ </header> 
+
+<h3>Complete with the Past Simple or the Past Perfect Simple of the verbs in brackets.</h3>
+    
+<table> 
+<tr><th>
+A:</th><td> Hey, William. 
+      <input type="text" id="q1" class="changeDiv">(you / take) the car to the garage today?</td></tr><tr><th>
+B:</th><td> Yeah, but listen to this. When I 
+      <input type="text" id="q2" class="changeDiv"> (get) there, they 
+      <input type="text" id="q3" class="changeDiv"> (close) for lunch. So I
+      <input type="text" id="q4" class="changeDiv"> (park) outside and 
+      <input type="text" id="q5" class="changeDiv"> (go) for a walk. Then I 
+      <input type="text" id="q6" class="changeDiv"> (remember) something. I
+      <input type="text" id="q7" class="changeDiv">(leave) my wallet and my keys in the car! l 
+      <input type="text" id="q8" class="changeDiv"> (run) back but the car was gone.</td></tr><tr><th>
+A:</th><td> What?</td></tr><tr><th>
+B:</th><td> I was shocked! But then I realised what 
+      <input type="text" id="q9" class="changeDiv"> (happen). The mechanic 
+      <input type="text" id="q10" class="changeDiv"> (take) the car inside to fix it.</td></tr><tr><th>
+A:</th><td> Without asking?</td></tr><tr><th>
+B:</th><td> Well, he 
+      <input type="text" id="q11" class="changeDiv"> (see) the keys in the car and thought it 
+      <input type="text" id="q12" class="changeDiv">(be) OK to take it.</td></tr>
+    </table>  
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "did you take", 
+      "got", 
+      "had closed", 
+      "parked", 
+      "went",
+      "remembered",
+      "had left",
+      "ran",
+      "happened",
+      "had taken",
+      "saw",
+      "was"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
