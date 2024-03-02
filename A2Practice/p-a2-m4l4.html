@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m4l4</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Prepositions</h1>
+ </header> 
+
+<h3>Complete the dialogues with who, which, that or where.</h3>
+<table>
+  <tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      1.</td></tr><tr>
+<th>
+A:</th><td> ls that the laptop 
+      (1) <input type="text" id="q1" class="changeDiv"> you bought last week?</td></tr><tr><th>
+B:</th><td> Yeah.</td></tr><tr><th>
+A:</th><td> It's nice. Where did you get it from?</td></tr><tr><th>
+B:</td><td> From the shop 
+      (2) <input type="text" id="q2" class="changeDiv"> you used to work. In fact, the man
+      (3) <input type="text" id="q3" class="changeDiv"> sold it to me knew you.</td></tr><tr><th>
+A:</th><td> Did he? What was his name?</td></tr><tr><th>
+B:</th><td> Alan Bishop.</td></tr><tr><th>
+A:</th><td> Oh, he was one of the people 
+      (4) <input type="text" id="q4" class="changeDiv"> I hung out with while I was there.
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      2.</td></tr><tr>
+<th>
+A:</th><td> Denise, can I borrow your green top?</td></tr><tr><th>
+B:</td><td> Which one?</td></tr><tr><th>
+A:</td><td> The one 
+      (5) <input type="text" id="q5" class="changeDiv"> you were wearing yesterday.</td></tr><tr><th>
+B:</td><td> Go on then. Are you going out?</td></tr><tr><th>
+A:</td><td> Yeah, I'm meeting Laura. You know, the girl 
+      (6) <input type="text" id="q6" class="changeDiv"> is in my computer class.</td></tr><tr><th>
+B:</th><td> Where are you going?</td></tr><tr><th>
+A:</td><td> To Ricky's.</td></tr><tr><th>
+B:</td><td> Where?</td></tr><tr><th>
+A:</th><td> You know, the cafe 
+      (7) <input type="text" id="q7" class="changeDiv"> is in the park. It's the place
+      (8) <input type="text" id="q8" class="changeDiv"> her sister works.</td></tr><tr><th>
+B:</th><td> Have fun!
+ </td></tr></table>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "that", "where", "who", "that", "which", "who", "which", "where"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
