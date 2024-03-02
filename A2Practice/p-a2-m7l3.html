@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m7l3</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Reflexive pronouns</h1>
+ </header> 
+
+<h3>Complete the sentences using the verbs in the box and reflexive pronouns.</h3>
+    
+   <div class="samples"> 
+     <div class="note" style="text-align:center">enjoy &emsp; cut &emsp; made &emsp; look at &emsp; buy</div>
+<ol>
+<li>Ann felt ill, so she 
+  <input type="text" id="q1" class="changeDiv"> some tea.<br><br>
+<li>Be careful! You'll 
+  <input type="text" id="q2" class="changeDiv"> with that knife.<br><br>
+<li>I want to 
+  <input type="text" id="q3" class="changeDiv"> a suit from that shop over there for my job interview.<br><br>
+<li>Before they leave the house, the girls always 
+  <input type="text" id="q4" class="changeDiv"> in the mirror.<br><br>
+<li>We 
+  <input type="text" id="q5" class="changeDiv"> at Tina's birthday party yesterday.<br><br>
+      
+      </div>   
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "made herself", "cut yourself", "buy myself", 
+      "look at themselves", "enjoyed ourselves"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
