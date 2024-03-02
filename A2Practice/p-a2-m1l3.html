@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m1l3</title>
+</head>
+  
+<body>
+  <div class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Prepositions</h1>
+ </header> 
+
+<h3>Complete the sentences with prepositions of time.</h3>
+
+    <ol>
+<li> Iris is meeting Helen 
+  <input type="text" id="q1" class="changeDiv"> noon.<br><br>
+<li> Paul always reads newspapers 
+  <input type="text" id="q2" class="changeDiv"> Sunday afternoon.<br><br>
+<li> I usually drink a warm cup of milk 
+  <input type="text" id="q3" class="changeDiv"> the morning.<br><br>
+<li> Tanya takes lots of photos 
+  <input type="text" id="q4" class="changeDiv"> her holiday.<br><br>
+<li> Susan's birthday is 
+  <input type="text" id="q5" class="changeDiv"> June.<br><br>
+<li> I was in Spain 
+  <input type="text" id="q6" class="changeDiv"> 29 January.<br><br>
+<li> My brother left ten minutes 
+  <input type="text" id="q7" class="changeDiv">.
+  </ol>
+       </div>
+      
+       
+     </div>  
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+"at", "on", "in", "on", "in", "on", "ago"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
