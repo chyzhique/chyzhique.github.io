@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m4l3</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Comparisons</h1>
+ </header> 
+
+<h3 class="header">Look, read and say what the problem is, using too or enough and the words in brackets. </h3>
+<div class="inner">
+    <div class="text" style="height: 100%">
+      
+<div style="padding: 10px;border: 1px solid silver; box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.06) 0px 2px 4px -1px; border-radius: 8px; margin-right: 5px; margin-bottom: 5px; background-color: #FDFD96;">
+  <img src="https://www.refinery29.com/images/10885628.jpg" style="width: 50%; height: 50%; float: left; padding: 15px; border-radius: 15%">
+  <br><br><p style="overflow: auto">
+ <h3> 1. I can't buy it. </h3> 
+a) It's <input type="text" id="q1" class="changeDiv"> (expensive) <br>
+b) It's <input type="text" id="q2" class="changeDiv"> (cheap)<br> 
+</p><br><br><br><br><br>
+  <img src="https://www.nme.com/wp-content/uploads/2016/10/2010LadyGagaPA04101013-1-1.jpg"  style="width: 50%; float: right; padding: 15px; border-radius: 75%">
+      <p style="overflow: auto">
+  <h3> 2. This hat doesn't fit her.</h3> 
+a) It's <input type="text" id="q3" class="changeDiv"> (big) <br>
+b) It's <input type="text" id="q4" class="changeDiv"> (small)
+      </p>
+</div>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "too expensive", "isn't cheap enough", "too big", "isn't small enough"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
