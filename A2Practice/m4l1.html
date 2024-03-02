@@ -1,117 +1,79 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
-  <style>
-    .hdd{font-weight: bold; background-color: #ffc119; font-size: 27px; border-radius: 15px}
-    </style>
-  </head>
-<body>
-  <div class="outer">
-    <h3 class="header">Complete with the Present Simple or the Future will of the words in brackets.</h3>
-<div class="inner">
-    <div class="text">
-
-    
-      <table>
-  <tr><td colspan="2" style="background-color: #ffc119">
-1.</td></tr><tr><td>
-A:</td><td> Ken, 
-      <input type="text" id="q1"> (you / give) me the newspaper, please?</td></tr><tr><td>
-B:</td><td> Sorry, but I'm reading it.</td></tr><tr><td>
-A:</td><td> I 
-      <input type="text" id="q2"> (give) it back immediately, I promise. I just want to see the weather forecast for tomorrow.</td></tr><tr><td>
-B:</td><td> No, you 
-      <input type="text" id="q3"> (get) it as soon as I 
-      <input type="text" id="q4">(finish).</td></tr><tr><td>
-A:</td><td> Forget it. I 
-      <input type="text" id="q5"> (check) it on the Internet.</td></tr><tr><td>
-B:</td><td> Good idea.</td></tr>
-        <tr><td colspan="2" style="background-color: #ffc119">
-2.</td></tr><tr><td>
-A:</td><td> Where are you going?</td></tr><tr><td>
-B:</td><td> To the shopping centre.</td></tr><tr><td>
-A:</td><td> 
-      <input type="text" id="q6"> (you / do) me a favour before you 
-      <input type="text" id="q7">(leave)?</td></tr><tr><td>
-B:</td><td> I don't know, what is it?</td></tr><tr><td>
-A:</td><td> I need to take these boxes upstairs.</td></tr><tr><td>
-B:</td><td> I don't have enough time. I 
-      <input type="text" id="q8"> (help) you when I 
-      <input type="text" id="q9"> (get) back, OK?</td></tr>
-      </td></tr></table>
-
-  </div>     
-</div>
-    
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m4l1</title>
+</head>
   
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="button" id="submitBtn" class="button-30">Check</button>
-    </div>
-    
-    <div id="results" style="display: none; justify-content: center; align-items: center;">
-      <h2 class="header">Results</h2>
-      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <button type="button" id="tryAgainBtn">Try again</button>
-     
-    </div>
-  </div>
-</div>
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Future vs Present</h1>
+ </header> 
 
-  <script>
-    const correctAnswers = [
+<h3>Complete with the Present Simple or the Future WILL of the words in brackets.</h3>
+
+    <table>
+  <tr><td colspan="2" style="background-color: #ffc119; text-align:center">
+1.</td></tr><tr><th>
+A:</th><td> Ken, 
+      <input type="text" id="q1" class="changeDiv"> (you / give) me the newspaper, please?</td></tr><tr><th>
+B:</th><td> Sorry, but I'm reading it.</td></tr><tr><th>
+A:</th><td> I 
+      <input type="text" id="q2" class="changeDiv"> (give) it back immediately, I promise. I just want to see the weather forecast for tomorrow.</td></tr><tr><th>
+B:</th><td> No, you 
+      <input type="text" id="q3" class="changeDiv"> (get) it as soon as I 
+      <input type="text" id="q4" class="changeDiv">(finish).</td></tr><tr><th>
+A:</th><td> Forget it. I 
+      <input type="text" id="q5" class="changeDiv"> (check) it on the Internet.</td></tr><tr><th>
+B:</th><td> Good idea.</td></tr>
+        <tr><td colspan="2" style="background-color: #ffc119; text-align:center">
+2.</td></tr><tr><th>
+A:</th><td> Where are you going?</td></tr><tr><th>
+B:</th><td> To the shopping centre.</td></tr><tr><th>
+A:</th><td> 
+      <input type="text" id="q6" class="changeDiv"> (you / do) me a favour before you 
+      <input type="text" id="q7" class="changeDiv">(leave)?</td></tr><tr><th>
+B:</th><td> I don't know, what is it?</td></tr><tr><th>
+A:</th><td> I need to take these boxes upstairs.</td></tr><tr><th>
+B:</th><td> I don't have enough time. I 
+      <input type="text" id="q8" class="changeDiv"> (help) you when I 
+      <input type="text" id="q9" class="changeDiv"> (get) back, OK?
+      </td></tr>
+      </table>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
       "will you give", "will give", "will get", "finish", "will", 
       "will you do", "leave", "will help", "get"
-    ];
+    ]
 
-    const submitBtn = document.getElementById("submitBtn");
-    const tryAgainBtn = document.getElementById("tryAgainBtn");
-    const resultsDiv = document.getElementById("results");
-    const scoreDiv = document.getElementById("score");
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-    submitBtn.addEventListener("click", () => {
-      const userAnswers = [];
-      let score = 0;
-
-      for (let i = 0; i < correctAnswers.length; i++) {
-        const userInput = document.getElementById(`q${i + 1}`).value.trim();
-
-        userAnswers.push(userInput);
-        const inputField = document.getElementById(`q${i + 1}`);
-
-        if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
-          inputField.style.backgroundColor = "lightgreen";
-          score++;
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
-          inputField.style.backgroundColor = "pink";
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      }
-
-      displayResults(score);
-    });
-
-    tryAgainBtn.addEventListener("click", () => {
-      const inputFields = document.querySelectorAll("input[type='text']");
-      inputFields.forEach(input => {
-        input.style.backgroundColor = "white";
-        input.value = "";
       });
-
-      resultsDiv.style.display = "none";
-      tryAgainBtn.style.display = "none";
-      submitBtn.style.display = "block";
     });
+  });
+</script>
 
-    function displayResults(score) {
-      resultsDiv.style.display = "block";
-      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
-      submitBtn.style.display = "none";
-      tryAgainBtn.style.display = "block";
-    }
-  </script>
-</body>
 </html>
