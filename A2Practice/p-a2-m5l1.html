@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m5l1</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Infinitives</h1>
+ </header> 
+
+<h3>Complete with the full or the bare infinitive of the verbs in brackets.</h3>
+<table>
+  <tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      1.</td></tr><tr>
+<th>
+A:</th><td> Could you (1)
+      <input type="text" id="q1" class="changeDiv"> (call) a doctor? I feel ill.</td></tr><tr><th>
+B:</td><td> Do you want me (2)
+      <input type="text" id="q2" class="changeDiv"> (take) you to hospital?</td></tr><tr><th>
+A:</td><td> No, just call a doctor.</td></tr>
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      2.</td></tr><tr>
+<th>
+A:</td><td> Can you (3)
+      <input type="text" id="q3" class="changeDiv"> (show) me how (4)
+      <input type="text" id="q4" class="changeDiv"> (use) this printer?</td></tr><tr><th>
+B:</th><td> Sure. Just let me (5)
+  <input type="text" id="q5" class="changeDiv"> (finish) what I'm doing first. </td></tr>
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      3.</td></tr><tr>
+<th>
+A:</td><td> We're going to Bristol for the weekend (6)
+  <input type="text" id="q6" class="changeDiv"> (visit) Joanna. Would you like (7)
+  <input type="text" id="q7" class="changeDiv"> (come)?</td></tr><tr><th>
+B:</td><td> No, I'm too busy. I (8)
+    <input type="text" id="q8" class="changeDiv"> (go) away.</td></tr>
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      4.</td></tr><tr>
+<th>
+A:</th><td> Oh, no! I failed the Maths test. Now, my parents will make me (9)
+    <input type="text" id="q9" class="changeDiv"> (study) all week.</td></tr><tr><th>
+B:</th><td> Jenny has offered (10)
+  <input type="text" id="q10" class="changeDiv"> (help) me with Maths. Why don't you ask her for help, too? You
+need (11)
+  <input type="text" id="q11" class="changeDiv"> (do) something about it.
+      </td></tr></table>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+       "call", "to take", "show", "to use", "finish", "to visit", "to come", "go", "study", "to help", "to do"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
