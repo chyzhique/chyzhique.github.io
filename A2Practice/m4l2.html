@@ -1,117 +1,80 @@
-
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/updtcs.css">
-  <style>
-    .hdd{font-weight: bold; background-color: #ffc119; font-size: 27px; border-radius: 15px}
-    </style>
-  </head>
-<body>
-  <div class="outer">
-    <h3 class="header">Complete the dialogues with will, won't, will have to, will be able to or won't be able to.</h3>
-<div class="inner">
-    <div class="text">
-
-<table>
-  <tr><td colspan="2" style="background-color: #ffc119">
-1.</td></tr><tr><td>
-A:</td><td> Oh no! The lift isn't working! We 
-  <input type="text" id="q1"> use it.</td></tr><tr><td>
-B:</td><td> Then we 
-  <input type="text" id="q2"> take the stairs.</td></tr><tr><td>
-A:</td><td> With all these heavy bags? I 
-  <input type="text" id="q3"> do it.</td></tr><tr><td>
-B:</td><td> Yes, you 
-  <input type="text" id="q4"> . I live on the second floor.</td></tr><tr><td>
-A:</td><td> All right then.
-<tr><td colspan="2" style="background-color: #ffc119">
-2.</td></tr><tr><td>
-A:</td><td> What do you think about flying cars?</td></tr><tr><td>
-B:</td><td> Well, there 
-  <input type="text" id="q5"> be any in our lifetime, that's for sure.</td></tr><tr><td>
-A:</td><td> Why not?</td></tr><tr><td>
-B:</td><td> I don't think scientists 
-  <input type="text" id="q6"> create them soon. Anyway, they 
-  <input type="text" id="q7"> be too dangerous.</td></tr><tr><td>
-A:</td><td> You think so?</td></tr><tr><td>
-B:</td><td> Yeah, people 
-  <input type="text" id="q8"> drive them, and there 
-  <input type="text" id="q9"> be accidents all the time.</td></tr><tr><td>
-A:</td><td> Maybe, you're right.
-      </td></tr></table>
-      
-    
-  </div>     
-</div>
-    
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m4l2</title>
+</head>
   
-    <div style="display: flex; justify-content: center; align-items: center;">
-      <button type="button" id="submitBtn" class="button-30">Check</button>
-    </div>
-    
-    <div id="results" style="display: none; justify-content: center; align-items: center;">
-      <h2 class="header">Results</h2>
-      <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-      <div style="display: flex; justify-content: center; align-items: center;">
-        <button type="button" id="tryAgainBtn">Try again</button>
-     
-    </div>
-  </div>
-</div>
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Future</h1>
+ </header> 
 
-  <script>
-    const correctAnswers = [
+<h3>Complete the dialogues with will, won't, will have to, will be able to or won't be able to.</h3>
+
+    <table>
+  <tr><td colspan="2" style="background-color: #ffc119">
+1.</td></tr><tr><th>
+A:</th><td> Oh no! The lift isn't working! We 
+  <input type="text" id="q1" class="changeDiv"> use it.</td></tr><tr><th>
+B:</th><td> Then we 
+  <input type="text" id="q2" class="changeDiv"> take the stairs.</td></tr><tr><th>
+A:</th><td> With all these heavy bags? I 
+  <input type="text" id="q3" class="changeDiv"> do it.</td></tr><tr><th>
+B:</th><td> Yes, you 
+  <input type="text" id="q4" class="changeDiv"> . I live on the second floor.</td></tr><tr><th>
+A:</th><td> All right then.
+<tr><td colspan="2" style="background-color: #ffc119">
+2.</td></tr><tr><th>
+A:</th><td> What do you think about flying cars?</td></tr><tr><th>
+B:</th><td> Well, there 
+  <input type="text" id="q5" class="changeDiv"> be any in our lifetime, that's for sure.</td></tr><tr><th>
+A:</th><td> Why not?</td></tr><tr><th>
+B:</th><td> I don't think scientists 
+  <input type="text" id="q6" class="changeDiv"> create them soon. Anyway, they 
+  <input type="text" id="q7" class="changeDiv"> be too dangerous.</td></tr><tr><th>
+A:</th><td> You think so?</td></tr><tr><th>
+B:</th><td> Yeah, people 
+  <input type="text" id="q8" class="changeDiv"> drive them, and there 
+  <input type="text" id="q9" class="changeDiv"> be accidents all the time.</td></tr><tr><th>
+A:</th><td> Maybe, you're right.
+      </td></tr>
+        
+      </table>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
       "won't be able to", "will have to", "won't be able to", "will", 
       "won't", "will be able to", "will", "won't be able to", "will"
-    ];
+    ]
 
-    const submitBtn = document.getElementById("submitBtn");
-    const tryAgainBtn = document.getElementById("tryAgainBtn");
-    const resultsDiv = document.getElementById("results");
-    const scoreDiv = document.getElementById("score");
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-    submitBtn.addEventListener("click", () => {
-      const userAnswers = [];
-      let score = 0;
-
-      for (let i = 0; i < correctAnswers.length; i++) {
-        const userInput = document.getElementById(`q${i + 1}`).value.trim();
-
-        userAnswers.push(userInput);
-        const inputField = document.getElementById(`q${i + 1}`);
-
-        if (userInput.toLowerCase() === correctAnswers[i].toLowerCase()) {
-          inputField.style.backgroundColor = "lightgreen";
-          score++;
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
-          inputField.style.backgroundColor = "pink";
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-      }
-
-      displayResults(score);
-    });
-
-    tryAgainBtn.addEventListener("click", () => {
-      const inputFields = document.querySelectorAll("input[type='text']");
-      inputFields.forEach(input => {
-        input.style.backgroundColor = "white";
-        input.value = "";
       });
-
-      resultsDiv.style.display = "none";
-      tryAgainBtn.style.display = "none";
-      submitBtn.style.display = "block";
     });
+  });
+</script>
 
-    function displayResults(score) {
-      resultsDiv.style.display = "block";
-      scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
-      submitBtn.style.display = "none";
-      tryAgainBtn.style.display = "block";
-    }
-  </script>
-</body>
 </html>
