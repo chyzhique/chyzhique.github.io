@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m7l1</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Questions</h1>
+ </header> 
+
+<h3>A. Read the situations and make negative questions.</h3>
+    
+    <ol>
+<li>You're surprised that your brother doesn't know how to use a cash machine. <br>What do you say?
+<input type="text" id="q1" class="changeDiv" style="width: 90%">?<br><br>
+<li>You see a woman who you think went to the same school as you. <br>What do you say to her?
+<input type="text" id="q2" class="changeDiv" style="width: 90%">?<br><br>
+<li>Your best friend rents a DVD but you're quite sure he's seen it before. <br>What do you say?
+<input type="text" id="q3" class="changeDiv" style="width: 90%">?<br><br>
+    </ol>
+<h3>B. Complete the dialogues with the correct question tags.</h3>
+    
+<table> 
+<tr><td style="padding: 10px; background-color: #ffc119; text-align: center" colspan="2">
+<b> 1.</b> </td></tr><tr><th>
+A:</th><td> David, you went to the bank today, (1) 
+  <input type="text" id="q4" class="changeDiv">?</td></tr><tr><th>
+B:</th><td> No. You didn't tell me to go, (2) 
+  <input type="text" id="q5" class="changeDiv"> ?</td></tr><tr><th>
+A:</th><td> Yes, I did.</td></tr><tr><th>
+B:</th><td> Sorry.</td></tr><tr><th>
+A:</th><td> You can go tomorrow, (3) 
+  <input type="text" id="q6" class="changeDiv"> ?</td></tr><tr><th>
+B:</th><td> Of course.</td></tr>
+<tr><td style="padding: 10px; background-color: #ffc119; text-align: center" colspan="2">
+<b> 2.</b> </td></tr><tr><th>
+A:</th><td> The banks are closed today, (4) 
+  <input type="text" id="q7" class="changeDiv"> ?</td></tr><tr><th>
+B:</th><td> Yes, but there's a cash machine round the corner.
+You've seen it, (5) 
+  <input type="text" id="q8" class="changeDiv">?</td></tr><tr><th>
+A:</th><td> You're right. I'll go there.</td></tr><tr><th>
+B:</th><td> You won't be long, (6) 
+  <input type="text" id="q9" class="changeDiv"> ?</td></tr><tr><th>
+A:</th><td> No, I just need to check something.</td></tr><tr><th>
+B:</th><td> You don't have Internet banking, (7) 
+  <input type="text" id="q10" class="changeDiv">?</td></tr><tr><th>
+A:</th><td> No, I don't.               
+    </td></tr></table>     
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "Don't you know how to use a cash machine", 
+      "Didn't we go to the same school", 
+      "Didn't you see it before",
+      
+      "didn't you", "did you", "can't you", 
+      "aren't they", "haven't you", "will you", "do you",
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
