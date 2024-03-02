@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <title>p-a2-m5l2</title>
+</head>
+  
+<body>
+  <blockquote class="outer">
+  <header>
+    <h4>practice</h4>
+    <h1>Gerund vs Infinitive</h1>
+ </header> 
+
+<h3>Complete the dialogues with the -ing form or the bare or full infinitive of the verbs in brackets.</h3>
+<table>
+  <tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      1.</td></tr><tr>
+<th>
+A:</td><td> We're lost! What should we (1)
+  <input type="text" id="q1"> (do)?</td></tr><tr><th>
+B:</td><td> Don't panic.</td></tr><tr><th>
+A:</td><td> But it's getting dark. How about (2)
+  <input type="text" id="q2"> (light) a fire? Someone will see it.</td></tr><tr><th>
+B:</td><td> (3)
+  <input type="text" id="q3"> (make) a fire near a forest is a crazy thing to do.</td></tr><tr><th>
+A:</td><td> Wait! I can (4)
+  <input type="text" id="q4"> (hear) something!</td></tr><tr><th>
+B:</th><td> It's a car! Quick, start (5)
+  <input type="text" id="q5"> (run) this way.</td></tr><tr><td>
+<tr><td colspan="2" style="background-color: #ffc119; text-align: center">
+      2.</td></tr><tr>
+<th>
+A:</td><td> Hey Alice, would you like (6)
+  <input type="text" id="q6"> (come) to a hip hop concert tonight?</td></tr><tr><th>
+B:</td><td> No, thanks.</td></tr><tr><th>
+A:</td><td> Why not? You love (7)
+  <input type="text" id="q7"> (listen) to hip hop.</td></tr><tr><th>
+B:</td><td> I know but (8)
+  <input type="text" id="q8"> (go) to concerts isn't really something I enjoy (9)
+  <input type="text" id="q9"> (do).</td></tr><tr><th>
+A:</td><td> OK.</td></tr><tr><th>
+B:</td><td> You could (10)
+  <input type="text" id="q10"> (ask) Dennis to go with you. He loves hip hop.</td></tr><tr><th>
+A:</th><td> That's a good idea.
+  </td></tr>
+    
+  </table>
+     </div>  
+
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+ "do", "lighting", "Making", "hear", "running", 
+      "to come", "listening", "going", "doing", "ask"
+    ]
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</html>
