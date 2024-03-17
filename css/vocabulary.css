@@ -44,6 +44,7 @@ h4 {
   width: 100%;
   box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
   margin: 1em auto;
+  min-height: 85vh
 }
 
 .bg-left {
@@ -221,4 +222,5 @@ ol, ul {
   background-color:white;
   padding: 0 3em 0;
   box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
+  min-height: 85vh
        }
