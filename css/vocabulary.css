@@ -44,18 +44,20 @@ h4 {
   width: 100%;
   box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
   margin: 1em auto;
-  min-height: 85vh
+  
 }
 
 .bg-left {
   background: white;
   padding: 0 3em 0;
   border-right: 1px solid silver;
+  min-height: 85vh
 }
 
 .bg-right {
   background: white;
   padding: 0 3em 0;
+  min-height: 85vh
 }
  
 .bunch{
