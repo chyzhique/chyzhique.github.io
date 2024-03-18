@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/writing.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <script src="https://chyzhique.github.io/script/writing-check-letter.js" defer></script> 
+    <title>w-a2-m2l3</title>
+</head>
+      </head>
+    
+  <body> 
+    <div class="bg">
+      <div class="bg-left">
+<header>
+  <h4>writing</h4>
+<div><h1>A STORY</h1></div>
+</header>
+<h3>A. Discuss.</h3>
+ ❓  Has anything unbelievable ever happened to you?<br>
+ ❓  What happened?
+<h3>B. Read the story and answer the questions.</h3>
+ ❓  What is the purpose of each of the paragraphs? <br>
+ ❓  What tenses are used?
+
+<h3>C. Look at the following questions and decide in which paragraph each of them has been answered.
+Write 1, 2 or 3.</h3>
+<ol>
+<li> Who is/are the main character(s) and what was/were the main character(s) doing?  
+  <input type="text" id="q1" class="changeDiv">
+<li> What did the main character(s) do and what happened?
+    <input type="text" id="q2" class="changeDiv">
+<li> When did the story take place?
+    <input type="text" id="q3" class="changeDiv">
+<li> How did the main character(s) feel?
+    <input type="text" id="q4" class="changeDiv">
+<li> What happened in the end? 
+    <input type="text" id="q5" class="changeDiv">
+<li> Where did the story take place?
+    <input type="text" id="q6" class="changeDiv">
+<li> How does/do the main character(s)feel now?
+    <input type="text" id="q7" class="changeDiv">
+  </div>
+      <div class="bg-right">
+        <header>
+  <h4>writing</h4>
+</header>
+        <div class="letter" style="font-family: roboto">
+<h3 style="text-align: center; color: black ">CAN I GIVE YOU A HAND?</h3>
+<img src="https://hips.hearstapps.com/hmg-prod/images/movers-carrying-sofa-to-new-home-royalty-free-image-1587748747.jpg" >
+
+It was a warm summer evening. Paul was returning home when he  saw two men outside the house of his neighbour, Tom Baker. 
+They were carrying his furniture into a van. 
+<br><br>
+He knew that Tom was moving out  in a few days, so he walked up to one of the men and said, 'Hello, can I give you a hand?' The men just stood there,
+looking at Paul. That's when the other man said, 'That would be great'. As soon as Paul helped them finish, the two men quickly, got into the van, thanked 
+him and left. Later  while Tom was having dinner, the doorbell rang. It was Tom and he looked very upset.  'Someone broke into my house and took everything!' he shouted. Paul froze 'I'm so stupid!' he thought.
+<br><br>
+Fortunately, Paul gave a clear descnption of the men to the police and the found  the burglars after
+only an hour. Paul helped move everything back into the empty house, but he's never offered to help a
+neighbour again.
+</div></div>
+  
+
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "1", "2", "1", "2", "3", "1", "2"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
