@@ -1,16 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  width: 100vw;
-  align-items: center;
-  justify-content: center; 
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-gap: 0;
-  align-items: start;
-        }
+  background: #eeeeee;
+  margin: 2em;
+  font-family: "Roboto", sans-serif;
+}
 /*EXCERCISEs*/
 .bg {
   display: grid;
