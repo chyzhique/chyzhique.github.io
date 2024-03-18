@@ -181,7 +181,8 @@ table{
   margin: auto;
   padding-left: 1rem;
   padding-right: 1rem;
-  margin-bottom: 1rem
+  margin-bottom: 1rem;
+  background-color: #FDFFAB;
   }
 
 th, td {
