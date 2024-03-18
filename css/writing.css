@@ -206,3 +206,7 @@ th {
   box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
   min-height: 85vh
        }
+::marker {
+  color: crimson;
+  font-weight:800
+}
