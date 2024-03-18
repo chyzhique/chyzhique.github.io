@@ -173,3 +173,23 @@ img {
       box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
       border-radius:15px
 }
+table{  
+  border-collapse: separate;
+  border-spacing: 0 1em;
+  width:100%;
+  font-weight: normal;
+  margin: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-bottom: 1rem
+  }
+
+th, td {
+  padding:0.5rem;
+  vertical-align:top;
+  
+  }
+th {
+  background-color: crimson; 
+  color: white
+      }
