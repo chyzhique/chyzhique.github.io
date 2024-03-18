@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/writing.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <script src="https://chyzhique.github.io/script/writing-check-letter.js" defer></script> 
+    <title>w-a2-m1l4</title>
+</head>
+      </head>
+    
+  <body> 
+    <div class="bg">
+      <div class="bg-left">
+<header>
+  <h4>writing</h4>
+<div><h1>A DESCRIPTION OF A PERSON</h1></div>
+</header>
+<h3>A. Talk</h3>
+ ❓       What does the girl look like?<br>
+ ❓       What do you think she's like?
+<h3>B. Read the description of the girl and compare your answers.<br>
+Which paragraph does the writer:</h3>
+<ol>
+<li> describe the person's personality? 
+  <input type="text" id="q1" class="changeDiv"><br>
+<li> introduce the person?
+  <input type="text" id="q2" class="changeDiv"><br>
+<li> describe how he/she feels about it?
+  <input type="text" id="q3" class="changeDiv"><br>
+<li> describe the person's appearance?
+  <input type="text" id="q4" class="changeDiv">
+  </ol>
+<h3>C. Read the following statements and write <mark>T for true</mark> or <mark>F for false</mark>:</h3>
+<h4>The writer:</h4>
+        <ol>
+<li> uses a variety of adjectives.
+        <input type="text" id="q5" class="changeDiv"><br>
+<li> gives details about how they met.
+        <input type="text" id="q6" class="changeDiv"><br>
+<li> uses past tense only.
+        <input type="text" id="q7" class="changeDiv"><br>
+<li> sugests how this person can change personality.
+        <input type="text" id="q8" class="changeDiv"><br>
+<li> groups related ideas together.
+        <input type="text" id="q9" class="changeDiv"><br>
+<li> gives his/her general opinion about the person.
+        <input type="text" id="q10" class="changeDiv"><br>
+<li> gives some examples to explain what he/she means.
+        <input type="text" id="q11" class="changeDiv">      
+</div>
+      <div class="bg-right">
+        <header>
+  <h4>writing</h4>
+</header>
+        <div class="letter" style="font-family: roboto">
+<img src="https://www.dropbox.com/scl/fi/caxoqfyhu6321p811xq3n/w-a2-m1l4.jpg?rlkey=4b7jtcs5bb0n4g8y3wuokuh1p&raw=1" style="width:50%; float:left; margin:0.5rem">
+<h2>A person I've recently met</h2>
+
+<span class="bunch" style="margin:1rem; float:left">A</span>
+Amy is a new girl at college. She started two weeks ago and but she already seems to have many friends.
+        <hr>
+<span class="bunch" style="margin:1rem; float:left">B</span>
+She's very popular, especially with the boys. She's tall, slim and very attractive. She has long dark brown hair and brown eyes. She usually wears really trendy clothes and she always looks good.
+<hr>
+<span class="bunch" style="margin:1rem; float:left">C</span>
+Amy is clever, confident and she always gets good marks. She is also outgoing and has a good sense of humour. Of course, she tries to be friendly with everyone, but I'm not so sure she is very honest. Also when I work with her on assignments, she can be very quick-tempered. She often gets angry for silly reasons.
+        <hr>
+<span class="bunch" style="margin:1rem; float:left">D</span>
+I don't think Amy and I are going to become best friends because we don't always get along well. However, she is good fun to be with, and whenever we work together, we get good marks, so that's something.
+</td></tr></table>
+</div>
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "C", "A", "D", "B", "t",	"f",	"f",	"f",	"t",	"t", "t"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
