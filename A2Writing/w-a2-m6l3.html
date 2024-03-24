@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/writing.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <script src="https://chyzhique.github.io/script/writing-check-letter.js" defer></script> 
+    <title>w-a2-m6l3</title>
+</head>
+      </head>
+    
+  <body> 
+    <div class="bg">
+      <div class="bg-left">
+<header>
+  <h4>writing</h4>
+<div><h1>AN ACCOUNT OF A TRUE EVENT</h1></div>
+</header>
+
+<h3>A. Discuss.</h3>
+❓What is your favourite place of entertainment? <br>
+❓Why do you like going there?
+
+<h3>B. Read the paragraph below and answer the questions.</h3>
+        <ol>
+<li> Which words/phrases show t hat the writer likes this place? <br>
+<li> What do the highlighted words refer to? <br> <ol type="a">
+<li> we: <input type="text" id="q1" class="changeDiv">
+<li> there: <input type="text" id="q2" class="changeDiv">
+<li> them: <input type="text" id="q3" class="changeDiv">
+<li> them: <input type="text" id="q4" class="changeDiv">
+<li> it: <input type="text" id="q5" class="changeDiv">
+  </ol>
+</ol>
+
+<h3>C. Rewrite the sentences below without repeating the same words, whenever you can.</h3>
+1. My sister and I love going to the mall. My sister and I go to the mall every weekend. The mall is usually crowded, but my sister and I always have a good time when we go to the mall.
+<textarea id="q6" class="changeDiv" style="width:100%; height:75px"></textarea>
+2. Brian is really interested in acting. Acting relaxes Brian. There are lots of theatres in Brian's neighbourhood and Brian goes to one of the theatres once a month.
+<textarea id="q7" class="changeDiv" style="width:100%; height:75px"></textarea>
+
+
+</div>
+      <div class="bg-right">
+        <header>
+  <h4>writing</h4>
+</header>
+<div style="font-family:roboto" class="letter">
+<h3>My favourite place of entertainment</h3>
+I enjoy going out a lot but there's one place I prefer going to more often and that's the
+drama club. I find that it's an interesting place as it gives members the chance to spend time with friends, have fun and also learn something new. <mark>We</mark> all meet up <mark>there</mark> to rehearse twice a week, but nobody takes it too seriously. The club offers a nice, relaxing atmosphere. Every year, we put on two performances and everyone gets excited about <mark>them</mark>. We all work together for months to create the scenery and the costumes. Last year we performed A Midsummer Night's Dream which was a big success. The audience couldn't stop applauding! Some of <mark>them</mark> even came back to see it a second
+time. It's great fun being part of a drama club and I wouldn't give <mark>it</mark> up for anything in the world!
+</div>
+<h1>WRITING TASK</h1>  
+<h3>Write a paragraph about your favourite place of entertainment. Your paragraph should be between 80-100 words.</h3>
+<h4>❗ When writing a paragraph expressing preference:</h4>
+        <ul>
+<li> explain your ideas by giving examples;
+<li> use phrases like: <ul style="columns:2">
+  <li>I think ... , 
+  <li>I prefer .... , 
+  <li>I like/love ... , 
+  <li>I really enjoy... , 
+  <li>I'm fond of ... , 
+  <li>I'm a big fan of ... , 
+  <li>I'm interested in ... , 
+  <li>I find ... fantastic, etc.;</ul>
+<li> use a variety of adjectives to describe how you feel;
+  <ul style="columns:2">
+  <li>interesting   <li>exciting, etc.</ul>
+<li> try not to repeat the same words all the time. Instead, use 
+  <ul style="columns:2">
+    <li>subject personal pronouns (he, she, it...), 
+      <li>object personal pronouns (him, her, it...), 
+        <li>possessive adjectives (his, her, its ... ) and 
+          <li>adverbs (here, .there)
+</ul></ul>
+</div></div>
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input, textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      ["friends", "me and friends"],
+      ["drama club", "the drama club"],
+      ["performances", "two performances"],
+      ["audience", "the audience"],
+      ["being part of a drama club"],
+      "My sister and I love going to the mall. We go there every weekend. It is usually crowded, but we always have a good time when we go there",
+      "Brian is really interested in acting. It relaxes him. There are lots of theatres in his neighbourhood and he goes to one of them once a month"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
