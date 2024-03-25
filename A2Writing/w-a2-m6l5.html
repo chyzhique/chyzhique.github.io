@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/writing.css">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/input_elements.css">
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <script src="https://chyzhique.github.io/script/clearBtn.js" defer></script>
+    <script src="https://chyzhique.github.io/script/writing-check-letter.js" defer></script> 
+    <title>w-a2-m6l5</title>
+</head>
+      </head>
+    
+  <body> 
+    <div class="bg">
+      <div class="bg-left">
+<header>
+  <h4>writing</h4>
+<div><h1>A FILM REVIEW</h1></div>
+</header>
+
+<h3>A. Discuss.</h3>
+❓In your opinion, what makes a film successful? <br>
+❓Do you read film reviews? Are you influenced by them?
+
+<h3>B. Below is a film review which appeared in a college
+magazine. Read the review and answer the questions.</h3>
+        <ol>
+<li> Did the writer like the film?
+<li> What tense does the writer use to describe the plot?
+<li> Which words/phrases show that the writer likes this place? <br>
+  </ol>
+</ol>
+
+<h3>C. What is the topic of each paragraph? Read the review again and match.</h3>
+      <table>
+        <tr><td>
+          <ol style="margin:0; padding:0">
+<li>1st para: Introduction - <input type="text" id="q1" class="changeDiv" style="width:10%">
+<li>2nd para: Main Part - <input type="text" id="q2" class="changeDiv" style="width:10%">
+<li>3rd para: Conclusion - <input type="text" id="q3" class="changeDiv" style="width:10%">
+        </td><td>
+  <ol type="a"  style="margin:0; paddingleft:0.5rem">
+<li>writer's opinion <li>general information about the film <li>setting and plot
+    </ol></td></tr>
+        </table>
+<h3>D. Read the sentences and decide which paragraph you would find them in.</h3>
+<h4> Write I for Introduction, M for Main Part or C for Conclusion.</h4>
+      <ol>
+<li> The film was directed by Peter Jackson.
+  <input type="text" id="q4" class="changeDiv" style="width:10%; float:right">
+<li> The leading actor tries to save the world.
+  <input type="text" id="q5" class="changeDiv" style="width:10%; float:right">
+<li> This film is a romantic comedy.
+  <input type="text" id="q6" class="changeDiv" style="width:10%; float:right">
+<li> It's suitable for both children and adults.
+  <input type="text" id="q7" class="changeDiv" style="width:10%; float:right">
+<li> I was very disappointed by the film.
+  <input type="text" id="q8" class="changeDiv" style="width:10%; float:right">
+<li> Nicole Kidman stars in this film.
+  <input type="text" id="q9" class="changeDiv" style="width:10%; float:right">
+</ol>
+</div>
+      <div class="bg-right">
+        <header>
+  <h4>writing</h4>
+</header>
+<div style="font-family:roboto" class="letter">
+<h3>FILM REVIEW <br>by Joanna Stone</h3>
+  <img src="https://upload.wikimedia.org/wikipedia/en/2/2d/Quantum_of_Solace_-_UK_cinema_poster.jpg" style="width:50%; float:right; margin:0.5rem">
+&emsp; &emsp; Quantum of Solace is an action film which was directed by Marc Forster. It is the 22nd Bond film and Daniel Craig stars as James Bond for the second time. The villain of the film, Dominic Green, is played by Mathieu
+Amalric and the Bond girl, Camille, is the beautiful Olga Kurylenko.<br>
+&emsp; &emsp;The film is set in different cities around the world. Bond puts his life in danger trying to find the people responsible for the death of the woman he loved, Vesper Lynd. He finds out that Dominic Green, a member of
+the Quantum organisation is behind Vesper's murder. As he tries to catch Green, he meets Camille Montes who helps him take his revenge.<br>
+&emsp; &emsp;Overall, I found the film very exciting. The action-packed scenes and great special effects kept me interested throughout the whole film. I definitely recommend it,
+especially to action-lovers.
+</div>
+<h1>WRITING TASK</h1>  
+<h3>Write a paragraph about your favourite place of entertainment. Your paragraph should be between 80-100 words.</h3>
+<h4>❗ When writing a paragraph expressing preference:</h4>
+        <ul>
+<li> explain your ideas by giving examples;
+<li> use phrases like: <ul style="columns:2">
+  <li>I think ... , 
+  <li>I prefer .... , 
+  <li>I like/love ... , 
+  <li>I really enjoy... , 
+  <li>I'm fond of ... , 
+  <li>I'm a big fan of ... , 
+  <li>I'm interested in ... , 
+  <li>I find ... fantastic, etc.;</ul>
+<li> use a variety of adjectives to describe how you feel;
+  <ul style="columns:2">
+  <li>interesting   <li>exciting, etc.</ul>
+<li> try not to repeat the same words all the time. Instead, use 
+  <ul style="columns:2">
+    <li>subject personal pronouns (he, she, it...), 
+      <li>object personal pronouns (him, her, it...), 
+        <li>possessive adjectives (his, her, its ... ) and 
+          <li>adverbs (here, .there)
+</ul></ul>
+</div></div>
+</div>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input, textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "b","c","a",
+      "i","m","i","c","c","i"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+</html>
