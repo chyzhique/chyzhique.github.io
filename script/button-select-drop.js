@@ -1,16 +1,16 @@
-  function checkAnswer(button) {
+  function checkAnswer(option) {
     // Reset all buttons to default state
-    let buttons = button.parentElement.getElementsByTagName('button');
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('correct', 'incorrect');
+    let buttons = button.parentElement.getElementsByTagName('option');
+    for (let i = 0; i < options.length; i++) {
+      options[i].classList.remove('correct', 'incorrect');
     }
 
     // Check if the selected answer is correct
     let correctAnswer = button.parentElement.getAttribute('data-correct');
-    if (button.id === correctAnswer) {
-      button.classList.add('correct');
+    if (option.id === correctAnswer) {
+      option.classList.add('correct');
     } else {
-      button.classList.add('incorrect');
+      option.classList.add('incorrect');
     }
   }
 
