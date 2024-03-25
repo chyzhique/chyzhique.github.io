@@ -1,19 +1,13 @@
-  function checkAnswer(option) {
-    // Reset all buttons to default state
-    let buttons = button.parentElement.getElementsByTagName('option');
-    for (let i = 0; i < options.length; i++) {
-      options[i].classList.remove('correct', 'incorrect');
-    }
+ function checkAnswer(selectElement) {
+    // Reset the background color of the select element
+    selectElement.classList.remove('correct', 'incorrect');
 
     // Check if the selected answer is correct
-    let correctAnswer = button.parentElement.getAttribute('data-correct');
-    if (option.id === correctAnswer) {
-      option.classList.add('correct');
+    const correctAnswer = selectElement.parentElement.getAttribute('data-correct');
+    const selectedOption = selectElement.options[selectElement.selectedIndex];
+    if (selectedOption.value === correctAnswer) {
+      selectElement.classList.add('correct');
     } else {
-      option.classList.add('incorrect');
+      selectElement.classList.add('incorrect');
     }
-  }
-
-  function toggleCrossed(element) {
-    element.classList.toggle("crossed");
   }
