@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    
+<title>p-b1-m5l2</title>
+
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Present vs Past</h1></div>
+</header>
+
+<h3>Rewrite the following sentences using Reported Speech.</h3>
+
+	  <ol>
+
+<li> I'm thinking of taking a foreign language course,' Becky said to Tom.<br> 
+Becky told <input type="text" id="q1" class="changeDiv">.
+<li> 'I don't know what time Jack will arrive at the party,' Alex told me. <br>
+Alex told me that <input type="text" id="q2" class="changeDiv">.
+<li> Tom is going to buy a holiday home in Spain,' Philip said to me. <br>
+Philip told <input type="text" id="q3" class="changeDiv">.
+<li> 'It may rain at the weekend,' Paul said. <br>
+Paul said <input type="text" id="q4" class="changeDiv">.
+<li> 'I have bought a new car for the race,' Peter said to me. <br>
+Peter told <input type="text" id="q5" class="changeDiv">.
+</li></ol>
+</div>
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["Tom that she was thinking of taking a foreign language course"], 
+["he didn't know what time Jack would arrive at the party"], 
+["me that Tom was going to buy a holiday home in Spain"], 
+["It might rain at the following weekend"], 
+["me that he had bought a new car for the race"]   
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+
+
+    </script>
+	
+	</div>
+	</body>
