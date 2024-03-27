@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    
+<title>p-b1-m3l1</title>
+
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Present vs Past</h1></div>
+</header>
+
+<h3>Read the text below and complete the blanks with the Present Perfect Simple, the Present Perfect Progressive or the Past Simple of the verbs in brackets.</h3>
+<div class="samples">
+  <h2>the Thespians</h2>
+    <img src="https://images.saymedia-content.com/.image/t_share/MTc0NDU3MDk3MDEzMjQxMTky/how-to-start-your-own-school-drama-club.jpg" style="width:40%; float:left; margin:0.4em" alt="dog" />
+  	
+
+I 
+(1) <input type="text" id="q1" class="changeDiv"> (always / want) to do something interesting in my free time, but I work quite long hours and I'm often very tired when I get home from work. Some time ago, а friend of mine 
+(2) <input type="text" id="q2" class="changeDiv"> (give) me the idea of joining the Thespians, а drama club which meets just once а week. I 
+(3) <input type="text" id="q3" class="changeDiv">  (bе) а member for the last six months and I 
+(4) <input type="text" id="q4" class="changeDiv">  (enjoy) every moment of it. The people in the club are very friendly, and the atmosphere is fun and relaxed. For the past few weeks, we 
+(5) <input type="text" id="q5" class="changeDiv"> (rehearse) for а play that we're going to put on for the local community centre. I am really looking forward to it. The daughter of one of the members 
+(6) <input type="text" id="q6" class="changeDiv"> (study) fashion design at university for the last two years and 
+(7) <input type="text" id="q7" class="changeDiv">  (design) our costumes. Yesterday, I 
+(8) <input type="text" id="q8" class="changeDiv"> (go) to the club for our last rehearsal before the play. The first performance will bе on Friday night and I hope everything will go well.
+
+</div>
+   </div>
+</body>
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["have always wanted", "'ve always wanted"],
+    "gave",
+    ["have been", "'ve been"],
+    ["have enjoyed", "'ve enjoyed", 
+          "have been enjoying", "'ve been enjoying"],
+    ["have been rehearsing", "'ve been rehearsing"],
+    "has been studying",
+    "has designed",
+    "went"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+
+
+    </script>
