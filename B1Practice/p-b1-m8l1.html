@@ -60,60 +60,31 @@
 </div>
 
 <script>
-  const correctAnswers = [
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input, textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
     ["had been"], ["would have got"],
     ["had met"], ["would have loved"],
     ["saw"], ["would believe"],
     ["would have arrived"], ["had walked"],
     ["had known"], ["would have bought"]
-  ];
+    ];
 
-  const submitBtn = document.getElementById("submitBtn");
-  const redoBtn = document.getElementById("redoBtn");
-  const resultsDiv = document.getElementById("results");
-  const scoreDiv = document.getElementById("score");
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-  submitBtn.addEventListener("click", () => {
-    const userAnswers = [];
-    let score = 0;
-
-    for (let i = 0; i < correctAnswers.length; i++) {
-      const userInput = document.getElementById(`q${i + 1}`).value.trim();
-
-      userAnswers.push(userInput);
-      const inputField = document.getElementById(`q${i + 1}`);
-
-      if (userInput.toLowerCase() === correctAnswers[i][0].toLowerCase()) {
-        inputField.classList.remove("incorrect");
-        inputField.classList.add("correct");
-        score++;
-      } else {
-        inputField.classList.remove("correct");
-        inputField.classList.add("incorrect");
-      }
-    }
-
-    displayResults(userAnswers, score);
-  });
-
-  redoBtn.addEventListener("click", () => {
-    const inputFields = document.querySelectorAll("input[type='text']");
-    inputFields.forEach(input => {
-      input.classList.remove("correct", "incorrect");
-      input.value = "";
-      input.style.backgroundColor = "white";
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
     });
-
-    resultsDiv.style.display = "none";
-    submitBtn.disabled = false;
   });
-
-  function displayResults(userAnswers, score) {
-    resultsDiv.style.display = "block";
-    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
-
-    submitBtn.disabled = true;
-  }
+  
 </script>
 
 </body>
