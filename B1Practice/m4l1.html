@@ -1,61 +1,60 @@
+<!DOCTYPE html>
 <html>
-	<html>
 <head>
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta charset="utf-8">
-		<link rel="stylesheet" type="text/css" href="https://static.staticsave.com/cssstyles/style.css">
-	</head>
-  
-<body>
-
-  <div class="outer" id="content">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
     
-<h3 class="header">Complete the dialogues with the Future will, the Future going to, the Present Simple, the Future Progressive or the Future Perfect of the verbs in brackets.</h3>
-    
-    <div class="inner">
-  <form id="beTestForm" class="text">
-  A: 
-(1) <input type="text" id="q1" name="q1"> (you / watch) the game tonight?<br>
-B: Of course. Do you think the Allstars 
-(2) <input type="text" id="q2" name="q2"> (win)?<br>
-A: No way! I think it 
-(3) <input type="text" id="q3" name="q3"> (be) an exciting game, though.<br>
-B: Me too. Listen, Jack and I 
-(4) <input type="text" id="q4" name="q4"> (watch) the game at Sportcafe. It has a huge screen. Do you want to come?<br>
-A: Yeah, it sounds like fun.<br>
-B: OK. I 
-(5) <input type="text" id="q5" name="q5"> (call) Jack now and tell him you're coming.<br>
-A: I have to wake up at 7:00 tomorrow because I have an early meeting.<br>
-B: Well, by the time you 
-(6) <input type="text" id="q6" name="q6"> (wake up), I 
-(7) <input type="text" id="q7" name="q7"> (leave).<br>
-A: Where are you going?<br>
-B: To Perth. I have a lot of meetings and I 
-(8) <input type="text" id="q8" name="q8">  (work) all day. I 
-(9) <input type="text" id="q9" name="q9"> (give) you a call as soon as I
-(10) <input type="text" id="q10" name="q10"> (get) there.<br>
-A: OK. 
-(11) <input type="text" id="q11" name="q11"> (you / be) at home when I 
-(12) <input type="text" id="q12" name="q12">  (get) back in the evening?<br>
-B: No, I 
-(13) <input type="text" id="q13" name="q13">  (be) late I'm afraid.
-	  </form>
-      
-    <div style="display: flex; justify-content: center; align-items: center;">
-    <button type="button" id="submitBtn" class="button-30">Check</button>
-</div>
+<title>p-b1-m4l1</title>
 
-<div id="results" style="display: none; justify-content: center; align-items: center;">
-    <h2 class="header">Results</h2>
-    <div id="score" class="inner" style="padding: 10px; text-align: center"></div>
-  
-    <div style="display: flex; justify-content: center; align-items: center;">
-        <button type="button" id="redoBtn">Try again</button>
-    </div>
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Future tenses</h1></div>
+</header>
+
+<h3>Complete the dialogues with the Future will, the Future going to, the Present Simple, the Future Progressive or the Future Perfect of the verbs in brackets.</h3>
+    
+<table style="border-spacing: 0 0.4em">
+<tr><th>A:</th><td> (1) <input type="text" id="q1" class="changeDiv"> (you / watch) the game tonight?</td></tr>
+<tr><th>B:</th><td> Of course. Do you think the Allstars 
+(2) <input type="text" id="q2" class="changeDiv"> (win)?</td></tr>
+<tr><th>A:</th><td> No way! I think it 
+(3) <input type="text" id="q3" class="changeDiv"> (be) an exciting game, though.</td></tr>
+<tr><th>B:</th><td> Me too. Listen, Jack and I 
+(4) <input type="text" id="q4" class="changeDiv"> (watch) the game at Sportcafe. It has a huge screen. Do you want to come?<br>
+<tr><th>A:</th><td> Yeah, it sounds like fun.</td></tr>
+<tr><th>B:</th><td> OK. I 
+(5) <input type="text" id="q5" class="changeDiv"> (call) Jack now and tell him you're coming.</td></tr>
+<tr><th>A:</th><td> I have to wake up at 7:00 tomorrow because I have an early meeting.</td></tr>
+<tr><th>B:</th><td> Well, by the time you 
+(6) <input type="text" id="q6" class="changeDiv"> (wake up), I 
+(7) <input type="text" id="q7" class="changeDiv"> (leave).</td></tr>
+<tr><th>A:</th><td> Where are you going?</td></tr>
+<tr><th>B:</th><td> To Perth. I have a lot of meetings and I 
+(8) <input type="text" id="q8" class="changeDiv">  (work) all day. I 
+(9) <input type="text" id="q9" class="changeDiv"> (give) you a call as soon as I
+(10) <input type="text" id="q10" class="changeDiv"> (get) there.</td></tr>
+<tr><th>A:</th><td> OK. 
+(11) <input type="text" id="q11" class="changeDiv"> (you / be) at home when I 
+(12) <input type="text" id="q12" class="changeDiv">  (get) back in the evening?</td></tr>
+<tr><th>B:</th><td> No, I 
+(13) <input type="text" id="q13" class="changeDiv">  (be) late I'm afraid.</td></tr>
+</table>
 </div>
 	<script>
-			const correctAnswers = [
-  ["are you going to watch"],
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["are you going to watch"],
   ["will win"],
   ["will be"],
   ["are going to watch"],
@@ -68,67 +67,23 @@ B: No, I
   ["Will you be", "Are you going to be"],
   ["get"],
   ["am going to be"]
-];
+    ];
 
-const form = document.getElementById("beTestForm");
-const submitBtn = document.getElementById("submitBtn");
-const redoBtn = document.getElementById("redoBtn");
-const resultsDiv = document.getElementById("results");
-const scoreDiv = document.getElementById("score");
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
 
-submitBtn.addEventListener("click", () => {
-    const userAnswers = [];
-    let score = 0;
-
-    for (let i = 0; i < correctAnswers.length; i++) {
-        const userAnswer = document.getElementById(`q${i + 1}`).value.trim().toLowerCase().replace(/\s+/g, '');
-        const correctAnswerArray = correctAnswers[i].map(answer => answer.toLowerCase().replace(/\s+/g, ''));
-
-        userAnswers.push(userAnswer);
-        const input = document.getElementById(`q${i + 1}`);
-
-        if (correctAnswerArray.includes(userAnswer)) { // Check if user's answer is in the correct answers array
-            score++;
-            input.classList.remove("incorrect");
-            input.classList.add("correct");
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
         } else {
-            input.classList.remove("correct");
-            input.classList.add("incorrect");
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
         }
-    }
+      });
+    });
+  });
+  
 
-    displayResults(userAnswers, score);
-});
-
-        redoBtn.addEventListener("click", () => {
-            form.reset();
-            resultsDiv.style.display = "none";
-            submitBtn.disabled = false;
-            
-            const inputs = document.querySelectorAll("input[type='text']");
-            inputs.forEach(input => {
-                input.classList.remove("correct", "incorrect");
-            });
-
-            const questionDivs = document.querySelectorAll(".question label");
-            questionDivs.forEach(label => {
-                label.innerHTML = label.textContent.split(" Your")[0];
-            });
-        });
-
-        function displayResults(userAnswers, score) {
-            resultsDiv.style.display = "block";
-            scoreDiv.innerHTML = `You scored ${score} out of ${correctAnswers.length}.`;
-
-            const questionDivs = document.querySelectorAll(".question");
-
-            for (let i = 0; i < questionDivs.length; i++) {
-                const label = questionDivs[i].querySelector("label");
-                const userAnswer = userAnswers[i] || "(no answer)";
-                      }
-
-            submitBtn.disabled = true;
-        }
     </script>
 	
 	</form>
