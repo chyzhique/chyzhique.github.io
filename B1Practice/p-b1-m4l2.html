@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    
+<title>p-b1-m4l2</title>
+
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Present vs Past</h1></div>
+</header>
+
+<h3>Complete the dialogues with the correct form of the verbs in brackets.</h3>
+
+<table style= "border-spacing: 0 0.4em"> 
+<tr><th colspan="2">1.</th></tr><tr><th>
+Paul </th><td> Hi, Jack. What are you up to?</td></tr><tr><th>
+Jack  </th><td> I'm just doing some research on the Internet about climate change. Did you know that if the planet 
+(1) <input type="text" id="q1" class="changeDiv"> (continue) to get warmer, the polar ice caps will melt?</td></tr><tr><th>
+Paul </th><td>  I guess that's obvious. After all, if you 
+(2) <input type="text" id="q2" class="changeDiv"> (heat) ice, it 
+(3) <input type="text" id="q3" class="changeDiv">  (melt).</td></tr><tr><th>
+Jack </th><td>  I bet you don't know what causes climate change.</td></tr><tr><th>
+Paul </th><td>  I know that burning fossil fuels increases the planet's temperature.</td></tr><tr><th>
+Jack </th><td>  That's right, and if we 
+(4) <input type="text" id="q4" class="changeDiv"> (not use) alternative sources of energy more, we 
+(5) <input type="text" id="q5" class="changeDiv">  (destroy) the planet.</td></tr><tr><th>
+Paul </th><td>   Yes, but they're more expensive, aren't they?</td></tr><tr><th>
+Jack </th><td>  Well, if I 
+(6) <input type="text" id="q6" class="changeDiv"> (can), I 
+(7) <input type="text" id="q7" class="changeDiv"> (make) fossil fuels more expensive so that people wouldn't use them. 
+</td></tr>
+	<tr><th colspan="2">2.</th></tr><tr><th>
+Charlotte </th><td> Hi, Michael. I like your new car.</td></tr><tr><th>
+Michael </th><td> Thanks, but it's not actually mine. I'm taking part in an experiment. This car runs on electricity rather than petrol, so it doesn't cause pollution. Scientists asked a number of volunteers to try the cars out for a month.</td></tr><tr><td style=" padding: 10px">
+Charlotte </th><td>That's interesting.</td></tr><tr><td>
+Michael </th><td>Yes, there are some disadvantages, though. If the battery 
+(8) <input type="text" id="q8" class="changeDiv"> (run) out, then the car 
+(9) <input type="text" id="q9" class="changeDiv"> (stop).</td></tr><tr><th>
+Charlotte </th><td> That's a bit risky. Imagine what would happen if the car 
+(10) <input type="text" id="q10" class="changeDiv"> (stop) suddenly in the middle of the road!</td></tr><tr><th>
+Michael </th><td> It doesn't work like that. The car gives a warning signal. So, you have time to go and recharge the battery. If this experiment 
+(11) <input type="text" id="q11" class="changeDiv"> (be) successful, these cars 
+(12) <input type="text" id="q12" class="changeDiv"> (be) on the market in two years' time.
+</td></tr></table>
+
+    </div>
+</div>
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["continues"], 
+ 	 ["heat"], 
+ 	 ["melts"], 
+        ["don't use"], 
+        ["'ll destroy", "will destroy"], 
+        ["could"], 
+        ["would make"], 
+        ["runs out"], 
+        ["stops", "will stop"], 
+        ["stopped"], 
+        ["is"],
+        ["will be"]
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+  
+    </script>
+	
+	</form>
+	</div>
+	</body>
