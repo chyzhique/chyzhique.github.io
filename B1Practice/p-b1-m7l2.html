@@ -8,7 +8,9 @@
     <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
-    
+  <style>
+    input{width: 60%}
+    </style>
 <title>p-b1-m7l2</title>
 
 </head>
@@ -23,24 +25,23 @@
 <h3>Complete the Sentences</h3>
 
 <ol>
-<li>1. Julie will not buy a wedding dress. She will ask a famous designer to make it.</label><br>
-Julia <textarea id="q1" name="q1" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
- by a famous designer
+<li>Julie will not buy a wedding dress. She will ask a famous designer to make it.<br>
+Julia <input type="text" id="q1" class="changeDiv"> by a famous designer
     
-<li>2. Mrs Morrison is at the hairdresser's. They are dyeing her hair.</label>
-Mrs Morrison <textarea id="q2" name="q2" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+<li>Mrs Morrison is at the hairdresser's. They are dyeing her hair.<br>
+Mrs Morrison <input type="text" id="q2" class="changeDiv"> 
     
-<li>3. Linda asked a catering company to prepare all the food.</label>
-Linda <textarea id="q3" name="q3" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+<li>Linda asked a catering company to prepare all the food.<br>
+Linda <input type="text" id="q3" class="changeDiv"> by a catering company
     
-<li>4. Didn't the mechanic service your car yesterday?</label>
-Didn't you <textarea id="q4" name="q4" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+<li>Didn't the mechanic service your car yesterday?<br>
+Didn't you <input type="text" id="q4" class="changeDiv"> 
     
-<li>5. Mr Wilson told his secretary to type and send all the letters.</label><br>
-Mr Wilson <textarea id="q5" name="q5" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+<li>Mr Wilson told his secretary to type and send all the letters.<br>
+Mr Wilson <input type="text" id="q5" class="changeDiv"> 
     
-<li>6. Before the party, I am going to ask the cleaning lady to clean the house.</label>
-I <textarea id="q6" name="q6" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+<li>Before the party, I am going to ask the cleaning lady to clean the house.<br>
+I <input type="text" id="q6" class="changeDiv"> 
     
       </ol>
   </div>
@@ -51,9 +52,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputFields = document.querySelectorAll('input, textarea');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
-    ["will have a wedding dress made", "will have a wedding dress made"], 
+    ["will have a wedding dress made", "will have her wedding dress made"], 
     ["is having her hair dyed"], 
-    ["had all the food prepared", "had all the food prepared by a catering company"], 
+    ["had all the food prepared"], 
     ["have your car serviced yesterday"], 
     ["had all the letters typed and sent"], 
     ["am going to have the house cleaned before the party"]
