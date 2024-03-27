@@ -8,6 +8,35 @@
     <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
     <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
 <title>v-b1-m4l4</title>
+  <style>
+    .popup-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 800px; /* Maximum width of the popup */
+  background-color: silver;
+  border: 1px solid #ccc;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 9999;
+}
+
+.popup-content {
+  padding: 20px;
+}
+
+.popup-content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 80vh; /* Maximum height of the image */
+}
+
+.popup-content button {
+  margin-top: 10px;
+}
+</style>
 </head>
     
   <body> 
@@ -19,12 +48,38 @@
 </header>
 
 <h3>How many words can you add to each group?</h3>
-
-<img src="https://www.dropbox.com/scl/fi/5ixyx8txg2jepey96mmgd/v-b1-m4l4-1_png.png?rlkey=da73smnq4aeih86ua296hsrh8&raw=1">
-<img src="https://www.dropbox.com/scl/fi/r4bz6ab8g5x0yvexb3vpo/v-b1-m4l4-2_png.png?rlkey=jrn2zbbkrmnkr3rt4kccs7qes&raw=1">
-<img src="https://www.dropbox.com/scl/fi/pmt3frmkh91wy0s2on3zf/v-b1-m4l4-3_png.png?rlkey=ykzef8e7lv2l9wjreosh3mn51&raw=1">
-<img src="https://www.dropbox.com/scl/fi/qvvl0n5mfi8qyuj4yurtq/v-b1-m4l4-4_png.png?rlkey=1vrzuegr9v5m8xn2fslwu2ew9&raw=1">
- 
+<div style="display:grid; grid-template-columns: 1fr 1fr">
+<img src="https://www.dropbox.com/scl/fi/5ixyx8txg2jepey96mmgd/v-b1-m4l4-1_png.png?rlkey=da73smnq4aeih86ua296hsrh8&raw=1" onclick="openFullImage('https://www.dropbox.com/scl/fi/5ixyx8txg2jepey96mmgd/v-b1-m4l4-1_png.png?rlkey=da73smnq4aeih86ua296hsrh8&raw=1')">
+<div id="popupContainer" class="popup-container" style="display: none;">
+  <div id="popupContent" class="popup-content">
+    <img id="fullImage" src="" alt="Full Resolution Image">
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+<img src="https://www.dropbox.com/scl/fi/r4bz6ab8g5x0yvexb3vpo/v-b1-m4l4-2_png.png?rlkey=jrn2zbbkrmnkr3rt4kccs7qes&raw=1"
+onclick="openFullImage('https://www.dropbox.com/scl/fi/r4bz6ab8g5x0yvexb3vpo/v-b1-m4l4-2_png.png?rlkey=jrn2zbbkrmnkr3rt4kccs7qes&raw=1')">
+  <div id="popupContainer" class="popup-container" style="display: none;">
+  <div id="popupContent" class="popup-content">
+    <img id="fullImage" src="" alt="Full Resolution Image">
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+<img src="https://www.dropbox.com/scl/fi/pmt3frmkh91wy0s2on3zf/v-b1-m4l4-3_png.png?rlkey=ykzef8e7lv2l9wjreosh3mn51&raw=1"
+onclick="openFullImage('https://www.dropbox.com/scl/fi/pmt3frmkh91wy0s2on3zf/v-b1-m4l4-3_png.png?rlkey=ykzef8e7lv2l9wjreosh3mn51&raw=1')">
+  <div id="popupContainer" class="popup-container" style="display: none;">
+  <div id="popupContent" class="popup-content">
+    <img id="fullImage" src="" alt="Full Resolution Image">
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+<img src="https://www.dropbox.com/scl/fi/qvvl0n5mfi8qyuj4yurtq/v-b1-m4l4-4_png.png?rlkey=1vrzuegr9v5m8xn2fslwu2ew9&raw=1"     onclick="openFullImage('https://www.dropbox.com/scl/fi/qvvl0n5mfi8qyuj4yurtq/v-b1-m4l4-4_png.png?rlkey=1vrzuegr9v5m8xn2fslwu2ew9&raw=1')">
+  <div id="popupContainer" class="popup-container" style="display: none;">
+  <div id="popupContent" class="popup-content">
+    <img id="fullImage" src="" alt="Full Resolution Image">
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+ </div>
         </div>
               <div class="bg-right">
        <header>
@@ -39,3 +94,18 @@ there may be more than one answer.</h3>
 <img src="https://www.dropbox.com/scl/fi/4w5ns03ukwgbmb7c031jx/v-b1-m4l4_6_png.png?rlkey=zcvo9our3hqrx72hb5p70kslw&raw=1">
    </div>
 </body>
+<script>
+  function openFullImage(imageUrl) {
+    // Set the source of the full-resolution image
+    document.getElementById('fullImage').src = imageUrl;
+    
+    // Show the popup container
+    document.getElementById('popupContainer').style.display = 'block';
+  }
+
+  function closePopup() {
+    // Hide the popup container
+    document.getElementById('popupContainer').style.display = 'none';
+  }
+</script>
+
