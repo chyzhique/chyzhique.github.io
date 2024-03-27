@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+
+<title>p-b1-m8l1</title>
+
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Communication</h1></div>
+</header>
+
+<h3>Complete the Dialogues</h3>
+
+      <table>
+      <tr><th colspan="2">Dialogue 1</th></tr>
+      <tr><th>A:</th><td> How did Tony do in the interview?</td></tr>
+      <tr><th>B:</th><td> Not too well. If his CV 
+      <input type="text" id="q1" class="changeDiv"> (be) more professional, he 
+      <input type="text" id="q2" class="changeDiv"> (get) the job.</td></tr>
+      <tr><th>A: &emsp; Maybe next time.</td></tr>
+      
+      <tr><th colspan="2">Dialogue 2</th></tr>
+      <tr><th>A:</th><td> It's a shame our grandmother wasn't here. If she 
+        <input type="text" id="q3" class="changeDiv"> (meet) Mark, she 
+        <input type="text" id="q4" class="changeDiv"> (love) him.</td></tr>
+      <tr><th>B:</th><td> Yes, you're right.</td></tr>
+      
+      <tr><th colspan="2">Dialogue 3</th></tr>
+      <tr><th>A:</th><td> What do you mean he disappeared into thin air?</td></tr>
+      <tr><th>B:</th><td> I know that it sounds incredible, but if you 
+      <input type="text" id="q5" class="changeDiv"> (see) it, you 
+      <input type="text" id="q6" class="changeDiv"> (believe) it.</td></tr>
+      
+      <tr><th colspan="2">Dialogue 4</th></tr>
+      <tr><th>A:</th><td> It was a bad idea to wait for the bus.</td></tr>
+      <tr><th>B:</th><td> Yes, I know. We 
+      <input type="text" id="q7" class="changeDiv"> (arrive) earlier if we 
+      <input type="text" id="q8" class="changeDiv"> (walk) home.</td></tr>
+      
+      <tr><th colspan="2">Dialogue 5</th></tr>
+      <tr><th>A:</th><td> So how did your shopping trip go?</td></tr>
+      <tr><th>B:</th><td> Well, remember that computer game I told you about that I wanted to buy last time? I went back to the shop and they had none left! I was so disappointed. If I 
+      <input type="text" id="q9" class="changeDiv"> (know) they were so popular, I 
+      <input type="text" id="q10" class="changeDiv"> (buy) it when I first saw it.</td></tr>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctAnswers = [
+    ["had been"], ["would have got"],
+    ["had met"], ["would have loved"],
+    ["saw"], ["would believe"],
+    ["would have arrived"], ["had walked"],
+    ["had known"], ["would have bought"]
+  ];
+
+  const submitBtn = document.getElementById("submitBtn");
+  const redoBtn = document.getElementById("redoBtn");
+  const resultsDiv = document.getElementById("results");
+  const scoreDiv = document.getElementById("score");
+
+  submitBtn.addEventListener("click", () => {
+    const userAnswers = [];
+    let score = 0;
+
+    for (let i = 0; i < correctAnswers.length; i++) {
+      const userInput = document.getElementById(`q${i + 1}`).value.trim();
+
+      userAnswers.push(userInput);
+      const inputField = document.getElementById(`q${i + 1}`);
+
+      if (userInput.toLowerCase() === correctAnswers[i][0].toLowerCase()) {
+        inputField.classList.remove("incorrect");
+        inputField.classList.add("correct");
+        score++;
+      } else {
+        inputField.classList.remove("correct");
+        inputField.classList.add("incorrect");
+      }
+    }
+
+    displayResults(userAnswers, score);
+  });
+
+  redoBtn.addEventListener("click", () => {
+    const inputFields = document.querySelectorAll("input[type='text']");
+    inputFields.forEach(input => {
+      input.classList.remove("correct", "incorrect");
+      input.value = "";
+      input.style.backgroundColor = "white";
+    });
+
+    resultsDiv.style.display = "none";
+    submitBtn.disabled = false;
+  });
+
+  function displayResults(userAnswers, score) {
+    resultsDiv.style.display = "block";
+    scoreDiv.textContent = `You scored ${score} out of ${correctAnswers.length}.`;
+
+    submitBtn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
