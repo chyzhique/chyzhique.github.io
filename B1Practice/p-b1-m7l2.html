@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    
+<title>p-b1-m7l2</title>
+
+</head>
+    
+  <body> 
+    <div class="outer">
+<header>
+   <h4>practice</h4>
+<div><h1>Paraphrasing</h1></div>
+</header>
+
+<h3>Complete the Sentences</h3>
+
+<ol>
+<li>1. Julie will not buy a wedding dress. She will ask a famous designer to make it.</label><br>
+      <textarea id="q1" name="q1" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+    <!-- Question 2 -->
+    
+<li>2. Mrs Morrison is at the hairdresser's. They are dyeing her hair.</label>
+      <textarea id="q2" name="q2" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+    <!-- Question 3 -->
+    
+<li>3. Linda asked a catering company to prepare all the food.</label>
+      <textarea id="q3" name="q3" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 4 -->
+    
+<li>4. Didn't the mechanic service your car yesterday?</label>
+      <textarea id="q4" name="q4" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 5 -->
+    
+<li>5. Mr Wilson told his secretary to type and send all the letters.</label><br>
+      <textarea id="q5" name="q5" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    <br>
+      <hr>
+
+    <!-- Question 6 -->
+    
+<li>6. Before the party, I am going to ask the cleaning lady to clean the house.</label>
+      <textarea id="q6" name="q6" rows="2" style="width: 400px; background: transparent; border: none; border-bottom: 1px solid #000; padding: 5px; outline: none;"></textarea>
+    
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input, textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["will have a wedding dress made", "will have a wedding dress made by a famous designer"], 
+    ["is having her hair dyed"], 
+    ["had all the food prepared", "had all the food prepared by a catering company"], 
+    ["have your car serviced yesterday"], 
+    ["had all the letters typed and sent"], 
+    ["am going to have the house cleaned before the party"]
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
