@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Bevan&Playfair+Display&family=Playfair+Display+SC&Playfair+Display+SC:wght@900&&family=Single+Day&display=swap');
 
 body {
-background-color: white;
-margin: 2em;
-font-family: "Roboto", sans-serif;
-        }
+  background: #eeeeee;
+  margin: 2em;
+  font-family: "Roboto", sans-serif;
+}
 
 .hd {
 font-family: "Playfair Display", serif;
