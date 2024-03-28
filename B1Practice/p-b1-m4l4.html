@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/practice.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+
+<title>p-b1-m4l4</title>
+
+</head>
+    
+  <body> 
+    <div class="bg">
+      <div class="bg-left">
+<header>
+   <h4>practice</h4>
+<div><h1>Bloody articles</h1></div>
+</header>
+
+<h3>A. Complete the texts with a(n), the, some or - .</h3>
+<div class="samples">
+Have you ever seen 
+(1) <input type="text" id="q1" class="changeDiv"> Bengal tiger? I saw one up close when I was in 
+(2) <input type="text" id="q2" class="changeDiv"> India last year, and I believe these tigers are 
+(3) <input type="text" id="q3" class="changeDiv">  most magnificent animals in the world. They have two habitats; 
+(4) <input type="text" id="q4" class="changeDiv"> Bengal tigers live near the Bay of Bengal and others live in 
+(5) <input type="text" id="q5" class="changeDiv"> foothills of 
+(6) <input type="text" id="q6" class="changeDiv"> Himalayas. 
+(7) <input type="text" id="q7" class="changeDiv"> Bengal tiger is 
+(8) <input type="text" id="q8" class="changeDiv">  endangered species because people hunt it, and its habitat has been significantly reduced over 
+(9) <input type="text" id="q9" class="changeDiv">  last 100 years.
+<br><br>
+(10) <input type="text" id="q10" class="changeDiv"> mountain gorilla of 
+(11) <input type="text" id="q11" class="changeDiv"> Africa lives in 
+(12) <input type="text" id="q12" class="changeDiv"> mountains of 
+(13) <input type="text" id="q13" class="changeDiv"> Central Africa. These gorillas are one of 
+(14) <input type="text" id="q14" class="changeDiv"> top most endangered species on 
+(15) <input type="text" id="q15" class="changeDiv"> Earth. 
+(16) <input type="text" id="q16" class="changeDiv"> mountain gorillas are threatened by 
+(17) <input type="text" id="q17" class="changeDiv"> destruction of their habitats, 
+(18) <input type="text" id="q18" class="changeDiv"> hunting and diseases brought by tourists who come to see them. Although hunting 
+(19) <input type="text" id="q19" class="changeDiv">  gorillas is now illegal, there are still people who hunt them.
+    </div>
+
+<h3>B. Read the dialogue and write the correct answer.</h3>
+ <table> 
+<tr><th>
+A:</th><td>  Hi, John! Do you have
+(1) <input type="text" id="q20" class="changeDiv" placeholder="any / many"> spare time this weekend?</td></tr><tr><th>
+B:</th><td>  I don't have
+(2) <input type="text" id="q21" class="changeDiv" placeholder="much / many"> time because I've got
+(3) <input type="text" id="q22" class="changeDiv" placeholder="lots of / a lot"> work to do over the weekend. Why are you asking?</td></tr><tr><th>
+A:</th><td>
+(4) <input type="text" id="q23" class="changeDiv" placeholder="Any / Some"> of the students from my class are going to help replant trees in the park that was damaged by the fire</td></tr><tr><th>
+B:</th><td>  Oh! That sounds like fun. When are they going?</td></tr><tr><th>
+A:</th><td>  Sunday; you can come any time between 10am and 4pm. Jenny told me that 
+(5) <input type="text" id="q24" class="changeDiv" placeholder="a lot of / how many"> people are going to take part.</td></tr><tr><th>
+B:</th><td>  I might try to come for 
+(6) <input type="text" id="q25" class="changeDiv" placeholder="a few / a little"> hours if I finish my work.</td></tr><tr><th>
+    A:</th><td>  Great!</td></tr>  
+    </table>
+        
+          </div>
+      <div class="bg-right">
+<header>
+   <h4>practice</h4>
+<div><h1>REAL TALK</h1></div>
+</header>
+<h3>Read the text and complete the blanks with the correct form of the words in capitals.</h3>
+        <div class="samples">
+<h2>TSUNAMIS</h2>
+The word tsunami comes from the Japanese word for tidal wave. These huge waves are caused by underwater
+earthquakes or volcanic (1)
+<input type="text" id="q26" class="changeDiv" placeholder="ERUPT">. Most
+tsunamis occur in the Pacific Ocean. There is no doubt that tsunamis cause great (2)
+<input type="text" id="q27" class="changeDiv" placeholder="DESTROY">
+when the waves reach the shore. However, most (3)
+<input type="text" id="q28" class="changeDiv" placeholder="DIE">          
+that occur after a tsunami are because of people's lack of (4)
+<input type="text" id="q29" class="changeDiv" placeholder="PREPARE">          
+People should escape to higher ground the minute they are warned of a possible tsunami. In the past, it was (5)
+          <input type="text" id="q30" class="changeDiv" placeholder="POSSIBLE">
+to inform people in time, but today (6)
+          <input type="text" id="q31" class="changeDiv" placeholder="SCIENCE">
+have developed tsunami warning systems. Various instruments determine the (7)
+          <input type="text" id="q32" class="changeDiv" placeholder="LOCATE">
+of where an underwater earthquake has occurred and whether a tsunami will follow.
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input, textarea');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    ["a"], ["-"], ["the"], ["-"], ["the"], ["the"], ["the"], ["an"], ["the"], ["the"], ["-"], ["the"], ["-"], ["the"], ["-"], ["-"], ["the"], ["-"], ["-", "some"],
+      
+    ["any"], ["much"], ["lots of"], ["some"], ["a lot of"], ["a few"],
+      
+    "eruptions",  "destruction",  "deaths",  "preparation",  "impossible",  "scientists",  "location"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+  
+</script>
+
+</body>
+</html>
