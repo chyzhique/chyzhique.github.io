@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
-  </style>
+  <script src="https://chyzhique.github.io/script/button-select-drop.js" defer> </script>
+  <title>r-ab-b1-m1l1.html</title>
 </head>
 
 <body>
@@ -52,27 +53,6 @@
 </ol>
 
 
-<script>
-  function checkAnswer(button) {
-    // Reset all buttons to default state
-    let buttons = button.parentElement.getElementsByTagName('button');
-    for (let i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove('correct', 'incorrect');
-    }
-
-    // Check if the selected answer is correct
-    let correctAnswer = button.parentElement.getAttribute('data-correct');
-    if (button.id === correctAnswer) {
-      button.classList.add('correct');
-    } else {
-      button.classList.add('incorrect');
-    }
-  }
-
-  function toggleCrossed(element) {
-    element.classList.toggle("crossed");
-  }
-</script>
 
 </body>
 </html>
