@@ -6,9 +6,16 @@
       vertical-align: top; /* Ensure content aligns to the top */
     }
 
+    ul, ol{
+  padding-left:0.5em
+}
  li {
     cursor: pointer;
     margin-bottom:1em;
+  background-color: #FDFFAB; 
+  padding:0.5em;
+  border: 1px solid silver; 
+  border-radius: 8px
   }
 
   li.crossed {
