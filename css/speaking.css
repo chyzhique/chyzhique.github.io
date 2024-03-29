@@ -43,7 +43,8 @@ text-align: center;
  display: grid;
  grid-template-columns: 1fr 1fr;
  box-shadow: 0 5px 10px hsla(0, 0, 50%, 0.5);
-  column-gap: 0.5rem
+  column-gap: 0.5rem;
+  margin-top:0.3em
 }
 .sampleA {
         margin: 0 0.5rem 0.5rem 0;
