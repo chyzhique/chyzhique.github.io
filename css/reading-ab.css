@@ -36,10 +36,9 @@
   color: #1A202C;
   display: inline-flex;
   font-family: Inter, sans-serif;
-  font-size: 1rem;
-  padding: 0.8rem;
+  padding: 0.3rem;
     min-width: 5em;
-    margin:7px;
+    margin:4px;
   justify-content: center;
   overflow-wrap: break-word;
   text-decoration: none;
@@ -73,3 +72,7 @@
       margin-bot:0.4rem;
     
     }
+::marker{
+  color:red;
+  font-weight:bold;
+}
