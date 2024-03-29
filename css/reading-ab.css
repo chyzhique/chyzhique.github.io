@@ -3,13 +3,12 @@
     body {
       font-family: merriweather;
       margin: 1rem;
-      font-size: 1rem;
       vertical-align: top; /* Ensure content aligns to the top */
     }
 
  li {
     cursor: pointer;
-    margin-bottom:1.5em;
+    margin-bottom:1em;
   }
 
   li.crossed {
