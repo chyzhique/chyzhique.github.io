@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/wordlist.css">
+    <title>wl-b1-m1l5</title>
+</head>
+<body>
+  
+<div class="progress-bar" id="progress-bar">
+    <div class="progress" id="progress">Progress</div>
+</div>
+  
+<div class="quiz-container">
+    <div class="question" id="question">Loading...</div>
+    <div class="options">
+        <div class="option" onclick="checkAnswer(0)" id="option0">Option 1</div>
+        <div class="option" onclick="checkAnswer(1)" id="option1">Option 2</div>
+        <div class="option" onclick="checkAnswer(2)" id="option2">Option 3</div>
+    </div>
+</div>
+
+<div class="result-window" id="result-window">
+    <div class="result-content">
+        <h2>Quiz Result</h2>
+        <p id="score"></p>
+        <p id="incorrect-answers"></p>
+        <button onclick="tryAgain()">Try Again</button>
+    </div>
+    </div>
+</div>
+
+<script>
+const vocabulary = [
+    { word: "a couple of", partOfSpeech: "phrase", definition: "a small number; a few" },
+    { word: "access", partOfSpeech: "n", definition: "the ability or right to enter, use, or obtain something" },
+    { word: "alone", partOfSpeech: "adv", definition: "by oneself; without others" },
+    { word: "apply", partOfSpeech: "v", definition: "to make a formal request or put oneself forward for a job, opportunity, etc." },
+    { word: "block", partOfSpeech: "n", definition: "a solid mass or group that obstructs or prevents movement or progress" },
+    { word: "crowded", partOfSpeech: "adj", definition: "filled with many people or things; having little space" },
+    { word: "exhausting", partOfSpeech: "adj", definition: "extremely tiring or draining of energy" },
+    { word: "expenses", partOfSpeech: "n", definition: "costs or expenditures, especially related to money spent on various items or activities" },
+    { word: "express", partOfSpeech: "v", definition: "to convey or communicate thoughts, feelings, or information" },
+    { word: "fabulous", partOfSpeech: "adj", definition: "extremely good; marvelous" },
+    { word: "facilities", partOfSpeech: "n", definition: "buildings, equipment, or services that are provided for a particular purpose" },
+    { word: "feel like", partOfSpeech: "phrase", definition: "to have a desire for or be in the mood for something" },
+    { word: "get together", partOfSpeech: "phrase", definition: "to meet or gather with others" },
+    { word: "hear from", partOfSpeech: "phrase", definition: "to receive communication or news from someone" },
+    { word: "hectic", partOfSpeech: "adj", definition: "characterized by intense activity, confusion, or disorder" },
+    { word: "incredibly", partOfSpeech: "adv", definition: "to an extraordinary degree; unbelievably" },
+    { word: "independent", partOfSpeech: "adj", definition: "self-reliant; not dependent on others" },
+    { word: "isolated", partOfSpeech: "adj", definition: "set apart from others; remote or secluded" },
+    { word: "keep in touch", partOfSpeech: "phrase", definition: "to maintain communication with someone" },
+    { word: "keep up with", partOfSpeech: "phrase", definition: "to stay at the same level or pace as something; to not fall behind" },
+    { word: "lack", partOfSpeech: "n", definition: "a shortage or absence of something" },
+    { word: "lead", partOfSpeech: "v", definition: "to guide or direct a group or activity; to be in charge" },
+    { word: "lifestyle", partOfSpeech: "n", definition: "the way in which a person lives, including their habits, interests, and activities" },
+    { word: "lonely", partOfSpeech: "adj", definition: "feeling sad or unhappy due to a lack of companionship" },
+    { word: "monotonous", partOfSpeech: "adj", definition: "dull, repetitive, and lacking in variety or interest" },
+    { word: "nearby", partOfSpeech: "adj", definition: "situated close to or not far away" },
+    { word: "on the corner", partOfSpeech: "phrase", definition: "at the intersection of two streets or roads" },
+    { word: "on your left", partOfSpeech: "phrase", definition: "indicating a location or direction to the left of the speaker" },
+    { word: "on your right", partOfSpeech: "phrase", definition: "indicating a location or direction to the right of the speaker" },
+    { word: "pick up", partOfSpeech: "phrasal verb", definition: "to collect or acquire something; to improve or increase" },
+    { word: "president", partOfSpeech: "n", definition: "the head of a country or organization" },
+    { word: "quite", partOfSpeech: "adv", definition: "to a certain degree; fairly or moderately" },
+    { word: "relaxing", partOfSpeech: "adj", definition: "providing a sense of calm and comfort; soothing" },
+    { word: "routine", partOfSpeech: "n", definition: "a regular pattern of behavior or activities" },
+    { word: "schedule", partOfSpeech: "n", definition: "a plan or list of activities, events, or tasks with their designated times" },
+    { word: "similar", partOfSpeech: "adj", definition: "resembling or having qualities in common with something else" },
+    { word: "socialise", partOfSpeech: "v", definition: "to interact and engage with others in a social setting" },
+    { word: "trendy", partOfSpeech: "adj", definition: "fashionable or up-to-date in style or influence" },
+    { word: "walk past", partOfSpeech: "phrase", definition: "to walk by or go past something or someone" },
+    { word: "within walking distance", partOfSpeech: "phrase", definition: "located at a distance that can be covered on foot" }
+];
+
+
+     let currentQuestionIndex = 0;
+    let score = 0;
+    let incorrectAnswers = [];
+
+    function loadQuestion() {
+        const currentQuestion = vocabulary[currentQuestionIndex];
+        const questionElement = document.getElementById('question');
+        questionElement.textContent = currentQuestion.word;
+
+        const options = [];
+        options.push(currentQuestion.definition);
+
+        // Generate two random incorrect options
+        while (options.length < 3) {
+            const randomIndex = Math.floor(Math.random() * vocabulary.length);
+            const randomDefinition = vocabulary[randomIndex].definition;
+            if (!options.includes(randomDefinition)) {
+                options.push(randomDefinition);
+            }
+        }
+
+        // Shuffle the options array
+        options.sort(() => Math.random() - 0.5);
+
+        // Display options
+        for (let i = 0; i < 3; i++) {
+            const optionElement = document.getElementById(`option${i}`);
+            optionElement.textContent = options[i];
+        }
+    }
+
+    function checkAnswer(optionIndex) {
+        const currentQuestion = vocabulary[currentQuestionIndex];
+        const selectedOption = document.getElementById(`option${optionIndex}`).textContent;
+        if (selectedOption === currentQuestion.definition) {
+            score++;
+            document.getElementById(`option${optionIndex}`).classList.add('correct');
+        } else {
+            document.getElementById(`option${optionIndex}`).classList.add('incorrect');
+            incorrectAnswers.push(currentQuestion);
+        }
+        setTimeout(() => {
+            document.getElementById(`option${optionIndex}`).classList.remove('correct', 'incorrect');
+            currentQuestionIndex++;
+            if (currentQuestionIndex < vocabulary.length) {
+                loadQuestion();
+            } else {
+                showResult();
+            }
+        }, 1000);
+        updateProgress();
+    }
+
+    function updateProgress() {
+        const progress = (currentQuestionIndex / vocabulary.length) * 100;
+        document.getElementById('progress').textContent = `${progress.toFixed(0)}`;
+        document.getElementById('progress').style.width = `${progress}%`;
+    }
+
+    function showResult() {
+        document.getElementById('result-window').style.display = 'block';
+        document.getElementById('score').textContent = `Score: ${score}/${vocabulary.length}`;
+        let incorrectWords = "Incorrectly answered words:<br>";
+        for (const word of incorrectAnswers) {
+            incorrectWords += `${word.word}: ${word.definition}<br>`;
+        }
+        document.getElementById('incorrect-answers').innerHTML = incorrectWords;
+    }
+
+    function tryAgain() {
+        currentQuestionIndex = 0;
+        score = 0;
+        incorrectAnswers = [];
+        loadQuestion();
+        document.getElementById('result-window').style.display = 'none';
+        updateProgress();
+    }
+
+    function retryIncorrect() {
+        vocabulary = incorrectAnswers;
+        currentQuestionIndex = 0;
+        score = 0;
+        loadQuestion();
+        document.getElementById('result-window').style.display = 'none';
+        updateProgress();
+    }
+
+    // Start the quiz
+    loadQuestion();
+</script>
+
+</body>
+</html>
