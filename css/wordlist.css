@@ -1,0 +1,94 @@
+body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+          background-color: #EAD196
+        }
+        .quiz-container {
+            margin-top: 50px;
+        }
+        .question {
+            font-size: 24px;
+            margin-bottom: 20px;
+          font-weight:bold
+        }
+        .options {
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .option {
+            margin: 1rem 1rem;
+            padding: 10px 20px;
+            background-color: #F5F7F8;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: white;
+        }
+      .option.correct:hover {
+    background-color: #45FFCA;
+}
+      .option.incorrect:hover {
+    background-color: #FF6969;
+        color:white
+}
+ 
+.correct::after {
+    content: '\2714';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    color: green;
+}
+        .correct {
+        background-color: #45FFCA;
+        }
+        .incorrect {
+        background-color: #FF6969;
+          color:white
+        }
+        .result-window {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+        }
+        .result-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+        }
+      mark{
+        border-radius: 7px;
+background: #dee137;
+        padding: 0.3rem;
+        font-weight:bold
+      }
+      li{
+        margin-bottom:0.4rem
+      }
+    .progress-bar {
+	box-sizing: border-box;
+	border: solid #242b35;
+	width: 100%;
+	border-radius: 2rem;
+	background: linear-gradient(#191c23, #2d3341);
+      }
+.progress {
+    height: 30px;
+    background-color: #FBA834;
+    border-radius: 2rem;
+    text-align: center;
+    line-height: 30px;
+    color: #FBA834; /* Changed color to white for better visibility */
+    transition: width 0.5s ease-in-out;
+}
