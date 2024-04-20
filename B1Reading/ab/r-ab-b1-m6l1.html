@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+  <title>r-ab-b1-m6l1</title>
+    <style>
+    .underlined{
+       text-decoration: line-through;
+    }
+    </style>
+</head>
+
+<body>
+
+<h2>A. Read the text quickly without paying any attention to the missing sentences and answer the following question.</h2>
+  <div data-correct="b">
+    <button onclick="checkAnswer(this)" id="a">a. to discuss the advantages and disadvantages of the bicycle tour</button>
+    <button onclick="checkAnswer(this)" id="b">b. to give some information about the bicycle tour and persuade the readers to go on it</button>
+    <button onclick="checkAnswer(this)" id="c">c. to give information about the most important sights in the Netherlands and Belgium</button>
+  </div>
+
+  <h2>C. Five sentences have been removed from the text. Choose from the sentences A-F the one which best fits each gap 1-5. There is one extra sentence which you do not need to use.</h2>
+  <ol type="A">
+    <li id="sentence0">The route begins in Amsterdam, where cyclists have the opportunity to explore the city by riding around its famous canals.</li>
+    <li id="sentence1">However, the route is easy, and there are frequent stops at local attractions.</li>
+    <li id="sentence2">Many cyclists take pictures in front of the church with their bikes.</li>
+    <li id="sentence3">Here, cyclists have an entire day to explore the city with their guide.</li>
+    <li id="sentence4">Cheap flights to Amsterdam can be found if you book in advance.</li>
+  </ol>
+
+  
+<script>
+    // Get all the paragraph elements
+    const sentences = document.querySelectorAll('li');
+
+    // Add onclick event listener to each paragraph
+    sentences.forEach(sentence => {
+        sentence.onclick = function() {
+            // Toggle the 'underlined' class for the clicked sentence
+            sentence.classList.toggle('underlined');
+        };
+    });
+</script>
+</body>
+
+</html>
