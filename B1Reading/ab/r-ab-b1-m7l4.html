@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading-ab.css">
+  <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+  <title>r-ab-b1-m7l4</title>
+   <style>
+    .underlined{
+       text-decoration: line-through;
+    }
+    </style>
+</head>
+
+<body>
+
+  <h2>A. Read the text quickly without paying any attention to the missing sentences and answer the question below.</h2>
+  <div data-correct="b">
+    <button onclick="checkAnswer(this)" id="a">a. to encourage readers to visit some of London's famous sights</button>
+    <button onclick="checkAnswer(this)" id="b">b. to inform readers about various high-tech restaurants in London</button>
+    <button onclick="checkAnswer(this)" id="c">c. to inform readers about the quality of the food served in high-tech restaurants</button>
+    <button onclick="checkAnswer(this)" id="d">d. to discourage readers from visiting high-tech restaurants</button>
+  </div>
+
+  <h2>B. Six sentences have been removed from the text. Choose from the sentences the one which best fits each gap (1-6).</h2>
+  <ol>
+    <li id="sentence0">When I walked into the restaurant, I was given a tray and a chip card, but I had no idea what to do next!</li>
+    <li id="sentence1">On the next night, a friend of mine suggested that we visit her favourite high-tech restaurant.</li>
+    <li id="sentence2">Once I'd paid for my meal, I collected it and made my way to the dining area on the second floor.</li>
+    <li id="sentence3">I was already used to high-tech dining so I was not impressed.</li>
+    <li id="sentence4">The touch screen tabletop also allowed us to change virtual tablecloths and even play games!</li>
+    <li id="sentence5">After my meal, I used the touch screen to surf the Internet and to order a taxi to take me back to my hotel.</li>
+  </ol>
+
+
+<script>
+    // Get all the paragraph elements
+    const sentences = document.querySelectorAll('li');
+
+    // Add onclick event listener to each paragraph
+    sentences.forEach(sentence => {
+        sentence.onclick = function() {
+            // Toggle the 'underlined' class for the clicked sentence
+            sentence.classList.toggle('underlined');
+        };
+    });
+</script>
+  </body>
+</html>
