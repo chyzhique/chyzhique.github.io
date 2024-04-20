@@ -10,10 +10,17 @@
    </head>
   
 <body>
+
+  <div class="container" style="background-color: coral">
+<h3>❗ When you are presented with a text from which sentences have been removed:</h3>
+► first read the whole text in order to get an <b>overall idea</b>.<br>
+► read the sentences <b>before and after the gap</b> and the sentences that have been removed from the text, looking for <b>clues in both the text and the sentences</b>. The correct option must logically complete the <b>writer's meaning </b>and <b>grammatically fit</b> the gap.<br>
+► pay attention to sentence <b>linkers</b> (moreover, on the other hand, as a result, after, etc.) as well as <b>reference items</b> ( he, it, this, there, etc.) and identify what they refer to. This will help you understand the text.
+    </div>
 <div class="container" style="background-color: #ECEE81">
   
   <h1 id="td1" style="text-align:center; background-color: #EDB7ED; border: 1px solid black; border-radius:7px; color:white">
-  <select id="select1" style="font-size:1rem" data-correct-value="valuea" onchange="SaveSelectValue(this)">
+  <select id="select1" style="font-size:1rem" data-correct="valuea" onclick="checkAnswer(this)" onchange="SaveSelectValue(this)">
 <option value="">?</option>
 <option value="valuea">a. Tips for successful interview		</option>
 <option value="valueb">b. How to dress for success</option>
@@ -34,30 +41,8 @@ Final preparations include choosing what to wear. It is important to <mark> sele
   You should arrive at the interview ten minutes in advance. You must also remember to bring extra copies of your CV with you. Bringing a small notebook for notes is also a good idea. Remember to stay  calm and project an image of self-confidence. <br><br>
 <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 5%">
   In it, you should emphasise your interest  and restate your specific qualifications for the position.  Remember, the more you prepare, the more successful your interview will be.
-  
-     <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const inputFields = document.querySelectorAll('input[type="text"]');
-    const changeDivs = document.querySelectorAll('.changeDiv');
-    const correctWords = [
-"b", "a", "d", "c", "f"
-    ];
-
-    inputFields.forEach((input, index) => {
-      input.addEventListener('input', function () {
-        const enteredWord = input.value.trim().toLowerCase();
-        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
-
-        if (correctOptions.includes(enteredWord)) {
-          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
-        } else {
-          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
-        }
-      });
-    });
-  });
-</script>
-  
+</div>
+  </div>
   </body>
   </html>
 
