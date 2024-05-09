@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/reading.css">
+<link href="https://chyzhique.github.io/saved-results.js">
+<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+<script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+<style>
+.head-img {
+	width: 100%; 
+        height: 75vh; 
+        object-fit: cover;
+        object-position: 50% 50%;
+        -webkit-filter: contrast(130%);
+  z-index:-1}
+  </style>
+      <body> 
+
+    <div class= "note-container" style="text-align: justify;">
+     <i class="pin"></i>
+        <blockquote class="note yellow" style="font-size:0.9rem">
+<h3>Think about or discuss:</h3>
+❓Have you or has anyone you know ever done a heroic act?
+<br>
+❓ What is the most heroic act you have ever heard of?
+          </blockquote>
+ </div> 
+    
+<img src= "https://www.dropbox.com/scl/fi/ut6nkk7gp3o9a7wdpw3mk/r-b1-m2l4-p0.jpg?rlkey=5mm928r7wyvj05hhva35p3kyy&st=ruzmss3o&raw=1" class="head-img">
+       
+  
+    <div class="grid-container">
+      <div id="leftColumn" class="left-side"></div>
+      <div id="rightColumn" class="right-side"></div>
+      <div id="botColumn" style="grid-column:1/3;"></div>
+      
+    </div>
+      
+    </div>
+
+  </div>
+  
+</body>
+
+<script>
+    async function fetchAndPopulateContent(columnId, url, padding = 10, margin = 0) {
+        try {
+            const response = await fetch(url);
+            const content = await response.text();
+
+            const column = document.getElementById(columnId);
+            const iframe = document.createElement('iframe');
+            iframe.style.width = '100%';
+            iframe.style.border = 'none';
+            iframe.style.overflow = 'hidden';
+
+            column.appendChild(iframe);
+            const iframeDocument = iframe.contentDocument;
+
+            iframeDocument.write(`
+                <style>
+                    body {
+                        margin: ${margin}px;
+                        padding: ${padding}px;
+                        overflow: hidden;
+                    }
+                    html {
+                        overflow: hidden;
+                    }
+                </style>
+                ${content}
+            `);
+
+            iframeDocument.close();
+
+            iframe.onload = () => {
+                iframe.style.height = `${iframeDocument.body.scrollHeight}px`;
+
+                // Set overflow hidden for the iframe content
+                const iframeBody = iframeDocument.querySelector('body');
+                const iframeHtml = iframeDocument.querySelector('html');
+
+                if (iframeBody && iframeHtml) {
+                    iframeBody.style.overflow = 'hidden';
+                    iframeHtml.style.overflow = 'hidden';
+                }
+            };
+
+            window.addEventListener('resize', () => {
+                iframe.style.height = `${iframeDocument.body.scrollHeight}px`;
+            });
+        } catch (error) {
+            console.error(`Error loading content for ${columnId}: ${error.message}`);
+        }
+    }
+
+    const leftColumnUrl = 'https://chyzhique.github.io/B1Reading/ab/r-ab-b1-m2l4.html';
+    const rightColumnUrl = 'https://chyzhique.github.io/B1Reading/texts-only/r-t-b1-m2l4.html';
+    const botColumnUrl = 'https://chyzhique.github.io/B1Reading/taskC/r-c-b1-m2l4.html';
+
+    fetchAndPopulateContent('leftColumn', leftColumnUrl);
+    fetchAndPopulateContent('rightColumn', rightColumnUrl);
+    fetchAndPopulateContent('botColumn', botColumnUrl); // Adjust padding and margin as needed
+</script>
