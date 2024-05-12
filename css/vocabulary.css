@@ -226,3 +226,15 @@ ol, ul {
   box-shadow: 0 5px 15px hsla(0, 0, 50%, 0.5);
   min-height: 85vh
        }
+
+@media (max-width: 700px) {
+  body {
+  background: #eeeeee;
+  margin: 0em;
+    width:100%;
+  }
+  .bg {
+    grid-template-columns: 1fr;
+    margin: 0em;   
+  }
+}
