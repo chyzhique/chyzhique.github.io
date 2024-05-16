@@ -364,3 +364,8 @@ mark {
   -webkit-user-select: none;
   touch-action: manipulation;
 }
+
+@media screen and (max-width: 800px) {
+        ol {
+          columns:1 !important;
+        }}
