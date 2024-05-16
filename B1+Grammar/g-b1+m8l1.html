@@ -12,9 +12,8 @@
    </head>
   <body>
 
-<div class="bg">
-  <div class="bg-left">
-  
+<div class="outer">
+  <h4>grammar</h4>
   <h1>UNREAL PAST I</h1>
   
       <div class="part">    
@@ -51,85 +50,3 @@ Some parents <b>would rather</b> their kids played with other children while the
 
     
   </body>
- 
-              
-    <script>
-    function setTdBackgroundColor(selectId, tdId, correctValue) {
-      const select = document.getElementById(selectId);
-      const td = document.getElementById(tdId);
-
-      select.addEventListener('change', function () {
-        if (select.value === correctValue) {
-          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
-        } else {
-          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
-        }
-      });
-    }
-
-    // Call the function for each select and corresponding td
-    setTdBackgroundColor('select1', 'td1', 'value3');
-    setTdBackgroundColor('select2', 'td2', 'value4');
-    setTdBackgroundColor('select3', 'td3', 'value2');
-    setTdBackgroundColor('select4', 'td4', 'value2');
-    setTdBackgroundColor('select5', 'td5', 'value1');
-      
-    setTdBackgroundColor('select6', 'td6', 'value2');
-    setTdBackgroundColor('select7', 'td7', 'value3');
-    setTdBackgroundColor('select8', 'td8', 'value1');
-      
-       setTdBackgroundColor('select9', 'td9', 'value5');
-       setTdBackgroundColor('select10', 'td10', 'value4');
-       setTdBackgroundColor('select11', 'td11', 'value6');
-       setTdBackgroundColor('select12', 'td12', 'value1');
-       setTdBackgroundColor('select13', 'td13', 'value3');
-       setTdBackgroundColor('select14', 'td14', 'value2');
-
-  </script>
-
-    
-    <script>
-    // Function to save the result
-    function saveResult() {
-      const result = document.getElementById('resultMessage').textContent;
-      localStorage.setItem('userResult', result);
-    }
-
-    // Function to load and display the saved result
-    function loadResult() {
-      const savedResult = localStorage.getItem('userResult');
-      if (savedResult) {
-        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
-      }
-    }
-  </script>
-    
-    <script>
-  function autoExpand(textarea) {
-    // Set the textarea's height to scrollHeight to expand with the content
-    textarea.style.height = 'auto';
-    textarea.style.height = textarea.scrollHeight + 'px';
-  }
-
-  const textAreas = document.querySelectorAll('textarea');
-  const changeDivs = document.querySelectorAll('.changeDiv');
-  const correctWords = [
-    ["The soup was so tasty that I decided to have some more", "It was such a tasty soup that I decided to have some more"],
-    ["Robert drives so carelessly that he may have an accident", "Robert is such a careless driver that he may have an accident"],
-    ["This exercise is so difficult that I can't do it", "It's such a difficult exercise that I can't do it"],
-    ["Sam has so much money that he can lend you some", "Sam is such a rich person that he can lend you some", "Sam is so rich that he can lend you some"],
-    ["Evelyn's party was so successful that everyone remembered it for years", "Evelyn's party was such a success that everyone remembered it for years"],
-    ["I feel so weak that I can't help you carry the box"]
-  ];
-
-  textAreas.forEach((textarea, index) => {
-    textarea.addEventListener('input', function () {
-      const enteredWord = textarea.value;
-      if (correctWords[index].includes(enteredWord)) {
-        changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
-      } else {
-        changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
-      }
-    });
-  });
-</script>
