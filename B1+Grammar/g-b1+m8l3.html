@@ -12,8 +12,8 @@
    </head>
   <body>
 
-<div class="bg">
-  <div class="bg-left">
+<div class="outer">
+  <h4>grammar</h4>
   
   <h1>CONDITIONAL SENTENCES TYPE 3 - UNREAL PAST II</h1>
   
@@ -61,58 +61,6 @@ is used to express regret about something that happened or didn't happen in the 
 
     
   </body>
- 
-              
-    <script>
-    function setTdBackgroundColor(selectId, tdId, correctValue) {
-      const select = document.getElementById(selectId);
-      const td = document.getElementById(tdId);
-
-      select.addEventListener('change', function () {
-        if (select.value === correctValue) {
-          td.style.backgroundColor = '#77DD77'; // Change the background color for the correct value
-        } else {
-          td.style.backgroundColor = '#ff6961'; // Reset the background color if a different option is selected
-        }
-      });
-    }
-
-    // Call the function for each select and corresponding td
-    setTdBackgroundColor('select1', 'td1', 'value3');
-    setTdBackgroundColor('select2', 'td2', 'value4');
-    setTdBackgroundColor('select3', 'td3', 'value2');
-    setTdBackgroundColor('select4', 'td4', 'value2');
-    setTdBackgroundColor('select5', 'td5', 'value1');
-      
-    setTdBackgroundColor('select6', 'td6', 'value2');
-    setTdBackgroundColor('select7', 'td7', 'value3');
-    setTdBackgroundColor('select8', 'td8', 'value1');
-      
-       setTdBackgroundColor('select9', 'td9', 'value5');
-       setTdBackgroundColor('select10', 'td10', 'value4');
-       setTdBackgroundColor('select11', 'td11', 'value6');
-       setTdBackgroundColor('select12', 'td12', 'value1');
-       setTdBackgroundColor('select13', 'td13', 'value3');
-       setTdBackgroundColor('select14', 'td14', 'value2');
-
-  </script>
-
-    
-    <script>
-    // Function to save the result
-    function saveResult() {
-      const result = document.getElementById('resultMessage').textContent;
-      localStorage.setItem('userResult', result);
-    }
-
-    // Function to load and display the saved result
-    function loadResult() {
-      const savedResult = localStorage.getItem('userResult');
-      if (savedResult) {
-        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
-      }
-    }
-  </script>
     
 <script>
     const inputFields = document.querySelectorAll('input[type="text"]');
