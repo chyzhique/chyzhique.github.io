@@ -1,18 +1,31 @@
 <!DOCTYPE html>
   <html>
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">  
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">
+    <script src="https://chyzhique.github.io/script/button-select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/select-drop.js" defer></script>
+    <script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-select.js" defer></script>
+    <script src="https://chyzhique.github.io/script/locstor-input.js" defer></script>
+    <title>g-b1+-m1l3</title>
+    <style>
+      input{
+  width:100%;
+}
+      </style>
+   </head>
   <body>
 
+
 <div class="bg">
-  
+  <div class="bg-left">
+  <header>
+    <h4>grammar</h4>
   <h1>COMPARISONS</h1>
+</header>
     
 <h2>FOCUS ON USE</h2>
-
-    <div class="part">  
 
 <h3>A. Match the rules about the use of the Comparative and Superlative Form with the examples below.</h3>
      
@@ -56,15 +69,18 @@
             <option value="value4">d</option>
           </select></td><td>
           d. Petrol prices are getting <b>higher and higher</b> these days.
-</td></tr></table>
+</td></tr>
+</table>
 
-
+ </div>   
+    <div class="bg-right">
+      <h4>grammar</h4>
 <h3>B. Look at the following sentence from the text and decide which of the two sentences a or b means the same.</h3>
- <div class="sentence">     
+  
 5. Today's Bedouins are <b>not as traditional as </b>their ancestors.<br><br>
 
       <span class="var">
-        <input type="radio" id="1" name="word1" value="eat" >
+        <input type="radio" id="1" name="word1" value="eat" style="width:auto">
         <label for="1">a. Today's Bedouins are more traditional than their ancestors.</label> </input></span><br><br>
       <span class="var">
         <input type="radio" id="2" name="word1" value="am eating" data-correct="true">
@@ -73,32 +89,34 @@
 <br>
 </i>
 
-      
+
 <h2> FOCUS ON FORM</h2>
 <h3>Complete the table below with the missing forms of the adjectives/adverbs.</h3>
-
-<table>
+<div>
+<table style="width:100%; margin:auto">
 <tr><td>
 harsh </td><td> 
-    <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1" style="border:0; border-bottom: 1px solid black">
+    <input type="text" id="wordInput1" placeholder="" class="changeDiv" id="changeDiv1">
   </td><td> the harshest</td></tr><tr><td>
 dry </td><td> 
-  <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2" style="border:0; border-bottom: 1px solid black">
+  <input type="text" id="wordInput2" placeholder="" class="changeDiv" id="changeDiv2">
   </td><td>  
-  <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3" style="border:0; border-bottom: 1px solid black"></td></tr><tr><td>hot </td><td> 
-  <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4" style="border:0; border-bottom: 1px solid black"> </td><td> 
-  <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5" style="border:0; border-bottom: 1px solid black"></td></tr><tr><td>
+  <input type="text" id="wordInput3" placeholder="" class="changeDiv" id="changeDiv3"></td></tr>
+  <tr><td>hot </td><td> 
+  <input type="text" id="wordInput4" placeholder="" class="changeDiv" id="changeDiv4"> </td><td> 
+  <input type="text" id="wordInput5" placeholder="" class="changeDiv" id="changeDiv5"></td></tr><tr><td>
 likely </td><td> more likely </td><td> 
-  <input type="text" id="wordInput6" placeholder="" class="changeDiv" id="changeDiv6" style="border:0; border-bottom: 1px solid black"></td></tr><tr><td>
+  <input type="text" id="wordInput6" placeholder="" class="changeDiv" id="changeDiv6"></td></tr><tr><td>
 good/well </td><td> 
-  <input type="text" id="wordInput7" placeholder="" class="changeDiv" id="changeDiv7" style="border:0; border-bottom: 1px solid black"> </td><td>the best</td></tr><tr><td>
+  <input type="text" id="wordInput7" placeholder="" class="changeDiv" id="changeDiv7"> </td><td>the best</td></tr><tr><td>
 little </td><td> less </td><td> 
- <input type="text" id="wordInput8" placeholder="" class="changeDiv" id="changeDiv8" style="border:0; border-bottom: 1px solid black"></td></tr><tr><td>
-far </td><td> 
-  <input type="text" id="wordInput9" placeholder="" class="changeDiv" id="changeDiv9" style="border:0; border-bottom: 1px solid black"> </td><td>the farthest/furthest</td></tr>
+ <input type="text" id="wordInput8" placeholder="" class="changeDiv" id="changeDiv8"></td></tr>
+  <tr><td>far </td><td> 
+  <input type="text" id="wordInput9" placeholder="" class="changeDiv" id="changeDiv9"> </td><td>the farthest/furthest</td></tr>
 </table>
-
-
+</div>
+</div></div></div>
+</body>
     <script>
     function setTdBackgroundColor(selectId, tdId, correctValue) {
       const select = document.getElementById(selectId);
@@ -159,20 +177,3 @@ far </td><td>
       });
     });
   </script>
-      
-    <script>
-    // Function to save the result
-    function saveResult() {
-      const result = document.getElementById('resultMessage').textContent;
-      localStorage.setItem('userResult', result);
-    }
-
-    // Function to load and display the saved result
-    function loadResult() {
-      const savedResult = localStorage.getItem('userResult');
-      if (savedResult) {
-        document.getElementById('savedResult').textContent = 'Saved Result: ' + savedResult;
-      }
-    }
-    </script>
-      
