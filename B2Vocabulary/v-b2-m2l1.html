@@ -48,11 +48,12 @@ A. Complete the table with the missing words.</h3>
 </td></tr>
 <tr><td>
   <input type="text" id="wordInput11" class="changeDiv" id="changeDiv11" style="width: 100%">
-</td><td>murderer </td><td>
+</td><td>murder </td><td>
   <input type="text" id="wordInput12" class="changeDiv" id="changeDiv12" style="width: 100%"></td></tr>
-<tr><td>hijack/hijacking </td><td>
+<tr><td>
   <input type="text" id="wordInput13" class="changeDiv" id="changeDiv13" style="width: 100%">
 </td><td>
+    hijack/hijacking </td><td>
   <input type="text" id="wordInput14" class="changeDiv" id="changeDiv14" style="width: 100%">
 </td></tr>
       </table>
@@ -192,7 +193,12 @@ A. Complete the table with the missing words.</h3>
     const inputFields = document.querySelectorAll('input[type="text"]');
     const changeDivs = document.querySelectorAll('.changeDiv');
     const correctWords = [
-     "impressive", "overwhelming", "thrilled", "scared", "frightening", "disappointed", "homesick", "graceful", "enormous", "mysterious", "brilliant", "grateful", "remote", "nervous"
+     "robbery", "robber", "steal", "thief", "kidnap", "kidnapper", "shoplifting", "shoplifter", "burgle", "burglar", "murder", "murderer", "hijack", "hijacker",
+        "theft", "kidnap", "robbery", "shoplifting", ["hijackings", "hijacks"], "murderer", 
+        "e", "f", "d", "g", "a", "c", "b",
+        "pay a fine", "committed crime", "reach a verdict", "breaking the law", "take to court",
+        "rob", "mug", "stole", "burgled", "banned", "avoid", "forbid", "prevent", "victim", "hostages", "witnesses", "blamed", "accused", "sentenced", 
+        "charge", "convicted"
     ];
 
     inputFields.forEach((input, index) => {
