@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/grammar.css">
+<link href="https://chyzhique.github.io/saved-results.js">
+<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+<script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+   </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">GRAMMAR</h4>
+      <H1 style="text-align:center">THE VERB be <BR>(I, you, we)<br>
+POSSESSIVE ADJECTIVES <BR>(my, your, our)</H1>
+<h3>A. Read the examples and write the short forms in the table.</h3>
+<table>
+<tr><td>
+<mark>I'm</mark> from Colombia. <br>
+<mark>I'm</mark> not from Venezuela. <br>
+<mark>My</mark> name's Carlos. <br>
+</td><td>
+<mark>You're</mark> Polish.<br>
+<mark>You aren't</mark> Hungarian.<br>
+<mark>Your</mark> surname's Dudek.<br>
+</td></tr>
+<tr><td>
+<mark>We're</mark> from Spain.<br>
+<mark>We aren't</mark> Mexican.<br>
+<mark>Our</mark> surname's Martin.<br>
+</td><th>
+ Are you  English? <hr>
+  <br>- Yes, I <mark>am</mark>. <br>- Yes, <mark>we are</mark>.<br> - No, <mark>I'm not.</mark> <br> - No, <mark>we aren't.</mark></th>
+</td></tr>
+</table>
+  
+<div class="bunch">
+I am - (1)
+<input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%"> <br>
+You are - (2)
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%"> <br>
+We are - (3)
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%"> <br>
+are not - (4)
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%"> <br>
+</div>  
+</div>  
+    <div class="bg-right">
+<h4 style="text-align:center">PRACTICE</h4>
+<h3>B. Write the correct word<h3>
+
+<table> 
+<tr> 
+<th>Ken</th>
+<td>Good afternoon, I'm Ken and this is Sally.</td></tr><tr>
+<th>Woman </td>
+<td>What's your surname?</td></tr><tr>
+<th>Ken </td>
+<td><b>[1]
+  <span class="var">
+  <input type="radio" id="1" name="word1" value="a" data-correct="true">
+  <label for="1">Our</label>
+  <input type="radio" id="2" name="word1" value="b">
+  <label for="2">Your</label></span></b> 
+  surname's Jameson.</td></tr><tr>
+<th>Woman </td>
+<td><b>[2]
+  <span class="var">
+  <input type="radio" id="3" name="word2" value="a" data-correct="true">
+  <label for="3">Are you</label>
+  <input type="radio" id="4" name="word2" value="b">
+  <label for="4">You are</label></span></b>
+Scottish?</td></tr><tr>
+<th>Ken </td>
+<td>No, we <b>[3]
+  <span class="var">
+  <input type="radio" id="5" name="word3" value="a">
+  <label for="5">am not</label>
+  <input type="radio" id="6" name="word3" value="b" data-correct="true">
+  <label for="6">aren't</label></span></b>
+.</td></tr><tr>
+<th>Woman </td>
+<td><b>[4]
+  <span class="var">
+  <input type="radio" id="7" name="word4" value="a" data-correct="true">
+  <label for="7">Where</label>
+  <input type="radio" id="8" name="word4" value="b">
+  <label for="8">What</label></span></b>
+</b> are you from?</td></tr><tr>
+<th>Ken </td>
+<td><b>[5]
+  <span class="var">
+  <input type="radio" id="9" name="word5" value="a">
+  <label for="9">You're</label>
+  <input type="radio" id="10" name="word5" value="b" data-correct="true">
+  <label for="10">We're</label></span></b>
+</b> American. I'm from New York.</td></tr><tr>
+<th>Sally </td>
+<td><b>[6]
+  <span class="var">
+  <input type="radio" id="11" name="word6" value="a">
+  <label for="11">I'm</label>
+  <input type="radio" id="12" name="word6" value="b" data-correct="true">
+  <label for="12">I'm not</label></span></b>
+from New York. I'm from Boston.</td></tr><tr>
+    </div></div>
+</div>
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "I'm", 
+      "you're", 
+      "we're", 
+      "aren't", 
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
