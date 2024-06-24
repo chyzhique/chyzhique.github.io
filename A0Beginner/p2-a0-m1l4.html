@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+<script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+   </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">GRAMMAR</h4>
+      <h1>QUESTION WORDS <br>(Who?/ What?/ How? / Where ... from?)</h1>
+ 
+      <h3>A. Match the questions with the answers</h3>
+<table><tr><td><ol class="bunch" style="margin-left:1rem">
+<li> Who are you?
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">
+<li> What's your phone number?
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">
+<li> What's your e-mail?
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">
+<li> How are you?
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">
+<li> How old are you?
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 25%">
+<li> Where are you from?
+  <input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 25%">
+</td><td>
+a. I'm 41.<br><br>
+b. I'm OK.<br><br>
+c. katy15@gmail.com<br><br>
+d. I'm Roberta.<br><br>
+e. Hungary.<br><br>
+f. 020 8994 5563
+</td></tr></table>
+ 
+</div>
+<div class="bg-right">
+  <h4 style="text-align:center">PRONUNCIATION</h4>
+<h3>A. Listen and repeat. Notice the difference.</h3>
+  <div class="hint">
+! six<b>teen</b> - <b>six</b>ty <br>
+! four<b>teen</b> - <b>four</b>ty
+    </div>
+<h3>B. Listen and choose the correct variant.</h3>
+<ol style="columns:2">
+  <li><span class="var">
+  <input type="radio" id="1" name="word1" value="a" >
+  <label for="1">a.15 </label>
+  <input type="radio" id="2" name="word1" value="b" data-correct="true">
+  <label for="2">b.50</label></li>
+  
+  <li><span class="var">
+  <input type="radio" id="3" name="word2" value="a" data-correct="true">
+  <label for="3">a.17</label>
+  <input type="radio" id="4" name="word2" value="b">
+  <label for="4">b.70</label></li>
+    
+    <li><span class="var">
+  <input type="radio" id="5" name="word3" value="a" data-correct="true">
+  <label for="5">a.13</label>
+  <input type="radio" id="6" name="word3" value="b">
+  <label for="6">b.30</label></li>
+      
+      <li><span class="var">
+  <input type="radio" id="7" name="word4" value="a" data-correct="true">
+  <label for="7">a.18</label>
+  <input type="radio" id="8" name="word4" value="b">
+  <label for="8">b.80</label></li>
+        
+        <li><span class="var">
+  <input type="radio" id="9" name="word5" value="a" data-correct="true">
+  <label for="9">a.19</label>
+  <input type="radio" id="10" name="word5" value="b">
+  <label for="10">b.90</label></li>
+  </ol>
+  
+<h4 style="text-align:center">LISTENING</H4>
+  
+<h3>A. Listen and choose the correct answer.</h3>
+<b>1. NAME:</b><br>
+<span class="var">
+  <input type="radio" id="11" name="word5" value="a" data-correct="true">
+  <label for="11">a. Dan Jones</label><br>
+  <input type="radio" id="12" name="word5" value="b">
+  <label for="12">b. Don Jones</label></span>
+<br><br>
+<b>2. PHONE NUMBER:</b><br>
+  <span class="var">
+  <input type="radio" id="13" name="word6" value="a" data-correct="true">
+  <label for="13">a. 020 8762 9940</label><br>
+  <input type="radio" id="14" name="word6" value="b">
+  <label for="14">b. 020 8762 9140</label></span>
+<br><br>
+<b>3. E-MAIL:</b><br>
+    <span class="var">
+  <input type="radio" id="15" name="word7" value="a" data-correct="true">
+  <label for="15">a. djones44@gmail.com</label><br>
+  <input type="radio" id="16" name="word7" value="b">
+  <label for="16">b. djones44@gmail.co.uk</label></span>
+<br>
+
+</div>
+  </div></div>
+  
+  <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "d", 
+      "f", 
+      "c", 
+      "b", 
+      "a",
+      "e"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
