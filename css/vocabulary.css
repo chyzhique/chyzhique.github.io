@@ -244,3 +244,6 @@ ol, ul {
 .incorrect{
   background-color:#C80036;
 }
+    mark {
+        background: url(//s2.svgbox.net/pen-brushes.svg?ic=brush-1&color=ffff43);
+    }
