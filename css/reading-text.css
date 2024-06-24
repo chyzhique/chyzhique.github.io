@@ -103,19 +103,6 @@ tr:hover {
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 767px) {
-  th, td {
-    display: block;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  th {
-    text-align: center;
-    background-color: #3498db;
-    color: #fff;
-  }
-}
 
 .box select {
   background-color: #0563af;
