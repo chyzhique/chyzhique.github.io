@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+    </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">VOCABULARY</h4>
+      <h3>A. Listen, read and repeat </h3>
+<img src="https://www.dropbox.com/scl/fi/j2juycdtzu3rd9rc0jv9b/v-a0-m1l5.jpg?rlkey=j7tr1mrnprcnbj7413zsvi2h5&st=g7iep16w&raw=1">
+<center><h1>NOTE!</h1>
+<mark>a</mark>  dentist - <mark>an</mark> electrician
+     </center> </div>
+    <div class="bg-left">
+<h4 style="text-align:center">Reading</h4>
+<h3> A. Listen and read the blog. Do people know each other?</h3>
+  <div class="bunch">
+<h1 style:"text-align:center">JOB BLOG </h1>
+
+<blockquote class="bunch" style="background-color:#FF7F3E">
+Hi! I'm Tim and I'm 24. I'm from London and I'm unemployed. :(
+  <br><br><hr> 
+<i>
+Posted by Tim Chaffer at 11:12</i>
+
+</blockquote>
+
+<blockquote class="bunch" style="background-color:#80C4E9">
+RE: Hello Tim. My name's Jenny. I'm 27 and I'm a mechanic. Go to <a href="url">getajob.co.uk </a> It's great!  <br><br><hr> 
+<i>
+Posted by Jenny Collins at 11:32 </i>
+</blockquote>
+
+<blockquote class="bunch" style="background-color:#80C4E9">
+RE: Hi Tim! I'm Keith and I live in Manchester. I'm an electrician. Jenny's right, <a href="url">getajob.co.uk</a> is a great website.  <br><br><hr> 
+<i>Posted by Keith Ball at 11:56.</i>
+</blockquote>
+  
+  
+<h3> B. Read again and write T for True or F for False.</h3>
+
+<ol>
+<li> Tim is English: <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 25%">
+<li> Tim is a mechanic: <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 25%">
+<li> Jenny is 27: <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 25%">
+<li> Keith is an electrician: <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 25%">
+</ol>
+
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "T", 
+      "F", 
+      "T", 
+      "T", 
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
