@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+<script src="https://chyzhique.github.io/script/var-select.js" defer></script>
+   </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">SPEAKING</h4>
+      <h1>GUESSING GAME</h1>
+<DIV CLASS="bunch">
+<b>Student A:</b> Choose a person from the cards below, but don't tell Student B.<hr>
+<b>Student B:</b> Ask questions and guess who Student A is.
+  </DIV>
+ <img src="https://www.dropbox.com/scl/fi/iqztnr5x0cdcyuawjh34t/p3-a0-m1l5.png?rlkey=yq2cehc35a9q0ddugv038yz82&st=xhhxzgky&raw=1">
+      
+<div class="bunch"><i>
+<td>- What do you do?<br> - I'm a/an ... Are you a/an ... ?
+  <hr>
+  <td>- Are you a/an ... ?<br>- Yes, I am. / No, I'm not.<br>- Are you ... ?</i>  
+  </TABLE>
+</div>
+   </div>
+  
+<div class="bg-right">
+  <h4 style="text-align:center">WRITING</h4>
+  <H1>CAPITAL LETTER</H1>
+<DIV CLASS="hint">
+<h3> Use capital letters:</h3>
+• with names/surnames<br>
+• with Mr/Mrs/Miss/Ms<br>
+• with cities/countries/nationalities
+  </div>
+
+<h3>A. Add capitals where necessary.</h3>
+  <ol>
+<li><input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 100%" spellcheck="false" value="Is mr martino your boss?">
+  
+<li><input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 100%" spellcheck="false" value="I'm from canada but I live in italy." spellcheck="false">
+  
+<li><input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 100%" spellcheck="false" value="Are you british?">
+  
+<li><input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 100%" spellcheck="false" value="This is ms lipton.">
+  
+<li><input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 100%" spellcheck="false" value="My name is tanya white.">
+  
+<li><input type="text" id="wordInput6" class="changeDiv" id="changeDiv6" style="width: 100%" spellcheck="false" value="How are you, ben?">
+</ol>
+  
+<h3> B. Complete the form</h3>
+  
+<h2 style= "text-align:center">JOBCENTRE FORM</h2>
+<table>
+<tr><td style=" padding: 10px">
+TITLE: </td><td><input type="text" placeholder="Mr / Mrs / Miss / Ms"></td></tr><tr><td>
+FIRST NAME: </td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+MIDDLE NAME:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+SURNAME:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+AGE:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+NATIONALITY:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+MARITAL STATUS:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+JOB:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+DAYTIME PHONE NUMBER:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+EVENING PHONE NUMBER:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+MOBILE PHONE NUMBER:</td><td><input type="text"></td></tr><tr><td style=" padding: 10px">
+E-MAIL:</td><td><input type="text">
+</td></tr></table>
+<br><i>
+I confirm that, to the best of my knowledge, the information given on this form is correct <br>(Print and sign) ________________</i>
+
+  <div class="hint">
+*When completing a form, make sure you understand
+what information you are asked to give.</div>
+
+</div>
+  </div></div>
+  
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+      "Is Mr Martino your boss?", 
+      "I'm from canada but I live in italy.",
+"Are you British?",
+"This is Ms Lipton.",
+"My name is Tanya White.",
+"How are you, Ben?"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim(); // Remove leading and trailing whitespace
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index] : [correctWords[index]];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
