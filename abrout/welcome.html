@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Sheets Data</title>
     <style>
-        /* Add some basic styling */
         table {
             width: 100%;
             border-collapse: collapse;
@@ -29,15 +28,29 @@
     </table>
 
     <script>
-        const sheetUrl = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRGdBGn1pQtgPoqChr2X8c0eaIO6rcJ3ruXWYn7VW2GzAk_3E1SjRhh543LXWTjXqyg2EwnWWq-PcQr/pub?output=csv';
+        const sheetUrl = 'YOUR_PUBLISHED_SHEET_URL';
 
         fetch(sheetUrl)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
             .then(data => {
                 const tableHeader = document.getElementById('table-header');
                 const tableBody = document.getElementById('table-body');
+                
+                if (!data.values || data.values.length === 0) {
+                    throw new Error('No data found');
+                }
+
                 const headers = data.values[0];
                 const rows = data.values.slice(1);
+
+                // Clear existing content
+                tableHeader.innerHTML = '';
+                tableBody.innerHTML = '';
 
                 // Create table headers
                 headers.forEach(header => {
