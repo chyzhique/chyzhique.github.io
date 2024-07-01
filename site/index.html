@@ -1,6 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
- <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css"> 
-        <script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css"> 
+    <script>
         async function verifyData(event) {
             event.preventDefault();
 
@@ -21,16 +26,16 @@
             const result = await response.json();
 
             if (result.success) {
-                // Data is correct
-                document.getElementById('status').innerText = 'Data verified successfully!';
-                // Enable the button or perform any other action
+                // Redirect to the main page if the data is correct
+                window.location.href = 'https://chyzhique.github.io/site/main.html';
             } else {
-                // Data is incorrect
+                // Display an error message if the data is incorrect
                 document.getElementById('status').innerText = 'Verification failed. Please try again.';
             }
         }
     </script>
 </head>
+<body>
 
   <section class="user">
   <div class="user_options-container">
@@ -89,6 +94,19 @@
   </div>
 </section>
 
+
+ <form id="login-form" onsubmit="verifyData(event)">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Log In</button>
+    </form>
+    <p id="status"></p>
+
+ 
 <script>
   /**
  * Variables
