@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Online Education</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Welcome to Online Education</h1>
+  <div id="register">
+    <h2>Register</h2>
+    <form id="registerForm">
+      <input type="text" id="name" placeholder="Name" required><br>
+      <input type="email" id="email" placeholder="Email" required><br>
+      <input type="password" id="password" placeholder="Password" required><br>
+      <button type="submit">Register</button>
+    </form>
+  </div>
+  <div id="login">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <input type="email" id="loginEmail" placeholder="Email" required><br>
+      <input type="password" id="loginPassword" placeholder="Password" required><br>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+  <script>
+    $('#registerForm').on('submit', function(event) {
+      event.preventDefault();
+      google.script.run.registerUser(
+        $('#name').val(),
+        $('#email').val(),
+        $('#password').val()
+      );
+    });
+
+    $('#loginForm').on('submit', function(event) {
+      event.preventDefault();
+      google.script.run.loginUser(
+        $('#loginEmail').val(),
+        $('#loginPassword').val()
+      );
+    });
+  </script>
+</body>
+</html>
