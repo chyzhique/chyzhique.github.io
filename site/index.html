@@ -56,13 +56,13 @@
     <div class="user_options-forms" id="user_options-forms">
       <div class="user_forms-login">
         <h2 class="forms_title">Login</h2>
-        <form class="forms_form">
+        <form class="forms_form" id="login-form" onsubmit="verifyData(event)">
           <fieldset class="forms_fieldset">
             <div class="forms_field">
-              <input type="email" placeholder="Email" class="forms_field-input" required autofocus />
+              <input type="email" id="email" name="email" placeholder="Email" class="forms_field-input" required autofocus />
             </div>
             <div class="forms_field">
-              <input type="password" placeholder="Password" class="forms_field-input" required />
+              <input  type="password" id="password" name="password" placeholder="Password" class="forms_field-input" required />
             </div>
           </fieldset>
           <div class="forms_buttons">
@@ -79,10 +79,10 @@
               <input type="text" placeholder="Full Name" class="forms_field-input" required />
             </div>
             <div class="forms_field">
-              <input type="email" placeholder="Email" class="forms_field-input" required />
+              <input type="email" id="email" name="email" placeholder="Email" class="forms_field-input" required />
             </div>
             <div class="forms_field">
-              <input type="password" placeholder="Password" class="forms_field-input" required />
+              <input type="password" id="password" name="password" placeholder="Password" class="forms_field-input" required />
             </div>
           </fieldset>
           <div class="forms_buttons">
