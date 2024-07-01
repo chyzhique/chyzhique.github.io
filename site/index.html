@@ -1,134 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Form</title>
-  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css"> 
-    <script>
-        async function verifyData(event) {
-            event.preventDefault();
+<title>main</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+* {
+  box-sizing: border-box;
+}
 
-            const formData = new FormData(event.target);
-            const data = {};
-            formData.forEach((value, key) => {
-                data[key] = value;
-            });
+/* Style the body */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
 
-            const response = await fetch('https://script.google.com/macros/s/AKfycbwfeKyE2gDlseXhVrcFqUBqXJg4eUXQ-oud2hu1dNZg', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            });
+/* Header/logo Title */
+.header {
+  padding: 80px;
+  text-align: center;
+  color: white;
+  background: url("https://www.dropbox.com/scl/fi/jh7z1byxs9d11hi37q7am/enter-bg.jpg?rlkey=6xkp1g7xqx3b5t2muh256purt&st=z1okezpy&raw=1")  no-repeat center center fixed;
+  background-size: cover;
+  width: 100%;
+  height: 80vh;
+}
 
-            const result = await response.json();
+/* Increase the font size of the heading */
+.header h1 {
+  font-size: 40px;
+}
 
-            if (result.success) {
-                // Redirect to the main page if the data is correct
-                window.location.href = 'https://chyzhique.github.io/site/main.html';
-            } else {
-                // Display an error message if the data is incorrect
-                document.getElementById('status').innerText = 'Verification failed. Please try again.';
-            }
+/* Style the top navigation bar */
+    nav {
+        background-color: #333;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+
+    nav ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    nav ul li {
+        float: left;
+    }
+
+    nav ul li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        background-color: #111;
+    }
+
+/* Style the navigation bar links */
+.navbar a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
+  width:100%
+}
+
+/* Right-aligned link */
+.navbar a.right {
+  float: right;
+}
+
+/* Change color on hover */
+.navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Footer */
+.footer {
+  padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+/* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
+
+/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+@media screen and (max-width: 400px) {
+  .navbar a {
+    float: none;
+    width: 100%;
+  }
+}
+  
+  
+</style>
+  <script>
+        function loadNavbar() {
+            fetch('https://chyzhique.github.io/site/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
         }
+
+        window.onload = loadNavbar;
     </script>
 </head>
 <body>
 
-  <section class="user">
-  <div class="user_options-container">
-    <div class="user_options-text">
-      <div class="user_options-unregistered">
-        <h2 class="user_unregistered-title">Don't have an account?</h2>
-        <p class="user_unregistered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
-        <button class="user_unregistered-signup" id="signup-button">Sign up</button>
-      </div>
+<div class="header">
+  <h1>Anglomova</h1>
+  <p>Learn English like you already know it.</p>
+</div>
 
-      <div class="user_options-registered">
-        <h2 class="user_registered-title">Have an account?</h2>
-        <p class="user_registered-text">Banjo tote bag bicycle rights, High Life sartorial cray craft beer whatever street art fap.</p>
-        <button class="user_registered-login" id="login-button">Login</button>
-      </div>
-    </div>
-    
-    <div class="user_options-forms" id="user_options-forms">
-      <div class="user_forms-login">
-        <h2 class="forms_title">Login</h2>
-        <form class="forms_form" id="login-form" onsubmit="verifyData(event)">
-          <fieldset class="forms_fieldset">
-            <div class="forms_field">
-              <input type="email" id="email" name="email" placeholder="Email" class="forms_field-input" required autofocus />
-            </div>
-            <div class="forms_field">
-              <input  type="password" id="password" name="password" placeholder="Password" class="forms_field-input" required />
-            </div>
-          </fieldset>
-          <div class="forms_buttons">
-            <button type="button" class="forms_buttons-forgot">Forgot password?</button>
-            <input type="submit" value="Log In" class="forms_buttons-action">
-          </div>
-        </form>
-      </div>
-      <div class="user_forms-signup">
-        <h2 class="forms_title">Sign Up</h2>
-        <form class="forms_form">
-          <fieldset class="forms_fieldset">
-            <div class="forms_field">
-              <input type="text" placeholder="Full Name" class="forms_field-input" required />
-            </div>
-            <div class="forms_field">
-              <input type="email" id="email" name="email" placeholder="Email" class="forms_field-input" required />
-            </div>
-            <div class="forms_field">
-              <input type="password" id="password" name="password" placeholder="Password" class="forms_field-input" required />
-            </div>
-          </fieldset>
-          <div class="forms_buttons">
-            <input type="submit" value="Sign up" class="forms_buttons-action">
-          </div>
-        </form>
-      </div>
-    </div>
+<div id="navbar" class="navbar">
+  <a href="#">Profile</a>
+  <a href="#">Courses</a>
+  <a href="#">Current lesson</a>
+  <a href="#">My Materials</a>
+  <a href="#" class="right">Pricing</a>
+</div>
+
+<div class="row">
+  <div class="side">
+    <h2>About Me</h2>
+    <h5>Photo of me:</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+    <h3>More Text</h3>
+    <p>Lorem ipsum dolor sit ame.</p>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div><br>
+    <div class="fakeimg" style="height:60px;">Image</div>
   </div>
-</section>
+  <div class="main">
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Dec 7, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+    <br>
+    <h2>TITLE HEADING</h2>
+    <h5>Title description, Sep 2, 2017</h5>
+    <div class="fakeimg" style="height:200px;">Image</div>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+  </div>
+</div>
 
+<div class="footer">
+  <h2>Footer</h2>
+</div>
 
- <form id="login-form" onsubmit="verifyData(event)">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <button type="submit">Log In</button>
-    </form>
-    <p id="status"></p>
-
- 
-<script>
-  /**
- * Variables
- */
-const signupButton = document.getElementById('signup-button'),
-    loginButton = document.getElementById('login-button'),
-    userForms = document.getElementById('user_options-forms')
-
-/**
- * Add event listener to the "Sign Up" button
- */
-signupButton.addEventListener('click', () => {
-  userForms.classList.remove('bounceRight')
-  userForms.classList.add('bounceLeft')
-}, false)
-
-/**
- * Add event listener to the "Login" button
- */
-loginButton.addEventListener('click', () => {
-  userForms.classList.remove('bounceLeft')
-  userForms.classList.add('bounceRight')
-}, false)
-
-  </script>
+</body>
+</html>
