@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Courses</title>
+  <!-- Include jQuery (required by DataTables) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <!-- Include DataTables CSS and JS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</head>
+<body>
+  <h1>Courses</h1>
+  <table id="coursesTable" class="display">
+    <!-- Table content will be dynamically populated by JavaScript -->
+    
+  </table>
+
+  <script>
+    $(document).ready(function() {
+      google.script.run.withSuccessHandler(displayCourses).getCoursesData();
+    });
+
+    function displayCourses(data) {
+      $('#coursesTable').DataTable({
+        data: data,
+        columns: [
+          { title: "Course name" },
+          { title: "Column 2" }, // Replace with actual column headers
+          { title: "Column 3" }
+          // Add more columns as needed
+        ],
+        "paging": true, // Enable paging
+        "searching": true, // Enable searching
+        "ordering": true, // Enable sorting
+        "info": true // Enable table information display
+      });
+    }
+  </script>
+</body>
+</html>
