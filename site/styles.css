@@ -491,20 +491,9 @@ input::placeholder {
       }
 
 body{
-background-color: #FAFFAF
-}
-
-li {
-	/* Default bullets style erased */
-	list-style: none;
-  color: black;
-  margin-bottom: 1em;
-]
-
-/* Style the body */
-body {
-  font-family: Arial, Helvetica, sans-serif;
-  margin: 0;
+background-color: #FAFFAF;
+font-family: Arial, Helvetica, sans-serif;
+margin: 0;
 }
 
 /* Header/logo Title */
