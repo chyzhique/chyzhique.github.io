@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Courses page</title>
-<link href="https://chyzhique.github.io/site/index.html">
-    <script>
+<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css">
+  <script>
         function loadNavbar() {
             fetch('https://chyzhique.github.io/site/navbar.html')
                 .then(response => response.text())
@@ -17,6 +17,15 @@
     </script>
 </head>
 <body>
+  
+  <div id="navbar" class="navbar">
+  <a href="#">Profile</a>
+  <a href="#">Courses</a>
+  <a href="#">Current lesson</a>
+  <a href="#">My Materials</a>
+  <a href="#" class="right">Pricing</a>
+</div>
+  
     <div id="passage1" class="passage active">
         <h1>COURSES</h1>
         <p>Read and find all available courses!</p>
