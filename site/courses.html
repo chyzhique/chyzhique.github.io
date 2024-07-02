@@ -4,6 +4,17 @@
     <meta charset="UTF-8">
     <title>Courses page</title>
 <link href="https://chyzhique.github.io/site/index.html">
+    <script>
+        function loadNavbar() {
+            fetch('https://chyzhique.github.io/site/navbar.html')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('navbar').innerHTML = data;
+                });
+        }
+
+        window.onload = loadNavbar;
+    </script>
 </head>
 <body>
     <div id="passage1" class="passage active">
