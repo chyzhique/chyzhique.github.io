@@ -513,35 +513,12 @@ margin: 0;
 }
 
 /* Style the top navigation bar */
-    nav {
+    navbar {
         background-color: #333;
         width: 100%;
         top: 0;
         left: 0;
         z-index: 1000;
-    }
-
-    nav ul {
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }
-
-    nav ul li {
-        float: left;
-    }
-
-    nav ul li a {
-        display: block;
-        color: white;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-    }
-
-    nav ul li a:hover {
-        background-color: #111;
     }
 
 /* Style the navigation bar links */
