@@ -1,21 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>main</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css">
-  <script>
-        function loadNavbar() {
-            fetch('https://chyzhique.github.io/site/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                });
-        }
-
-        window.onload = loadNavbar;
-    </script>
+    <meta charset="UTF-8">
+    <title>Courses page</title>
+    <script src="https://chyzhique.github.io/site/scripts/navbar.js" defer></script>
+    <script src="https://chyzhique.github.io/site/scripts/passage.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css">
 </head>
 <body>
 
@@ -24,13 +14,6 @@
   <p>Learn English like you already know it.</p>
 </div>
 
-<div id="navbar" class="navbar">
-  <a href="#">Profile</a>
-  <a href="#">Courses</a>
-  <a href="#">Current lesson</a>
-  <a href="#">My Materials</a>
-  <a href="#" class="right">Pricing</a>
-</div>
 
 <div class="row">
   <div class="side">
