@@ -7,7 +7,7 @@ body {
   font-family: "Roboto", sans-serif;
 }
 .bg {        
-  margin: 1em auto;  
+  margin: 0 1em; 
   background-color: #ffb347;
   font-family:merriweather; 
   line-height:normal;
