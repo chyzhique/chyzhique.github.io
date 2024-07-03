@@ -513,7 +513,7 @@ margin: 0;
 }
 
 /* Style the top navigation bar */
-    navbar {
+.navbar {
         background-color: #151515;
         width: 100%;
         top: 0;
