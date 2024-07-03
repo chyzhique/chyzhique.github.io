@@ -4,17 +4,8 @@
     <meta charset="UTF-8">
     <title>Courses page</title>
 <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css">
-  <script>
-        function loadNavbar() {
-            fetch('https://chyzhique.github.io/site/navbar.html')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('navbar').innerHTML = data;
-                });
-        }
-
-        window.onload = loadNavbar;
-    </script>
+    <script href="https://chyzhique.github.io/site/scripts/navbar.js" defer></script>
+    <script href="https://chyzhique.github.io/site/scripts/passage.js" defer></script>
 </head>
 <body>
   
@@ -112,36 +103,6 @@ style="background: url('https://www.dropbox.com/scl/fi/bonblyqyk4migm6fqf1ug/beg
         <p>Click a link below to navigate:</p>
         <div class="back-button element" data-target="passage1">Back</div>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const links = document.querySelectorAll('.element');
-            const backs = document.querySelectorAll('.back');
-            const passages = document.querySelectorAll('.passage');
 
-            links.forEach(link => {
-                link.addEventListener('click', function() {
-                    const target = this.getAttribute('data-target');
-                    
-                    // Hide all passages
-                    passages.forEach(passage => passage.classList.remove('active'));
-                    
-                    // Show the target passage
-                    document.getElementById(target).classList.add('active');
-                });
-            });
-          
-          backs.forEach(back => {
-                link.addEventListener('click', function() {
-                    const target = this.getAttribute('data-target');
-                    
-                    // Hide all passages
-                    passages.forEach(passage => passage.classList.remove('active'));
-                    
-                    // Show the target passage
-                    document.getElementById(target).classList.add('active');
-                });
-            });
-        });
-    </script>
 </body>
 </html>
