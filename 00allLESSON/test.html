@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page 1</title> <!-- Ensure this title matches a page name in your Google Sheets -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevent scrolling */
+        }
+        .background-div {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            z-index: -1; /* Ensure it's behind other content */
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+        .info {
+            margin-bottom: 20px;
+        }
+        .links {
+            margin-bottom: 20px;
+        }
+        .links a {
+            display: block;
+            margin: 5px 0;
+            color: blue;
+            text-decoration: none;
+        }
+        .specific-part {
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-div" id="background-div"></div>
+    <div class="content">
+        <div class="info" id="info">
+            <h1 id="name"></h1>
+            <p id="course"></p>
+            <p id="module"></p>
+            <p id="gb"></p>
+            <p id="wl"></p>
+        </div>
+        <div class="links" id="links">
+            <!-- Links will be dynamically populated here -->
+        </div>
+        <div class="specific-part" id="specific-part">
+            <!-- Specific part content will be dynamically populated here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const title = document.title; // Get the title of the HTML page
+
+            // URL of your Google Apps Script web app
+            const webAppUrl = 'https://script.google.com/macros/s/AKfycbyalLPkDyWvHDCqwNllsYmp2TW-IDTZxW4mN7t-5yNWo2AW2GhQgnPEyHdlmwGwVuYw/exec'; // Replace with your web app URL
+
+            // Fetch data from Google Apps Script web app
+            fetch(webAppUrl)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Fetched data:', data); // Debug: log the fetched data
+
+                    const pageData = data[title];
+                    console.log('Page-specific data:', pageData); // Debug: log the page-specific data
+
+                    if (pageData) {
+                        // Set background image
+                        const backgroundDiv = document.getElementById('background-div');
+                        backgroundDiv.style.backgroundImage = `url(${pageData.background})`;
+
+                        // Set page info
+                        document.getElementById('name').textContent = pageData.name;
+                        document.getElementById('course').textContent = `Course: ${pageData.course}`;
+                        document.getElementById('module').textContent = `Module: ${pageData.module}`;
+                        document.getElementById('gb').textContent = `GB: ${pageData.gb}`;
+                        document.getElementById('wl').textContent = `WL: ${pageData.wl}`;
+
+                        // Set links
+                        const linksDiv = document.getElementById('links');
+                        for (const part in pageData.parts) {
+                            const link = pageData.parts[part];
+                            const a = document.createElement('a');
+                            a.href = link;
+                            a.textContent = `Part ${part}`;
+                            linksDiv.appendChild(a);
+                        }
+
+                        // Extract and display a specific part (e.g., p1)
+                        const specificPartDiv = document.getElementById('specific-part');
+                        const specificPartLink = pageData.parts['p1']; // Change the key as needed
+                        if (specificPartLink) {
+                            specificPartDiv.innerHTML = `<h3>Specific Part</h3><a href="${specificPartLink}" target="_blank">${specificPartLink}</a>`;
+                        }
+                    }
+                })
+                .catch(error => console.error('Error fetching the page data:', error));
+        });
+    </script>
+</body>
+</html>
