@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     const title = document.title; // Get the title of the HTML page
-    const webAppUrl = 'https://script.google.com/macros/s/AKfycbyalLPkDyWvHDCqwNllsYmp2TW-IDTZxW4mN7t-5yNWo2AW2GhQgnPEyHdlmwGwVuYw/exec'; // Replace with your web app URL
+    const webAppUrl = 'hhttps://script.google.com/macros/s/AKfycbwIBCTe-Nu8U9V2gt7Dl1e-7H2dz_7WoyLDPLWUWlX8iDGQ_WwqDJRMe0WcQlxKOLIV/exec'; // Replace with your web app URL
 
     fetch(webAppUrl)
         .then(response => {
