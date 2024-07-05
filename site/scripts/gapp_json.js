@@ -32,17 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById('ip4').src = data.p4;
                 document.getElementById('ip5').src = data.p5;
 
-                 const specificPartDiv1 = document.getElementById('ip1');
-                 const specificPartLink1 = pageData.parts['p1']; // Change the key as needed
-                        if (specificPartLink1) {
-                            specificPartDiv1.innerHTML = `<iframe src="${specificPartLink}"></iframe>`;
-                        }
-                    } else {
-                        console.error('Page data not found for title:', title);
-                    }
-                })
-                .catch(error => console.error("Error fetching JSON data:", error));
-        });
+            
                 // Create and append links dynamically
                 const linksDiv = document.getElementById('links');
                 for (const part in pageData.parts) {
