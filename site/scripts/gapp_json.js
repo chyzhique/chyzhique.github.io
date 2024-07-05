@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
             if (pageData) {
                 // Set background image
-                const backgroundDiv = document.getElementById('background-div');
+                const backgroundDiv = document.getElementById('p0');
                 backgroundDiv.style.backgroundImage = `url(${pageData.background})`;
 
                 // Update the info section
