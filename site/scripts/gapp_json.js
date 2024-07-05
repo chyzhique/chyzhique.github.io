@@ -25,12 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("gb").textContent = `GB: ${pageData.gb}`;
                 document.getElementById("wl").textContent = `WL: ${pageData.wl}`;
 
+                
                 document.getElementById('ip1').src = pageData.p1;
                 document.getElementById('ip2').src = data.p2;
                 document.getElementById('ip3').src = data.p3;
                 document.getElementById('ip4').src = data.p4;
                 document.getElementById('ip5').src = data.p5;
 
+                 const specificPartDiv1 = document.getElementById('ip1');
+                 const specificPartLink1 = pageData.parts['p1']; // Change the key as needed
+                        if (specificPartLink1) {
+                            specificPartDiv1.innerHTML = `<iframe src="${specificPartLink}"></iframe>`;
+                        }
+                    } else {
+                        console.error('Page data not found for title:', title);
+                    }
+                })
+                .catch(error => console.error("Error fetching JSON data:", error));
+        });
                 // Create and append links dynamically
                 const linksDiv = document.getElementById('links');
                 for (const part in pageData.parts) {
@@ -42,16 +54,3 @@ document.addEventListener("DOMContentLoaded", function () {
                         linksDiv.appendChild(a);
                     }
                 }
-
-                // Extract and display a specific part (e.g., p1)
-                const specificPartDiv = document.getElementById('specific-part');
-                const specificPartLink = pageData.parts['p1']; // Change the key as needed
-                if (specificPartLink) {
-                    specificPartDiv.innerHTML = `<h3>Specific Part</h3><a href="${specificPartLink}" target="_blank">${specificPartLink}</a>`;
-                }
-            } else {
-                console.error('Page data not found for title:', title);
-            }
-        })
-        .catch(error => console.error("Error fetching JSON data:", error));
-});
