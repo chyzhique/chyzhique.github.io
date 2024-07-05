@@ -11,8 +11,14 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .then(data => {
             console.log(data); // Log data for debugging
+
+            // Ensure the title exists in the data
+            if (!data.hasOwnProperty(title)) {
+                throw new Error(`Data for title '${title}' not found`);
+            }
+
             const pageData = data[title];
-            
+
             if (pageData) {
                 // Set background image
                 const backgroundDiv = document.getElementById('p0');
@@ -25,14 +31,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("gb").textContent = `GB: ${pageData.gb}`;
                 document.getElementById("wl").textContent = `WL: ${pageData.wl}`;
 
-                
+                // Update the iframes with links from JSON data
+                console.log("iframe p1 URL:", pageData.p1); // Log the URL for debugging
                 document.getElementById('ip1').src = pageData.p1;
-                document.getElementById('ip2').src = data.p2;
-                document.getElementById('ip3').src = data.p3;
-                document.getElementById('ip4').src = data.p4;
-                document.getElementById('ip5').src = data.p5;
+                document.getElementById('ip2').src = pageData.p2;
+                document.getElementById('ip3').src = pageData.p3;
+                document.getElementById('ip4').src = pageData.p4;
+                document.getElementById('ip5').src = pageData.p5;
 
-            
                 // Create and append links dynamically
                 const linksDiv = document.getElementById('links');
                 for (const part in pageData.parts) {
@@ -44,3 +50,16 @@ document.addEventListener("DOMContentLoaded", function () {
                         linksDiv.appendChild(a);
                     }
                 }
+
+                // Extract and display a specific part (e.g., p1)
+                const specificPartDiv1 = document.getElementById('ip1');
+                const specificPartLink1 = pageData.parts['p1']; // Change the key as needed
+                if (specificPartLink1) {
+                    specificPartDiv1.src = specificPartLink1;
+                }
+            } else {
+                console.error('Page data not found for title:', title);
+            }
+        })
+        .catch(error => console.error("Error fetching JSON data:", error));
+});
