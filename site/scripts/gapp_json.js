@@ -25,6 +25,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.getElementById("gb").textContent = `GB: ${pageData.gb}`;
                 document.getElementById("wl").textContent = `WL: ${pageData.wl}`;
 
+                document.getElementById('ip1').src = data.p1;
+                document.getElementById('ip2').src = data.p2;
+                document.getElementById('ip3').src = data.p3;
+                document.getElementById('ip4').src = data.p4;
+                document.getElementById('ip5').src = data.p5;
+
                 // Create and append links dynamically
                 const linksDiv = document.getElementById('links');
                 for (const part in pageData.parts) {
