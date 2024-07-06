@@ -234,6 +234,9 @@ button {
     border: 1px solid black; border-radius: 8px; padding:1em; background-color: #FFDB00}
 
   .flavicon(
+  max-height 24px;
+max-width 188px;
+object-fit contain;
   width:100%;
   margin:1rem;
 }
