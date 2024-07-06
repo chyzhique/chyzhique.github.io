@@ -22,9 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
             if (pageData) {
                 // Set background image
                 const backgroundDiv = document.getElementById('p0');
-                if (pageData.background) {
-                    backgroundDiv.style.backgroundImage = `url(${pageData.background})`;
-                }
+                if (pageData && pageData.background) {
+            backgroundDiv.style.backgroundImage = `url(${pageData.background})`;
+        }
 
                 // Update the info section
                 if (pageData.name) document.getElementById("name").textContent = pageData.name;
