@@ -153,6 +153,7 @@ button {
 .navbar {
   overflow: hidden; /* Hide overflow */
   background-color: #333; /* Dark background color */
+  font-size:14px;
 }
 
 /* Style the navigation bar links */
