@@ -1,1 +1,30 @@
-it's me
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Profile Page</title>
+  <style>
+    .wrapper { max-width: 400px; margin: auto; text-align: center; }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <h2>User Profile</h2>
+    <div id="profileInfo"></div>
+  </div>
+
+  <script>
+    function displayProfile(profile) {
+      if (profile) {
+        document.getElementById('profileInfo').innerHTML = `
+          <p>Email: ${profile.email}</p>
+          <!-- Add more profile information as needed -->
+        `;
+      } else {
+        document.getElementById('profileInfo').innerHTML = '<p>Error fetching profile information.</p>';
+      }
+    }
+
+    google.script.run.withSuccessHandler(displayProfile).getUserProfile();
+  </script>
+</body>
+</html>
