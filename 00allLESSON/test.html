@@ -2,50 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>b1m1l1</title>
+    <title>a0m1l1</title>
     <script src="https://chyzhique.github.io/site/scripts/navbar.js" defer></script>
     <script src="https://chyzhique.github.io/site/scripts/passage.js" defer></script>
     <script src="https://chyzhique.github.io/site/scripts/lesson_nav.js" defer></script>
-  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles.css">
-  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles_lesson.css">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/site/styles/styles_lesson.css">
 </head>
 <body>
   <div id="p0" class="main active">
-        <div class="element" style="height:5vh" data-target="p1">START</div>
-    </div></div>
-
-    <div id="p1" class="passage">   
-        <div class="arrow left" data-target="p0">BACK</div>
-        <div class="arrow right" data-target="p2">NEXT</div>
-        <iframe id="ip1" frameborder="0"></iframe>
-    </div>
-
-    <div id="p2" class="passage">   
-        <div class="arrow left" data-target="p1">BACK</div>
-        <div class="arrow right" data-target="p3">NEXT</div>
-        <iframe id="ip2" frameborder="0"></iframe>
-    </div>
-
-      <div id="p3" class="passage">   
-        <div class="arrow left" data-target="p2">BACK</div>
-        <div class="arrow right" data-target="p4">NEXT</div>
-        <iframe id="ip3"  frameborder="0"></iframe>
-    </div>
-  
-        <div id="p4" class="passage">   
-        <div class="arrow left" data-target="p3">BACK</div>
-        <div class="arrow right" data-target="p5">NEXT</div>
-        <iframe  id="ip4"  frameborder="0"></iframe>
-    </div>
-  
-         <div id="p5" class="passage">   
-        <div class="arrow left" data-target="p4">BACK</div>
-        <div class="arrow right" data-target="p5">Finish</div>
-        <iframe id="ip5"  frameborder="0"></iframe>
-    </div>
-  
-    <div </div>
-    <div class="content">
+  <div class="content">
         <div class="info" id="info">
             <h1 id="name"></h1>
             <p id="course"></p>
@@ -53,13 +19,41 @@
             <p id="gb"></p>
             <p id="wl"></p>
         </div>
-        <div class="links" id="links">
-            <!-- Links will be dynamically populated here -->
-        </div>
-        <div class="specific-part" id="specific-part">
-            <!-- Specific part content will be dynamically populated here -->
-        </div>
+        <div class="element" style="height:5vh" data-target="p1">START</div>
+    </div></div></div>
+
+    <div id="p1" class="passage">   
+        <div class="arrow left" data-target="p0">BACK</div>
+        <div class="arrow right" data-target="p2">NEXT</div>
+        <iframe id="ip1"></iframe>
     </div>
+
+    <div id="p2" class="passage">   
+        <div class="arrow left" data-target="p1">BACK</div>
+        <div class="arrow right" data-target="p3">NEXT</div>
+        <iframe id="ip2"></iframe>
+    </div>
+
+      <div id="p3" class="passage">   
+        <div class="arrow left" data-target="p2">BACK</div>
+        <div class="arrow right" data-target="p4">NEXT</div>
+        <iframe id="ip3"></iframe>
+    </div>
+  
+        <div id="p4" class="passage">   
+        <div class="arrow left" data-target="p3">BACK</div>
+        <div class="arrow right" data-target="p5">NEXT</div>
+        <iframe  id="ip4"></iframe>
+    </div>
+  
+         <div id="p5" class="passage">   
+        <div class="arrow left" data-target="p4">BACK</div>
+        <div class="arrow right" data-target="p5">Finish</div>
+        <iframe id="ip5"></iframe>
+    </div>
+  
+    <div> </div>
+   </div>
     <script src="https://chyzhique.github.io/site/scripts/gapp_json.js" defer></script>
 </body>
 </html>
