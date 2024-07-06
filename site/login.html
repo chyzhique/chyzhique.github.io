@@ -57,7 +57,37 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.querySelector('.signIn-link').addEventListener('click', function() {
+      document.querySelector('.sign-up').classList.remove('active');
+      document.querySelector('.sign-in').classList.add('active');
+    });
+
+    document.querySelector('.signUp-link').addEventListener('click', function() {
+      document.querySelector('.sign-in').classList.remove('active');
+      document.querySelector('.sign-up').classList.add('active');
+    });
+
+    document.getElementById('registrationForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      google.script.run.withSuccessHandler(function(response) {
+        alert(response);
+        if (response === 'Registration successful') {
+          window.location.href = '?page=profile'; // Redirect to profile page
+        }
+      }).registerUser(document.getElementById('regEmail').value, document.getElementById('regPassword').value);
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      google.script.run.withSuccessHandler(function(response) {
+        alert(response);
+        if (response === 'Login successful') {
+          window.location.href = '?page=profile'; // Redirect to profile page
+        }
+      }).loginUser(document.getElementById('loginUsername').value, document.getElementById('loginPassword').value);
+    });
+    </script>
 </body>
 
 </html>
