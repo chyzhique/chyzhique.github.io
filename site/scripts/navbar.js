@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbarHTML = `
-    <head>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    </head>
           <div id="navbar" class="navbar">
           <span class="logo"><img class="flavicon" src="https://www.dropbox.com/scl/fi/a0qiv80qrjzu8vvvv2ouk/512sign.png?rlkey=ykjui910b9eufvs1n0yzbok2s&st=m0y64ssi&raw=1">ANGLOMOVA</span>
   <a href="https://chyzhique.github.io/site/index.html"><span class="material-symbols-outlined">home</span>Main</a>
