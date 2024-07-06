@@ -239,6 +239,9 @@ max-width 188px;
 object-fit contain;
   width:100%;
   margin:1rem;
+  box-sizing: border-box;
+  dispay: block;
+  
 }
 .logo{
   margin-right: 25px;
