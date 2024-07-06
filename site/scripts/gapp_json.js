@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Set background image
                 const backgroundDiv = document.getElementById('p0');
                 if (pageData && pageData.background) {
-            backgroundDiv.style.backgroundImage = `url(${pageData.background})`;
+            backgroundDiv.style.background = `center / contain no-repeat url(${pageData.background})`;
         }
 
                 // Update the info section
