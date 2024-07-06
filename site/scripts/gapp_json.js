@@ -24,6 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 const backgroundDiv = document.getElementById('p0');
                 if (pageData && pageData.background) {
             backgroundDiv.style.background = `center / contain no-repeat url(${pageData.background})`;
+            backgroundDiv.style.backgroundPosition = 'center';
+            backgroundDiv.style.backgroundSize = 'cover';
+            backgroundDiv.style.backgroundRepeat = 'no-repeat';
         }
 
                 // Update the info section
