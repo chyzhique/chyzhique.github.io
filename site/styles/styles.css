@@ -149,7 +149,29 @@ button {
 
 /* Increase the font size of the heading */
 .header h1 {
-  font-size: 40px;
+  font-size: 4rem;
+  font-family: Holtwood One SC, serif; 
+  font-weight: 400; 
+   font-style: normal; 
+  color: #FFFFFF; 
+  text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5; color: #FFFFFF;
+}
+.header p{
+  font-family: Baskervville SC, serif; 
+  font-weight: 600; 
+  font-style: normal; 
+  translate: 0 -50%
+}
+
+.header div{
+  margin-top: 10vh; 
+  background-color: white; 
+  border: 1px solid silver; 
+  padding:1vh; 
+  border-radius: 8px; 
+  width:10vw; 
+  margin-left:auto; 
+  margin-right:auto
 }
 
 /* Column container */
