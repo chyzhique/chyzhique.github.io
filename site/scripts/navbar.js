@@ -15,14 +15,14 @@ document.addEventListener('DOMContentLoaded', function() {
   <button type="button" class="navbut" onclick="document.location='/courses.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">dataset</span></div><div>Courses</div></button>
   
-  <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/lesson.html'">
+  <button type="button" class="navbut" onclick="document.location='/lesson.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">bolt</span></div><div>Current lesson</div></button>
   
-  <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/materials.html'">
+  <button type="button" class="navbut" onclick="document.location='/materials.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">save</span></div><div>Materials</div></button>
   </nav>
   <div style="align-items: center; box-sizing: border-box;display: flex;;">
-  <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/profile.html'">
+  <button type="button" class="navbut" onclick="document.location='/profile.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">account_circle</span></div><div>Profile</div></button>
   
 </div></div></div>
