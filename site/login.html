@@ -57,38 +57,55 @@
     </div>
 </div>
 
-  <script>
-document.getElementById('signUpForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const data = new URLSearchParams();
-    formData.forEach((value, key) => {
-        data.append(key, value);
-    });
+    <script>
+    const CORS_PROXY_URL = 'https://script.google.com/macros/s/AKfycbye8x8lbdQrviDBnjpSuIhSSJbgTVdSt5cTJX0kSiarcXt_G04RrxSOGOOY6IpdQbXm/exec';
+    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec';
 
-    fetch('https://script.google.com/macros/s/AKfycbye8x8lbdQrviDBnjpSuIhSSJbgTVdSt5cTJX0kSiarcXt_G04RrxSOGOOY6IpdQbXm/exec?url=https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?action=register', {
+    document.getElementById('signUpForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch(`${CORS_PROXY_URL}?url=${encodeURIComponent(SCRIPT_URL)}&action=register`, {
         method: 'POST',
-        body: data
-    }).then(response => response.text()).then(data => {
-        alert(data);
-        window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?page=profile';
-    });
-});
-
-document.getElementById('signInForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const formData = new FormData(this);
-    const data = new URLSearchParams();
-    formData.forEach((value, key) => {
-        data.append(key, value);
+        body: JSON.stringify({ payload: data }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        window.location.href = `${SCRIPT_URL}?page=profile`;
+      })
+      .catch(error => console.error('Error:', error));
     });
 
-    fetch('https://script.google.com/macros/s/AKfycbye8x8lbdQrviDBnjpSuIhSSJbgTVdSt5cTJX0kSiarcXt_G04RrxSOGOOY6IpdQbXm/exec?url=https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec&action=login', {
+    document.getElementById('signInForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(this);
+      const data = {};
+      formData.forEach((value, key) => {
+        data[key] = value;
+      });
+
+      fetch(`${CORS_PROXY_URL}?url=${encodeURIComponent(SCRIPT_URL)}&action=login`, {
         method: 'POST',
-        body: data
-    }).then(response => response.text()).then(data => {
-        alert(data);
-        window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?page=profile';
+        body: JSON.stringify({ payload: data }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        alert(data.message);
+        window.location.href = `${SCRIPT_URL}?page=profile`;
+      })
+      .catch(error => console.error('Error:', error));
     });
-});
-</script>
+  </script>
+
+ 
