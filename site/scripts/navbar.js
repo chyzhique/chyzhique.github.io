@@ -24,6 +24,9 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <button type="button" class="navbut" onclick="document.location='/materials.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">save</span></div><div>Materials</div></button>
+
+  <button type="button" class="navbut" onclick="document.location='/pricing.html'">
+  <div class="piclog" size="20"><span class="material-symbols-outlined">paid</span></div><div>Pricing</div></button>
   </nav>
       
   <div class="nav-bar-rig">
