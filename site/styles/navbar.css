@@ -594,5 +594,5 @@ font-family: Wittgenstein, serif;
 
 .navbut:hover{
   background-color: #C80036;
-  transition-delay: 1s;
+  transition-delay: 0,3s;
 }
