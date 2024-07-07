@@ -9,10 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
 </div>
   <nav class="objectives">
   
-  <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/index.html'">
+  <button type="button" class="navbut" onclick="document.location='/index.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">home</span></div><div>Main</div></button>
   
-  <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/courses.html'">
+  <button type="button" class="navbut" onclick="document.location='/courses.html'">
   <div class="piclog" size="20"><span class="material-symbols-outlined">dataset</span></div><div>Courses</div></button>
   
   <button type="button" class="navbut" onclick="document.location='https://chyzhique.github.io/site/lesson.html'">
