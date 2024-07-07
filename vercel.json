@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/site/index.html" }
+    { "source": "/", "destination": "https:chyzhique.github.io/site/index.html" }
   ]
 }
