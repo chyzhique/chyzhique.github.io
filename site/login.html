@@ -57,29 +57,38 @@
     </div>
 </div>
 
-<script>
-    document.getElementById('signUpForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        fetch('https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?action=register', {
-            method: 'POST',
-            body: formData
-        }).then(response => response.text()).then(data => {
-            alert(data);
-            window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?page=profile';
-        });
+  <script>
+document.getElementById('signUpForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const data = new URLSearchParams();
+    formData.forEach((value, key) => {
+        data.append(key, value);
     });
 
-    document.getElementById('signInForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        fetch('https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?action=login', {
-            method: 'POST',
-            body: formData
-        }).then(response => response.text()).then(data => {
-            alert(data);
-            window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec/exec?page=profile';
-        });
+    fetch('https://script.google.com/macros/s/AKfycbye8x8lbdQrviDBnjpSuIhSSJbgTVdSt5cTJX0kSiarcXt_G04RrxSOGOOY6IpdQbXm/exec?url=https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?action=register', {
+        method: 'POST',
+        body: data
+    }).then(response => response.text()).then(data => {
+        alert(data);
+        window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?page=profile';
     });
-    </script>
-   
+});
+
+document.getElementById('signInForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    const data = new URLSearchParams();
+    formData.forEach((value, key) => {
+        data.append(key, value);
+    });
+
+    fetch('https://script.google.com/macros/s/AKfycbye8x8lbdQrviDBnjpSuIhSSJbgTVdSt5cTJX0kSiarcXt_G04RrxSOGOOY6IpdQbXm/exec?url=https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec&action=login', {
+        method: 'POST',
+        body: data
+    }).then(response => response.text()).then(data => {
+        alert(data);
+        window.location.href = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec?page=profile';
+    });
+});
+</script>
