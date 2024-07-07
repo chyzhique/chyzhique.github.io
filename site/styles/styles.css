@@ -152,34 +152,6 @@ button {
   font-size: 40px;
 }
 
-.navbar {
-  overflow: hidden; /* Hide overflow */
-  background-color: #333; /* Dark background color */
-  font-size:14px;
-  align-items:center;
-}
-
-/* Style the navigation bar links */
-.navbar a {
-  float: left; /* Make sure that the links stay side-by-side */
-  display: block; /* Change the display to block, for responsive reasons (see below) */
-  color: white; /* White text color */
-  text-align: center; /* Center the text */
-  padding: 14px 20px; /* Add some padding */
-  text-decoration: none; /* Remove underline */
-}
-
-/* Right-aligned link */
-.navbar a.right {
-  float: right; /* Float a link to the right */
-}
-
-/* Change color on hover/mouse-over */
-.navbar a:hover {
-  background-color: #ddd; /* Grey background color */
-  color: black; /* Black text color */
-}
-
 /* Column container */
 .row {  
   display: -ms-flexbox; /* IE10 */
@@ -227,27 +199,9 @@ button {
 }
 
 /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .navbar a {
-    float: none;
-    width: 100%;
-  }
+
 }
   .det2_course{
     border: 1px solid black; border-radius: 8px; padding:1em; background-color: #FFDB00
   }
-
-  .icon(
-  max-height: 24px;
-max-width: 188px;
-object-fit: contain;
-  width:100%;
-  margin:1rem;
-  box-sizing: border-box;
-  dispay: block;
-  
-}
-.logo{
-  margin-right: 25px;
-}
   
