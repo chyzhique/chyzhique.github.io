@@ -148,7 +148,7 @@ button {
 }
 
 /* Increase the font size of the heading */
-.header h1 {
+.frs {
   font-size: 4rem;
   font-family: Holtwood One SC, serif; 
   font-weight: 400; 
@@ -156,14 +156,14 @@ button {
   color: #FFFFFF; 
   text-shadow: 2px 2px 0 #4074b5, 2px -2px 0 #4074b5, -2px 2px 0 #4074b5, -2px -2px 0 #4074b5, 2px 0px 0 #4074b5, 0px 2px 0 #4074b5, -2px 0px 0 #4074b5, 0px -2px 0 #4074b5; color: #FFFFFF;
 }
-.header p{
+.det{
   font-family: Baskervville SC, serif; 
   font-weight: 600; 
   font-style: normal; 
   translate: 0 -50%
 }
 
-.header div{
+.redir{
   margin-top: 10vh; 
   background-color: white; 
   border: 1px solid silver; 
