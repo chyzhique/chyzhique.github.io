@@ -5,6 +5,7 @@
     align-items: center;
     position: sticky;
     top: 0px;
+  height:53px;
     z-index: 10;
     flex-direction: row;
   padding-top: 1.1rem;
