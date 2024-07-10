@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+  <script src="https://chyzhique.github.io/script/img-opener.js" defer></script>
+    </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">VOCABULARY</h4>
+      <h3>A. Listen, read and repeat </h3>
+<img src="https://www.dropbox.com/scl/fi/afgcwrr7gtpo1koqmuzj2/v-a0-m2l5.jpg?rlkey=3qhpvalnmn8iztgjemzfkdxc3&st=0t2mw2n2&raw=1">
+</div>
+    <div class="bg-left">
+<h4 style="text-align:center">READING</h4>
+<h3>A. Look at the picture from the film Hairspray. Who do you think the actor is?/</h3>
+<img src="https://www.dropbox.com/scl/fi/um32djtbkoemg82mpsz5a/r-a0-m2l5.png?rlkey=mht90dqbvrx6zuivu5frb1qp6&st=rq4zrffi&raw=1">  
+<div class="bunch">
+&emsp; Hairspray is a film about a girl called Tracy Turnblad. 
+Tracy is chubby but she's a great dancer. <br>
+&emsp;In the film, John Travolta plays Edna Turnblad, Tracy's mother. 
+Of course, he is very different. Edna is overweight and she's got medium-length hair.<br> 
+&emsp;In real life, John Travolta isn't overweight and he's got short dark hair. 
+Also, Travolta's eyes are blue, but in the film Edna's got brown eyes. <br>
+&emsp;It's a big difference.
+</div>
+<h3>C. Read again and answer the questions.</h3>
+<ol>
+<li> What's Hairspray about?<br>
+<li> Has Edna got medium-length hair?<br>
+<li> Is John Travolta overweight in real life?<br>
+<li> What colour are Edna's eyes?
+  </ol>
+
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "f", "t", "f", "f",
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
