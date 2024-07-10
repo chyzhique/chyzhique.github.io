@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" href="https://chyzhique.github.io/css/vocabulary.css">
+    <link href="https://chyzhique.github.io/saved-results.js">
+	<script src="https://chyzhique.github.io/script/locstor.js" defer></script>
+  <script src="https://chyzhique.github.io/script/img-opener.js" defer></script>
+    <title>p1-a0-m3l3</title>
+    </head> 
+<body>
+ 
+  <div class="bg">
+    <div class="bg-left">
+      <h4 style="text-align:center">VOCABULARY</h4>
+      <h3>A. Listen, read and repeat </h3>
+<img src="https://www.dropbox.com/scl/fi/kkw5ft04j0bi0uvms4t81/v-a0-m3l3.jpg?rlkey=2ao10n2jb3cbmvsp8fmn9gbgd&st=7utifr4k&raw=1">
+      <h4 style="text-align:center">SPEAKING</h4>
+<h3>Talk about your daily routine.</h3>
+- I go to work in the morning.<br>
+- I get home in the evening.
+      <br><br> 
+</div>
+    <div class="bg-left">
+<h4 style="text-align:center">READING</h4>
+<h3>A. Look at the picture and the title of the text.
+What does Gary Silver do? Does he work day
+or night? Listen, read and check your answers.</h3>
+<img src="https://www.dropbox.com/scl/fi/ue3w0zq98easqeguppgpc/r-a0-m3l3.png?rlkey=vaay8jgvfy1my5vixnyvcopkd&st=tazyn3zk&raw=1">  
+<h1><center>A day in the life of GARY SILVER</center></h1>
+<div class="bunch">
+Gary Silver is a radio DJ for Downtown Radio 97.2FM. His show is on every night, so his daily routine is a bit unusual. Every day he gets up at three o'clock in the afternoon. He has a shower,
+but then he doesn't have breakfast, he has lunch. He relaxes for the rest of the day and has dinner at about ten o'clock in the evening. Then he goes to work. He starts at 11 pm and finishes at 6 am. He gets home at about seven in the morning and he goes to bed.
+  </div>
+  
+<h3>B. Read again and complete the sentences with the correct time.</h3>
+      
+<ol>
+<li> Gary gets up at
+  <input type="text" id="wordInput1" class="changeDiv" id="changeDiv1" style="width: 15%">
+<li> He has dinner at
+  <input type="text" id="wordInput2" class="changeDiv" id="changeDiv2" style="width: 15%">
+<li> He starts work at
+  <input type="text" id="wordInput3" class="changeDiv" id="changeDiv3" style="width: 15%">
+<li> He finishes work at
+  <input type="text" id="wordInput4" class="changeDiv" id="changeDiv4" style="width: 15%">
+<li> He gets home from work at
+  <input type="text" id="wordInput5" class="changeDiv" id="changeDiv5" style="width: 15%">
+  </ol>
+
+</div>
+
+</div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const inputFields = document.querySelectorAll('input[type="text"]');
+    const changeDivs = document.querySelectorAll('.changeDiv');
+    const correctWords = [
+    "3 pm", "10 pm", "11 pm", 
+      "6 am", "7 am"
+    ];
+
+    inputFields.forEach((input, index) => {
+      input.addEventListener('input', function () {
+        const enteredWord = input.value.trim().toLowerCase();
+        const correctOptions = Array.isArray(correctWords[index]) ? correctWords[index].map(option => option.toLowerCase()) : [correctWords[index].toLowerCase()];
+
+        if (correctOptions.includes(enteredWord)) {
+          changeDivs[index].style.backgroundColor = '#77DD77'; // Change background color to green if correct word is entered
+        } else {
+          changeDivs[index].style.backgroundColor = ''; // Reset background color if a different word is entered
+        }
+      });
+    });
+  });
+</script>
