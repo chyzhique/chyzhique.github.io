@@ -276,7 +276,7 @@ ol, ul {
   margin: auto;
   display: block;
   width: 80%;
-  max-width: 700px;
+  max-width: 80vw;
 }
 
 /* Caption of Modal Image */
@@ -284,7 +284,7 @@ ol, ul {
   margin: auto;
   display: block;
   width: 80%;
-  max-width: 700px;
+  max-width: 80vw;
   text-align: center;
   color: #ccc;
   padding: 10px 0;
