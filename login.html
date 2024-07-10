@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,101 +10,25 @@
 </head>
 
 <body>
-  
-  <div class="wrapper">
-    <div class="form-wrapper sign-up">
-        <form id="signUpForm">
-            <h2>Sign Up</h2>
-            <div class="input-group">
-                <input type="text" name="username" required>
-                <label for="">Username</label>
-            </div>
-            <div class="input-group">
-                <input type="email" name="email" required>
-                <label for="">Email</label>
-            </div>
-            <div class="input-group">
-                <input type="password" name="password" required>
-                <label for="">Password</label>
-            </div>
-            <button type="submit" class="btn">Sign Up</button>
-            <div class="sign-link">
-                <p>Already have an account? <a href="#" class="signIn-link">Sign In</a></p>
-            </div>
-        </form>
-    </div>
 
-    <div class="form-wrapper sign-in">
-        <form id="signInForm">
-            <h2>Login</h2>
-            <div class="input-group">
-                <input type="text" name="username" required>
-                <label for="">Username</label>
-            </div>
-            <div class="input-group">
-                <input type="password" name="password" required>
-                <label for="">Password</label>
-            </div>
-            <div class="forgot-pass">
-                <a href="#">Forgot Password?</a>
-            </div>
-            <button type="submit" class="btn">Login</button>
-            <div class="sign-link">
-                <p>Don't have an account? <a href="#" class="signUp-link">Sign Up</a></p>
-            </div>
-        </form>
-    </div>
-</div>
+  <div class="form-wrapper sign-up">
+    <h2>Register</h2>
+    <form id="register-form">
+      <input type="email" id="register-email" placeholder="Email" required>
+      <input type="password" id="register-password" placeholder="Password" required>
+      <button type="submit">Register</button>
+    </form>
+  </div>
 
-    <script>
-    const CORS_PROXY_URL = 'https://script.google.com/macros/s/AKfycbwCLJQDmTp_s4hIbFTbmWOJKHZgDlqIhSm46a1lsh_SGA-NDYKIkJeisjOTrXIyD5qR/exec';
-    const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec';
+  <div class="form-wrapper sign-in">
+    <h2>Login</h2>
+    <form id="login-form">
+      <input type="email" id="login-email" placeholder="Email" required>
+      <input type="password" id="login-password" placeholder="Password" required>
+      <button type="submit">Login</button>
+    </form>
+  </div>
 
-    document.getElementById('signUpForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      fetch(`${CORS_PROXY_URL}?url=${encodeURIComponent(SCRIPT_URL)}&action=register`, {
-        method: 'POST',
-        body: JSON.stringify({ payload: data }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
-        window.location.href = `https://chyzhique.github.io/site/profile.html`;
-      })
-      .catch(error => console.error('Error:', error));
-    });
-
-    document.getElementById('signInForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const formData = new FormData(this);
-      const data = {};
-      formData.forEach((value, key) => {
-        data[key] = value;
-      });
-
-      fetch(`${CORS_PROXY_URL}?url=${encodeURIComponent(SCRIPT_URL)}&action=login`, {
-        method: 'POST',
-        body: JSON.stringify({ payload: data }),
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        alert(data.message);
-        window.location.href = 'https://chyzhique.github.io/site/profile.html';
-      })
-      .catch(error => console.error('Error:', error));
-    });
-  </script>
-
- 
+  <script src="/site/scripts/login_sys.js"></script>
+</body>
+</html>
