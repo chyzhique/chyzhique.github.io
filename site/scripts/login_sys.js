@@ -1,42 +1,53 @@
+// Register new user
 document.getElementById('register-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = document.getElementById('register-email').value;
   const password = document.getElementById('register-password').value;
 
-  fetch('https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec', {
-    method: 'POST',
-    body: JSON.stringify({ action: 'register', email, password }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    alert(data.message);
-  })
-  .catch(error => console.error('Error:', error));
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert('User registered successfully');
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
 });
 
+// Login user
 document.getElementById('login-form').addEventListener('submit', function(e) {
   e.preventDefault();
   const email = document.getElementById('login-email').value;
   const password = document.getElementById('login-password').value;
 
-  fetch('https://script.google.com/macros/s/AKfycbyeDL5drikLxZTiQOyofijg6r_KiivPD6xA_7cFkAWEXLugucN85rbBK11QocWnGCxK/exec', {
-    method: 'POST',
-    body: JSON.stringify({ action: 'login', email, password }),
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(response => response.json())
-  .then(data => {
-    if (data.status === 'success') {
-      // Redirect to profile page or set session
-      alert(data.message);
-    } else {
-      alert(data.message);
-    }
-  })
-  .catch(error => console.error('Error:', error));
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert('Login successful');
+      window.location.href = 'profile.html';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
+});
+
+// Google Sign-In
+document.getElementById('google-signin-button').addEventListener('click', function() {
+  const provider = new firebase.auth.GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider)
+    .then((result) => {
+      const user = result.user;
+      alert('Google Sign-In successful');
+      window.location.href = 'profile.html';
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      alert(errorMessage);
+    });
 });
