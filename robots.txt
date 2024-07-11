@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /             # Разрешает индексацию главной страницы
+Allow: /courses      # Разрешает индексацию страницы курсов
+Allow: /materials    # Разрешает индексацию страницы материалов
+Allow: /profile      # Разрешает индексацию страницы профиля
+Allow: /lesson      # Разрешает индексацию страницы контактов
+
+Disallow: /
+
+Sitemap: https://www.anglomova.com/sitemap.xml
