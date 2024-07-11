@@ -20,7 +20,7 @@ const firebaseConfig = {
   measurementId: "G-9W633V0TWL"
 };
 
-// Initialize Firebase
+    // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
@@ -44,6 +44,9 @@ const firebaseConfig = {
         });
 
         console.log("User data successfully stored in Firestore");
+
+        // Redirect to profile page
+        window.location.href = 'profile.html';
       } catch (error) {
         console.error("Error writing document: ", error);
         alert(error.message);
@@ -60,6 +63,8 @@ const firebaseConfig = {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
         alert('Login successful');
+
+        // Redirect to profile page
         window.location.href = 'profile.html';
       } catch (error) {
         console.error(error);
@@ -75,6 +80,8 @@ const firebaseConfig = {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
         alert('Google Sign-In successful');
+
+        // Redirect to profile page
         window.location.href = 'profile.html';
       } catch (error) {
         console.error(error);
