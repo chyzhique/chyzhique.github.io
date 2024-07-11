@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Login and Registration Form</title>
     <link rel="stylesheet" href="/site/styles/styles_reg.cs">
-    <script src="/site/scripts/login_scr.js" defer></script>
+    
 </head>
 
 <body>
@@ -28,19 +28,16 @@
       <button type="submit">Login</button>
     </form>
   </div>
-      <button id="google-signin-button">Sign in with Google</button>
 
-  <script src="/site/scripts/login_sys.js"></script>
-    <script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.3/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
+  <button id="google-signin-button">Sign in with Google</button>
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-analytics.js"></script>
+
+        <script>
+    // Your web app's Firebase configuration
+const firebaseConfig = {
     apiKey: "AIzaSyA9fv5y23398kzP8HljS3BlreOjycA-NUI",
     authDomain: "anglomova-429e2.firebaseapp.com",
     projectId: "anglomova-429e2",
@@ -50,9 +47,65 @@
     measurementId: "G-9W633V0TWL"
   };
 
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+    // Handle login
+    const loginForm = document.querySelector('#login-form');
+    loginForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+      
+      firebase.auth().signInWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Handle successful login
+          console.log('User logged in:', userCredential.user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // Handle errors
+          console.error('Login error:', errorMessage);
+        });
+    });
+
+    // Handle registration
+    const registerForm = document.querySelector('#register-form');
+    registerForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('register-email').value;
+      const password = document.getElementById('register-password').value;
+      
+      firebase.auth().createUserWithEmailAndPassword(email, password)
+        .then((userCredential) => {
+          // Handle successful registration
+          console.log('User registered:', userCredential.user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // Handle errors
+          console.error('Registration error:', errorMessage);
+        });
+    });
+
+    // Sign in with Google button
+    const googleSignInButton = document.getElementById('google-signin-button');
+    googleSignInButton.addEventListener('click', () => {
+      const provider = new firebase.auth.GoogleAuthProvider();
+      firebase.auth().signInWithPopup(provider)
+        .then((userCredential) => {
+          // Handle successful Google sign-in
+          console.log('User signed in with Google:', userCredential.user);
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // Handle errors
+          console.error('Google sign-in error:', errorMessage);
+        });
+    });
+  </script>
 </body>
 </html>
