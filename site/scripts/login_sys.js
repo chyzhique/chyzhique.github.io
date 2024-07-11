@@ -1,3 +1,6 @@
+// Initialize Firestore
+const db = firebase.firestore();
+
 // Register new user
 document.getElementById('register-form').addEventListener('submit', function(e) {
   e.preventDefault();
@@ -8,6 +11,19 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
     .then((userCredential) => {
       const user = userCredential.user;
       alert('User registered successfully');
+
+      // Store additional user data in Firestore
+      db.collection("users").doc(user.uid).set({
+        email: user.email,
+        displayName: user.displayName || '',
+        photoURL: user.photoURL || ''
+      })
+      .then(() => {
+        console.log("User data successfully stored in Firestore");
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
     })
     .catch((error) => {
       const errorCode = error.code;
