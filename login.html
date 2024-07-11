@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login System</title>
-<script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore-compat.js"></script>
-  <script>
+<script type="module">
+    // Import Firebase modules
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
 const firebaseConfig = {
   apiKey: "AIzaSyA9fv5y23398kzP8HljS3BlreOjycA-NUI",
   authDomain: "anglomova-429e2.firebaseapp.com",
@@ -20,11 +21,66 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+    const app = initializeApp(firebaseConfig);
+    const auth = getAuth(app);
+    const db = getFirestore(app);
 
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
+    // Register new user
+    document.getElementById('register-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('register-email').value;
+      const password = document.getElementById('register-password').value;
+
+      try {
+        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        alert('User registered successfully');
+
+        // Store additional user data in Firestore
+        await setDoc(doc(db, "users", user.uid), {
+          email: user.email,
+          displayName: user.displayName || '',
+          photoURL: user.photoURL || ''
+        });
+
+        console.log("User data successfully stored in Firestore");
+      } catch (error) {
+        console.error("Error writing document: ", error);
+        alert(error.message);
+      }
+    });
+
+    // Login user
+    document.getElementById('login-form').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const email = document.getElementById('login-email').value;
+      const password = document.getElementById('login-password').value;
+
+      try {
+        const userCredential = await signInWithEmailAndPassword(auth, email, password);
+        const user = userCredential.user;
+        alert('Login successful');
+        window.location.href = 'profile.html';
+      } catch (error) {
+        console.error(error);
+        alert(error.message);
+      }
+    });
+
+    // Google Sign-In
+    document.getElementById('google-signin-button').addEventListener('click', async () => {
+      const provider = new GoogleAuthProvider();
+
+      try {
+        const result = await signInWithPopup(auth, provider);
+        const user = result.user;
+        alert('Google Sign-In successful');
+        window.location.href = 'profile.html';
+      } catch (error) {
+        console.error(error);
+        alert(error.message);
+      }
+    });
   </script>
 </head>
 <body>
