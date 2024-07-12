@@ -227,3 +227,13 @@ h2 {
 .sign-link p a:hover {
     text-decoration: underline;
 }
+
+/* STYLES FOR DIFFERENT SCREENS */
+@media (max-width: 768px){
+    .wrapper {
+        width: 95vw;
+        height: 95vh;
+        font-size: 1em
+    }
+}    
+
