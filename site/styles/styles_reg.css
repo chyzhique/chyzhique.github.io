@@ -20,8 +20,8 @@ body {
 /* ======- FORM -======= */
 .wrapper {
     position: relative;
-    width: 32rem;
-    height: 34.5rem;
+    width: 50vw;
+    height: 70vh;
 }
 
 /* Form color */
