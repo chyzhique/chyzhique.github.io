@@ -184,6 +184,20 @@ h2 {
 .sign-link p {
     color: #1E2022;
 }
+    #success-message {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #4CAF50;
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      font-size: 1.2em;
+    }
 
 .sign-link p a {
     color: #4592AF;
