@@ -30,17 +30,6 @@ const firebaseConfig = {
     const auth = getAuth(app);
     const db = getFirestore(app);
   
- function showSuccessMessage(message, redirectUrl) {
-      const successMessage = document.getElementById('success-message');
-      successMessage.textContent = message;
-      successMessage.style.display = 'block';
-      setTimeout(() => {
-        successMessage.style.display = 'none';
-        window.location.href = redirectUrl;
-      }, 3000);
-    }
-
-
 // Show success message
 function showSuccessMessage(message, redirectUrl) {
   const successMessage = document.getElementById('success-message');
