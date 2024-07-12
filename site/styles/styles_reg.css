@@ -29,6 +29,7 @@ body {
     position: absolute;
     top: 0;
     left: 0;
+    padding: 2rem 1rem 1rem 1rem;
     justify-content: center;
     align-items: center;
     width: 90%;
