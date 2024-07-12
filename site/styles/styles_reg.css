@@ -184,20 +184,23 @@ h2 {
 .sign-link p {
     color: #1E2022;
 }
-    #success-message {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: #4CAF50;
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      font-size: 1.2em;
-    }
+#success-message {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%); /* Adjust to truly center */
+  background-color: white; /* Green background */
+  color: white; /* White text */
+  padding: 20px; /* Some padding */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  text-align: center; /* Centered text */
+  font-size: 1.2em; /* Larger text size */
+  max-width: 50%; /* Responsive width */
+  word-wrap: break-word; /* Wrap long words */
+}
 
 .sign-link p a {
     color: #4592AF;
