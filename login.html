@@ -13,6 +13,8 @@
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
     import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+    import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+  
 const firebaseConfig = {
   apiKey: "AIzaSyA9fv5y23398kzP8HljS3BlreOjycA-NUI",
   authDomain: "anglomova-429e2.firebaseapp.com",
@@ -28,6 +30,7 @@ const firebaseConfig = {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
+  
  function showSuccessMessage(message, redirectUrl) {
       const successMessage = document.getElementById('success-message');
       successMessage.textContent = message;
@@ -37,7 +40,41 @@ const firebaseConfig = {
         window.location.href = redirectUrl;
       }, 3000);
     }
+let timeout;
 
+function resetTimeout() {
+  clearTimeout(timeout);
+  timeout = setTimeout(() => {
+    signOut(auth).then(() => {
+      // Sign-out successful.
+      alert("You have been logged out due to inactivity.");
+      window.location.href = "/login.html"; // Redirect to login page
+    }).catch((error) => {
+      // An error happened.
+      console.error("Sign-out error:", error);
+    });
+  }, 15 * 60 * 1000); // 15 minutes
+}
+
+// Reset timeout on user activity
+['mousemove', 'keydown', 'scroll', 'click'].forEach(event => {
+  document.addEventListener(event, resetTimeout);
+});
+
+// Initialize the timeout when the script loads
+resetTimeout();
+
+// Show success message
+function showSuccessMessage(message, redirectUrl) {
+  const successMessage = document.getElementById('success-message');
+  successMessage.textContent = message;
+  successMessage.style.display = 'block';
+  setTimeout(() => {
+    successMessage.style.display = 'none';
+    window.location.href = redirectUrl;
+  }, 3000);
+}
+  
     // Register new user
     document.getElementById('register-form').addEventListener('submit', async (e) => {
       e.preventDefault();
