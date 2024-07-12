@@ -25,6 +25,15 @@ const firebaseConfig = {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const db = getFirestore(app);
+ function showSuccessMessage(message, redirectUrl) {
+      const successMessage = document.getElementById('success-message');
+      successMessage.textContent = message;
+      successMessage.style.display = 'block';
+      setTimeout(() => {
+        successMessage.style.display = 'none';
+        window.location.href = redirectUrl;
+      }, 3000);
+    }
 
     // Register new user
     document.getElementById('register-form').addEventListener('submit', async (e) => {
@@ -35,7 +44,6 @@ const firebaseConfig = {
       try {
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        alert('User registered successfully');
 
         // Store additional user data in Firestore
         await setDoc(doc(db, "users", user.uid), {
@@ -44,10 +52,7 @@ const firebaseConfig = {
           photoURL: user.photoURL || ''
         });
 
-        console.log("User data successfully stored in Firestore");
-
-        // Redirect to profile page
-        window.location.href = 'profile.html';
+        showSuccessMessage('User registered successfully', 'profile.html');
       } catch (error) {
         console.error("Error writing document: ", error);
         alert(error.message);
@@ -63,10 +68,8 @@ const firebaseConfig = {
       try {
         const userCredential = await signInWithEmailAndPassword(auth, email, password);
         const user = userCredential.user;
-        alert('Login successful');
 
-        // Redirect to profile page
-        window.location.href = 'profile.html';
+        showSuccessMessage('Login successful', 'profile.html');
       } catch (error) {
         console.error(error);
         alert(error.message);
@@ -80,10 +83,8 @@ const firebaseConfig = {
       try {
         const result = await signInWithPopup(auth, provider);
         const user = result.user;
-        alert('Google Sign-In successful');
 
-        // Redirect to profile page
-        window.location.href = 'profile.html';
+        showSuccessMessage('Google Sign-In successful', 'profile.html');
       } catch (error) {
         console.error(error);
         alert(error.message);
