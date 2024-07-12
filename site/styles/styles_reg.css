@@ -199,6 +199,7 @@ h2 {
 /* Sign link text */
 .sign-link p {
     color: #1E2022;
+    margin-bottom: 1.2rem
 }
 #success-message {
   display: none; /* Hidden by default */
