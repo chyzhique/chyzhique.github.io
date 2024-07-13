@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
+
+body{
+  background-color: #240A34;
+  color: white;
+  font-size: 1.1em;
+  padding:0;
+  margin: 0;
+  --scroll-pad: 2px;
+    --scroll-size: 10px;
+    --scroll-bg: transparent;
+    --scroll-color: var(--color-DisabledText);
+  font-family: "Merriweather", serif;
+  font-weight: 300;
+  font-style: normal; !important;
+}
+.window{
+  display: grid;
+  grid-template-columns: minmax(248px, 248px) minmax(300px, 1fr);
+}
+.sidebar{
+  width: 248px;
+  background-color: black;
+  height: 99vh;
+  padding:0;
+  margin: 0;
+  position: sticky;
+  display:flex;
+  flex-direction: column;
+  align-items:center
+}
+ul{
+  margin:0;
+  margin-top: 2rem;
+  padding:0;
+}
+.sidebar-list{
+  list-style: none;
+  padding: 1rem;
+  margin-left: 0;
+  padding-left:0px;
+}
+li{
+  display: flex;
+  justify-content: flex-star;
+  margin-bottom: 1.3rem;
+  width:100%;
+  margin-left:0;
+    padding-left:0;
+}
+
+.sidebar-banner{
+  font-weight: 600;
+    background-color: #202630;
+  text-align: center;
+  border-radius: 8px;
+  line-height:44px;
+  margin: 0.3rem;
+  width:95%
+}
+li:hover{
+  background-color: white;
+  color:black;
+  border-radius: 8px;
+  cursor: pointer;
+  width:100%
+}
+.sidebar element{
+display: flex;
+  align: top;
+padding: 12px 15px;
+    color: var(--color-textPrimary);
+    border-bottom: solid 1px;
+    border-color: var(--color-line);
+    justify-content: space-between;
+    align-items: center;
+
+}
+#smbl{
+margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+section{
+  width:100%;
+  padding: 2rem 1rem 1rem 1rem;
+  background-color: black
+}
+section info{
+  display: grid;
+  grid-template-columns: minmax(300px 1fr) minmax(300px; 1fr)
+}
+#user-image{
+    height: 100px;
+    width: 100px;
+    border-radius: 9px;
+    object-fit: cover;
+    box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+}
+#user-name{
+  font-weight: 600;
+}
