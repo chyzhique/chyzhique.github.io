@@ -4,7 +4,7 @@
 body{
   margin: 0;
   padding: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .root {
   padding: 0;
@@ -13,7 +13,7 @@ body{
   display: flex;
   flex-direction: column;
   font-family: Merriweather;
-  overflow: hidden
+  overflow-x: hidden;
 }
 .hero {
   display: grid;
