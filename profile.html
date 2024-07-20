@@ -10,62 +10,10 @@
     <link rel="icon" type="image/x-icon" href="https://www.dropbox.com/scl/fi/a0qiv80qrjzu8vvvv2ouk/512sign.png?rlkey=ykjui910b9eufvs1n0yzbok2s&st=m0y64ssi&raw=1">
     <link rel="stylesheet" type="text/css" href="/site/styles/navbar.css">
     <link rel="stylesheet" type="text/css" href="/site/styles/styles_profile.css">
-<script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-
-// Your Firebase configuration
-const firebaseConfig = {
-   apiKey: "AIzaSyA9fv5y23398kzP8HljS3BlreOjycA-NUI",
-  authDomain: "anglomova-429e2.firebaseapp.com",
-  databaseURL: "https://anglomova-429e2-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "anglomova-429e2",
-  storageBucket: "anglomova-429e2.appspot.com",
-  messagingSenderId: "30552534006",
-  appId: "1:30552534006:web:74d0515d25b5778e30f5d7",
-  measurementId: "G-9W633V0TWL"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-
-// Fetch and display user information
-onAuthStateChanged(auth, async (user) => {
-  if (user) {
-    const userNameElement = document.getElementById('user-name');
-    const userEmailElement = document.getElementById('user-email');
-
-    // Fetch user data from Firestore
-    const userDoc = await getDoc(doc(db, 'users', user.uid));
-    if (userDoc.exists()) {
-      const userData = userDoc.data();
-      userNameElement.textContent = userData.name || user.displayName;
-      userEmailElement.textContent = userData.email || user.email;
-    } else {
-      // No user document, use auth user data
-      userNameElement.textContent = user.displayName;
-      userEmailElement.textContent = user.email;
-    }
-  } else {
-    // No user is signed in, redirect to login page
-    window.location.href = 'login.html';
-  }
-});
-
-// Logout functionality
-document.getElementById('logout-button').addEventListener('click', () => {
-  signOut(auth).then(() => {
-    window.location.href = 'login.html';
-  }).catch((error) => {
-    console.error('Error signing out: ', error);
-  });
-});
-</script>
+    <script type="module" src="/site/scripts/firebaseConfig.js" defer></script>
 </head>
 <body>
+    <div id="navbar-container"></div>
  <section class="profile-container"> 
 <aside class="sidebar">
   <div class="sidebar-set">
@@ -98,9 +46,8 @@ document.getElementById('logout-button').addEventListener('click', () => {
 <span class="sidebar-text">Settings</span>
 </div>
 <div class="sidebar-items" style="position: fixed;
-  bottom: 3rem;" id="logout-button">
-<span class="material-symbols-outlined"> logout </span>
-<span class="sidebar-text">EXIT</span>
+  bottom: 3rem;" id="logout-container">
+
 </div>
           </div>
       </aside>
