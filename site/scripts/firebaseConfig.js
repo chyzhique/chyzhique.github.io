@@ -1,6 +1,6 @@
     // Import Firebase modules
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
     import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
   
 const firebaseConfig = {
@@ -110,3 +110,20 @@ document.getElementById('google-login-button').addEventListener('click', async (
     alert(error.message);
   }
 });
+// Avatar if logged in
+const authButton = document.getElementById('auth-button');
+
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in, show avatar
+                const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
+                authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
+            } else {
+                // No user is signed in, show sign-in button
+                authButton.innerHTML = 
+    '<div class="nav-auth" id="auth-button">
+    <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
+    <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>
+  </div>';
+            }
+        });
