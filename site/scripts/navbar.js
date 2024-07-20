@@ -39,19 +39,4 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('navbar-container').innerHTML = navbarHTML;
 });
 
-document.addEventListener('auth-state-changed', (event) => {
-    const user = event.detail.user;
-    const authButtonDiv = document.getElementById('auth-button');
 
-    if (user) {
-        // User is signed in, show avatar
-        const avatarUrl = user.photoURL || 'default-avatar.png'; // Use a default avatar if photoURL is not available
-        authButtonDiv.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
-    } else {
-        // No user is signed in, show sign-in and register buttons
-        authButtonDiv.innerHTML = `
-            <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
-            <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>
-        `;
-    }
-});
