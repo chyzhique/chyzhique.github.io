@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     const navbarHTML = `
-
+<div class="root">
 <div class="navbar">
   <div class="nav-left">
     <img
