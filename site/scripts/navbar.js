@@ -32,8 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       </div>
     </div>
   <div class="nav-auth" id="auth-button">
-    <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
-    <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>
+
   </div>
 </div>
     `;
