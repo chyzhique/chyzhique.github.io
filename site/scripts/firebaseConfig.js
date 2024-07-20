@@ -120,10 +120,8 @@ const authButton = document.getElementById('auth-button');
                 authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
             } else {
                 // No user is signed in, show sign-in button
-                authButton.innerHTML = 
-    '<div class="nav-auth" id="auth-button">
+                authButton.innerHTML = '
     <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
-    <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>
-  </div>';
+    <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>';
             }
         });
