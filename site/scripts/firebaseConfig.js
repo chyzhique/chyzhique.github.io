@@ -112,12 +112,25 @@ document.getElementById('google-login-button').addEventListener('click', async (
 });
 // Avatar if logged in
 const authButton = document.getElementById('auth-button');
+const logoutContainer = document.getElementById('logout-container');
 
         onAuthStateChanged(auth, (user) => {
             if (user) {
                 // User is signed in, show avatar
                 const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
                 authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
+                logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button">Log out</button>`;
+
+                document.getElementById('logout-button').addEventListener('click', () => {
+                    signOut(auth).then(() => {
+                        // Sign-out successful.
+                        console.log('User signed out.');
+                    }).catch((error) => {
+                        // An error happened.
+                        console.error('Error signing out: ', error);
+                    });
+                });
+                
             } else {
                 // No user is signed in, show sign-in button
                 authButton.innerHTML = '
