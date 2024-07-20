@@ -113,18 +113,22 @@ document.getElementById('google-login-button').addEventListener('click', async (
   }
 });
 
-// Avatar if logged in
-const authButton = document.getElementById('auth-button');
-const logoutContainer = document.getElementById('logout-container');
+// Function to update the auth button based on the user's sign-in status
+function updateAuthButton(user) {
+  const authButton = document.getElementById('auth-button');
 
-onAuthStateChanged(auth, (user) => {
   if (user) {
-    // User is signed in, show avatar
-    const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
-    authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
-    logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button"><span class="material-symbols-outlined"> logout </span>
-<span class="sidebar-text">EXIT</span></button>`;
+    // User is signed in
+    const avatarUrl = user.photoURL || 'https://anglomova.com/site/images/default-avatar.jpg'; // Provide a default avatar URL if needed
+    authButton.innerHTML = `
+      <img src="${avatarUrl}" alt="Avatar" class="avatar">
+      <div id="logout-container">
+        <button class="nav-auth-logout" id="logout-button"><span class="material-symbols-outlined"> logout </span>
+<span class="sidebar-text">EXIT</span></button>
+      </div>
+    `;
 
+    // Add event listener for logout button
     document.getElementById('logout-button').addEventListener('click', () => {
       signOut(auth).then(() => {
         // Sign-out successful.
@@ -134,11 +138,18 @@ onAuthStateChanged(auth, (user) => {
         console.error('Error signing out: ', error);
       });
     });
-
   } else {
-    // No user is signed in, show sign-in button
+    // No user is signed in
     authButton.innerHTML = `
       <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
-      <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>`;
+      <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>
+    `;
   }
+}
+
+// Check auth state on page load
+document.addEventListener('DOMContentLoaded', () => {
+  onAuthStateChanged(auth, (user) => {
+    updateAuthButton(user);
+  });
 });
