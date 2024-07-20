@@ -1,8 +1,10 @@
-    // Import Firebase modules
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
-    import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
-    import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
-  
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+import { 
+    getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, 
+    GoogleAuthProvider, signInWithPopup, signOut, onAuthStateChanged 
+} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import { getFirestore, doc, setDoc, collection, query, where, getDocs, addDoc } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-firestore.js";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA9fv5y23398kzP8HljS3BlreOjycA-NUI",
   authDomain: "anglomova-429e2.firebaseapp.com",
@@ -14,11 +16,11 @@ const firebaseConfig = {
   measurementId: "G-9W633V0TWL"
 };
 
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-  
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const db = getFirestore(app);
+
 // Show success message
 function showSuccessMessage(message, redirectUrl) {
   const successMessage = document.getElementById('success-message');
@@ -29,47 +31,47 @@ function showSuccessMessage(message, redirectUrl) {
     window.location.href = redirectUrl;
   }, 3000);
 }
-  
-    // Register new user
-    document.getElementById('register-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('register-email').value;
-      const password = document.getElementById('register-password').value;
 
-      try {
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+// Register new user
+document.getElementById('register-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('register-email').value;
+  const password = document.getElementById('register-password').value;
 
-        // Store additional user data in Firestore
-        await setDoc(doc(db, "users", user.uid), {
-          email: user.email,
-          displayName: user.displayName || '',
-          photoURL: user.photoURL || ''
-        });
+  try {
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-        showSuccessMessage('User registered successfully', 'profile.html');
-      } catch (error) {
-        console.error("Error writing document: ", error);
-        alert(error.message);
-      }
+    // Store additional user data in Firestore
+    await setDoc(doc(db, "users", user.uid), {
+      email: user.email,
+      displayName: user.displayName || '',
+      photoURL: user.photoURL || ''
     });
 
-    // Login user
-    document.getElementById('login-form').addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const email = document.getElementById('login-email').value;
-      const password = document.getElementById('login-password').value;
+    showSuccessMessage('User registered successfully', 'profile.html');
+  } catch (error) {
+    console.error("Error writing document: ", error);
+    alert(error.message);
+  }
+});
 
-      try {
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+// Login user
+document.getElementById('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.getElementById('login-email').value;
+  const password = document.getElementById('login-password').value;
 
-        showSuccessMessage('Login successful', 'profile.html');
-      } catch (error) {
-        console.error(error);
-        alert(error.message);
-      }
-    });
+  try {
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
+
+    showSuccessMessage('Login successful', 'profile.html');
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+  }
+});
 
 // Google Sign-In for Registration
 document.getElementById('google-register-button').addEventListener('click', async () => {
@@ -110,31 +112,32 @@ document.getElementById('google-login-button').addEventListener('click', async (
     alert(error.message);
   }
 });
+
 // Avatar if logged in
 const authButton = document.getElementById('auth-button');
 const logoutContainer = document.getElementById('logout-container');
 
-        onAuthStateChanged(auth, (user) => {
-            if (user) {
-                // User is signed in, show avatar
-                const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
-                authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
-                logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button">Log out</button>`;
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, show avatar
+    const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
+    authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
+    logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button">Log out</button>`;
 
-                document.getElementById('logout-button').addEventListener('click', () => {
-                    signOut(auth).then(() => {
-                        // Sign-out successful.
-                        console.log('User signed out.');
-                    }).catch((error) => {
-                        // An error happened.
-                        console.error('Error signing out: ', error);
-                    });
-                });
-                
-            } else {
-                // No user is signed in, show sign-in button
-                authButton.innerHTML = '
-    <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
-    <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>';
-            }
-        });
+    document.getElementById('logout-button').addEventListener('click', () => {
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        console.log('User signed out.');
+      }).catch((error) => {
+        // An error happened.
+        console.error('Error signing out: ', error);
+      });
+    });
+
+  } else {
+    // No user is signed in, show sign-in button
+    authButton.innerHTML = `
+      <button class="nav-auth-sign" onclick="document.location='/login.html'">Sign in</button>
+      <button class="nav-auth-reg" onclick="document.location='/login.html'">Register</button>`;
+  }
+});
