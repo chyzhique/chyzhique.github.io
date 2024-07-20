@@ -122,7 +122,8 @@ onAuthStateChanged(auth, (user) => {
     // User is signed in, show avatar
     const avatarUrl = user.photoURL || 'site/images/default-avatar.jpg'; // Use a default avatar if photoURL is not available
     authButton.innerHTML = `<img src="${avatarUrl}" alt="Avatar" class="avatar">`;
-    logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button">Log out</button>`;
+    logoutContainer.innerHTML = `<button class="nav-auth-logout" id="logout-button"><span class="material-symbols-outlined"> logout </span>
+<span class="sidebar-text">EXIT</span></button>`;
 
     document.getElementById('logout-button').addEventListener('click', () => {
       signOut(auth).then(() => {
