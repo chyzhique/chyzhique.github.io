@@ -1,9 +1,9 @@
 {
   "files": {
     "main.css": "/static/css/main.32978b81.css",
-    "main.js": "/static/js/main.6da70d11.js",
-    "static/css/694.f8ea7f48.chunk.css": "/static/css/694.f8ea7f48.chunk.css",
-    "static/js/694.7a49c547.chunk.js": "/static/js/694.7a49c547.chunk.js",
+    "main.js": "/static/js/main.f5c6c301.js",
+    "static/css/877.b2c19df3.chunk.css": "/static/css/877.b2c19df3.chunk.css",
+    "static/js/877.ba3cdc81.chunk.js": "/static/js/877.ba3cdc81.chunk.js",
     "static/js/188.c1b5ae10.chunk.js": "/static/js/188.c1b5ae10.chunk.js",
     "static/media/1who.webp": "/static/media/1who.bc59d6067c6073674386.webp",
     "static/media/2who.webp": "/static/media/2who.b906489aeb1df071151e.webp",
@@ -50,14 +50,15 @@
     "static/media/right.svg": "/static/media/right.1a6285a35798e27471a579fc2f08f0c6.svg",
     "static/media/coin.svg": "/static/media/coin.3e283424316442b6686c87f24e39fb9a.svg",
     "static/media/user.svg": "/static/media/user.3c3ce3f89bb64e810ca13708310f5d79.svg",
+    "static/media/advancedVerbs": "/static/media/advancedVerbs.31d6cfe0d16ae931b73c",
     "main.32978b81.css.map": "/static/css/main.32978b81.css.map",
-    "main.6da70d11.js.map": "/static/js/main.6da70d11.js.map",
-    "694.f8ea7f48.chunk.css.map": "/static/css/694.f8ea7f48.chunk.css.map",
-    "694.7a49c547.chunk.js.map": "/static/js/694.7a49c547.chunk.js.map",
+    "main.f5c6c301.js.map": "/static/js/main.f5c6c301.js.map",
+    "877.b2c19df3.chunk.css.map": "/static/css/877.b2c19df3.chunk.css.map",
+    "877.ba3cdc81.chunk.js.map": "/static/js/877.ba3cdc81.chunk.js.map",
     "188.c1b5ae10.chunk.js.map": "/static/js/188.c1b5ae10.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.32978b81.css",
-    "static/js/main.6da70d11.js"
+    "static/js/main.f5c6c301.js"
   ]
 }
