@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a860d204.css",
-    "main.js": "/static/js/main.3e764e24.js",
-    "static/css/800.8ff7cc61.chunk.css": "/static/css/800.8ff7cc61.chunk.css",
-    "static/js/800.1067024b.chunk.js": "/static/js/800.1067024b.chunk.js",
+    "main.css": "/static/css/main.928ad108.css",
+    "main.js": "/static/js/main.70939e36.js",
+    "static/css/213.6834c1b2.chunk.css": "/static/css/213.6834c1b2.chunk.css",
+    "static/js/213.1394bdb3.chunk.js": "/static/js/213.1394bdb3.chunk.js",
     "static/js/530.8bdd7f4e.chunk.js": "/static/js/530.8bdd7f4e.chunk.js",
     "static/media/listening-test.MP3": "/static/media/listening-test.11610415503ac60fe2fd.MP3",
     "static/media/helperz_transp.png": "/static/media/helperz_transp.248fd559e201ba05e3fc.png",
     "static/media/testembark.webp": "/static/media/testembark.5d7342b8b7db2b7cdc77.webp",
     "static/media/mainBG.webp": "/static/media/mainBG.ba248bfbb131bc8866c3.webp",
     "static/media/default-user.png": "/static/media/default-user.68ea416727beeffc9690.png",
+    "static/media/currentlessonbg.webp": "/static/media/currentlessonbg.3aacb1fc7ac343216d15.webp",
     "static/media/vaulterror.webp": "/static/media/vaulterror.9ce24242d57ec5a2519a.webp",
     "static/media/WORDLISTBG.webp": "/static/media/WORDLISTBG.d028e0492c16a7160ed2.webp",
     "static/media/error.webp": "/static/media/error.6a8cce478c346c0ffeef.webp",
@@ -31,6 +32,9 @@
     "static/media/c-a1.webp": "/static/media/c-a1.4dc3899f773d5ba7af0a.webp",
     "static/media/c-b1.webp": "/static/media/c-b1.ba250baa29d1a767cee9.webp",
     "static/media/6why.webp": "/static/media/6why.9748f36d037ab7494eb6.webp",
+    "static/media/nextitem.png": "/static/media/nextitem.5d5167f2ec63e5158e78.png",
+    "static/media/finished.png": "/static/media/finished.c6222de66a0bd349d9c9.png",
+    "static/media/blocked.png": "/static/media/blocked.abb7d2047a82e68a9633.png",
     "static/media/part.svg": "/static/media/part.d96d50337c3b926c03cc40589821404e.svg",
     "static/media/1why.webp": "/static/media/1why.be5ff6218c75f86aabfb.webp",
     "static/media/5why.webp": "/static/media/5why.8a7adc5990c24802fa85.webp",
@@ -59,14 +63,14 @@
     "static/media/right.svg": "/static/media/right.1a6285a35798e27471a579fc2f08f0c6.svg",
     "static/media/coin.svg": "/static/media/coin.3e283424316442b6686c87f24e39fb9a.svg",
     "static/media/user.svg": "/static/media/user.3c3ce3f89bb64e810ca13708310f5d79.svg",
-    "main.a860d204.css.map": "/static/css/main.a860d204.css.map",
-    "main.3e764e24.js.map": "/static/js/main.3e764e24.js.map",
-    "800.8ff7cc61.chunk.css.map": "/static/css/800.8ff7cc61.chunk.css.map",
-    "800.1067024b.chunk.js.map": "/static/js/800.1067024b.chunk.js.map",
+    "main.928ad108.css.map": "/static/css/main.928ad108.css.map",
+    "main.70939e36.js.map": "/static/js/main.70939e36.js.map",
+    "213.6834c1b2.chunk.css.map": "/static/css/213.6834c1b2.chunk.css.map",
+    "213.1394bdb3.chunk.js.map": "/static/js/213.1394bdb3.chunk.js.map",
     "530.8bdd7f4e.chunk.js.map": "/static/js/530.8bdd7f4e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a860d204.css",
-    "static/js/main.3e764e24.js"
+    "static/css/main.928ad108.css",
+    "static/js/main.70939e36.js"
   ]
 }
